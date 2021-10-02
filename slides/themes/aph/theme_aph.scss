@@ -68,7 +68,7 @@ $title-font-size: 60px;
 	/* Linear background */
 	.frame::before {
 		z-index: -2;
-		background: linear-gradient(to bottom right, rgba($color-midnight-dark, 0.92) 0%, rgba($color-rhino-100, 0.92) 100%);
+		background: linear-gradient(to bottom right, rgba($color-midnight-dark, 0.94) 0%, rgba($color-rhino-100, 0.94) 100%);
 	}
 
 	/* Pattern effect */
@@ -260,28 +260,20 @@ $title-font-size: 60px;
 			width: 35px;
 			height: 35px;
 			left: -45px;
-			top: 10px;
+			top: 8px;
 			background-repeat: no-repeat;
 			background-size: contain;
 		}
 	}
 
 	.upside::before {
-		background-image: url("./resources/ghost_upside.png");
+		background-image: url("./resources/emoji_happy.png");
 	}
     
 	.downside::before {
-		background-image: url("./resources/ghost_downside.png");
+		background-image: url("./resources/emoji_angry.png");
 	}
   
-	.upside {
-	  color: $color-emerald;
-	}
-  
-	.downside {
-	  color: $color-tomato-light;
-	}
-
 	.rotating {
 		-webkit-animation:spin 20s linear infinite;
 		-moz-animation:spin 20s linear infinite;

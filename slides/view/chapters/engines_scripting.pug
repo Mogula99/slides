@@ -1,0 +1,63 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_scripting/';
+- var defaultBgr = 'backgrounds/script.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Scripting Engine', imgAssets+'chapter_engines_scripting.svg')
++frameInbox('Scripts')
+	.important-green
+		.scope.fragment
+			p Scripts in games
+			ul
+				li.fragment allow rapid prototyping
+				li.fragment can be reloaded at runtime 
+				li.fragment can separate gameplay and core components 
+				li.fragment can be exposed to the end users for modding
+		.bottom-30.left-30.fragment
+			figure
+				img.height-400(src=imgAssets+'hexen.jpg')
+				p Hexen (1995) - one of the first scripted games
+		.bottom-80.right-30.fragment
+			img.height-650(src=imgAssets+'scripting_engine.svg')
++frameInboxMid('Example: Hexen ACS Script')
+	div
+		.code.text-md
+			include ../../assets/engines_scripting/snippets_generated/hexen.html
++frameInbox('Example: Arma 2 SQS Script')
+	.flex-cols-2
+		div
+			.code.text-xs
+				include ../../assets/engines_scripting/snippets_generated/arma2.html
+		div.text-right
+			img.height-400(src=imgAssets+'arma.jpg')
++frameInbox('Example: Godot GDScript')
+	.flex-cols-2
+		div
+			.code.text-sm
+				include ../../assets/engines_scripting/snippets_generated/pong.html
+		div.text-right.bottom-30.right-30
+			img.height-400(src=imgAssets+'pong.gif')
++frameInbox('Game Engine Scripting API')
+	.important-orange
+		div
+			ul
+				li.fragment the engine needs to communicate with the script - provided by <span class="highlight">bridging</span>
+				li.fragment bridge is a performance bottleneck, especially for per-frame calls
+				li.fragment more scripting languages = more bridges to maintain
+				li.fragment <span class="highlight">Marshalling</span> - transforming memory representation of an object between two domains (different programming languages)
+				li.fragment <span class="highlight">Semantic gap</span> - descriptive difference of an object in various representations (e.g. relational database vs object-oriented structure)
+				li.fragment applies to visual representations as well
+					.text-center.mt-20
+						img.height-300(src=imgAssets+'blueprints.png')
++frameInbox('Example: Atomic Game Engine JS API')
+	div
+		.code.text-xs
+			include ../../assets/engines_scripting/snippets_generated/age_jsapi.html
++frameInbox('Example: Atomic Game Engine C# API')
+	div
+		ul
+			li mapping from C++ to C# is easy
+		.code.text-sm.mt-40
+			include ../../assets/engines_scripting/snippets_generated/age_csharpapi.html

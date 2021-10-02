@@ -6,6 +6,11 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [5.2.0] - 2021-10-02
+### Added
+Lecture 2
+Minitalk about essential mechanics
+
 ## [5.1.0] - 2021-09-28
 ### Added
 First lecture for NI-APH 2021

@@ -1,0 +1,78 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_history/';
+- var defaultBgr = 'backgrounds/bgr_engine.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('History of game engines', imgAssets+'chapter_engines_history.svg')
++frameInbox('Pre-engine era')
+	.center.fill
+		.grid.grid-cols-3.grid-rows-2.gap-40.width-80p
+			+floppyAppBig(imgAssets+'engine_pinball.jpg', 'Pinball Construction Kit', '1983')
+			+floppyAppBig(imgAssets+'engine_tforce.jpg', 'Thunder Force Construction', '1984')
+			+floppyAppBig(imgAssets+'engine_adventure.jpg', 'Adventure Construction Kit', '1984')
+			+floppyAppBig(imgAssets+'engine_gamemaker.jpg', 'Garry Kitchen\'s GameMaker', '1988')
+			+floppyAppBig(imgAssets+'engine_arcade.jpg', 'Arcade Construction Kit', '1988')
+			+floppyAppBig(imgAssets+'engine_rpgmaker.jpg', 'RPG Maker', '1990')
++frameInbox('Example: Vlak (1993)')
+	div
+		.code.tiny.font-dos.text-sm
+			include ../../assets/engines_history/snippets_generated/vlak.html
+		.top-100.right-20
+			img.height-350(src=imgAssets+'vlak.png')
+			p.mt-10 Source code for MS-DOS: <a href="https://github.com/oldcompcz/vlak">link</a>
+
++frameInbox('ID Tech')
+	div.important-orange
+		ul
+			li.fragment family of game engines developed by <span class="highlight">ID Software</span>
+			li.fragment <span class="highlight">Id Tech 0</span> - the very first game engine
+			li.fragment every next game had more advanced technology
+			li.fragment all games were based on raycasting until 1996
+		.flex-cols-4.mt-80
+			+floppyApp(imgAssets+'idtech_hovertank.jpg', 'Hovertank 3-D', '1991').fragment
+			+floppyApp(imgAssets+'idtech_catacomb.jpg', 'Catacomb 3-D', '1991').fragment
+			+floppyApp(imgAssets+'idtech_wolfenstein.jpg', 'Wolfenstein 3-D', '1992').fragment
+			+floppyApp(imgAssets+'idtech_doom.jpg', 'Doom', '1993').fragment
++frameInbox('1993: Doom')
+	.flex-cols-2
+		.code.tiny.text-xs
+			include ../../assets/engines_history/snippets_generated/doom.html 
+		div
+			img.height-550(src=imgAssets+'doom.jpg')
+			p Source code: <a href"https://github.com/id-Software/DOOM/tree/master/linuxdoom-1.10">link</a>
++frameInbox('Quake Engine')
+	div.important-orange
+		.flex-cols-2
+			div
+				ul
+					li.fragment ~id Tech 1
+					li.fragment released by ID Software in 1996
+					li.fragment initiated the rise of 3D gaming
+					li.fragment true 3D real-time rendering, 3D light sources
+					li.fragment <span class="highlight">Id Tech 1 Games</span>: 
+						ul
+							li.fragment Quake, Hexen 2, Silver Wings
+					li.fragment <span class="highlight">Other IdTech-based games:</span>
+						ul
+							li.fragment Call of Duty
+							li.fragment Medal of Honor
+							li.fragment Daikatana
+							li.fragment Half-Life (forked Source Engine)
+					li.fragment <span class="highlight">Successors:</span>
+						ul
+							li.fragment id Tech 2, 3, 4, 5, 6, 7 (2020)
+
+			div.fragment
+				img.height-550(src=imgAssets+'quake.jpg')
+				p Quake source code: <a href="https://github.com/id-Software/Quake">link</a>
+
++frameInbox('Quake engine family')
+	.center
+		img.height-750(src=imgAssets+'idtech_family.svg')
++frameInbox('Influence of Game Engines')
+	div.nopadding.fill.center.absolute
+		img.height-900(src=imgAssets+'games_evolution.svg')
+	div.nopadding.fill.center.absolute.top-50
+		img.height-700(src=imgAssets+'games_evolution.png')

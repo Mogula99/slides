@@ -1,0 +1,90 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_input/';
+- var defaultBgr = 'backgrounds/keyboard.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Input', imgAssets+'chapter_engines_input.svg')
++frameInbox('Input Manager')
+	.important-green
+		.flex.flex-row.flex-no-wrap
+			div.spacing-xs
+				ul
+					li.fragment detects events from input devices
+					li.fragment <span class="highlight">polling</span> - compare against the previous state
+					li.fragment <span class="highlight">callbacks</span> - handled by an upper SW layer
+				.scope.fragment
+					p Devices
+					.right-100.top-250
+						img.height-450(src=globalAssets+'memes/keyboard_games.jpg')
+					ul
+						li.fragment keyboard, touch sensor, camera, gamepad, Oculus Touch,...
+						li.fragment one-axis controller - single analog state
+						li.fragment two-axis controller - mouse and joystick
+						li.fragment three-axis controller - accelerometer
+				.scope.fragment
+					p What to consider
+					ul
+						li.fragment which input is active (e.g., pressed key)
+						li.fragment how long has it been active
+						li.fragment what state is it in and which component can react to it
+						li.fragment when an input got active, what input was active before?
++frameInbox('Input Events')
+	.important-green
+		.flex-cols-2
+			div
+				.scope.fragment(data-fragment-index="1")
+					p Atomic events
+					ul
+						li key press
+						li key release
+						li mouse wheel move
+				.scope.fragment(data-fragment-index="2")
+					p Compound events
+					ul
+						li click
+						li fling
+						li pinch to zoom
+						li double tap
+				.scope.fragment(data-fragment-index="3")
+					p Special events
+					ul
+						li sequences
+						li actions
+			div
+				.right-170.top-200.fragment(data-fragment-index="1")
+					img.height-150(src=imgAssets+'input_joypad.png')
+				.right-270.top-350.mt-80.fragment(data-fragment-index="2")
+					img.height-150(src=imgAssets+'input_pinch.png')
+				.right-270.top-600.mt-80.fragment(data-fragment-index="3")
+					img.height-200(src=imgAssets+'input_cheat.png')
++frameInbox('Special Events')
+		div.width-85p.important-green
+			.scope
+				p.fragment Sequence
+				ul
+					li.fragment cheats: IDDQD, IDKFA
+						.right-30.top-30
+							img.width-400(src=globalAssets+'memes/cheatcodes.jpg')
+					li.fragment chords: combo moves in fighting games
+						.right-150.top-380
+							img.width-450(src=imgAssets+'street_fighter.jpg')
+			.space-md
+			.scope.fragment
+				p Action
+				ul
+					li.fragment a button or a combination of buttons result in an action
+					li.fragment there must be a button ID <-> action ID mapping
+			.space-md
+			.scope.fragment
+				p Context-sensitive input
+				ul
+					li.fragment several modes: walking, driving, flying
+						.right-400.top-600
+							img.width-550(src=globalAssets+'memes/walk.jpg')
+				
++frameInbox('Example: Godot Input Manager')
+	.flex-cols-2
+		.code.text-sm
+			include ../../assets/engines_input/snippets_generated/input_godot.html

@@ -49,6 +49,49 @@ $color-rhino-20: #d2d6dc;
 $color-rhino-10: #e8eaec;
 $color-rhino-5: #f3f4f5;
 
+/* Transparent colors */
+$color-white-3: rgba($color-white, 0.03);
+$color-white-5: rgba($color-white, 0.05);
+$color-white-10: rgba($color-white, 0.1);
+$color-white-20: rgba($color-white, 0.2);
+$color-white-40: rgba($color-white, 0.4);
+$color-white-60: rgba($color-white, 0.6);
+$color-white-80: rgba($color-white, 0.8);
+$color-white-90: rgba($color-white, 0.9);
+
+/* Gradients */
+$gradient-rhino: linear-gradient($color-rhino-40, $color-rhino-60);
+$gradient-rhino-45: linear-gradient(-45deg, $color-rhino-40, $color-rhino-60);
+$gradient-rhino-90: linear-gradient(90deg, $color-rhino-40, $color-rhino-60);
+$gradient-rhino-dark: linear-gradient($color-rhino-80, $color-rhino-100);
+$gradient-rhino-dark-45: linear-gradient(-45deg, $color-rhino-80, $color-rhino-100);
+$gradient-rhino-dark-90: linear-gradient(90deg, $color-rhino-80, $color-rhino-100);
+$gradient-tomato: linear-gradient($color-tomato, $color-tomato-dark);
+$gradient-tomato-45: linear-gradient(-45deg, $color-tomato, $color-tomato-dark);
+$gradient-tomato-90: linear-gradient(90deg, $color-tomato, $color-tomato-dark);
+$gradient-manhattan: linear-gradient($color-manhattan, $color-manhattan-dark);
+$gradient-manhattan-45: linear-gradient(-45deg, $color-manhattan, $color-manhattan-dark);
+$gradient-manhattan-90: linear-gradient(90deg, $color-manhattan, $color-manhattan-dark);
+$gradient-goldenrod: linear-gradient($color-goldenrod, $color-goldenrod-dark);
+$gradient-goldenrod-45: linear-gradient(-45deg, $color-goldenrod, $color-goldenrod-dark);
+$gradient-goldenrod-90: linear-gradient(90deg, $color-goldenrod, $color-goldenrod-dark);
+$gradient-lemon: linear-gradient($color-lemon, $color-lemon-dark);
+$gradient-lemon-45: linear-gradient(-45deg, $color-lemon, $color-lemon-dark);
+$gradient-lemon-90: linear-gradient(90deg, $color-lemon, $color-lemon-dark);
+$gradient-emerald: linear-gradient($color-emerald, $color-emerald-dark);
+$gradient-emerald-45: linear-gradient(-45deg, $color-emerald, $color-emerald-dark);
+$gradient-emerald-90: linear-gradient(90deg, $color-emerald, $color-emerald-dark);
+$gradient-aqua: linear-gradient($color-aqua, $color-aqua-dark);
+$gradient-aqua-45: linear-gradient(-45deg, $color-aqua, $color-aqua-dark);
+$gradient-aqua-90: linear-gradient(90deg, $color-aqua, $color-aqua-dark);
+$gradient-azure: linear-gradient($color-azure, $color-azure-dark);
+$gradient-azure-45: linear-gradient(-45deg, $color-azure, $color-azure-dark);
+$gradient-azure-90: linear-gradient(90deg, $color-azure, $color-azure-dark);
+$gradient-royal: linear-gradient($color-royal, $color-royal-dark);
+$gradient-royal-45: linear-gradient(-45deg, $color-royal, $color-royal-dark);
+$gradient-royal-90: linear-gradient(90deg, $color-royal, $color-royal-dark);
+
+
 /* List of all colors for auto-generated classes - in PUG we will be able to write classes like color-tomato, bgr-tomato etc. */
 $allColors: "midnight" $color-midnight, "midnight-light" $color-midnight-light, "midnight-dark" $color-midnight-dark, "white" $color-white, "tomato" $color-tomato, "tomato-light" $color-tomato-light, "tomato-dark" $color-tomato-dark,
 	"goldenrod" $color-goldenrod, "goldenrod-light" $color-goldenrod-light, "goldenrod-dark" $color-goldenrod-dark,
@@ -59,8 +102,19 @@ $allColors: "midnight" $color-midnight, "midnight-light" $color-midnight-light, 
 	"rhino-100" $color-rhino-100, "rhino-90" $color-rhino-90, "rhino-80" $color-rhino-80, "rhino-60" $color-rhino-60, "rhino-40" $color-rhino-40, 
 	"rhino-20" $color-rhino-20, "rhino-10" $color-rhino-10, "rhino-5" $color-rhino-5;
 
+/* List of all gradients for auto-generated classes */
+$allGradients: "rhino" $gradient-rhino, "rhino-45" $gradient-rhino-45, "rhino-90" $gradient-rhino-90,
+"rhino-dark" $gradient-rhino-dark, "rhino-dark-45" $gradient-rhino-dark-45, "rhino-dark-90" $gradient-rhino-dark-90,
+"tomato" $gradient-tomato, "tomato-45" $gradient-tomato-45, "tomato-90" $gradient-tomato-90,
+"manhattan" $gradient-manhattan, "manhattan-45" $gradient-manhattan-45, "manhattan-90" $gradient-manhattan-90,
+"goldenrod" $gradient-goldenrod, "goldenrod-45" $gradient-goldenrod-45, "goldenrod-90" $gradient-goldenrod-90,
+"lemon" $gradient-lemon, "lemon-45" $gradient-lemon-45, "lemon-90" $gradient-lemon-90,
+"emerald" $gradient-emerald, "emerald-45" $gradient-emerald-45, "emerald-90" $gradient-emerald-90,
+"aqua" $gradient-aqua, "aqua-45" $gradient-aqua-45, "aqua-90" $gradient-aqua-90,
+"azure" $gradient-azure, "azure-45" $gradient-azure-45, "azure-90" $gradient-azure-90,
+"royal" $gradient-royal, "royal-45" $gradient-royal-45, "royal-90" $gradient-royal-90;
 
-/* This is required for brand.md */
+
 @each $name, $color in $allColors {
 	.bgr-#{$name} {
 		background-color: $color !important;
@@ -80,5 +134,11 @@ $allColors: "midnight" $color-midnight, "midnight-light" $color-midnight-light, 
 
 	.border-color-#{$name} {
 		border-color: $color !important;
+	}
+}
+
+@each $name, $grad in $allGradients {
+	.bgr-gradient-#{$name} {
+		background-image: $grad !important;
 	}
 }

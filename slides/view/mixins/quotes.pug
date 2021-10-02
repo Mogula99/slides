@@ -1,7 +1,15 @@
 mixin quote-pokemon()
-    +mcontainer('Goodbye Quote')(autoAnimate)
-        +frameShard().top-25p.left-35p.width-30p
-                +quote('It\'s super effective.', '')(class="font-dos not-italic")
-    +mcontainer('Goodbye Quote')(bgr='backgrounds/pokemon.jpg', autoAnimate=true)
-        +frameShard().top-25p.left-30p.width-42p
-                +quote('It\'s super effective.', 'Pokémon Series')(class="font-dos not-italic")
+	+mcontainer('Goodbye Quote')(autoAnimate)
+		+frameShard().top-25p.left-35p.width-30p
+			+quote('It\'s super effective.', '')(class="font-dos not-italic")
+	+mcontainer('Goodbye Quote')(bgr='backgrounds/pokemon.jpg', autoAnimate=true)
+		+frameShard().top-25p.left-30p.width-42p
+			+quote('It\'s super effective.', 'Pokémon Series')(class="font-dos not-italic")
+
+mixin quote-portal()
+	+mcontainer('Goodbye Quote')(autoAnimate)
+		+frameShard().top-25p.left-22p.width-60p
+			+quote('If You Become Light Headed From Thirst, Feel Free To Pass Out.', '')(class="font-dos not-italic")
+	+mcontainer('Goodbye Quote')(bgr='backgrounds/portal.jpg', autoAnimate=true)
+		+frameShard().top-25p.left-22p.width-60p
+			+quote('If You Become Light Headed From Thirst, Feel Free To Pass Out!', 'Portal')(class="font-dos not-italic")

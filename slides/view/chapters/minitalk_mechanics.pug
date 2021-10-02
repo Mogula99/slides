@@ -1,0 +1,183 @@
+include ../mixins/title.pug
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_mechanics/';
+- var defaultBgr = 'backgrounds/gears.jpg';
+
+// ===================================================== SLIDES =====================================================
++titleLecture('Essential Mechanics', 'Minitalk', imgAssets+'chapter_mechanics.svg')
++frameInbox('Game Mechanics')
+	div
+		ul
+			li.fragment one of the most visible parts of the gameplay
+			li.fragment enjoyable games heavily depend on well-designed mechanics
+			li.fragment.highlight mostly, it's not about inventing a new mechanic, but bringing an already existing one to the perfection
+			li.fragment <span class="highlight-2">design hook</span> - the mechanic that makes the game stand out
+				.bottom-30.left-450
+					figure
+						img.height-420(src=imgAssets+'braid.gif')
+						p Braid (2009)
++frameInbox('1. Score')
+	div
+		ul
+			li.fragment How does the game utilize score?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'score_80s.jpg')
+				p Most 80's games - highscore table
+			figure.fragment
+				img.height-320(src=imgAssets+'score_icy.jpg')
+				p Icy Tower - tailored to the gameplay itself
+			figure.fragment
+				img.height-320(src=imgAssets+'score_gwars.jpg')
+				p Geometry Wars - switching weapons, blast bomb
++frameInbox('2. Health')
+	div
+		ul
+			li.fragment How does the game utilize character's health?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'health_prince.jpg')
+				p Prince of Persia - extra lives
+			figure.fragment
+				img.height-320(src=imgAssets+'health_doom.jpg')
+				p Doom - first aid kits
+			figure.fragment
+				img.height-320(src=imgAssets+'health_wolf.jpg')
+				p Wolfenstein II - regeneration + kits
++frameInbox('3. Respawn')
+	div
+		ul
+			li.fragment If the character dies, how can he/she respawn?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'death_limbo.jpg')
+				p Limbo - very near
+			figure.fragment
+				img.height-320(src=imgAssets+'death_braid.jpg')
+				p Braid - when the character dies, time stops
+			figure.fragment
+				img.height-320(src=imgAssets+'death_fps.jpg')
+				p Most FPS games - save your game or start over
++frameInbox('4. Special modes')
+	div
+		ul
+			li.fragment Into what special modes can the character get?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'bonus_pacman.jpg')
+				p Pamcan - power pellets
+			figure.fragment
+				img.height-320(src=imgAssets+'bonus_jazz.jpg')
+				p Jazz Jackrabbit - sugar rush
+			figure.fragment
+				img.height-320(src=imgAssets+'bonus_doom.jpg')
+				p Doom - invulnerability sphere
++frameInbox('5. Development')
+	div
+		ul
+			li.fragment How can the character and his/her equipment develop?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'dev_duke.jpg')
+				p Duke Nukem - faster weapon
+			figure.fragment
+				img.height-320(src=imgAssets+'dev_pokemon.jpg')
+				p Pokémon series - training, evolution,...
+			figure.fragment
+				img.height-320(src=imgAssets+'dev_tombraider.jpg')
+				p Tomb Raider - gathering, levelling, exploring,...
++frameInbox('6. Equipment limits')
+	div
+		ul
+			li.fragment What limits are applied to the character's equipment?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'equip_skyrim.jpg')
+				p Many RPGs - inventory limits
+				.tip.absolute.fragment.fade-in-then-out
+					img.height-500(src=globalAssets+'memes/backpack.jpg')
+			figure.fragment
+				img.height-320(src=imgAssets+'equip_fps.jpg')
+				p Some FPS - two weapons max
+				.tip.absolute.fragment.fade-in-then-out
+					img.height-650(src=globalAssets+'memes/fps_weapons.jpg')
+			figure.fragment
+				img.height-320(src=imgAssets+'equip_lol.jpg')
+				p LoL - 6 items max
++frameInbox('7. Chapters and Levels')
+	div
+		ul
+			li.fragment What can we find at the end of each chapter/level?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'levels_cuphead.jpg')
+				p Cuphead - boss fights
+				.tip.absolute.fragment.fade-in-then-out
+					img.height-650(src=globalAssets+'memes/bossfight.jpg')
+			figure.fragment
+				img.height-320(src=imgAssets+'levels_halflife.jpg')
+				p Half-Life - different environment
+			figure.fragment
+				img.height-320(src=imgAssets+'levels_tomb.jpg')
+				p Tomb Raider - another damn tomb
+
++frameInbox('8. Opening doors')
+	div
+		ul
+			li.fragment How can the character get the door open?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'door_doom.jpg')
+				p Doom - hunting keys
+			figure.fragment
+				img.height-320(src=imgAssets+'door_halflife.jpg')
+				p Half-Life - waiting for NPCs
+				.tip.absolute.fragment.fade-in-then-out
+					img.height-500(src=globalAssets+'memes/door.jpg')
+			figure.fragment
+				img.height-320(src=imgAssets+'door_hellblade.jpg')
+				p Hellblade - window element
++frameInbox('9. Revisiting')
+	div
+		ul
+			li.fragment Is there any reason to revisit already visited areas?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'revisit_rayman.jpg')
+				p Rayman - after character development
+			figure.fragment
+				img.height-320(src=imgAssets+'revisit_darksouls.jpg')
+				p Dark Souls - "I'm lost again!"
+			figure.fragment
+				img.height-320(src=imgAssets+'revisit_openworld.jpg')
+				p Open world games - quests
+				.tip.absolute.fragment.fade-in-then-out
+					img.height-550(src=globalAssets+'memes/quests.jpg')
++frameInbox('10. Randomness')
+	div
+		ul
+			li.fragment How the game works with randomness?
+		.space-xl
+		.flex-cols-3.fill
+			figure.fragment
+				img.height-320(src=imgAssets+'random_tetris.jpg')
+				p Tetris - random permutations
+			figure.fragment
+				img.height-320(src=imgAssets+'random_pokemon.jpg')
+				p Pokémon series - random encounter
+				.tip.absolute.fragment.fade-in-then-out
+					img.height-500(src=globalAssets+'memes/miss.jpg')
+			figure.fragment
+				img.height-320(src=imgAssets+'retro_gwars.jpg')
+				p Geometry Wars - random waves

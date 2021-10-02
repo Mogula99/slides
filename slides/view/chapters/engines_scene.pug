@@ -1,0 +1,32 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_scene/';
+- var defaultBgr = 'backgrounds/tree.png';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Scene Graph', imgAssets+'chapter_engines_scene.svg')
++frameInbox('Scene Graph')
+	.important-orange
+		.scope.fragment
+			p Scene Graph
+			ul
+				li.fragment essential structure of every interactive application
+				li.fragment a way of ordering data into a hierarchy
+				li.fragment represented as an N-Tree or a regular graph
+				li.fragment implemented as an array, oct-tree, quad-tree, bounding volume hierarchy,...
+				li.fragment parent nodes affect child nodes (translation, rotation, scale,...)
+				li.fragment leaves represent atomic units (shapes, vertices, imported meshes)
+		.scope.fragment
+			p Scene Manager
+			ul
+				li.fragment uses scene graph as a logical hierarchy
+				li.fragment responsibility: communication, binding to logical components
+				li.fragment Unity Engine - game objects form a hierarchy
+				li.fragment Unreal Engine - components form a hierarchy
+				li.fragment Godot Engine - everyting forms a hierarchy
++frameInbox('Example: Scene Hierarchy')
+	.center.bottom-0.width-100p
+		img.height-380.mr-100(src=imgAssets+'scene_game.gif')
+	.center.top-0.left-20
+		img.height-650(src=imgAssets+'graph_creature.svg')

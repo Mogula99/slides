@@ -1,0 +1,75 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_resources/';
+- var defaultBgr = 'backgrounds/memory.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Resource Manager', imgAssets+'chapter_engines_resources.svg')
++frameInbox('Resource Manager')
+	.important-orange
+		.scope.fragment.fade-up
+			p Provides access to all resources (~assets)
+			ul
+				li meshes, materials, shaders, animations, textures, clips, levels
+				li <span class="highlight-2">Resource Cache</span> - used for faster access
+		.scope.fragment.fade-up
+			p Manages lifetime of each resource
+			ul
+				li most managers maintain some kind of registry
+		.scope.fragment.fade-up
+			p Ensures that only one copy of each resource exists in memory
+			ul
+				li resource GUID - usually path to the file, guaranteed to be unique
+		.scope.fragment.fade-up
+			p Loads required resources and unloads those no longer needed
+			ul
+				li loading is simpler than unloading
+		.scope.fragment.fade-up
+			p Handles streaming
+			ul
+				li in case of open worlds
++frameInbox('Data loading')
+	.important-orange
+		.scope.fragment.fade-up 
+			p Level loading
+			ul
+				li only one game chunk is loaded at a time
+				li requires a loading screen or a pre-rendered cutscene
+				li used in <span class="highlight-2">Tomb Raider, Doom, Quake,...</span>
+		.scope.fragment.fade-up
+			p Air locks
+			ul
+				li air lock is a small scene (room, hall)
+				li when the player enters the area from which can't see the previous one, the next scene is loaded
+				li used in <span class="highlight-2">Half-Life, Portal (partially)</span>
+		.scope.fragment.fade-up
+			p World streams
+			ul
+				li the engine unloads regions too far away and loads new regions the player is heading to
+				li uses <span class="highlight">LOD system</span> - chunks are loaded at a variable granularity
+				li used in <span class="highlight-2">GTA, WoW, Arma, Spiderman</span>
++frameInbox('Example: Level Loading')
+	.flex-cols-2.items-center.fill
+		figure
+			img.height-400(src=imgAssets+'loading_tomb_raider.jpg')
+			p Shadow of the Tomb Raider (2018)
+		figure
+			img.height-400(src=imgAssets+'loading_wolfenstein.jpg')
+			p Wolfenstein II: The New Colossus (2018), cutscene
++frameInbox('Example: Air Lock')
+	.flex-cols-2.items-center.fill
+		figure
+			img.height-400(src=imgAssets+'airlock_portal.jpg')
+			p Portal (2007)
+		figure
+			img.height-400(src=imgAssets+'airlock_hellblade.jpg')
+			p Hellblade: Senua's Sacrifice (2017)
++frameInbox('Example: World Streaming')
+	.flex-cols-2.items-center.fill
+		figure
+			img.height-400(src=imgAssets+'openworld_wow.jpg')
+			p World of Warcraft (2004)
+		figure
+			img.height-400(src=imgAssets+'openworld_cyberpunk.jpg')
+			p Cyberpunk 2077 with broken LOD (2020)

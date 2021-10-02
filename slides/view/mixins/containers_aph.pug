@@ -60,6 +60,16 @@ mixin floppyApp(image, text, year)
 			div!=text
 		div.absolute.left-90.top-50.color-rhino-5.opacity-6!=year
 
+mixin floppyAppBig(image, text, year)
+	div.relative.height-350()&attributes(attributes)
+		.absolute.height-120.left-60.top-10.opacity-8.ml-2
+			img(src!=image).height-120.object-cover
+		img.absolute.height-350(src=globalAssets+'floppy_525.png')
+		div.absolute.bottom-20.width-80.left-10.text-2xs.color-rhino-50
+			div!=text
+		div.absolute.left-10.text-xs.top-20.color-rhino-50!=year
+
+
 mixin mchapter(text, icon)
 	+frameOutbox()&attributes(attributes)
 		.flex-col.items-center

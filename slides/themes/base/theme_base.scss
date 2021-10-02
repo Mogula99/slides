@@ -312,7 +312,8 @@ body {
 		@extend .items-center;
         text-align: center;
         > p {
-            @extend .text-md;;
+            margin-top: 10px;
+            @extend .text-md;
         }
     }
 

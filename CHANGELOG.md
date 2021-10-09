@@ -6,6 +6,12 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [5.3.0] - 2021-10-09
+### Added
+Lecture 3
+Minitalk about speedrunning
+
+
 ## [5.2.0] - 2021-10-02
 ### Added
 Lecture 2

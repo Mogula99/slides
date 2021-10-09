@@ -1,11 +1,11 @@
 include ../mixins/containers.pug
 include ../mixins/containers_aph.pug
 
-- var imgAssets = '../assets/engines_resources/';
+- var imgAssets = '../assets/assets_resources/';
 - var defaultBgr = 'backgrounds/memory.jpg';
 
 // ===================================================== SLIDES =====================================================
-+mchapter('Resource Manager', imgAssets+'chapter_engines_resources.svg')
++mchapter('Resource Manager', imgAssets+'chapter_assets_resources.svg')
 +frameInbox('Resource Manager')
 	.important-orange
 		.scope.fragment.fade-up
@@ -29,8 +29,15 @@ include ../mixins/containers_aph.pug
 			p Handles streaming
 			ul
 				li in case of open worlds
++frameInbox('Resource Manager')
+	div.text-center
+		img.height-700.mt-40(src=imgAssets+'resource_manager.svg' alt='Resource Manager')
++frameInbox('Example: Godot Engine Resource Loader')
+	div
+		.code.text-xs
+			include ../../assets/assets_resources/snippets_generated/godot_resource_loader.html
 +frameInbox('Data loading')
-	.important-orange
+	.important-orange.spacing-xs
 		.scope.fragment.fade-up 
 			p Level loading
 			ul
@@ -47,8 +54,9 @@ include ../mixins/containers_aph.pug
 			p World streams
 			ul
 				li the engine unloads regions too far away and loads new regions the player is heading to
-				li uses <span class="highlight">LOD system</span> - chunks are loaded at a variable granularity
-				li used in <span class="highlight-2">GTA, WoW, Arma, Spiderman</span>
+				li 2D uses lazy loading
+				li 3D uses <span class="highlight">LOD system</span> - chunks are loaded at a variable granularity
+				li used in <span class="highlight-2">GTA, WoW, Arma, and many 2D scrollers</span>
 +frameInbox('Example: Level Loading')
 	.flex-cols-2.items-center.fill
 		figure
@@ -71,5 +79,5 @@ include ../mixins/containers_aph.pug
 			img.height-400(src=imgAssets+'openworld_wow.jpg')
 			p World of Warcraft (2004)
 		figure
-			img.height-400(src=imgAssets+'openworld_cyberpunk.jpg')
-			p Cyberpunk 2077 with broken LOD (2020)
+			img.height-400(src=imgAssets+'openworld_jazz.jpg')
+			p Jazz Jackrabbit 2 (1998)

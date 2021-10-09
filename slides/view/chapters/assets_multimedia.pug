@@ -1,0 +1,323 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/assets_multimedia/';
+- var defaultBgr = 'backgrounds/mesh.jpg';
+
++mchapter('Multimedia assets', imgAssets+'chapter_assets_multimedia.svg')
++frameInbox('Music Formats')
+	.important-green
+		.flex-cols-2
+			div.spacing-4xs
+				.scope.mt-5.fragment.fade-up
+					p AIFF
+					ul
+						li Audio Interchange File Format
+						li uncompressed pulse-code modulation
+						li may contain loops and samples
+				.scope.mt-5.fragment.fade-up
+					p WAV
+					ul
+						li linear pulse-code modulation
+						li used when time involved in compressing is a concern (short sounds)
+				.scope.mt-5.fragment.fade-up
+					p MP3
+					ul
+						li MPEG-1 Audio Layer III
+						li lossy data-compression
+				.scope.mt-5.fragment.fade-up
+					p OGG
+					ul
+						li more advanced and a bit smaller in size than MP3
+						li open-source (in sharp contrast with MP3)
+			div.text-center
+				img.height-420.mt-80(src=imgAssets+'assets_music.svg' alt='Music assets')
++frameInbox('Image Formats')
+	.important-orange
+		.flex-cols-2.spacing-3xs
+			div
+				.scope.fragment(data-fragment-index="1")
+					p JPEG
+					ul
+						li Joint Photographic Experts Group
+						li used for digital photography
+						li doesn't support alpha channel
+						li.color-tomato-light don't use it for pixel-art
+				.scope.fragment(data-fragment-index="2")
+					p PNG
+					ul
+						li Portable Network Graphics
+						li good results for simple images (not real pictures)
+				.scope.fragment(data-fragment-index="3")
+					p TGA
+					ul
+						li Truevision TGA
+						li favorite format for textures
+				.scope.fragment(data-fragment-index="4")
+					p SVG
+					ul
+						li Scalable Vector Graphics
+						li format for vector images
+			div.text-center
+				div.fragment(data-fragment-index="1")
+					img.height-300.mt-20(src=imgAssets+'assets_images_jpg.jpg' alt='JPG image')
+				div.fragment(data-fragment-index="2")
+					img.height-300.mt-20(src=imgAssets+'assets_images_png.png' alt='PNG image')
+				div.fragment(data-fragment-index="4")
+					img.height-100.mt-20(src=imgAssets+'assets_images_svg.svg' alt='SVG image')
++frameInbox('Videos and Cutscenes')
+	.important-orange
+		.flex-cols-2
+			div
+				ul
+					li.fragment one of the most progressive properties of a game
+					li.fragment <span class="highlight-2">a) fully progressive</span> - video, in-game cutscene
+					li.fragment <span class="highlight-2">b) partially progressive</span> - i.e. custom skin of the avatar in the scene
+					li.fragment <span class="highlight-2">c) partially emergent</span> - the player can walk around but can't control the scene
+					li.fragment <span class="highlight-2">d) fully emergent</span> - generated cutscene
+					li.mt-30.fragment <span class="highlight">1980's</span> - in-game cutscenes
+					li.fragment <span class="highlight">1990's</span> - pre-rendered video cutscenes
+					li.fragment <span class="highlight">2000's</span> - in-game cutscenes
+					li.fragment <span class="highlight">2010's</span> - pre-rendered video cutscenes
+					li.fragment <span class="highlight">2020's</span> - in-game cutscenes
+			div.text-center
+				img.width-700(src=imgAssets+'cutscene_w3.jpg' alt='Warcraft cutscene')
+				img.width-700(src=imgAssets+'cutscene_hellblade.jpg' alt='Hellblade cutscene')
+		.tip.fragment.left-550.bottom-100
+			img.height-600(src=globalAssets+'memes/cutscenes.jpg')
++frameInbox('Videos and Cutscenes')
+	div
+		.flex-cols-2.mt-20
+			figure.fragment
+				img.width-600(src=imgAssets+'cut_ingame_another.jpg' alt='Another World cutscene')
+				p Another World, in-game
+			figure.fragment
+				img.width-600(src=imgAssets+'cut_video_wolf.jpg' alt='Wolfenstein New Collosus cutscene')
+				p Wolfenstein 2: New Colossus, video
+		.flex-cols-2.mt-20
+			figure.fragment
+				img.width-600(src=imgAssets+'w3_cutscene.jpg' alt='Warcraft cutscene')
+				p Warcraft 3, in-game
+			figure.fragment
+				img.width-600(src=imgAssets+'w3_reforged_cutscene.jpg' alt='Warcraft reforged cutscene')
+				p Warcraft 3 Reforged, video
+		.bottom-0.right-560.fragment.tip
+			img.height-400(src=globalAssets+'memes/ifonly.png' alt='meme ifonly')
++frameInbox('Textures')
+	.important-orange
+		.flex-cols-2.spacing-2xs
+			div
+				ul
+					li.fragment(data-fragment-index="1") pieces of bitmaps that are applied to an object
+					li.highlight-2.fragment(data-fragment-index="2") textures are ultimately converted to formats that are specific to platform and graphic API
+				.scope.fragment(data-fragment-index="3")
+					p Types
+					ul
+						li.fragment(data-fragment-index="4") diffuse texture
+						li.fragment(data-fragment-index="5") displacement texture
+						li.fragment(data-fragment-index="6") normal texture
+						li.fragment(data-fragment-index="7") volumetric texture
+						li.fragment(data-fragment-index="8") tileable texture
+						li.fragment(data-fragment-index="9") sprite atlas
+				.scope.fragment(data-fragment-index="10")
+					p Formats
+					ul
+						li Desktop: BC6H, BC7, DXT1, DXT5
+						li iOS: ATSC, PVRTC
+						li Android: ASTC
+			.grid.grid-cols-2
+				div
+					figure.fragment(data-fragment-index="4")
+						img.height-210(src=imgAssets+'texture_color.jpg' alt='Color texture')
+						p Diffuse
+					figure.fragment(data-fragment-index="5")
+						img.height-210(src=imgAssets+'texture_displacement.jpg' alt='Displacement texture')
+						p Displacement
+					figure.fragment(data-fragment-index="6")
+						img.height-210(src=imgAssets+'texture_normal.jpg' alt='Normal texture')
+						p Normal
+				div
+					figure.fragment(data-fragment-index="7")
+						img.height-210(src=imgAssets+'texture_volumetric.jpg' alt='Volumetric texture')
+						p Volumetric
+					figure.fragment(data-fragment-index="8")
+						img.height-210(src=imgAssets+'texture_tileable.jpg' alt='Tileable texture')
+						p Tileable
+					figure.fragment(data-fragment-index="9")
+						img.height-210(src=imgAssets+'spriteanim.gif' alt='Sprite animation')
+						p Sprite atlas
++frameInbox('Sprites')
+	.important-orange
+		.spacing-2xs
+			.scope.fragment.fade-up
+				p Sprite
+				ul
+					li a single graphic image that is incorporated into a scene
+					li allows to create large scenes as you can manipulate each sprite separately
+			.scope.fragment.fade-up
+				p Spritesheet
+				ul
+					li a set of corresponding sprites
+			.scope.fragment.fade-up
+				p Sprite atlas
+				ul
+					li a single texture image containing a list of spritesheets
+		.text-center.mt-30.fragment.fade-up
+			img.height-370(src=imgAssets+'prince2.png' alt='Prince of Persia sprites')
++frameInbox('3D Objects')
+	.important-green.text-center
+		img.height-700(src=imgAssets+'3DObjects.jpg' alt='3D objects')
+		.left-300.top-300
+			p.text-2xl.font-bold Mesh
+		.left-900.top-300
+			p.text-2xl.font-bold.color-rhino-100 Materials
+		.left-1100.bottom-200
+			p.text-2xl.font-bold Textures
++frameInbox('3D File Formats')
+	.important-green
+		ul
+			li.fragment encode 3D geometry, material, textures, animations,...
+			li.fragment geometry encoding - approximate mesh, precise mesh and constructive solid geometry (CSG)
+			li.fragment <span class="highlight">BLEND</span> - internal blender file, supported by many engines
+			li.fragment <span class="highlight">COLLADA</span> - .DAE, sharing models across CAD software
+			li.fragment <span class="highlight">X3D</span> - popular format for WEB
+		.center.mt-20.fragment
+			table
+				tr
+					th
+					th Appr. mesh
+					th Prec. mesh
+					th CSG
+					th Color
+					th Material
+					th Texture
+					th Camera
+					th Lights
+				tr
+					td STL
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+					td.text-center
+					td.text-center
+					td.text-center
+					td.text-center
+					td.text-center
+					td.text-center
+				tr
+					td OBJ
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+					td.text-center
+				tr
+					td FBX
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+				tr
+					td DAE
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+				tr
+					td 3DS
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+					td.text-center
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+				tr
+					td STEP
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+					td.text-center
+				tr
+					td X3D
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+				tr
+					td BLEND
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-30.inline-block

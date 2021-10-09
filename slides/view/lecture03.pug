@@ -1,0 +1,27 @@
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+include ./mixins/title.pug
+include ./mixins/quotes.pug
+include ./mixins/summary.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+
+html(lang='en')
+	+header('Assets', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			+titleLecture('Assets', 'Lecture 3', globalAssets+'lectures/ic_lecture03.svg')
+			include ./chapters/assets_intro.pug
+			include ./chapters/assets_resources.pug
+			include ./chapters/assets_multimedia.pug
+			include ./chapters/assets_generic.pug
+			- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+			+summary_lecture03()
+			+quote-assassins()
+					
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Lecture 3: Assets')
+	script(src!='../../scripts/reveal-setup.js')

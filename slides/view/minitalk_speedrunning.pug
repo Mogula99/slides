@@ -1,0 +1,16 @@
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+
+html(lang='en')
+	+header('Minitalk: Speedrunning', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			include ./chapters/minitalk_speedrunning.pug
+					
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Minitalk: Speedrunning')
+	script(src!='../../scripts/reveal-setup.js')

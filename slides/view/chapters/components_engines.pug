@@ -1,0 +1,99 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/components_engines/';
+- var defaultBgr = 'backgrounds/engines.jpg';
+
+
+
++mchapter('Component-oriented game engines', imgAssets+'chapter_components_engines.svg')
++frameInbox('Component-oriented game engines')
+	div
+		.spacing-xs
+			.scope.fragment
+				p Artemis framework
+				ul
+					li
+						a(href="https://github.com/junkdog/artemis-odb") https://github.com/junkdog/artemis-odb
+					li Java, ported to C#, ECS implementation in its essential nature
+			.scope.fragment
+				p Atomic Game Engine
+				ul
+					li
+						a(href="https://github.com/AtomicGameEngine/AtomicGameEngine") https://github.com/AtomicGameEngine/AtomicGameEngine
+					li C++, forsaken, but still a good source of inspiration
+			.scope.fragment
+				p Unity
+				ul
+					li ECS architecture
+			.scope.fragment
+				p Unreal Engine
+				ul
+					li hybrid component architecture
+			.scope.fragment
+				p Godot Engine
+				ul
+					li signal-passing architecture
+	.bottom-0.right-0
+		img.height-400(src=imgAssets+'engines.gif')
++frameInbox('Example: Artemis Engine')
+	div
+		ul
+			li Systems encapsulate logic, components encapsulate data
+		.code.text-xs
+			include ../../assets/components_engines/snippets_generated/artemis.html
++frameInbox('Unity')
+	.important-green
+		ul
+			li.fragment ECS architecture with messaging system
+			li.fragment entities are game objects, components have data, systems contain logic
+			li.fragment <span class="highlight code">MonoBehaviour</span> can encapsulate both data and logic
+		.space-xl
+		.text-center
+			img.height-400(src=imgAssets+'unity_prefab.gif')
++frameInbox('Unity Architecture')
+	.important-green
+		.text-center
+			img.height-770(src=imgAssets+'diag_ecs_unity.svg')
++frameInbox('Example: Platformer2D')
+	.text-center
+		img.height-700(src=imgAssets+'platformer2D.jpg')
++frameInbox('Example: Platformer2D Scene Graph')
+	.text-center
+		img.height-770.mt-20(src=imgAssets+'diag_unity_platformer.svg')
++frameInbox('Example: Platformer2D Events')
+	.code.text-xs
+		include ../../assets/components_engines/snippets_generated/platformer_events.html
++frameInbox('Component-oriented libraries')
+	div.spacing-xs
+		.scope.fragment
+			p EnTT
+			ul
+				li
+					a(href="https://github.com/skypjack/entt") https://github.com/skypjack/entt
+				li header-only C++ library, pure ECS
+		.scope.fragment
+			p Entitas
+			ul
+				li
+					a(href="https://github.com/sschmid/Entitas-CSharp") https://github.com/sschmid/Entitas-CSharp
+				li ECS Framework for Unity, ported to many other languages
+		.scope.fragment
+			p A-Frame
+			ul
+				li
+					a(href="https://aframe.io") https://aframe.io
+				li declarative framework for virtual reality, built on top of ThreeJS
+		.scope.fragment
+			p ECSY
+			ul
+				li 
+					a(href="https://ecsy.io") https://ecsy.io
+				li experimental ECS framework for PixiJS, ThreeJS and BabylonJS
++frameInbox('Example: ECSY Framework')
+	div
+		.flex.flex-row.mt-100
+			.code.text-xs
+				include ../../assets/components_engines/snippets_generated/ecsy.html
+			.text-center
+				img.height-400(src=imgAssets+'ecsy.svg')

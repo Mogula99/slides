@@ -1,0 +1,28 @@
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+include ./mixins/title.pug
+include ./mixins/quotes.pug
+include ./mixins/summary.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+
+html(lang='en')
+	+header('Components', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			+titleLecture('Components', 'Lecture 4', globalAssets+'lectures/ic_lecture04.svg')
+			include ./chapters/components_model.pug
+			include ./chapters/components_objects.pug
+			include ./chapters/components_components.pug
+			include ./chapters/components_messaging.pug
+			include ./chapters/components_engines.pug
+			- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+			+summary_lecture04()
+			+quote-halflife()
+
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Lecture 4: Components')
+	script(src!='../../scripts/reveal-setup.js')

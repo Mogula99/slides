@@ -1,0 +1,131 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/components_model/';
+- var defaultBgr = 'backgrounds/blocks.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Game Model', imgAssets+'chapter_components_model.svg')
++frameInbox('Game Model')
+	.important-green
+		ul
+			li.fragment all mechanics and rules are incorporated into a game model
+			li.fragment game model can be divided into several parts: domain model, view model, networking model,...
+			li.fragment a game engine updates the model and interprets it to the player
+			li.fragment with each update, the current <span class="highlight">state</span> of the model is drawn on screen
+		.space-2xl
+		.text-center
+			img.height-200(src=imgAssets+'input_model_view.svg')
++frameInbox('Game Model')
+	.important-orange
+		.scope.fragment
+			p Domain Model
+			ul
+				li contains rules, game mechanics and essential data to the gameplay
+		.scope.fragment
+			p Presentation Model
+			ul
+				li a model represented to the player
+				li e.g. played sounds, animated sprites
+		.scope.fragment
+			p Physics model
+			ul
+				li all entities that take part in physical interaction
+		.scope.fragment
+			p AI model
+			ul
+				li all data and structures that are processed by AI (navigation maps, behavioral trees,...)
+		.scope.fragment
+			p Networking model
+			ul
+				li everything that has to be in sync with other models on other devices
++frameInbox('Example: Super Mario Bros.')
+	.important-green
+		.text-center
+			img.height-300(src=imgAssets+'mario_screen.jpg')
+		.bottom-40.left-40
+			img.height-370(src=imgAssets+'mario_model.svg')
+		.right-0.bottom-150
+			img.height-320(src=imgAssets+'mario_spritesheet.png')
++mcontainer('Game Model')
+	+frameShard.height-30p.top-280.center.z-index-100
+		div
+			ul
+				li.fragment the more emergent the game, the more coupled the models
+				li.fragment turn-based games may have a domain model that contains both attributes and rules
+				li.fragment interactive games have domain model spread over all structures 
++frameInbox('Example: Chess')
+	.flex-cols-2.items-center.fill
+		figure
+			img.height-450(src=imgAssets+'chessmaster_2000.gif')
+			p Chessmaster 2000 (1986)
+		figure
+			img.height-450(src=imgAssets+'chessmaster_11.jpg')
+			p Chessmaster 11 (2007)
++frameInbox('Chess Model')
+	div
+		ul
+			li contains both attributes and game rules (in <span class="code">makeMove()</span>)
+		.text-center
+			img.height-750(src=imgAssets+'diag_chess.svg')
++frameInboxMid('Chess models')
+	.important-green.center.fill
+		table
+			tr
+				th
+				th Chessmaster 2000
+				th Chessmaster 11
+			tr.fragment
+				td.color-lemon Domain model
+				td Board, pieces, time, game rules
+				td Board, pieces, time, game rules
+			tr.fragment
+				td.color-lemon Presentation model
+				td CGA Sprites, beep sounds
+				td Animated 3D objects, 3D sounds
+			tr.fragment
+				td.color-lemon Physics model
+				td None
+				td Rigidbody engine
+			tr.fragment
+				td.color-lemon AI model
+				td David Kittinger's engine
+				td King engine
+			tr.fragment
+				td.color-lemon Networking model
+				td None
+				td Sending move commands
++frameInbox('Example: Strategy')
+	.fill.center
+		figure
+			img.height-650(src=imgAssets+'hom.jpg')
+			p Heroes of Might and Magic
++frameInbox('Heroes of Might and Magic model')
+	div
+		ul
+			li contains only attributes
+		.text-center.mt-10
+			img.height-750(src=imgAssets+'diag_heroes.svg')
++frameInbox('Example: Text Adventure')
+	div
+		ul
+			li contains both attributes and rules
+		.text-center
+			img.height-750(src=imgAssets+'diag_adventure.svg')
++frameInbox('Adventure events')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'belegost.png')
+	.top-100
+		img.height-350(src=imgAssets+'adventure_events.svg')
++frameInbox('Example: Pacman')
+	.fill.center
+		img.height-800(src=imgAssets+'pacman.png')
+	.top-90.left-260
+		img.height-480(src=imgAssets+'pacman.svg')
++frameInbox('Pacman architecture')
+	div
+		ul
+			li contains only attributes
+		.text-center.mt-20
+			img.height-600(src=imgAssets+'diag_pacman.svg')

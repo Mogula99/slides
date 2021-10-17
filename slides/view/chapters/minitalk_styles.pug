@@ -1,0 +1,130 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_styles/';
+- var defaultBgr = 'backgrounds/gamestyles.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Game Art Styles', imgAssets+'chapter_styles.svg')
++frameInbox('Visual Style')
+	div
+		ul
+			li.fragment two main categories - realistic and stylized
+			li.fragment reflects vision of the designer, and serves as another layer to deliver the message of the game
+			li.fragment the basic question - what objective does the style serve? How it can instill thematic coherence in the player?
+			li.highlight.fragment must be consistent throughout the game
+		.flex-cols-2.mt-20
+			figure
+				img.height-400(src=imgAssets+'art_rdr2.jpg')
+				p Red Dead Redemption 2 (2018)
+			figure
+				img.height-400(src=imgAssets+'art_dinn.jpg')
+				p Return of the Obra Dinn (2018)
++frameInbox('Geometric art')
+	div
+		ul
+			li.fragment uses simple shapes
+			li.fragment focuses on dynamic music and fast gameplay 
+			li.fragment suitable for arcades, smash-them-ups, puzzle games
+		.space-md
+		.flex-cols-3
+			+dsGameBig(imgAssets+'geom_tetris.jpg', 'Tetris (1984)').fragment
+			+dsGameBig(imgAssets+'geom_geom.jpg', 'Geometry Wars 3 (2014)').fragment
+			+dsGameBig(imgAssets+'geom_falcon.jpg', 'Falcon Fly (2021)').fragment
++frameInbox('Pixel Art')
+	div
+		ul
+			li.fragment textures are up-scaled without interpolation
+			li.fragment adds a retro-style feeling to a game
+			li.fragment created with rotoscoping animations
+		.space-md
+		.flex-cols-3
+			+dsGameBig(imgAssets+'pixelart_owlboy.jpg', 'Owlboy (2016)').fragment
+			+dsGameBig(imgAssets+'pixelart_fez.jpg', 'Fez (2012)').fragment
+			+dsGameBig(imgAssets+'pixelart_swordsorcery.jpg', 'Superbrothers: Sword and Sworcery (2011)').fragment
++frameInbox('Vector art')
+	div
+		ul
+			li.fragment high resolution and dynamic animations
+			li.fragment often mixed with hand-painted environment
+			li.fragment not many games released
+		.space-md
+		.flex-cols-3
+			+dsGameBig(imgAssets+'vector_ridifishing.jpg', 'Ridiculous Fishing (2013)').fragment
+			+dsGameBig(imgAssets+'vector_untitled.jpg', 'Guacamelee (2013)').fragment
+			+dsGameBig(imgAssets+'vector_vecter.jpg', 'Vecter (???)').fragment
++frameInbox('Flat art')
+	div
+		ul
+			li.fragment on the halfway between vector art and pixel art
+			li.fragment similar to geometric art, but not as simplistic
+		.space-lg
+		.flex-cols-3
+			+dsGameBig(imgAssets+'flat_another.jpg', 'Another World (1991)').fragment
+			+dsGameBig(imgAssets+'flat_kentucky.jpg', 'Kentucky Route Zero (2013)').fragment
+			+dsGameBig(imgAssets+'flat_apeout.jpg', 'Ape Out (2019)').fragment
++frameInbox('Hand painted')
+	div
+		ul
+			li.fragment freehand texture/background painting
+			li.fragment used in fantasy games and adventures
+		.space-md
+		.flex-cols-3
+			+dsGameBig(imgAssets+'handpaint_braid.jpg', 'Braid (2009)').fragment
+			+dsGameBig(imgAssets+'handpaint_dota2.jpg', 'Dota 2 (2013)').fragment
+			+dsGameBig(imgAssets+'handpaint_tormentum.jpg', 'Tormentum: Dark Sorrow (2015)').fragment
+
++frameInbox('Low Poly')
+	div
+		ul
+			li.fragment visually looking like a bunch of triangles, flat shading
+			li.fragment minimalism and purity prevails
+			li.fragment focuses on the shape and materials of the model
+		.space-md
+		.flex-cols-3
+			+dsGameBig(imgAssets+'lowpoly_morphite.jpg', 'Morphite (2017)').fragment
+			+dsGameBig(imgAssets+'lowpoly_lifeslide.jpg', 'Lifeslide (2019)').fragment
+			+dsGameBig(imgAssets+'lowpoly_palpha.jpg', 'Planet Alpha (2018)').fragment
++frameInbox('Cartoon')
+	div
+		ul
+			li.fragment includes low poly and hand-painted options
+			li.fragment colorfulness, relative simplicity, exaggeration of accents, non-standard proportions
+		.space-md
+		.flex-cols-3
+			+dsGameBig(imgAssets+'cartoon_rayman.jpg', 'Rayman (1995)').fragment
+			+dsGameBig(imgAssets+'cartoon_cuphead.jpg', 'Cuphead (2017)').fragment
+			+dsGameBig(imgAssets+'cartoon_zelda.jpg', 'The Legend of Zelda: Link\'s Awakening (2019)').fragment
++frameInbox('Cell Shading')
+	div
+		ul
+			li.fragment attempt to make 3D models look 2D
+			li.fragment high-level detail but loss of volume
+		.space-md
+		.flex-cols-3
+			+dsGameBig(imgAssets+'cell_zelda.jpg', 'The Legend of Zelda: The Wind Waker (2003)').fragment
+			+dsGameBig(imgAssets+'cell_defenders.jpg', 'Dungeon Defenders (2010)').fragment
+			+dsGameBig(imgAssets+'cell_borderlands.jpg', 'Borderlands 3 (2019)').fragment
++frameInbox('Realism')
+	div
+		ul
+			li.fragment focuses on immersing the player in the setting
+			li.fragment difficult to stand the test of time
+			li.fragment the main domain of AAA games
+		.space-md
+		.flex-cols-3
+			+dsGameBig(imgAssets+'realism_hellblade.jpg', 'Hellblade (2017)').fragment
+			+dsGameBig(imgAssets+'realism_farcry.jpg', 'Far Cry 5 (2018)').fragment
+			+dsGameBig(imgAssets+'realism_fhorizon.jpg', 'Forza Horizon 5 (2021?)').fragment
++frameInbox('Exotic style #1')
+	div
+		.flex-cols-3.mt-100
+			+dsGameBig(imgAssets+'exotic_monstro.jpg', 'C64: Monstro Giganto (2021)').fragment
+			+dsGameBig(imgAssets+'exotic_papertanks.jpg', 'Paper Tanks (???)').fragment
+			+dsGameBig(imgAssets+'exotic_asciident.jpg', 'ASCIIdent (2020)').fragment
++frameInbox('Exotic style #2')
+	div
+		.flex-cols-3.mt-100
+			+dsGameBig(imgAssets+'exotic_eternalcastle.jpg', 'Eternal Castle (2019)').fragment
+			+dsGameBig(imgAssets+'exotic_cloudpunk.jpg', 'Cloudpunk (2020)').fragment
+			+dsGameBig(imgAssets+'exotic_starjolt.jpg', 'Starjolt (2021)').fragment

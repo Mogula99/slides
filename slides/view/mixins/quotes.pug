@@ -21,3 +21,11 @@ mixin quote-assassins()
 	+mcontainer('Goodbye Quote')(bgr='backgrounds/assassins.jpg', autoAnimate=true)
 		+frameShard().top-25p.left-22p.width-60p
 			+quote('Where other men are limited by morality or law, remember, everything is permitted. We work in the dark to serve the light.', 'Assassin\'s Creed series')(class="font-dos not-italic")
+
+mixin quote-halflife()
+	+mcontainer('Goodbye Quote')(autoAnimate)
+		+frameShard().top-25p.left-22p.width-60p
+			+quote('I will admit that the possibility of a resonance cascade scenario is extremely unlikely.', '')(class="font-dos not-italic")
+	+mcontainer('Goodbye Quote')(bgr='backgrounds/halflife.jpg', autoAnimate=true)
+		+frameShard().top-25p.left-22p.width-60p
+			+quote('I will admit that the possibility of a resonance cascade scenario is extremely unlikely.', 'Half-Life')(class="font-dos not-italic")

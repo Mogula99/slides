@@ -1,0 +1,42 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/patterns_state/';
+- var defaultBgr = 'backgrounds/geometry.png';
+
++mchapter('State Patterns', imgAssets+'chapter_patterns_state.svg')
++frameInbox('Mutability')
+	.important-green
+		ul.spacing-xl
+			li.fragment immutable state is a luxury only simple games can afford
+			li.fragment we should assume that most structures are mutable
+			li.fragment <span class="highlight">selectors</span> can help us access properties that are deep in the hierarchy
+			li.fragment <span class="highlight">dirty flag</span> can help us find out if an entity has changed during the update
+			li.fragment <span class="highlight">chain</span> can help us centralize complex modifications and handle side effects
+			li.fragment <span class="highlight">messages</span> can help us discover if any important structure has changed
++frameInbox('Flag')
+	.important-orange
+		ul
+			li.fragment(data-fragment-index='1') <span class="highlight">bit array</span> that stores binary properties of game objects
+			li.fragment(data-fragment-index='2') may be used for queries (e.g. find all MOVABLE objects)
+			li.fragment(data-fragment-index='3') similar to a state machine but the use-case is different
+			li.fragment(data-fragment-index='4') if we maintain all flags within one single structure, we can search very fast
+		.bottom-70.left-150.fragment(data-fragment-index='1')
+			img.height-250(src=imgAssets+'flag_01.svg')
+		.bottom-50.right-300.fragment(data-fragment-index='1')
+			img.height-150(src=imgAssets+'mage.png')
++frameInbox('Example: Flag Table')
+	.importat-green
+		.text-center
+			img.height-700(src=imgAssets+'flag_02.svg')
+		.bottom-100.left-280
+			img.height-500(src=imgAssets+'flag_units.png')
++frameInbox('Numeric state')
+	.important-orange
+		ul
+			li.fragment the most basic state of an entity
+			li.fragment allows us to implement a simple state machine
+		.code.mt-20.fragment
+			include ../../assets/patterns_state/snippets_generated/numeric_state.html
+			.bottom-300.right-200
+				img.height-400(src=imgAssets+'jump.gif')

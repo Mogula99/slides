@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="125.94mm" height="43.921mm" version="1.1" viewBox="0 0 125.94 43.921" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g fill="#7b8694" stroke-linecap="round" stroke-width="1.566">
+  <rect x="14.684" y="8.0699" width="11.906" height="5.2917"/>
+  <rect x="1.4552" y="8.0699" width="11.906" height="5.2917"/>
+  <rect x="27.914" y="8.0699" width="11.906" height="5.2917"/>
+  <rect x="41.143" y="8.0699" width="11.906" height="5.2917"/>
+  <rect x="1.4552" y="14.684" width="11.906" height="5.2917"/>
+  <rect x="14.684" y="14.684" width="11.906" height="5.2917"/>
+  <rect x="27.914" y="14.684" width="11.906" height="5.2917"/>
+  <rect x="41.143" y="14.684" width="11.906" height="5.2917"/>
+  <rect x="14.684" y="1.4553" width="11.906" height="5.2917"/>
+  <rect x="1.4552" y="1.4553" width="11.906" height="5.2917"/>
+  <rect x="27.914" y="1.4553" width="11.906" height="5.2917"/>
+  <rect x="41.143" y="1.4553" width="11.906" height="5.2917"/>
+ </g>
+ <rect x="7.0115" y="41.143" width="10.319" height="2.6458" fill="#535e70"/>
+ <path d="m0.13229 0.13229h54.24v43.656h-54.24z" fill="none" stroke="#a6aeb8" stroke-dashoffset="1.2" stroke-linecap="square" stroke-width=".26458"/>
+ <path d="m5.424 33.026 6.6146 7.9375 8.2196-6.8497" fill="none" stroke="#7893ea" stroke-linecap="round" stroke-width=".26458"/>
+ <circle cx="21.647" cy="33.003" r="1.3229" fill="#e8eaec"/>
+ <g transform="matrix(.00058053 .0024857 -.0025283 .00059047 20.593 33.679)" fill="#7893ea" stroke-width="205.55">
+  <g fill="#7893ea" stroke-width="205.55">
+   <path d="m486.41 221.41-364.07-208.5c-52.938-30.318-95.852-5.44-95.852 55.563v415.65c0 61.004 42.914 85.882 95.852 55.563l364.07-208.49c52.938-30.317 52.938-79.473 0-109.79z" fill="#7893ea" stroke-width="205.55"/>
+  </g>
+ </g>
+ <g fill="#7b8694" stroke-linecap="round" stroke-width="1.566">
+  <rect x="86.122" y="8.0699" width="11.906" height="5.2917"/>
+  <rect x="72.893" y="8.0699" width="11.906" height="5.2917"/>
+  <rect x="99.351" y="8.0699" width="11.906" height="5.2917"/>
+  <rect x="112.58" y="8.0699" width="11.906" height="5.2917"/>
+  <rect x="72.893" y="14.684" width="11.906" height="5.2917"/>
+  <rect x="86.122" y="14.684" width="11.906" height="5.2917"/>
+  <rect x="99.351" y="14.684" width="11.906" height="5.2917"/>
+  <rect x="112.58" y="14.684" width="11.906" height="5.2917"/>
+  <rect x="86.122" y="1.4553" width="11.906" height="5.2917"/>
+  <rect x="72.893" y="1.4553" width="11.906" height="5.2917"/>
+  <rect x="99.351" y="1.4553" width="11.906" height="5.2917"/>
+  <rect x="112.58" y="1.4553" width="11.906" height="5.2917"/>
+ </g>
+ <rect x="78.449" y="41.143" width="10.319" height="2.6458" fill="#535e70"/>
+ <path d="m71.57 0.13229h54.24v43.656h-54.24z" fill="none" stroke="#a6aeb8" stroke-dashoffset="1.2" stroke-linecap="square" stroke-width=".26458"/>
+ <circle cx="100.1" cy="27.143" r="2.4262" fill="#e8eaec"/>
+ <path d="m94.075 32.214 3.8619-3.2183" fill="none" stroke="#7893ea" stroke-linecap="round" stroke-width=".26458"/>
+ <g>
+  <circle cx="93.085" cy="33.003" r="1.3229" fill="#e8eaec"/>
+  <g transform="matrix(.00058053 .0024857 -.0025283 .00059047 98.272 28.561)" fill="#7893ea" stroke-width="205.55">
+   <g fill="#7893ea" stroke-width="205.55">
+    <path d="m486.41 221.41-364.07-208.5c-52.938-30.318-95.852-5.44-95.852 55.563v415.65c0 61.004 42.914 85.882 95.852 55.563l364.07-208.49c52.938-30.317 52.938-79.473 0-109.79z" fill="#7893ea" stroke-width="205.55"/>
+   </g>
+  </g>
+  <g transform="matrix(-.0059888 .010373 -.010551 -.0060914 67.269 21.484)" fill="#7893ea" stroke-width="43.806">
+   <g fill="#7893ea" stroke-width="43.806">
+    <path d="m486.41 221.41-364.07-208.5c-52.938-30.318-95.852-5.44-95.852 55.563v415.65c0 61.004 42.914 85.882 95.852 55.563l364.07-208.49c52.938-30.317 52.938-79.473 0-109.79z" fill="#7893ea" stroke-width="43.806"/>
+   </g>
+  </g>
+ </g>
+</svg>

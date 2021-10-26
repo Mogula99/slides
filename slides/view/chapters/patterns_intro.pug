@@ -1,0 +1,18 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/patterns_intro/';
+- var defaultBgr = 'backgrounds/puzzle.jpg';
+
++mcontainer
+	+frameShard().top-40p
+		+quote('If game programmers ever cracked open Design Patterns at all, never got past Singleton. Gang of Four’s is inapplicable to games in its original version.', 'Robert Nystrom').text-xl
++frameInbox('Design patterns')
+	div
+		.flex-cols-2
+			figure.fragment
+				img.height-700(src=imgAssets+'patterns_apps.svg')
+				p Design patterns in applications
+			figure.fragment
+				img.height-700(src=imgAssets+'patterns_games.svg')
+				p Design patterns in games

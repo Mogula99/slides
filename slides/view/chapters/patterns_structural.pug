@@ -1,0 +1,46 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/patterns_structural/';
+- var defaultBgr = 'backgrounds/objects.jpg';
+
++mchapter('Structural Patterns', imgAssets+'chapter_patterns_structural.svg')
++frameInbox('Two-stage initialization')
+	.important-green
+		ul.spacing-3xs
+			li.fragment avoids passing everything through the constructor
+			li.fragment <span class="highlight code">constructor</span> creates an object, <span class="highlight code">init</span> method initializes it
+			li.upside.fragment objects can be initialized several times
+			li.upside.fragment objects can be allocated in-advance in a pool
+		.code.text-sm.mt-20.fragment
+			include ../../assets/patterns_structural/snippets_generated/twostage.html
+			.bottom-0.right-40
+				img.height-500(src=imgAssets+'brainbot.gif')
++frameInbox('Context')
+	.important-green
+		.scope.fragment
+			p Context (Blackboard)
+			ul
+				li.fragment shared data structure for a scope (or the whole game)
+				li.fragment may contain both states and properties
+				li.fragment provides global or scoped data (e.g. player score, money, number of lives)
+				li.fragment often used in behavioral trees
+		.code.text-sm.mt-20.fragment
+			include ../../assets/patterns_structural/snippets_generated/context.html
++frameInbox('Null Component')
+	.important-green
+		ul
+			li.fragment in some cases, components need to communicate directly (instead of sending messages)
+			li.fragment if we want to avoid using null-checks, we can introduce a dummy component that doesn't do anything
+			li.fragment example: instant animations for debugging purposes
+				.code.text-md.mt-20
+					include ../../assets/patterns_structural/snippets_generated/null_component.html
++frameInbox('Selector')
+	.important-orange
+		ul
+			li.fragment a function that returns a value
+			li.fragment centralizes the knowledge of how to find an entity/attribute/component
+			li.upside.fragment can be used by components to access dynamic data
+			li.upside.fragment can form a hierarchy from other selectors
+		.code.mt-20.fragment
+			include ../../assets/patterns_structural/snippets_generated/selector.html

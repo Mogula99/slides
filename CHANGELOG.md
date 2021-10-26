@@ -6,6 +6,11 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [5.5.0] - 2021-10-26
+### Added
+Lecture 5
+Minitalk about adventures
+
 ## [5.4.0] - 2021-10-17
 ### Added
 Lecture 4

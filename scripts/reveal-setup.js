@@ -29,7 +29,7 @@ if(!isPresentationMode) {
 if (window.location.search.match(/print-pdf/gi)) {
 	document.body.parentElement.className += ' print-pdf';
 
-	// additionally, replace logo with the one that display static pacman
+	// additionally, replace logo with the one that displays static pacman
 	const logoTitle = document.getElementById('logo_title');
 	if(logoTitle && logoTitle.src) {
 		logoTitle.src = './logo.svg';

@@ -57,6 +57,14 @@ mixin dsGameBig(image, text)
 		div.absolute.bottom-60.pl-2.pb-1.width-400.left-60.bgr-rhino-100-semi
 			.text-center.text-md.font-bold.color-rhino-50!=text
 
+mixin dsGameBigTop(image, text)
+	div.relative.height-520()&attributes(attributes)
+		img.absolute.height-520.ml-10(src=globalAssets+'ds_cartridge.png')
+		.absolute.width-390.height-410.left-60.ml-5.top-40.opacity-9.p-3
+			img(src!=image).width-390.height-410.object-cover
+		div.absolute.top-30.mt-6.pl-2.width-400.left-60.bgr-rhino-100-semi
+			.text-center.text-md.font-bold.color-rhino-50!=text
+
 mixin floppyApp(image, text, year)
 	div.relative.height-350()&attributes(attributes)
 		img.absolute.height-350(src=globalAssets+'disk_floppy.png')

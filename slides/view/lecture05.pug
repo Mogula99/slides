@@ -1,0 +1,48 @@
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+include ./mixins/title.pug
+include ./mixins/quotes.pug
+include ./mixins/summary.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+
+html(lang='en')
+	+header('Patterns', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			+titleLecture('Patterns', 'Lecture 5', globalAssets+'lectures/ic_lecture05.svg')
+			+frameInbox('Literature')
+				ul
+					li
+						a(href="https://www.amazon.com/Game-Programming-Patterns-Robert-Nystrom/dp/0990582906") Nystrom, Robert. 2014. Game Programming Patterns
+				div.text-center
+					img.height-550(src=globalAssets+'book_programming_patterns.jpg' alt='Nystrom, Robert. Game Programming Patterns')
+			include ./chapters/patterns_intro.pug
+			include ./chapters/patterns_action.pug
+			include ./chapters/patterns_optimizing.pug
+			include ./chapters/patterns_structural.pug
+			include ./chapters/patterns_state.pug
+			include ./chapters/patterns_creational.pug
+			include ./chapters/patterns_simulation.pug
+			+frameInbox('Design practices: Summary')
+				.important-green
+					ul.spacing-md
+						li.fragment use <span class="highlight">Builder</span> to build new objects
+						li.fragment use <span class="highlight">Factory</span> to manage construction of new objects
+						li.fragment use <span class="highlight">Prototype</span> to clone already existing objects
+						li.fragment use <span class="highlight">Chain</span> to chain up complex actions/processes
+						li.fragment use <span class="highlight">Selectors</span> to access attributes that are deep in the scene hierarchy
+						li.fragment use <span class="highlight">Flag</span> to collect a set of features of an object 
+						li.fragment use <span class="highlight">Numeric state</span> for a simple finite state machine
+						li.fragment use <span class="highlight">Transmuter</span> to change a composition of components upon an object
+						li.fragment use <span class="highlight">Context</span> to store global game data
+			- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+			+summary_lecture05()
+			+quote-skyrim()
+
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Lecture 5: Patterns')
+	script(src!='../../scripts/reveal-setup.js')

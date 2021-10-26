@@ -1,0 +1,51 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/patterns_optimizing/';
+- var defaultBgr = 'backgrounds/lab.jpg';
+
++mchapter('Optimizing Patterns', imgAssets+'chapter_patterns_optimizing.svg')
++frameInbox('Data storing')
+	.important-green
+		.flex-cols-2
+			figure.fragment
+				img.width-750.height-650(src=imgAssets+'memory_noopt.svg')
+				p Randomly
+			figure.fragment
+				img.width-750.height-650(src=imgAssets+'memory_opt.svg')
+				p Sequentially
++frameInbox('Flyweight')
+	.important-orange
+		ul
+			li.fragment(data-fragment-index='1') an object keeps shared data to support large number of fine-grained objects
+			li.fragment(data-fragment-index='2') e.g. instanced rendering, geometry hashing, particle systems
+			li.fragment(data-fragment-index='3') here we move a position and a tile index (Sprite) into an array
+		.text-center.mt-20.fragment(data-fragment-index='3')
+			img.height-610(src=imgAssets+'flyweight.svg')
++frameInbox('Dirty Flag')
+	.important-green
+		ul
+			li.fragment marks changed objects that need to be recalculated
+			li.fragment can be applied to various attributes (animation, physics, transformation)
+			li.fragment you have to make sure to set the flag every time the state changes
+		.scope
+			p.fragment Cleaning
+			ul
+				li.fragment When the result is needed
+					ul
+						li.upside.fragment avoids doing recalculation if the result is never used
+						li.downside.fragment game can freeze for expensive calculations
+				li.fragment At well-defined checkpoints
+					ul
+						li.upside.fragment less impact on user experience
+						li.downside.fragment you never know, when it happens
+				li.fragment On the background
+					ul
+						li.upside.fragment you can do more redundant work
+						li.downside.fragment danger of race-condition
+		.bottom-50.right-50.fragment
+			img.height-460(src=imgAssets+'dirty_flag.svg')
++frameInbox('Example: Godot Cache')
+	div
+		.code.text-xs
+			include ../../assets/patterns_optimizing/snippets_generated/godot_cache.html

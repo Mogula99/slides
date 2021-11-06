@@ -6,6 +6,10 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [5.6.0] - 2021-11-06
+### Added
+Lecture 6
+
 ## [5.5.0] - 2021-10-26
 ### Added
 Lecture 5

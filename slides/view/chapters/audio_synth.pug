@@ -1,0 +1,134 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/audio_synth/';
+
+- var defaultBgr = 'backgrounds/sound_synth.jpg';
+
++mchapter('Sound synthesizing, recording and composing', imgAssets+'chapter_synth.svg')
++frameInbox('Sound generators')
+	.important-orange
+		ul
+			li.fragment <span class="highlight">generator</span> - oscillator that can make a tone, either independently or by pairing with another generator
+				ul
+					li.fragment synth music is a combination of generated tones, effects, filters, and recorded sound samples
+			li.fragment <span class="highlight">main synthesis types</span>: additive, subtractive, FM, wavetable
+		.text-center.mt-20.fragment
+			img.height-600(src=imgAssets+'waves.svg' alt='Sound Waves')
++frameInbox('ADSR Envelope')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='0') envelope describes a change of a sound over time
+			li.fragment(data-fragment-index='2') <span class="highlight">attack</span> - time it takes for the sound to go from silent to the loudest level
+			li.fragment(data-fragment-index='3') <span class="highlight">decay</span> - how long it takes for the sound to go from the initial peak to the steady state
+			li.fragment(data-fragment-index='4') <span class="highlight">sustain</span> - steady state at its maximum intensity (until the source stops)
+			li.fragment(data-fragment-index='5') <span class="highlight">release</span> - time it takes for the sound to return to silence (fade out)
+		.text-center.mt-20.fragment(data-fragment-index='0')
+			img.height-450(src=imgAssets+'adsr.svg' alt='Sound ADSR Envelope diagram')
++frameInbox('Effects')
+	.important-green
+		ul
+			li.fragment <span class="highlight">Echo</span> - delayed signals of 50ms or more
+			li.fragment <span class="highlight">Reverberation (Reverb)</span> - reflection of sound waves off a solid surface, used for in-door environments
+			li.fragment <span class="highlight">Chorus</span> - delayed sound added to the original with a constant delay, adds depth
+			li.fragment <span class="highlight">Time stretching</span> - altering the speed without adjusting the pitch
+			li.fragment <span class="highlight">Compressor</span> - reduces the dynamic range of a sound, makes loud sounds quieter and quite louder
+			li.fragment <span class="highlight">Equalization</span> - attenuating or amplifying various frequency bands
+			li.fragment <span class="highlight">Filtering</span> - specific frequency ranges can be emphasized or attenuated
+			li.fragment <span class="highlight">Lowpass/highpass</span> - filter that cuts off high or low frequencies
+			li.fragment <span class="highlight">Portamento</span> - gradually increases pitch
+			li.fragment <span class="highlight">Vibrato</span> - a regular, pulsating change of pitch
+			li.fragment <span class="highlight">Tremolo</span> - variation in amplitude (volume)
+			li.fragment <span class="highlight">Panning</span> - changing the volume for respective channels
++frameInbox('MOS Technology - SID')
+	.important-green
+		.flex.flex-row
+			div.width-46p
+				ul
+					li.fragment(data-fragment-index='0') SID (Sound Interface Device) - built-in programmable sound generator
+					li.fragment(data-fragment-index='1') subtractive synthesizer, invented in 1981 for Commodore C64
+					li.fragment(data-fragment-index='2') one of the first sound chips of its kind
+					li.fragment(data-fragment-index='3') ADSR, 3 programmable audio oscillators, 4 waveforms (sawtooth, triangle, pulse, noise)
+			div.fragment(data-fragment-index='3')
+				img.height-780(src=imgAssets+'sid.svg' alt='SID in Commodore64')
+		.bottom-100.left-200.fragment(data-fragment-index='0')
+			img.height-250(src=imgAssets+'mos.png' alt='MOS die')
++frameInbox('Trackers')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='0') set of tools for wavetable synthesis
+			li.fragment(data-fragment-index='1') <span class="highlight">demoscene</span> and <span class="highlight">cracktro</span> makers heavily used trackers for their soundtracks
+			li.fragment(data-fragment-index='2') each channel has a vertical lane, with the vertical axis representing time
+			li.fragment(data-fragment-index='3') songs are constructed from patterns, each pattern has a set of notes, played by instruments
+			li.fragment(data-fragment-index='4') notes are generated from samples
+			li.fragment(data-fragment-index='5') 1987 - <span class="highlight">Ultimate SoundTracker</span> for Amiga, <span class="highlight">*.MOD</span> file format
+			li.fragment(data-fragment-index='6') 1994 - <span class="highlight">Scream Tracker</span> for MS-DOS, <span class="highlight">*.S3M</span> file format
+			li.fragment(data-fragment-index='7') 1994 - <span class="highlight">Fast Tracker 2</span> for MS-DOS, <span class="highlight">*.XM</span> file format
+			li.fragment(data-fragment-index='8') 1995 - <span class="highlight">Impulse Tracker</span> for MS-DOS, <span class="highlight">*.IT</span> file format
+			li.mt-40.fragment(data-fragment-index='9') <a href="http://modarchive.org/">http://modarchive.org/</a> - archive of MOD files
+			li.fragment(data-fragment-index='10') trackers used nowadays: SunVox, OpenMPT, Renoise
+		.bottom-80.right-20.fragment(data-fragment-index='7')
+			figure
+				img.height-400(src=imgAssets+'fast_tracker.png' alt='Fast Tracker')
+				p Fast Tracker 2
++frameInbox('MIDI')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='0') streaming protocol, introduced in 1982
+			li.fragment(data-fragment-index='1') enables different manufacturers to trigger events by sending messages on a serial connection
+			li.fragment(data-fragment-index='2') <span class="highlight">midi is not audio</span> but it can control audio
+			li.fragment(data-fragment-index='3') <span class="highlight">General MIDI</span> - a way of ensuring that every device has the exact same basic sounds
+			li.fragment(data-fragment-index='4') <span class="highlight">MIDI doesn't contain samples</span>, only notes and commands, thus it requires <span class="highlight">sound fonts</span>
+				ul
+					li.downside.fragment(data-fragment-index='5') MIDI sounds different when played on different SW/HW (big issue in 1990's)  
+					li.upside.fragment(data-fragment-index='6') old game soundtracks can be played at high quality by using good sound fonts (FluidSynth)
+		.text-center.mt-40.fragment(data-fragment-index='4')
+			img.height-320(src=imgAssets+'midi.svg' alt='MIDI format')
++frameInbox('VST plugins')
+	.important-green
+		ul
+			li.fragment.highlight Visual Studio Technology
+			li.fragment interface for digital audio processing
+			li.fragment can be integrated in almost every DAW (digital audio workstation)
+			li.fragment can simulate basically everything - used as effects, converters, filters, virtual instruments,...
+		.text-center.mt-40.fragment
+			img.height-500(src=imgAssets+'vst.jpg' alt='VST plugins')
++frameInbox('Sound recording')
+	div
+		ul
+			li.fragment(data-fragment-index='0') <span class="highlight">ambient sounds</span> - directly in the environment, using a good quality microphone
+			li.fragment(data-fragment-index='1') <span class="highlight">synthetic sound effects</span> - DAW software (FLStudio, Audacity,...) and a set of VST plugins
+			li.fragment(data-fragment-index='2') <span class="highlight">real sound effects</span> - by foley artists
+		.flex-cols-2.text-center.mt-80
+			div.fragment(data-fragment-index='0')
+				img.height-400(src=imgAssets+'sound_rec.jpg' alt='Sound Recording process')
+			div.fragment(data-fragment-index='2')
+				img.height-400(src=imgAssets+'foley_stage.jpg' alt='Foley stage')
++frameInbox('Music composing')
+	.important-green.spacing-xs
+		ul
+			li.fragment either real orchestra, synth music or combination of both
+			li.fragment many composing techniques: chords-first, melody-first, structure-first
+		.scope.fragment
+			p Scales
+			ul
+				li.fragment major scale - happy scale
+				li.fragment minor scale - sad scale (natural, harmonic, melodic)
+		.scope.fragment
+			p Keys
+			ul
+				li.fragment most songs are in a Key
+				li.fragment key is a specific group of pitches that follow a scale
+				li.fragment <span class="highlight-2">melody shaping</span> - moving away from the starting note and back
+		.scope.fragment
+			p Bassline
+			ul
+				li.fragment bottom notes of chords
+				li.fragment we can build chords from basslines
+				li.fragment e.g. CGFA basslines gives chords CEG, GBD, FAC, ACE
+	.top-50.right-10
+		img.height-300(src=imgAssets+'composing.jpg')
+	.bottom-20.right-0.fragment
+		figure
+			img.height-350(src=imgAssets+'eastwest.jpg' alt='EastWest Symphonic Orchestra')
+			p EastWest Symphonic Orchestra

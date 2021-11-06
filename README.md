@@ -18,3 +18,7 @@ Changelog is available [here](./CHANGELOG.md)
 
 ## Deployment
 - the slides can be found on [aphgames.io](https://aphgames.io), materials tab
+
+## License
+`SPDX-License-Identifier: MIT`
+- This license applies **only to the code** in this repository. Images, SVG files, and other assets are explicitly excluded!

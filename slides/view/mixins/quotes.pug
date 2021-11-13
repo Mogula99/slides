@@ -27,3 +27,15 @@ mixin quote-gta()
 	+mcontainer('Goodbye Quote')(bgr='backgrounds/gta.jpg')
 		+frameShard().top-25p.left-22p.width-60p
 			+quote('All you had to do was follow the damn train!', 'GTA, San Andreas')(class="font-dos not-italic")
+
+mixin quote-mightmagic()
+	+mcontainer('Goodbye Quote')(autoAnimate)
+		+frameShard().top-10p.width-100p
+			+quote('Mohu vycvičit experty černé magie na mistry, ovšem jen pokud splňují má kritéria. Budu učit jen opravdové zasvěcence, ty, kteří jsou tak zlí, že jejich reputace je ta nejhorší - prostě opravdové Miloše Zemany. Nedělám žádné výjimky a též nežádám žádné peníze, stačí ujištění, že budete po světě šířit zlo a zvyšovat daně.', '')(class="font-dos not-italic text-md")
+		+frameShard().top-14p.width-100p.fragment
+			+quote('I can bring experts of dark magic up to master, provided they meet my standards. I only teach the genuinely dedicated - those so evil their reputations are as bad as they can get. The truly notorious. I make no exceptions, and charge no fee in the interests of spreading darkness throughout the world.', '')(class="font-dos not-italic text-md")
+	+mcontainer('Goodbye Quote')(bgr='backgrounds/mm6.jpg', autoAnimate=true)
+		+frameShard().top-10p.width-100p
+			+quote('Mohu vycvičit experty černé magie na mistry, ovšem jen pokud splňují má kritéria. Budu učit jen opravdové zasvěcence, ty, kteří jsou tak zlí, že jejich reputace je ta nejhorší - prostě opravdové Miloše Zemany. Nedělám žádné výjimky a též nežádám žádné peníze, stačí ujištění, že budete po světě šířit zlo a zvyšovat daně.', 'Might and Magic 6')(class="font-dos not-italic text-md")
+		+frameShard().top-14p.width-100p
+			+quote('I can bring experts of dark magic up to master, provided they meet my standards. I only teach the genuinely dedicated - those so evil their reputations are as bad as they can get. The truly notorious. I make no exceptions, and charge no fee in the interests of spreading darkness throughout the world.', 'Might and Magic 6')(class="font-dos not-italic text-md")

@@ -1,0 +1,148 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_storytelling/';
+- var defaultBgr = 'backgrounds/half-life2.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Storytelling', imgAssets+'chapter_storytelling.svg')
++frameInbox('Literature')
+	ul
+		li
+			a(href="https://www.amazon.com/Narrative-Toolbox-Focal-Design-Workshops/dp/1138787086") Heussner, Tobias. 2015. The Game Narrative Toolbox 
+	div.text-center
+		img.height-600(src=globalAssets+'book_toolbox.jpg' alt='Heussner, Tobias. 2015. The Game Narrative Toolbox')
+
++frameInbox('Narrative design')
+	div
+		ul
+			li.fragment the art of telling a story usign the techniques and devices available
+			li.fragment narrative designer integrates the story into the game using the available mechanics and assets
+			li.fragment parts: world-building, story-telling, character-building, plot design,...
+			li.highlight.fragment only a smart portion of your world will ever be visible to the player
+			li.fragment <span class="highlight">player agency</span> - describes player's beliefs that their choices are what drives the events of the story
+			li.fragment.mt-30 perception of the world by the players
+				ul
+					li.fragment environmental narrative
+						.bottom-80.right-750.size-350
+							+gbGameBig(imgAssets+'game_limbo.jpg', 'Limbo')
+					li.fragment dialogues
+						.bottom-80.right-380.size-350
+							+gbGameBig(imgAssets+'game_torment.jpg', 'Planescape Torment')
+					li.fragment journal entries, books
+						.bottom-80.right-20.size-350
+							+gbGameBig(imgAssets+'game_fear.jpg', 'F.E.A.R')
++frameInbox('Storytelling for game genres')
+	div
+		ul
+			li.fragment(data-fragment-index='1') FPS - fast paced, action-oriented, simple story
+			li.fragment(data-fragment-index='2') RTS - cutscenes
+			li.fragment(data-fragment-index='3') RPG - complex connected storylines
+			li.fragment(data-fragment-index='4') Simulation - short, non-distracting plots
+			li.fragment(data-fragment-index='5') Platformer - level-based environmental narrative
+			li.fragment(data-fragment-index='6') Sandbox - exploration and interaction
+			li.fragment(data-fragment-index='7') Adventure - slow-paced storytelling, relying on puzzles, dialogues, and the environment
+		.flex-cols-7.mt-40
+			+gbGame(imgAssets+'genregame_doom.jpg', 'DOOM').fragment(data-fragment-index='1')
+			+gbGame(imgAssets+'genregame_warcraft.jpg', 'Warcraft 3').fragment(data-fragment-index='2')
+			+gbGame(imgAssets+'genregame_diablo.jpg', 'Diablo 3').fragment(data-fragment-index='3')
+			+gbGame(imgAssets+'genregame_trucksim.jpg', 'EuroTruck').fragment(data-fragment-index='4')
+			+gbGame(imgAssets+'genregame_rayman.jpg', 'Rayman').fragment(data-fragment-index='5')
+			+gbGame(imgAssets+'genregame_factorio.jpg', 'Factorio').fragment(data-fragment-index='6')
+			+gbGame(imgAssets+'genregame_polda.jpg', 'Polda 6').fragment(data-fragment-index='7')
++frameInbox('Freytag\'s pyramid')
+	div
+		ul
+			li.fragment <span class="highlight">Exposition</span> - sets the scene and establishes background
+			li.fragment <span class="highlight">Rising action</span> - the main issue gets complicated
+			li.fragment <span class="highlight">Climax</span> - the tension reaches a pitch
+			li.fragment <span class="highlight">Falling action</span> - shows the result of the climax
+			li.fragment <span class="highlight">Resolution</span> - final conclusion and ending
+		.top-100.right-20
+			img.height-300(src=imgAssets+'triangle.svg')
+		.bottom-80.left-100.fragment
+			img.height-350(src=imgAssets+'triangle_genres.svg')
+		.bottom-50.right-40
+			img.height-380(src=imgAssets+'prince.png')
++frameInbox('Narrative categories')
+	div
+		.scope
+			p.fragment(data-fragment-index='1') Linear Narratives
+			ul
+				li.fragment(data-fragment-index='2') the same events in the same order
+				li.fragment(data-fragment-index='3') story is conveyed by cutscenes and environmental narrative
+		.space-md
+		.scope
+			p.fragment(data-fragment-index='4') Branching Narratives
+			ul
+				li.fragment(data-fragment-index='5') story-driven games, can easily explode their budgets
+				li.fragment(data-fragment-index='6') the player makes choices that affect individual sections of plot
+				li.fragment(data-fragment-index='7') <span class="highlight">critical path</span> - non-optional quests which the player must compete
+		.space-md
+		.scope
+			p.fragment(data-fragment-index='8') Open Narratives
+			ul
+				li.fragment(data-fragment-index='9') everything you plan has to make sense in multiple scenarios
+				li.fragment(data-fragment-index='10') players can choose the order of tasks
+		.size-330.top-30.right-0.fragment(data-fragment-index='1')
+			+dsGame(imgAssets+'prince.png', 'Prince of Persia')
+		.size-330.bottom-30.right-0.fragment(data-fragment-index='8')
+			+dsGame(imgAssets+'gta.jpg', 'GTA')
+		.size-330.top-330.right-200.fragment(data-fragment-index='4')
+			+dsGame(imgAssets+'masseffect.jpg', 'Mass Effect')
++frameInbox('Character building')
+	div
+		ul
+			li.fragment very important, they need to advance the plot in some way
+			li.fragment NPCs must keep players entertained in the world and story
+			li.fragment game characters can emotionally involve players in ways no other medium can
+		.flex-cols-4.bottom-100.width-100p.height-300.ml-70
+			+dsGame(imgAssets+'char_duke.jpg', 'Duke Nukem').fragment
+			+dsGame(imgAssets+'char_gordon.jpg', 'Gordon Freeman').fragment
+			+dsGame(imgAssets+'char_kratos.jpg', 'Kratos').fragment
+			+dsGame(imgAssets+'char_senua.jpg', 'Senua').fragment
+		.flex-cols-4.mt-40.bottom-320.left-0.width-100p.height-300
+			+dsGame(imgAssets+'char_lara.jpg', 'Lara Croft').fragment
+			+dsGame(imgAssets+'char_blazkowicz.jpg', 'Blazkowicz').fragment
+			+dsGame(imgAssets+'char_shepard.jpg', 'Shepard').fragment
+			+dsGame(imgAssets+'char_glados.jpg', 'GlaDOS').fragment
++frameInbox('Character types')
+	div
+		.scope.fragment(data-fragment-index='1')
+			p Cipher
+			ul
+				li.fragment(data-fragment-index='2') no personality, blank states
+				li.fragment(data-fragment-index='3') has a name and appearance, no background
+				li.fragment(data-fragment-index='4') example: Doomguy, Gordon Freeman
+		.scope.fragment(data-fragment-index='5')
+			p Fixed Character
+			ul
+				li.fragment(data-fragment-index='6') defined by the designers
+				li.fragment(data-fragment-index='7') not many options to change them
+				li.fragment(data-fragment-index='8') players may not identify with the character
+				li.fragment(data-fragment-index='9') example: Mario, Sonic, Link, Duke Nukem
+		.scope.fragment(data-fragment-index='10')
+			p Customizable Character
+			ul
+				li.fragment(data-fragment-index='11') common for RPG games, require a solid world
+				li.fragment(data-fragment-index='12') example: Fallout, WoW
+		.top-20.right-20.size-350.fragment(data-fragment-index='1')
+			+gbGameBig(imgAssets+'doomguy.jpg', 'Doomguy')
+		.top-280.right-400.size-350.fragment(data-fragment-index='5')
+			+gbGameBig(imgAssets+'sonic.jpg', 'Sonic')
+		.top-530.right-20.size-350.fragment(data-fragment-index='10')
+			+gbGameBig(imgAssets+'orc.jpg', 'Orc')
++frameInbox('Honorable games')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'honor_masseffect.jpg', 'Mass Effect (2007+)').fragment
+		+dsGameBigTop(imgAssets+'honor_lifestrange.jpg', 'Life Is Strange (2015+)').fragment
+		+dsGameBigTop(imgAssets+'honor_portal.jpg', 'Portal (2007+)').fragment
+		+dsGameBigTop(imgAssets+'honor_disco.jpg', 'Disco Elysium (2019)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'honor_chrono.jpg', 'Chrono Trigger (1995)').fragment.bottom-250.left-260
++frameInbox('Honorable games')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'honor_fear.jpg', 'F.E.A.R. (2004+)').fragment
+		+dsGameBigTop(imgAssets+'honor_gtasa.jpg', 'GTA: San Andreas (2004)').fragment
+		+dsGameBigTop(imgAssets+'honor_dragonage.jpg', 'Dragon Age: Origins (2009)').fragment
+		+dsGameBigTop(imgAssets+'honor_horizon.jpg', 'Horizon Zero Dawn (2017)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'honor_halflife.jpg', 'Half-Life (1998+)').fragment.bottom-250.left-260

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="147.11mm" height="89.958mm" version="1.1" viewBox="0 0 147.11 89.958" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <rect x="76.861" y=".13231" width="70.115" height="42.069" fill="#1d232d" stroke="#7b8694" stroke-linecap="round" stroke-width=".26458"/>
+ <g fill="#e8eaec" stroke="#7b8694" stroke-linecap="round" stroke-width=".26458">
+  <path d="m90.091 0.13229v42.069"/>
+  <path d="m90.091 35.851h56.885"/>
+  <path d="m121.84 0.13229v35.719"/>
+  <path d="m90.091 17.33h31.75"/>
+  <path d="m104.91 17.33v-17.198"/>
+  <path d="m121.84 29.236h25.135"/>
+  <path d="m133.22 29.236v-29.104"/>
+  <path d="m104.91 12.039h16.933"/>
+  <path d="m114.17 12.039v-11.906"/>
+  <path d="m114.17 5.1594h7.6729"/>
+  <path d="m111.26 17.33v18.521"/>
+  <path d="m121.84 21.299h25.135"/>
+  <path d="m121.84 8.0698h25.135"/>
+  <path d="m104.64 8.0698h-14.552"/>
+  <path d="m90.091 22.622h-13.229"/>
+  <path d="m90.091 27.914h21.167"/>
+  <path d="m111.26 22.622h10.583"/>
+  <path d="m133.22 14.684h13.758"/>
+ </g>
+ <rect x=".13229" y=".13231" width="70.115" height="42.069" fill="#1d232d" stroke="#7b8694" stroke-linecap="round" stroke-width=".26458"/>
+ <rect x=".13229" y="47.757" width="70.115" height="42.069" fill="#1d232d" stroke="#7b8694" stroke-linecap="round" stroke-width=".26458"/>
+ <g fill="#e8eaec">
+  <g stroke="#7b8694" stroke-linecap="round" stroke-width=".26458">
+   <path d="m13.361 47.757v42.069"/>
+   <path d="m13.361 83.476h56.885"/>
+   <path d="m45.111 47.757v35.719"/>
+   <path d="m13.361 64.955h31.75"/>
+   <path d="m28.178 64.955v-17.198"/>
+   <path d="m45.111 76.861h25.135"/>
+   <path d="m56.489 76.861v-29.104"/>
+   <path d="m28.178 59.664h16.933"/>
+   <path d="m37.439 59.664v-11.906"/>
+   <path d="m37.439 52.784h7.6729"/>
+   <path d="m34.528 64.955v18.521"/>
+   <path d="m45.111 68.924h25.135"/>
+   <path d="m45.111 55.695h25.135"/>
+   <path d="m27.914 55.695h-14.552"/>
+   <path d="m13.361 70.247h-13.229"/>
+   <path d="m13.361 75.539h21.167"/>
+   <path d="m34.528 70.247h10.583"/>
+   <path d="m56.489 62.309h13.758"/>
+  </g>
+  <circle cx="13.361" cy="51.589" r=".66913"/>
+  <circle cx="13.361" cy="60.055" r=".66913"/>
+  <circle cx="6.7469" cy="70.374" r=".66913"/>
+  <circle cx="34.528" cy="73.02" r=".66913"/>
+  <circle cx="41.407" cy="59.791" r=".66913"/>
+  <circle cx="37.439" cy="56.351" r=".66913"/>
+  <circle cx="56.489" cy="66.141" r=".66913"/>
+  <circle cx="63.368" cy="55.557" r=".66913"/>
+  <circle cx="45.111" cy="80.164" r=".66913"/>
+  <circle cx="50.668" cy="55.822" r=".66913"/>
+  <circle cx="23.416" cy="75.401" r=".66913"/>
+  <circle cx="13.361" cy="86.778" r=".66913"/>
+  <circle cx="58.341" cy="83.339" r=".66913"/>
+  <circle cx="45.111" cy="73.549" r=".66913"/>
+  <circle cx="45.111" cy="66.934" r=".66913"/>
+  <circle cx="56.489" cy="73.02" r=".66913"/>
+  <circle cx="56.489" cy="51.853" r=".66913"/>
+  <circle cx="45.111" cy="62.436" r=".66913"/>
+  <circle cx="37.439" cy="50.266" r=".66913"/>
+  <circle cx="28.178" cy="51.589" r=".66913"/>
+ </g>
+ <rect x="76.861" y="47.757" width="70.115" height="42.069" fill="#1d232d" stroke="#7b8694" stroke-linecap="round" stroke-width=".26458"/>
+ <g fill="#e8eaec" stroke-linecap="round" stroke-width=".26458">
+  <g stroke="#7b8694">
+   <path d="m90.091 47.757v42.069"/>
+   <path d="m90.091 83.476h56.885"/>
+   <path d="m121.84 47.757v35.719"/>
+   <path d="m90.091 64.955h31.75"/>
+   <path d="m104.91 64.955v-17.198"/>
+   <path d="m121.84 76.861h25.135"/>
+   <path d="m133.22 76.861v-29.104"/>
+   <path d="m104.91 59.664h16.933"/>
+   <path d="m114.17 59.664v-11.906"/>
+   <path d="m114.17 52.784h7.6729"/>
+   <path d="m111.26 64.955v18.521"/>
+   <path d="m121.84 68.924h25.135"/>
+   <path d="m121.84 55.695h25.135"/>
+   <path d="m104.64 55.695h-14.552"/>
+   <path d="m90.091 70.247h-13.229"/>
+   <path d="m90.091 75.539h21.167"/>
+   <path d="m111.26 70.247h10.583"/>
+   <path d="m133.22 62.309h13.758"/>
+  </g>
+  <g stroke="#6f8ce9">
+   <path d="m90.091 86.916-6.6146-16.669"/>
+   <path d="m90.091 60.193-6.6146 10.319"/>
+   <path d="m90.091 51.461-6.6146 19.05"/>
+   <path d="m104.91 51.726h-14.817"/>
+  </g>
+ </g>
+ <g fill="none" stroke="#6f8ce9" stroke-linecap="round" stroke-width=".26458">
+  <path d="m114.17 50.139-9.2604 1.3229 9.2604 4.7625 3.9688 3.4396 3.7042 2.6458 5.5562-6.6146 5.8208-3.9688 6.8792 3.7042"/>
+  <path d="m135.07 83.476-13.229-3.175-10.583-7.4083 10.319 0.52917 11.642-0.52917"/>
+  <path d="m121.84 62.309 11.377 3.7042-11.377 1.0583 5.5562-11.377 5.8208 10.319"/>
+  <path d="m99.88 75.539 11.377-2.3812"/>
+  <path d="m90.091 86.651 44.979-3.175"/>
+  <path d="m133.22 66.014 6.6146 2.9104-6.6146 3.9688"/>
+ </g>
+ <g fill="#e8eaec">
+  <circle cx="90.091" cy="51.589" r=".66913"/>
+  <circle cx="90.091" cy="60.055" r=".66913"/>
+  <circle cx="83.476" cy="70.374" r=".66913"/>
+  <circle cx="111.26" cy="73.02" r=".66913"/>
+  <circle cx="118.14" cy="59.791" r=".66913"/>
+  <circle cx="114.17" cy="56.351" r=".66913"/>
+  <circle cx="133.22" cy="66.141" r=".66913"/>
+  <circle cx="140.1" cy="55.557" r=".66913"/>
+  <circle cx="121.84" cy="80.164" r=".66913"/>
+  <circle cx="127.4" cy="55.822" r=".66913"/>
+  <circle cx="100.14" cy="75.401" r=".66913"/>
+  <circle cx="90.091" cy="86.778" r=".66913"/>
+  <circle cx="135.07" cy="83.339" r=".66913"/>
+  <circle cx="121.84" cy="73.549" r=".66913"/>
+  <circle cx="121.84" cy="66.934" r=".66913"/>
+  <circle cx="133.22" cy="73.02" r=".66913"/>
+  <circle cx="133.22" cy="51.853" r=".66913"/>
+  <circle cx="121.84" cy="62.436" r=".66913"/>
+  <circle cx="114.17" cy="50.266" r=".66913"/>
+  <circle cx="104.91" cy="51.589" r=".66913"/>
+  <circle cx="139.83" cy="68.786" r=".66913"/>
+ </g>
+</svg>

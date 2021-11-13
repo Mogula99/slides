@@ -6,6 +6,10 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [5.7.0] - 2021-11-13
+### Added
+Lecture 7 and minitalk about storytelling
+
 ## [5.6.0] - 2021-11-06
 ### Added
 Lecture 6

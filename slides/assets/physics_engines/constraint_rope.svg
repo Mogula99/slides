@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64.236" height="133.09" version="1.1" viewBox="0 0 16.996 35.214" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g fill="#1d232d" stroke-width=".26459">
+  <path d="m8.3883 27.827v-25.243" stroke="#a6aeb8"/>
+  <rect x="6.0845" y=".13229" width="4.6884" height="4.6884" stroke="#7b8694" stroke-linecap="round"/>
+  <circle cx="8.3883" cy="27.827" r="3.8836" stroke="#7b8694" stroke-linecap="square" stroke-linejoin="round" style="paint-order:normal"/>
+ </g>
+ <path d="m15.98 32.71c-0.4131 0.46464-1.0109 0.88306-1.7495 1.2344-0.73867 0.3514-1.6182 0.63578-2.5949 0.83229-0.97669 0.19651-2.0505 0.30518-3.1777 0.30518-1.1272 0-2.201-0.10867-3.1777-0.30518-0.97669-0.19651-1.8563-0.48089-2.5949-0.83229-0.73867-0.35137-1.3364-0.76979-1.7495-1.2344" fill="none" stroke="#a6aeb8" stroke-linecap="square" stroke-linejoin="round" stroke-width=".26459" style="paint-order:normal"/>
+ <g transform="matrix(.0023208 -.0027353 .0027822 .0023605 14.939 32.424)" fill="#e8eaec" stroke-width="201.8">
+  <g fill="#e8eaec" stroke-width="201.8">
+   <path d="m486.41 221.41-364.07-208.5c-52.938-30.318-95.852-5.44-95.852 55.563v415.65c0 61.004 42.914 85.882 95.852 55.563l364.07-208.49c52.938-30.317 52.938-79.473 0-109.79z" fill="#e8eaec" stroke-width="201.8"/>
+  </g>
+ </g>
+ <g transform="matrix(-.0023208 -.0027353 -.0027822 .0023605 2.0568 32.424)" fill="#e8eaec" stroke-width="201.8">
+  <g fill="#e8eaec" stroke-width="201.8">
+   <path d="m486.41 221.41-364.07-208.5c-52.938-30.318-95.852-5.44-95.852 55.563v415.65c0 61.004 42.914 85.882 95.852 55.563l364.07-208.49c52.938-30.317 52.938-79.473 0-109.79z" fill="#e8eaec" stroke-width="201.8"/>
+  </g>
+ </g>
+</svg>

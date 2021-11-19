@@ -1,0 +1,81 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/physics_geometry/';
+- var defaultBgr = 'backgrounds/geometry2.jpg';
+
++mchapter('Geometry', imgAssets+'chapter_geometry.svg')
++frameInbox('Points and Vectors')
+	.important-green
+		ul
+			li.fragment <span class="highlight">Cartesian coordinate system</span> - by far the most common
+			li.fragment games usually use <span class="highlight">Euclidean space</span>
+			li.fragment in 2D engines, Y-axis is usually inverted
+		.flex-cols-2.mt-20
+			figure.fragment
+				img.height-500(src=imgAssets+'coord_2D.svg')
+				p 2D coordinate system
+			figure.fragment
+				img.height-500(src=imgAssets+'coord_3D.svg')
+				p 3D coordinate system
++frameInbox('Points and Vectors')
+	.important-orange
+		ul
+			li.fragment <span class="highlight">Vector</span> - a quantity that has both a magnitude and a direction
+			li.fragment vector can be used to represent a point, provided that we fix the tail of the vector to the origin of the coordinate system
+		.space-lg
+		.scope.fragment
+			p Addition and subtraction
+			ul
+				li vector + vector = vector
+				li vector - vector = vector
+				li point + vector = point
+				li point - point = vector
+				li point + point = <span class="highlight">undefined</span>
+			.bottom-220.right-180
+				figure
+					img.height-250(src=imgAssets+'add_subtract.svg')
+					p Vector addition and subtraction
++frameInbox('Points and Vectors')
+	.important-orange.spacing-4xs
+		.scope.fragment(data-fragment-index='1')
+			p Magnitude
+			ul
+				li scalar representing the length of the vector
+				li 
+					include ../../assets/physics_geometry/equations_generated/vectors_01.svg
+			.top-40.right-50
+				figure
+					img.height-270(src=imgAssets+'magnitude.svg')
+					p Magnitude of a vector
+		.scope.fragment(data-fragment-index='2')
+			p Normalization
+			ul
+				li a unit vector is a vector with a magnitude of one: 
+					include ../../assets/physics_geometry/equations_generated/vectors_02.svg
+		.scope.fragment(data-fragment-index='3')
+			p Normal vector
+			ul
+				li vector is normal to a surface if it is perpendicular to it
+		.scope.fragment(data-fragment-index='4')
+			p Dot product
+			ul
+				li
+					include ../../assets/physics_geometry/equations_generated/vectors_03.svg
+				li
+					include ../../assets/physics_geometry/equations_generated/vectors_04.svg
+		.scope.fragment(data-fragment-index='5')
+			p Cross product
+			ul
+				li yields another vector that is perpendicular to two vectors
+				li
+					include ../../assets/physics_geometry/equations_generated/vectors_05.svg
+		.bottom-260.right-20.fragment(data-fragment-index='6')
+			.scope
+				p Projection
+				ul
+					li projection of a vector onto another vector
+					li 
+						include ../../assets/physics_geometry/equations_generated/projection.svg
+		.bottom-20.right-20.fragment(data-fragment-index='6')
+			img.height-270(src=imgAssets+'projection.svg')

@@ -1,0 +1,151 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_leveldesign/';
+- var defaultBgr = 'backgrounds/levels.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Level Design', imgAssets+'chapter_leveldesign.svg')
++frameInbox('Level Design')
+	div
+		ul
+			li.fragment deals with creating respective stages of the game
+			li.fragment unlike environment design, it doesn't focus primarily on scenery composition, but on incorporation of player's capabilities, game mechanics, space, and game elements
+			li.fragment level design should <span class="highlight">showcase</span> the mechanics and provide the player with an enjoyable experience
+			li.mt-80.fragment <span class="highlight">Responsibilities</span>
+				ul
+					li.fragment laying out map features - buildings, hills, rooms,...
+					li.fragment determining environmental conditions (day, night)
+					li.fragment placing resources - equipment, new weapons, medkits
+					li.fragment utilizing surprise elements, ambushes,...
+					li.fragment specifying nonstatic parts - doors, buttons, teleporters
+					li.fragment creating scripted events triggered by player's actions
+			.bottom-50.right-20
+				img.height-400(src=imgAssets+'level_editor.jpg')
++frameInbox('Level Design Elements')
+	div
+		ul
+			li.fragment <span class="highlight">Spawners</span> - emitters of new objects/mobs (e.g. monster spawners in Doom)
+			li.fragment <span class="highlight">Triggers</span> - events that occur after the player has performed a certain action (e.g. entering the door)
+			li.fragment <span class="highlight">Resource placement</span> - careful placement of resources the player may use, so that their location will serve their purpose properly
+			li.fragment <span class="highlight">Window</span> - a place visible from player's position, but not directly reachable
+			li.fragment <span class="highlight">Weenie</span> - a large architectural object visible from many locations, can be used as a reference point
+			li.fragment <span class="highlight">Landmark</span> - easily-recognizable structure for better navigation
+			li.fragment <span class="highlight">Progression obstacle</span> - an obstacle that prevents the player from going further until the story advances
+				.center.flex-col.mt-10
+					div.flex-row
+						figure.mx-10
+							img.height-270(src=imgAssets+'blocker_01.png')
+							p Pokémon Ruby
+						figure.mx-10
+							img.height-270(src=imgAssets+'blocker_02.jpg')
+							p GTA III
+						figure.mx-10
+							img.height-270(src=imgAssets+'blocker_03.jpg')
+							p Dreamfall Chapters
++frameInbox('Example: Window and Weenie')
+	div
+		ul
+			li Window
+		.center.flex-col
+			div.flex-row
+				figure.mx-10.fragment
+					img.height-310(src=imgAssets+'window_01.png')
+					p Prince of Persia
+				figure.mx-10.fragment
+					img.height-310(src=imgAssets+'window_02.png')
+					p Rayman
+				figure.mx-10.fragment
+					img.height-310(src=imgAssets+'window_03.jpg')
+					p Doom
+		ul
+			li Weenie
+		.center.flex-col
+			div.flex-row
+				figure.mx-10.fragment
+					img.height-280(src=imgAssets+'weenie_esther.jpg')
+					p Dear Esther
+				figure.mx-10.fragment
+					img.height-280(src=imgAssets+'weenie_journey.jpg')
+					p Journey
+				figure.mx-10.fragment
+					img.height-280(src=imgAssets+'weenie_senua.jpg')
+					p Hellblade: Senua's Sacrifice
++frameInbox('Principle #1 - The player must know where he/she is')
+	ul
+		li.fragment put easily-recognizable landmarks to help the player navigate in complex environment
+	figure.top-100.left-20.fragment
+		img.height-420(src=imgAssets+'principle05_doom.png')
+		p Doom
+	figure.top-100.right-20.fragment
+		img.height-420(src=imgAssets+'principle05_prince.png')
+		p Prince of Persia
+	figure.bottom-0.right-500.fragment
+		img.height-340(src=imgAssets+'principle05_tombraider.jpg')
+		p Rise of the Tomb Raider
++frameInbox('Principle #2 - The player must know where to go')
+	ul
+		li.fragment use visual language (light, color, detail-rich spots, posters, graffiti, paintings,...)
+	figure.top-100.left-20.fragment
+		img.height-400(src=imgAssets+'principle01_doom.jpg')
+		p Doom Eternal
+	figure.top-100.right-20.fragment
+		img.height-400(src=imgAssets+'principle01_mirrorsedge.jpg')
+		p Mirror's Edge
+	figure.bottom-0.right-500.fragment
+		img.height-340(src=imgAssets+'principle01_portal.jpg')
+		p Portal 2
++frameInbox('Principle #2 - The player must know where to go')
+	ul
+		li.fragment if a level contains uniform doors and paths with little to no variation, the player will get lost
+			.bottom-0.right-0
+				img.height-600(src=imgAssets+'doom_doors.jpg')
+			.bottom-0.right-600.fragment
+				img.height-380(src=globalAssets+'memes/travolta.gif')
++frameInbox('Principle #3 - Placing of items and objects makes sense')
+	div
+		ul
+			li.fragment story-based games are always realistic to some degree
+			li.fragment active elements should have a meaning, in order to reinforce the story 
+		.center.flex-row.mt-100
+			figure.mx-10.fragment
+				img.height-450(src=imgAssets+'placing_prince.png')
+				p Prince of Persia - sword of a dead body
+			figure.mx-10.fragment
+				img.height-450(src=imgAssets+'placing_prey.jpg')
+				p Prey - the apartment
+		.tip.fragment.bottom-20.right-450
+			img.height-700(src=imgAssets+'upgrade.jpg')
++frameInbox('Principle #4 - The player is constantly learning')
+	div
+		ul
+			li.fragment <span class="highlight">learn - play- challenge - surprise</span> loop
+			li.fragment every new challenge will require the player to use his/her equipment in new ways
+		.center.flex-row.mt-100
+			figure.mx-10.fragment
+				img.height-450(src=imgAssets+'principle03_doom.jpg')
+				p Doom - picking up BFG
+			figure.mx-10.fragment
+				img.height-450(src=imgAssets+'principle03_zelda.jpg')
+				p The Legend of Zelda - new equipment
++frameInbox('Principle #5 - The game introduces surprise elements')
+	div
+		ul
+			li.fragment flip existing paradigms to boost the game experience
+			li.fragment fun is created through uncertainty and surprise
+		.center.flex-row.mt-100
+			figure.mx-10.fragment
+				img.height-450(src=imgAssets+'principle04_doom.jpg')
+				p Doom E1M8 - Barons of Hell (first encounter)
+			figure.mx-10.fragment
+				img.height-450(src=imgAssets+'principle04_portal2.jpg')
+				p Portal 2 - falling into a trap
++frameInbox('Prince of Persia - surprise elements')
+	div
+		.grid.grid-cols-3.grid-rows-2.gap-10
+			img.fragment.height-330(src=imgAssets+'sp_prince_01.png')
+			img.fragment.height-330(src=imgAssets+'sp_prince_02.png')
+			img.fragment.height-330(src=imgAssets+'sp_prince_03.png')
+			img.fragment.height-330(src=imgAssets+'sp_prince_04.png')
+			img.fragment.height-330(src=imgAssets+'sp_prince_05.png')
+			img.fragment.height-330(src=imgAssets+'sp_prince_06.png')

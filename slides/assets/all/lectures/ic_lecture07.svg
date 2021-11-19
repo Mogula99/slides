@@ -1,78 +1,263 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="639.79" height="277.35" version="1.1" viewBox="0 0 169.28 73.384" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
- <metadata>
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g transform="matrix(.20919 0 0 .20943 85.918 75.029)" fill="#a0f1c6" stroke-dashoffset="1.2" stroke-linecap="square" stroke-width=".26459" aria-label="00010 01101 01101">
-  <g transform="matrix(34.719 0 0 34.679 -3681.5 -3696.4)" stroke-dashoffset="1.2" stroke-linecap="square" stroke-width=".26459">
-   <rect x="94.208" y="96.454" width="23.308" height="9.7115" fill="#1d232d" style="paint-order:normal"/>
-   <g fill="#7b8694">
-    <path d="m94.596 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m96.538 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m98.481 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m100.42 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m102.37 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m104.31 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m106.25 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m108.19 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m110.13 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m112.08 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m114.02 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m115.96 96.26h1.1654v0.19408h-1.1654z"/>
-    <path d="m115.96 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m114.02 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m112.08 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m110.13 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m108.19 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m106.25 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m104.31 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m102.37 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m100.42 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m98.481 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m96.538 106.17h1.1654v0.19405h-1.1654z"/>
-    <path d="m94.596 106.17h1.1654v0.19405h-1.1654z"/>
-   </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0rc1 (09960d6f05, 2020-04-09)"
+   sodipodi:docname="ic_lecture07.svg"
+   id="svg128"
+   viewBox="0 0 169.28 73.384"
+   version="1.1"
+   height="277.35"
+   width="639.79">
+  <defs
+     id="defs132" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg128"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="243.38581"
+     inkscape:cx="225.34279"
+     inkscape:zoom="1.0433249"
+     showgrid="false"
+     id="namedview130"
+     inkscape:window-height="1377"
+     inkscape:window-width="2560"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g126"
+     aria-label="00010 01101 01101"
+     stroke-width=".26459"
+     stroke-linecap="square"
+     stroke-dashoffset="1.2"
+     fill="#a0f1c6"
+     transform="matrix(.20919 0 0 .20943 85.918 75.029)">
+    <g
+       id="g56"
+       stroke-width=".26459"
+       stroke-linecap="square"
+       stroke-dashoffset="1.2"
+       transform="matrix(34.719 0 0 34.679 -3681.5 -3696.4)">
+      <rect
+         id="rect4"
+         style="paint-order:normal"
+         fill="#1d232d"
+         height="9.7115"
+         width="23.308"
+         y="96.454"
+         x="94.208" />
+      <g
+         id="g54"
+         fill="#7b8694">
+        <path
+           id="path6"
+           d="m94.596 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path8"
+           d="m96.538 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path10"
+           d="m98.481 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path12"
+           d="m100.42 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path14"
+           d="m102.37 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path16"
+           d="m104.31 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path18"
+           d="m106.25 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path20"
+           d="m108.19 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path22"
+           d="m110.13 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path24"
+           d="m112.08 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path26"
+           d="m114.02 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path28"
+           d="m115.96 96.26h1.1654v0.19408h-1.1654z" />
+        <path
+           id="path30"
+           d="m115.96 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path32"
+           d="m114.02 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path34"
+           d="m112.08 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path36"
+           d="m110.13 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path38"
+           d="m108.19 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path40"
+           d="m106.25 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path42"
+           d="m104.31 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path44"
+           d="m102.37 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path46"
+           d="m100.42 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path48"
+           d="m98.481 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path50"
+           d="m96.538 106.17h1.1654v0.19405h-1.1654z" />
+        <path
+           id="path52"
+           d="m94.596 106.17h1.1654v0.19405h-1.1654z" />
+      </g>
+    </g>
+    <g
+       id="g122"
+       stroke-width="1.5563"
+       stroke-linecap="round"
+       stroke-dashoffset="0"
+       stroke="#a6aeb8"
+       fill="none">
+      <path
+         id="path58"
+         d="m-176.83-63.375h341.3v-249.99h-340.59z" />
+      <path
+         id="path60"
+         d="m-145.81-86.101h279.24v-204.54h-278.67z" />
+      <path
+         id="path62"
+         d="m-114.78-108.83h217.19v-159.09h-216.74z" />
+      <path
+         id="path64"
+         d="m-83.752-131.55h155.14v-113.63h-154.81z" />
+      <path
+         id="path66"
+         d="m-52.725-154.28h93.081v-68.18h-92.888z" />
+      <path
+         id="path68"
+         d="m-28.937-171.71h45.503v-33.33h-45.409z" />
+      <path
+         id="path70"
+         d="m-6.1835-188.37-170.65 125" />
+      <path
+         id="path72"
+         d="m-176.13-313.37 169.94 125" />
+      <path
+         id="path74"
+         d="m164.47-63.375-170.65-125" />
+      <path
+         id="path76"
+         d="m164.47-313.37-170.65 125" />
+      <path
+         id="path78"
+         d="m-175.98-206.55 170.65 18.181" />
+      <path
+         id="path80"
+         d="m-175.98-245.19 170.65 56.816" />
+      <path
+         id="path82"
+         d="m-175.98-279.28 170.65 90.906" />
+      <path
+         id="path84"
+         d="m-175.98-170.19 170.65-18.181" />
+      <path
+         id="path86"
+         d="m-175.98-131.55 170.65-56.816" />
+      <path
+         id="path88"
+         d="m-175.98-97.465 170.65-90.906" />
+      <path
+         id="path90"
+         d="m164.47-206.55-170.65 18.181" />
+      <path
+         id="path92"
+         d="m164.47-245.19-170.65 56.816" />
+      <path
+         id="path94"
+         d="m164.47-279.28-170.65 90.906" />
+      <path
+         id="path96"
+         d="m164.47-170.19-170.65-18.181" />
+      <path
+         id="path98"
+         d="m164.47-131.55-170.65-56.816" />
+      <path
+         id="path100"
+         d="m164.47-97.465-170.65-90.906" />
+      <path
+         id="path102"
+         d="m-119.95-63.375 114.62-125" />
+      <path
+         id="path104"
+         d="m-63.066-63.375 56.883-125" />
+      <path
+         id="path106"
+         d="m-6.1835-63.375 0.85325-125" />
+      <path
+         id="path108"
+         d="m50.699-63.375-56.03-125" />
+      <path
+         id="path110"
+         d="m107.58-63.375-112.91-125" />
+      <path
+         id="path112"
+         d="m107.58-313.37-114.62 125" />
+      <path
+         id="path114"
+         d="m50.699-313.37-56.883 125" />
+      <path
+         id="path116"
+         d="m-6.1835-313.37-0.8532 125" />
+      <path
+         id="path118"
+         d="m-63.066-313.37 56.03 125" />
+      <path
+         id="path120"
+         d="m-119.95-313.37 112.91 125" />
+    </g>
+    <ellipse
+       id="ellipse124"
+       fill="#1d232d"
+       ry="13.652"
+       rx="13.636"
+       cy="-6.1835"
+       cx="188.37"
+       transform="rotate(-90)" />
   </g>
-  <g fill="none" stroke="#a6aeb8" stroke-dashoffset="0" stroke-linecap="round" stroke-width="1.5563">
-   <path d="m-176.83-63.375h341.3v-249.99h-340.59z"/>
-   <path d="m-145.81-86.101h279.24v-204.54h-278.67z"/>
-   <path d="m-114.78-108.83h217.19v-159.09h-216.74z"/>
-   <path d="m-83.752-131.55h155.14v-113.63h-154.81z"/>
-   <path d="m-52.725-154.28h93.081v-68.18h-92.888z"/>
-   <path d="m-28.937-171.71h45.503v-33.33h-45.409z"/>
-   <path d="m-6.1835-188.37-170.65 125"/>
-   <path d="m-176.13-313.37 169.94 125"/>
-   <path d="m164.47-63.375-170.65-125"/>
-   <path d="m164.47-313.37-170.65 125"/>
-   <path d="m-175.98-206.55 170.65 18.181"/>
-   <path d="m-175.98-245.19 170.65 56.816"/>
-   <path d="m-175.98-279.28 170.65 90.906"/>
-   <path d="m-175.98-170.19 170.65-18.181"/>
-   <path d="m-175.98-131.55 170.65-56.816"/>
-   <path d="m-175.98-97.465 170.65-90.906"/>
-   <path d="m164.47-206.55-170.65 18.181"/>
-   <path d="m164.47-245.19-170.65 56.816"/>
-   <path d="m164.47-279.28-170.65 90.906"/>
-   <path d="m164.47-170.19-170.65-18.181"/>
-   <path d="m164.47-131.55-170.65-56.816"/>
-   <path d="m164.47-97.465-170.65-90.906"/>
-   <path d="m-119.95-63.375 114.62-125"/>
-   <path d="m-63.066-63.375 56.883-125"/>
-   <path d="m-6.1835-63.375 0.85325-125"/>
-   <path d="m50.699-63.375-56.03-125"/>
-   <path d="m107.58-63.375-112.91-125"/>
-   <path d="m107.58-313.37-114.62 125"/>
-   <path d="m50.699-313.37-56.883 125"/>
-   <path d="m-6.1835-313.37-0.8532 125"/>
-   <path d="m-63.066-313.37 56.03 125"/>
-   <path d="m-119.95-313.37 112.91 125"/>
-  </g>
-  <ellipse transform="rotate(-90)" cx="188.37" cy="-6.1835" rx="13.636" ry="13.652" fill="#1d232d"/>
- </g>
 </svg>

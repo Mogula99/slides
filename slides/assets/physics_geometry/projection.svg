@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50.271mm" height="28.343mm" version="1.1" viewBox="0 0 50.271 28.343" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-116.98 -110.56)">
+  <path d="m164.01 132.79v-21.431" fill="none" stroke="#7b8694" stroke-dasharray="1.05833, 0.264583" stroke-width=".26458"/>
+  <g>
+   <path d="m121.48 132.79 42.598-21.431" fill="none" stroke="#7b8694" stroke-width=".26458"/>
+   <circle transform="rotate(-27)" cx="95.601" cy="173.64" r=".57845" fill="#d2d6dc" stroke="#d2d6dc" stroke-linecap="round" stroke-width=".34707"/>
+   <path d="m116.98 132.79h50.271" fill="none" stroke="#7b8694" stroke-width=".26458"/>
+   <circle transform="rotate(-27)" cx="85.872" cy="192.74" r=".57845" fill="#d2d6dc" stroke="#d2d6dc" stroke-linecap="round" stroke-width=".34707"/>
+   <circle transform="rotate(-27)" cx="48.152" cy="173.52" r=".57845" fill="#6f8ce9" stroke="#6f8ce9" stroke-linecap="round" stroke-width=".34707"/>
+  </g>
+  <path d="m121.75 136.49h39.158" fill="none" stroke="#d2d6dc" stroke-width=".26458px"/>
+  <g fill="#e8eaec" stroke-linecap="round" stroke-width=".26458">
+   <g transform="scale(.99996 1)" stroke="#cf2f25" aria-label="v">
+    <path d="m125.74 133.58 0.47889 1.2197h0.15081l0.29369-0.69056c0.0714-0.16933 0.14023-0.34396 0.17992-0.52916h-0.17198c-0.0318 0.17727-0.0952 0.34395-0.16404 0.5027l-0.19315 0.44979-0.34925-0.8837c-3e-3 -5e-3 -5e-3 -0.0106-5e-3 -0.0159 0-0.0159 0.0132-0.0318 8e-3 -0.0529z" fill="#e8eaec" stroke="none"/>
+   </g>
+   <g transform="scale(.99996 1)" aria-label="v'">
+    <path d="m139.5 137.55 0.47889 1.2197h0.15082l0.29368-0.69056c0.0714-0.16933 0.14023-0.34396 0.17992-0.52917h-0.17198c-0.0318 0.17728-0.0952 0.34396-0.16404 0.50271l-0.19315 0.44979-0.34925-0.8837c-3e-3 -5e-3 -5e-3 -0.0106-5e-3 -0.0159 0-0.0159 0.0132-0.0317 8e-3 -0.0529z"/>
+    <path d="m141.56 137.16c0-0.11906-0.0688-0.16404-0.11907-0.16404-0.0529 0-0.11377 0.0423-0.11377 0.14552 0 0.0582 0.0159 0.11112 0.0159 0.16668 0 0.0529-0.0106 0.10319-0.0265 0.14817l-0.0556 0.17727 0.14552 0.037 0.0635-0.17727c0.0661-0.17991 0.09-0.26458 0.09-0.33337z"/>
+   </g>
+   <g transform="scale(.99996 1)" stroke="#cf2f25" aria-label="w">
+    <path d="m139.17 121.41 0.24341 1.2118h0.17198l0.21167-0.78316 0.22489 0.78316h0.17727c0.082-0.39952 0.15082-0.80433 0.20109-1.2091h-0.17463c5e-3 0.14552-8e-3 0.28046-0.11377 0.96837l-0.254-0.85725h-0.11641l-0.20902 0.8599-0.17463-0.87312c-5e-3 -0.0185-5e-3 -0.0265 3e-3 -0.0476 3e-3 -0.0132 0.0106-0.0318 3e-3 -0.0529z" fill="#e8eaec" stroke="none"/>
+   </g>
+  </g>
+  <path d="m121.96 132.79h15.603" fill="none" stroke="#6f8ce9" stroke-width=".26458"/>
+  <g stroke-width="247.7">
+   <g transform="matrix(.0021182 -1.534e-5 1.5606e-5 .0021545 137.3 132.17)" fill="#6f8ce9">
+    <g fill="#6f8ce9" stroke-width="247.7">
+     <path d="m486.41 221.41-364.07-208.5c-52.938-30.318-95.852-5.44-95.852 55.563v415.65c0 61.004 42.914 85.882 95.852 55.563l364.07-208.49c52.938-30.317 52.938-79.473 0-109.79z" fill="#6f8ce9" stroke-width="247.7"/>
+    </g>
+   </g>
+   <g transform="matrix(.0018619 -.0010101 .0010274 .0018938 162.11 111.71)" fill="#d2d6dc">
+    <g fill="#d2d6dc" stroke-width="247.7">
+     <path d="m486.41 221.41-364.07-208.5c-52.938-30.318-95.852-5.44-95.852 55.563v415.65c0 61.004 42.914 85.882 95.852 55.563l364.07-208.49c52.938-30.317 52.938-79.473 0-109.79z" fill="#d2d6dc" stroke-width="247.7"/>
+    </g>
+   </g>
+   <g transform="matrix(.0021182 -1.534e-5 1.5606e-5 .0021545 160.59 135.87)" fill="#d2d6dc">
+    <g fill="#d2d6dc" stroke-width="247.7">
+     <path d="m486.41 221.41-364.07-208.5c-52.938-30.318-95.852-5.44-95.852 55.563v415.65c0 61.004 42.914 85.882 95.852 55.563l364.07-208.49c52.938-30.317 52.938-79.473 0-109.79z" fill="#d2d6dc" stroke-width="247.7"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

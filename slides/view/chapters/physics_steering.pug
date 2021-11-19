@@ -1,0 +1,91 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/physics_steering/';
+- var defaultBgr = 'backgrounds/flocking.jpg';
+
++mchapter('Steering Behaviors', imgAssets+'chapter_steering.svg')
++frameInbox('Steering Behaviors')
+	.important-orange
+		ul
+			li.fragment a set of algorithms that help autonomous agents move in a realistic manner by using simple forces
+			li.fragment designed by <span class="highlight-2">Crag Reynolds</span> in the early 90's
+			li.mt-20.fragment <span class="highlight">Agent</span> - a system situated within an envirnoment, with an ability to sense that environment
+			li.mt-20.fragment <span class="highlight">Motion layers</span>
+				ul
+					li.fragment action selection - choosing goals, strategy
+					li.highlight-2.fragment steering - trajectory calculation
+					li.fragment locomotion - way of moving, animation, articulation
+		.text-center.mt-30.fragment
+			img.height-300(src=imgAssets+'steering_agent.svg')
++frameInbox('Steering Behaviors')
+	.important-orange
+		.scope.fragment
+			p Seek
+			ul
+				li.fragment the simplest steering behavior
+				li.fragment a force that directs an agent toward a target position
+			.space-md
+			.text-center
+				img.height-500(src=imgAssets+'steering_seek.svg')
++frameInbox('Steering Behaviors')
+	.important-orange
+		.scope.fragment(data-fragment-index='1')
+			p Flee
+			ul
+				li.fragment(data-fragment-index='2') opposite of seek, creates a force that steers the agent away
+		.scope.fragment(data-fragment-index='3')
+			p Arrive
+			ul
+				li.fragment(data-fragment-index='4') seek + stopping movement, decelerates the agent onto the target
+			.space-md
+		.bottom-450.right-40.fragment(data-fragment-index='3')
+			img.height-300(src=imgAssets+'steering_arrive.svg')
+		.scope.fragment(data-fragment-index='5')
+			p Pursuit
+			ul
+				li.fragment(data-fragment-index='6') agent intercepts a moving target
+				li.fragment(data-fragment-index='7') predicts where the target is going to be in the future
+				li.fragment(data-fragment-index='7') calls for a good prediction function
+		.scope.fragment(data-fragment-index='9')
+			p Evade
+			ul
+				li.fragment(data-fragment-index='10') opposite of pursuit
+				li.fragment(data-fragment-index='11') the evader flees from the estimated future position
+		.bottom-20.right-20.fragment(data-fragment-index='5')
+			img.height-300(src=imgAssets+'steering_evade.svg')
++frameInbox('Steering Behaviors')
+	.important-orange
+		.scope.fragment.spacing-xs
+			p Wander
+			ul
+				li.fragment produces a force that will give an impression of a <span class="highlight-2">random walking</span>
+				li.fragment small random displacement is applied to the velocity vector every frame
+				li.fragment a circle is projected in front of the vehicle
+				li.fragment the vehicle is steered toward a target that moves along the perimeter
+				li.fragment parameters: circle radius, distance from the vehicle and jittering (randomness)
+			.text-center.mt-20
+				img.height-420(src=imgAssets+'steering_wander.svg')
++frameInbox('Steering Behaviors')
+	.important-orange
+		.scope.fragment
+			p Path follow
+			ul
+				li.fragment moves a vehicle along a set of waypoints
+				li.fragment the last waypoint can be reached using <span class="highlight-2">arrive</span>, the others via <span class="highlight-2">seek</span>
+				li.fragment smooth movement can be achieved using a <span class="highlight-2">tolerance radius</span> or Bézier curve approximation
+				li.fragment very sensitive to configuration (max force, max velocity, radius,...)
+			.text-center.mt-10.fragment
+				img.height-500(src=imgAssets+'steering_follow.svg')
++frameInbox('Steering Behaviors')
+	.important-green
+		.scope.fragment
+			p Flocking
+			ul
+				li.fragment combination of three aspects:
+					ul
+						li.fragment <span class="highlight-2">separation</span> - steers a vehicle away from its neighborhood
+						li.fragment <span class="highlight-2">alignment</span> - keeps the vehicle's direction aligned with its neighbors
+						li.fragment <span class="highlight-2">cohesion</span> - moves a vehicle toward the center of mass of its neighbors
+			.text-center.mt-20
+				img.height-450(src=imgAssets+'steering_flocking.svg')

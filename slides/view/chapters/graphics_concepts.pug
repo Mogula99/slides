@@ -1,0 +1,208 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/graphics_concepts/';
+- var defaultBgr = 'backgrounds/raytracing.jpg';
+
++mchapter('Rendering concepts', imgAssets+'chapter_graphics.svg')
++frameInbox('Rendering techniques')
+	figure.fragment.fade-up.top-20.left-0
+		img.height-320(src=imgAssets+'conc_placement.jpg')
+		p Sprite placement
+	figure.fragment.fade-up.top-150.left-400
+		img.height-320(src=imgAssets+'conc_raycasting.jpg')
+		p Raycasting
+	figure.fragment.fade-up.top-300.left-740
+		img.height-320(src=imgAssets+'conc_rasterization.jpg')
+		p Rasterization
+	figure.fragment.fade-up.top-400.right-0
+		img.height-320(src=imgAssets+'conc_raytracing.jpg')
+		p Raytracing
++frameInbox('Raycasting')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='1') used as a variation of raster effects to circumvent hardware limits in early-gaming era
+			li.fragment(data-fragment-index='2') we cast a ray, obtain an object it hits and render its trapezoid
+			li.fragment(data-fragment-index='3') horizontal raycasting (racing games, fighting games), vertical raycasting (FPS) 
+		.text-center.mt-100.fragment(data-fragment-index='1')
+			img.height-350(src=imgAssets+'rendering_raycasting.svg')
+		.bottom-100.left-40.fragment(data-fragment-index='3')
+			figure
+				img.height-300(src=imgAssets+'raycasting_outrunners.gif')
+				p 1992: Outrunners
+		.bottom-100.right-40.fragment(data-fragment-index='3')
+			figure
+				img.height-300(src=imgAssets+'raycasting_wolf3d.gif')
+				p 1992: Wolfenstein 3D
++frameInbox('Top-notch Raycasting games')
+	.center.fill
+		.grid.grid-cols-3.grid-rows-1.gap-40.width-100p.mt
+			+floppyAppBig(imgAssets+'raycasting_darkforces.jpg', 'SW: Dark Forces', '1995').fragment
+			+floppyAppBig(imgAssets+'raycasting_duke.jpg', 'Duke Nukem 3D', '1996').fragment
+			+floppyAppBig(imgAssets+'raycasting_sw.jpg', 'Shadow Warrior', '1997').fragment
++frameInbox('Raycasting')
+	div
+		ol
+			li.fragment(data-fragment-index='1') send out a ray that starts at the player's location
+			li.fragment(data-fragment-index='2') move this ray forward with the direction of the player
+			li.fragment(data-fragment-index='3') if the ray hits an object, process it
+		.space-lg
+		.flex-cols-3
+			figure.fragment(data-fragment-index='1')
+				img.height-400(src=imgAssets+'raycasting_rays.svg')
+				p Principle
+			figure.fragment(data-fragment-index='2')
+				img.height-400(src=imgAssets+'raycasting_sampling_fixed.svg')
+				p Precise sampling
+			figure.fragment(data-fragment-index='3')
+				img.height-400(src=imgAssets+'raycasting_sampling_borders.svg')
+				p Fixed sampling
++frameInbox('Rasterization')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='1') converts each triangle into pixels on a 2D screen
+			li.fragment(data-fragment-index='2') shadows are either <span class="highlight">baked</span>, or calculated via <span class="highlight">shadow maps</span> or <span class="highlight">shadow volumes</span>
+			li.fragment(data-fragment-index='3') light color is calculated in shaders
+		.bottom-150.left-600.fragment(data-fragment-index='1')
+			img.height-400(src=imgAssets+'rendering_rasterization.svg')
+		.bottom-150.left-40.fragment(data-fragment-index='3')
+			figure
+				img.height-180(src=imgAssets+'lighting_vertex.png')
+				p Vertex lighting
+		.bottom-150.left-280.fragment(data-fragment-index='3')
+			figure
+				img.height-180(src=imgAssets+'lighting_fragment.png')
+				p Fragment lighting
+		.bottom-150.right-20.fragment(data-fragment-index='2')
+			figure
+				img.height-300(src=imgAssets+'shadow_maps.svg')
+				p Shadow mapping
++frameInbox('Top-notch Rasterization games')
+	.center.fill
+		.grid.grid-cols-3.grid-rows-1.gap-40.width-100p.mt
+			+dsGameBig(imgAssets+'raster_gta5.jpg', 'Grand Theft Auto 5 (2013)').fragment
+			+dsGameBig(imgAssets+'raycasting_witcher3.jpg', 'The Witcher 3: Wild Hunt (2015)').fragment
+			+dsGameBig(imgAssets+'raycasting_rdr2.jpg', 'Read Dead Redemption 2 (2018)').fragment
++frameInbox('Raytracing')
+	.important-green
+		ul
+			li.fragment.fade-up(data-fragment-index='1') provides realistic lighting by simulating the physical behavior of light
+			li.fragment.fade-up(data-fragment-index='2') several phases: ray-triangle tests, BVH traversal, denoising
+			li.fragment.fade-up(data-fragment-index='3') <span class="highlight">use-cases</span>: reflections, shadows, global illumination, caustics
+			li.fragment.fade-up(data-fragment-index='4') the light traverses the scene, reflecting from objects, being blocked (shadows), passing through transparent objects (refractions), producing the final color
+			li.fragment.fade-up(data-fragment-index='5') APIs: OptiX, DXR
+		.text-center.fragment(data-fragment-index='1')
+			img.height-400(src=imgAssets+'rendering_raytracing.svg')
+		.bottom-50.left-40.fragment(data-fragment-index='3')
+			img.height-230(src=imgAssets+'rtxon.jpg')
+		.bottom-50.right-40.fragment(data-fragment-index='3')
+			img.height-230(src=imgAssets+'rtxon1.jpg')
++frameInbox('Top-notch Raytracing games')
+	.center.fill
+		.grid.grid-cols-3.grid-rows-1.gap-40.width-100p.mt
+			+dsGameBig(imgAssets+'raytracing_minecraft.jpg', 'Minecraft (2011)').fragment
+			+dsGameBig(imgAssets+'raytracing_metro.jpg', 'Metro Exodus (2019)').fragment
+			+dsGameBig(imgAssets+'raytracing_cyberpunk.jpg', 'Cyberpunk 2077 (2020)').fragment
++frameInbox('Other techniques')
+	.important-orange.spacing-2xs
+		.scope.fragment(data-fragment-index='1')
+			p LOD
+			ul
+				li.fragment(data-fragment-index='2') level of detail, boosts draw distance
+				li.fragment(data-fragment-index='3') pioneered with Spyro the Dragon Series
+		.scope.fragment(data-fragment-index='4')
+			p Texture mapping
+			ul
+				li.fragment(data-fragment-index='5') mapping of 2D surface (texture map) onto a 3D object
+				li.fragment(data-fragment-index='6') early games have issues with perspective correctness
+				li.fragment(data-fragment-index='7') common use - UV mapping
+		.scope.fragment(data-fragment-index='8')
+			p Baking
+			ul
+				li.fragment(data-fragment-index='9') a.k.a rendering to texture
+				li.fragment(data-fragment-index='10') generating texture maps that describe different properties of the surface of a 3D model
+				li.fragment(data-fragment-index='11') effects are pre-calculated in order to save computational time and circumvent hardware limits
+		.top-50.right-40.fragment(data-fragment-index='1')
+			img.height-300(src=imgAssets+'lod.png')
+		.top-300.right-40.fragment(data-fragment-index='7')
+			img.height-290(src=imgAssets+'uv_mapping.png')
+		.top-350.right-450.fragment(data-fragment-index='6')
+			img.height-200(src=imgAssets+'texture_mapping.svg')
+		.bottom-10.right-40.fragment(data-fragment-index='8')
+			img.height-170(src=imgAssets+'normal_map.png')
++frameInbox('Light baking')
+	.important-orange
+		ul
+			li.fragment(data-fragment-index='1') common technique to create pre-rendered static lights
+			li.fragment(data-fragment-index='2') is usually combined with dynamic lighting - when a scene has many lights, most of them can be baked
+			li.fragment(data-fragment-index='3') only works for static scenes
+		.flex-cols-3.mt-100
+			figure.fragment(data-fragment-index='1')
+				img.height-400(src=imgAssets+'baking_tex.png')
+				p Textured scene
+			figure.fragment(data-fragment-index='2')
+				img.height-400(src=imgAssets+'baking_light.png')
+				p Baked lights
+			figure.fragment(data-fragment-index='3')
+				img.height-400(src=imgAssets+'baking_result.png')
+				p Result
++frameInbox('Rendering features')
+	div
+		.grid.grid-cols-2.grid-rows-2
+			figure.fragment
+				img.height-340(src=imgAssets+'effects_motion.jpg')
+				p Motion blur
+			figure.fragment
+				img.height-340(src=imgAssets+'effects_chroma.jpg')
+				p Chromatic Aberration
+			figure.fragment
+				img.height-340(src=imgAssets+'effects_decal.jpg')
+				p Decals
+			figure.fragment
+				img.height-340(src=imgAssets+'effects_depthoffield.jpg')
+				p Depth of field
++frameInbox('Rendering features')
+	div
+		.grid.grid-cols-2.grid-rows-2
+			figure.fragment
+				img.height-340(src=imgAssets+'effects_caustics.jpg')
+				p Caustics
+			figure.fragment
+				img.height-340(src=imgAssets+'effects_lens.jpg')
+				p Lens flare
+			figure.fragment
+				img.height-340(src=imgAssets+'effects_subsurfaces.jpg')
+				p Subsurface Scattering
+			figure.fragment
+				img.height-340(src=imgAssets+'effects_ao.jpg')
+				p Ambient Occlusion
++frameInbox('Texture filtering')
+	.important-green.spacing-3xs
+		ul
+			li.fragment there is not a clean one-to-one mapping between texels and pixels
+			li.fragment GPU has to sample more than one texel and blend the resulting colors
+			.scope.fragment.mt-20
+				p Mipmapping
+				ul
+					li.fragment for each texture, we create a sequence of lower-resolution bitmaps
+					li.fragment objects further from the camera will use low-res textures
+				.top-180.right-20
+					img.width-400(src=imgAssets+'mipmaps.svg')
+				.bottom-0.right-20
+					img.width-400(src=imgAssets+'giggly_effect.gif')
+			.scope.fragment
+				p Nearest neighbor
+				ul
+					li.fragment the closest texel to the pixel center is selected
+			.scope.fragment
+				p Bilinear filtering
+				ul
+					li.fragment the four texels surrounding the pixel center are sampled, and the resulting color is a weighted average of their colors
+			.scope.fragment
+				p Trilinear filtering
+				ul
+					li.fragment bilinear filtering is used on each of the two nearest mipmap levels
+			.scope.fragment
+				p Anisotropic filtering
+				ul
+					li.fragment samples texels within a region corresponding to the view angle

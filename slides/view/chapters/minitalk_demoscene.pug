@@ -1,0 +1,45 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_demoscene/';
+- var defaultBgr = 'backgrounds/beyond.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Demoscene', imgAssets+'chapter_demoscene.svg')
++frameInbox('Demoscene')
+	div
+		ul
+			li.fragment.fade-up Demos are things that happen when a group of AI geeks sit together and make something spectacular
+			li.fragment.fade-up originates in 80's (audio loops, C64 cracktro, MS-DOS demos)
+			li.fragment.fade-up mainly a European phenomenon, part of UNESCO in Finland as of 2020
+			li.fragment.fade-up Demoparty - an event that gathers demosceners and other enthusiasts
+			li.fragment.fade-up <span class="highlight">Competitions:</span> Demo, 64K intro, 4K/8K intro, demos for old HW (Atari, C64, Amiga)
+			li.fragment.fade-up All past demos are collected on <a href="https://pouet.net">pouet.net</a> and <a href="https://scene.org">scene.org</a>
+		.text-center.mt-20.fragment.fade-up
+			img.height-420(src=imgAssets+'demoscene.jpg' alt='Demoscene party')
++frameInbox('Demoscene')
+	.center.fill
+		.grid.grid-cols-3.grid-rows-2.gap-40.width-80p
+			+floppyApp(imgAssets+'demo_2ndreality.jpg', 'Second Reality', '1993')
+			+floppyApp(imgAssets+'demo_fr08.jpg', 'FR-08 64K', '2000')
+			+floppyApp(imgAssets+'demo_timeless.jpg', 'Timeless 64K', '2012')
+			+floppyApp(imgAssets+'demo_for_your_love.jpg', 'For Your Love', '2016')
+			+floppyApp(imgAssets+'demo_phobos.jpg', 'Phobos 8K', '2018')
+			+floppyApp(imgAssets+'demo_new_world.jpg', 'New World Awaits', '2021')
++frameInbox('Example: Tube')
+	div
+		ul
+			li 256B MS-DOS binary file
+		.code.text-xs.mt-20
+			include ../../assets/minitalk_demoscene/snippets_generated/tube.html
+	.right-0.top-0
+		div
+			img.height-600(src=imgAssets+'tube.jpg' alt='Demoscene tube demo')
+		a(href="http://www.pouet.net/prod.php?which=3397") LINK
++frameInbox('Example: kkrieger')
+	div
+		ul
+			li fully procedural 3D game from 2004, 96 KB in size
+			a(href="https://www.freegameplanet.com/kkrieger-download-game/") LINK
+		.center.mt-30
+			img.height-600(src=imgAssets+'kkrieger.jpg')

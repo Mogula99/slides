@@ -76,6 +76,16 @@ mixin floppyApp(image, text, year)
 		div.absolute.left-90.top-50.color-rhino-5.opacity-6!=year
 
 mixin floppyAppBig(image, text, year)
+	div.relative.height-450()&attributes(attributes)
+		img.absolute.height-450(src=globalAssets+'disk_floppy.png')
+		.absolute.width-330.left-50.top-180.opacity-8
+			img(src!=image).width-330.height-260.object-cover
+		.absolute.width-330.height-60.bottom-0.left-50.bgr-rhino-100.mb-1.opacity-9
+		div.absolute.bottom-0.width-330.height-60.left-50.text-center.text-xs.color-rhino-50.flex.items-center.justify-center
+			div!=text
+		div.absolute.left-130.top-60.color-rhino-5.opacity-6!=year
+
+mixin floppyFive(image, text, year)
 	div.relative.height-350()&attributes(attributes)
 		.absolute.height-120.left-60.top-10.opacity-8.ml-2
 			img(src!=image).height-120.object-cover

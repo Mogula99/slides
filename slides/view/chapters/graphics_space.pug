@@ -1,0 +1,189 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/graphics_space/';
+- var defaultBgr = 'backgrounds/geometry3.jpg';
+
+
+// ===================================================== SLIDES =====================================================
++mchapter('Space', imgAssets+'chapter_space.svg')
++mcontainer()
+	+frameShard.width-70px.height-33p.top-300.center.z-index-100
+		+quote('Game graphics is about squeezing a great deal of linear algebra into the tiny slice of computational time the game loop gives us.')
++frameInbox('Game categories')
+	div.spacing-3xs
+		.scope.fragment
+			p 2D
+			ul
+				li.fragment top-down or side view
+				li.fragment sprites are mapped onto quads
+				li.fragment layered rendering, orthographic projection
+			.top-80.right-450
+				img.height-220(src=imgAssets+'cat_2D.svg')
+			.top-80.right-100
+				img.width-290(src=imgAssets+'cat_2D.png')
+		.scope.fragment
+			p Isometric 2D
+			ul
+				li.fragment view that reveal more facets than pure 2D
+				li.fragment several types of projection: 104°-135°
+			.top-310.right-530
+				img.height-120(src=imgAssets+'cat_iso.svg')
+			.top-250.right-100
+				img.width-290(src=imgAssets+'cat_iso.jpg')
+		.scope.fragment
+			p Fake 3D
+			ul
+				li.fragment raycasting
+				li.fragment Mode 7 from SNES games
+			.top-420.right-100
+				img.width-290(src=imgAssets+'cat_raycasting.png')
+		.scope.fragment
+			p 2.5D
+			ul
+				li.fragment 3D game with a gameplay limited to 2 dimensions (e.g. sidescrollers)
+			.top-630.right-100
+				img.width-290(src=imgAssets+'cat_25D.jpg')
+		.scope.fragment
+			p 3D
+			ul
+				li.fragment regular 3-dimensional game
++frameInbox('Homogeneous coordinates')
+	.important-green.spacing-3xs
+		ul
+			li.fragment in Euclidean geometry we use <span class="highlight">Cartesian coordinates</span>
+			li.fragment in projective geometry we use <span class="highlight">Homogeneous coordinates</span>
+			li.fragment we can express all affine transforms and projections as one matrix
+			li.fragment transformations can be composed by matrix multiplication
+			li.fragment 
+				include ../../assets/graphics_space/equations_generated/coordinates_01.svg
+				|&nbsp;for points, 
+				include ../../assets/graphics_space/equations_generated/coordinates_02.svg
+				|&nbsp;for vectors
+			li.fragment
+				span.highlight Homogeneous coordinates -> Cartesian coordinates
+				ul
+					li.fragment
+						include ../../assets/graphics_space/equations_generated/coordinates_07.svg
+			li.fragment
+				span.highlight Cartesian coordiantes -> Homogeneous coordinates
+				ul
+					li.fragment
+						include ../../assets/graphics_space/equations_generated/coordinates_08.svg
+			li.fragment Example: homogeneous matrix 
+				include ../../assets/graphics_space/equations_generated/coordinates_03.svg
+				|&nbsp;of a rotation matrix 
+				include ../../assets/graphics_space/equations_generated/coordinates_04.svg
+				|&nbsp;and a position vector 
+				include ../../assets/graphics_space/equations_generated/coordinates_05.svg
+				ul
+					li.fragment
+						include ../../assets/graphics_space/equations_generated/coordinates_06.svg
+			.bottom-350.right-40
+				img.height-360(src=imgAssets+'transformations.svg')
++frameInbox('Rotation in 3D space')
+	.important-orange.center
+		img.height-700(src=imgAssets+'rotation.svg')
++frameInbox('Rotational representations')
+	.important-orange.spacing-4xs
+		.scope.fragment
+			p Euler angles
+			ul
+				li.fragment Pitch, Yaw, Roll
+				li.upside.fragment simple, small size (3 floats), intuitive
+				li.downside.fragment the order in which the rotations are performed matters
+				li.downside.fragment gimbal lock issue - when a 90-degree rotation causes one axis to collapse onto another
+		.scope.fragment
+			p Quaternions
+			.bottom-20.right-20
+				img.height-500(src=imgAssets+'quaternions.svg')
+			ul
+				li.fragment axis + angle + extra algebra
+				li.fragment
+					include ../../assets/graphics_space/equations_generated/quaternions_01.svg
+				li.fragment alternative form: 
+					include ../../assets/graphics_space/equations_generated/quaternions_02.svg
+				li.fragment unit-length: 
+					include ../../assets/graphics_space/equations_generated/quaternions_03.svg
+				li.fragment a unit quaternion can be visualised as a 3D vector + scalar
+				li.fragment
+					include ../../assets/graphics_space/equations_generated/quaternions_04.svg
+				li.upside.fragment permits rotations to be easily interpolated
+				li.downside.fragment can perform only one full rotation between keyframes
+		.top-80.right-40
+			img.height-200(src=imgAssets+'mass_effect_glitch.gif')
+		+tipKeen('Use Euler angles for fast rotation around one axis and quaternions for complex rotations around all axes').bottom-0.left-0
++frameInbox('Rotation in affine space')
+	.important-green
+		.scope.fragment
+			p Rotation about a fixed point 
+				include ../../assets/graphics_space/equations_generated/affine_01.svg
+			ul
+				li.fragment move 
+					include ../../assets/graphics_space/equations_generated/affine_01.svg
+					|&nbsp;to the origin, rotate, move back
+				li.fragment
+					include ../../assets/graphics_space/equations_generated/affine_02.svg
+				li.fragment post-multiply order -> right to left in the expresion and bottom to top in the code
+				li.fragment the origin of the object matters
+		.scope.mt-10.fragment
+			p OpenGL example:
+			.code.text-sm
+				include ../../assets/graphics_space/snippets_generated/rotation_opengl.html
+			.bottom-0.right-0
+				img.height-420(src=imgAssets+'rotation_affine.svg')
++frameInbox('Space')
+	.important-orange.spacing-2xs
+		.scope.fragment
+			p Model Space
+			ul
+				li.fragment origin is usually placed at a central location (center of mass)
+				li.fragment axes are aligned to natural direction of the model
+		.scope.fragment
+			p World Space
+			ul
+				li.fragment fixed coordinate space, in which the transformations of all objects in the game world are expressed
+		.scope.fragment
+			p View/Camera Space
+			ul
+				li.fragment coordinate frame fixed to the camera
+				li.fragment space origin is placed at the focal point of the camera
+				li.fragment OpenGL: camera faces toward negative <span class="italic">z</span>
+		.scope.fragment
+			p Clip Space
+			ul
+				li.fragment a rectangular prism extending from -1 to 1 (OpenGL)
+		.scope.fragment
+			p View/Screen Space
+			ul
+				li.fragment a region of the screen used to display a portion of the final image
++frameInbox('World-Model-View')
+	.important-orange.center.fill
+		img.height-600(src=imgAssets+'world-model-view.svg')
++frameInbox('Clip Space')
+	.important-orange.center.fill
+		img.height-600(src=imgAssets+'clip_space.svg')
++frameInbox('View Volume')
+	.important-orange
+		ul
+			li.fragment <span class="highlight">View volume</span> - region of space the camera can see
+			li.fragment <span class="highlight">Frustum</span> - the shape of view volume for perspective projection
+			li.fragment <span class="highlight">Rectangular prism</span> - the shape of view volume for orthographic projection
+			li.fragment <span class="highlight">Field of View (FOV)</span> - the angle between the top and bottom of a 2D surface of the projected world
+		.space-md
+		.flex-cols-2.fragment
+			figure
+				img.height-400(src=imgAssets+'projection_perspective.svg')
+				p Perspective projection
+			figure
+				img.height-400(src=imgAssets+'projection_ortographic.svg')
+				p Orthographic projection
++frameInbox('Lookat Vector')
+	.important-green
+		ul
+			li.fragment a unit vector that points in the same direction as the camera
+			li.fragment if the dot product between <span class="code highlight">lookAt</span> vector and the <span class="code highlight">normal</span> vector of a polygon is lower than zero, the polygon is facing the camera
+		.bottom-100.right-500
+			img.height-500(src=imgAssets+'doomdoor.png')
+		.bottom-110.right-380
+			img.height-500(src=imgAssets+'lookat.svg')

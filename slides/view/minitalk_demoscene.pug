@@ -1,0 +1,16 @@
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+
+html(lang='en')
+	+header('Minitalk: Demoscene', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			include ./chapters/minitalk_demoscene.pug
+
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Minitalk: Demoscene')
+	script(src!='../../scripts/reveal-setup.js')

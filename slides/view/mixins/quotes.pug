@@ -36,9 +36,14 @@ mixin quote-mightmagic()
 			+quote('I can bring experts of dark magic up to master, provided they meet my standards. I only teach the genuinely dedicated - those so evil their reputations are as bad as they can get. The truly notorious. I make no exceptions, and charge no fee in the interests of spreading darkness throughout the world.', 'Might and Magic 6')(class="font-dos not-italic text-md")
 
 mixin quote-blizzard()
-	+mcontainer('Goodbye Quote')(autoAnimate)
-		+frameShard().top-28p.width-60p.left-22p
-			+quote('Do you guys not have phones?', '')(class="font-dos not-italic")
-	+mcontainer('Goodbye Quote')(bgr='backgrounds/blizzard.jpg', autoAnimate=true)
+	+mcontainer('Goodbye Quote')(bgr='backgrounds/blizzard.jpg')
 		+frameShard().top-28p.width-60p.left-22p
 			+quote('Do you guys not have phones?', 'Wyatt Cheng, BlizzCon 2018')(class="font-dos not-italic")
+
+mixin quote-gow()
+	+mcontainer('Goodbye Quote')(autoAnimate)
+		+frameShard().top-28p.width-65p.left-20p
+			+quote('Hope is what makes us strong. It is why we are here. It is what we fight with when all else is lost.', '')(class="font-dos not-italic")
+	+mcontainer('Goodbye Quote')(bgr='backgrounds/god_of_war.jpg', autoAnimate=true)
+		+frameShard().top-28p.width-65p.left-20p
+			+quote('Hope is what makes us strong. It is why we are here. It is what we fight with when all else is lost.', 'Pandora, God of War 3')(class="font-dos not-italic")

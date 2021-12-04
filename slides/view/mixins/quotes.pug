@@ -41,9 +41,11 @@ mixin quote-blizzard()
 			+quote('Do you guys not have phones?', 'Wyatt Cheng, BlizzCon 2018')(class="font-dos not-italic")
 
 mixin quote-gow()
-	+mcontainer('Goodbye Quote')(autoAnimate)
-		+frameShard().top-28p.width-65p.left-20p
-			+quote('Hope is what makes us strong. It is why we are here. It is what we fight with when all else is lost.', '')(class="font-dos not-italic")
-	+mcontainer('Goodbye Quote')(bgr='backgrounds/god_of_war.jpg', autoAnimate=true)
+	+mcontainer('Goodbye Quote')(bgr='backgrounds/god_of_war.jpg')
 		+frameShard().top-28p.width-65p.left-20p
 			+quote('Hope is what makes us strong. It is why we are here. It is what we fight with when all else is lost.', 'Pandora, God of War 3')(class="font-dos not-italic")
+
+mixin quote-zelda()
+	+mcontainer('Goodbye Sheet')(bgr='backgrounds/bgr_zeldasong.jpg')
+		+frameShard().top-35p.width-65p.left-20p
+			p.font-dos.not-italic.color-lemon The Legend of Zelda

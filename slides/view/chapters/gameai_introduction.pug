@@ -1,0 +1,146 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/gameai_introduction/';
+- var defaultBgr = 'backgrounds/ai_circuit.jpg';
+
++mchapter('AI introduction', imgAssets+'chapter_gameai.svg')
++mcontainer('Game AI')
+	+frameShard.height-33p.top-100.center.z-index-100.fragment
+		+quote('Classic Game AI has something to do with scripting, a lot to do with state machines, even more to do with map analysis, and not a lot to do with AI field.')
+	+frameShard.height-33p.top-150.center.z-index-100.fragment
+		+quote('It\'s not that we can\'t get good behavior out of machine learning techniques. It\'s that it may not be the behavior we want for the game experience we are looking for.', 'Jacob Schrum')
++frameInbox('Artificial Intelligence in Games')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='1') A broad set of principles that generate behaviors, providing an <span class="highlight">illusion of intelligence</span>
+			li.fragment(data-fragment-index='2') Should be sophisticated enough to make the players think they interact with something intelligent
+			li.fragment(data-fragment-index='3') Realistic AI isn't necessarily fun for players
+		.flex-cols-3.mt-80
+			div.text-center.fragment(data-fragment-index='1')
+				img.height-430(src=imgAssets+'ai_in_games_1.jpg' alt='AI in games')
+			div.text-center.fragment(data-fragment-index='2')
+				img.height-430(src=imgAssets+'ai_in_games_2.jpg' alt='AI in games')
+			div.text-center.fragment(data-fragment-index='3')
+				img.height-430(src=imgAssets+'ai_in_games_3.jpg' alt='AI in games')
++frameInbox('AI Techniques')
+	div.text-center
+		img.height-760(src=imgAssets+'ai_techniques.svg' alt='AI techniques')
++mcontainer('AI Techniques')
+	+frameShard().top-20p.left-10p.width-80p
+		div.text-center
+			img.height-250(src=imgAssets+'ai_flow.svg' alt='AI flow')
++frameInbox('AI in games')
+	div.spacing-3xs
+		.scope.fragment
+			p Doom 1 (1993)
+			ul
+				li monsters infighting (two AI characters encounter each other)
+				li state machines, intelligent map (SPECIAL attribute of map lines)
+		.scope.fragment
+			p Age of Empires (1997)
+			ul
+				li AI is smart enough to find and revisit other kingdoms, poor in self-defense
+		.scope.fragment
+			p Half-life (1998)
+			ul
+				li monsters can hear and track players, flee when getting defeated etc.
+				li soldiers had automated announcement system, ability to cover
+		.scope.fragment
+			p Starcraft (1998)
+			ul
+				li particle model for hidden units' position estimation
+		.scope.fragment
+			p Unreal Tournament (1999)
+			ul
+				li Bayesian networks
+		.scope.fragment
+			p Quake III (1999)
+			ul
+				li HFSM for decisions, AAS (Area Awareness System) for collisions and pathfinding
+		.bottom-0.right-40
+			img.height-600(src=imgAssets+'freeman.png' alt='Gordon Freeman')
++frameInbox('AI techniques in games')
+	div.spacing-4xs
+		.scope.mt-10.fragment
+			p Black and White (2001)
+			ul
+				li scientific-based Belief-Desire-Intention model
+		.scope.mt-10.fragment
+			p Halo 2 (2004)
+			ul
+				li behavior trees and fuzzy logic
+		.scope.mt-10.fragment
+			p F.E.A.R. (2005)
+			ul
+				li GOAP for tactical coordinating with squad members, suppression fire, blind fire
+		.scope.mt-10.fragment
+			p XCOM: Enemy Unknown (2012)
+			ul
+				li utility-based system, measuring usefulness for every possible action
+		.scope.mt-10.fragment
+			p ARMA 3 (2013)
+			ul
+				li efficient issue ordering, situation-based decisions, retreats, ambush
+				li HTN (Hierarchical task network) for mission generator
+		.scope.mt-10.fragment
+			p DOTA 2 (2013)
+			ul
+				li OpenAI bot (since 2017) has beaten some of the greatest players
+		.scope.mt-10.fragment
+			p Starcraft II (2013)
+			ul
+				li AlphaStar deep neural network, released in 2019
+		.bottom-0.right-0
+			img.height-600(src=imgAssets+'starcraft.png' alt='Starcraft')
++frameInbox('Challenges for Game AI')
+	.important-orange.spacing-xs
+		.scope.fragment.fade-up
+			p Game AI features and limits
+			ul
+				li.fragment.fade-up real-time
+				li.fragment.fade-up limited resources
+				li.fragment.fade-up incomplete knowledge
+				li.fragment.fade-up planning
+				li.fragment.fade-up learning
+				li.fragment.fade-up acceleration (strategies)
+		.scope.fragment.fade-up
+			p Game AI properties
+			ul
+				li.fragment.fade-up predictability and unpredictability (surprise elements)
+				li.fragment.fade-up support - communication between NPC and the player
+				li.fragment.fade-up surprise - harassment, ambush, team support,...
+				li.highlight-2.fragment.fade-up winning well and losing well
+				li.fragment.fade-up cheating - acceptable as long as it doesn't get detected by the player
+		.top-20.right-20
+			img.height-400(src=imgAssets+'ai_challenges.png' alt='AI challenges')
+		+tipKeen('The AI must be fun to play against, not beat the player easily').bottom-0.left-0
++frameInbox('Rules for Good Game AI')
+	.important-green
+		ul
+			li.fragment
+				span.highlight Good AI lets the player cheat
+				ul
+					li.fragment e.g., combat chess system in Doom - only a handful of demons is pursuing the player
+			li.fragment
+				span.highlight Good AI tells the player what it is thinking
+				ul
+					li.fragment e.g., patrolling units saying "Someone is over there!"
+			li.fragment
+				span.highlight Good AI is predictable
+				ul
+					li.fragment e.g. mobs who are pursuing the player across the map
+			li.fragment
+				span.highlight Good AI can interact with the game system
+				ul
+					li.fragment picking up weapons, opening doors
+			li.fragment
+				span.highlight Good AI has its own goals
+				ul
+					li.fragment it doesn't just "spawn" for the sake of the player
+			li.fragment
+				span.highlight Good AI isn't just about enemies
+				ul
+					li.fragment worst example: Oblivion NPCs
+		.bottom-0.right-0
+			img.height-350(src=imgAssets+'ghosts.png')

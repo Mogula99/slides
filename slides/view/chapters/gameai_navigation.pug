@@ -1,0 +1,49 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/gameai_navigation/';
+- var defaultBgr = 'backgrounds/gridmap.png';
+
++mchapter('AI for navigation', imgAssets+'chapter_maps.svg')
++frameInbox('Predicting opponents')
+	.important-green
+		ul.spacing-3xs
+			li.fragment bots shouldn't know where the player is - <span class="highlight">partial observations of the game state</span>
+				.bottom-0.right-0
+					img.width-650(src=imgAssets+'predicting_opponents.jpg' alt='predicting opponents')
+				.bottom-370.right-0
+					img.width-650(src=imgAssets+'visioncone.png')
+			li.fragment <span class="highlight-2">General methods:</span>
+				ul
+					li.fragment Hidden semi-markov model
+					li.fragment Particle filters
+			li.fragment <span class="highlight-2">Methods for FPS:</span>
+				ul
+					li.fragment Occupancy map
+					li.fragment SOAR cognitive architecture (used in Quake II)
+					li.fragment Vision Cone (used in Bioshock)
+					li.fragment Influence Spheres (distance-based acknowledgment)
+			li.fragment <span class="highlight-2">Methods for strategies:</span>
+				ul
+					li.fragment Threat map
+					li.fragment Influence map
+					li.fragment Bayesian networks
+					li.fragment Delaunay triangulation
+					li.fragment K-Means clustering
++frameInbox('Occupancy map')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='1') a grid over the game environment
+			li.fragment(data-fragment-index='2') maintains probability for each grid cell
+			li.fragment(data-fragment-index='3') probability represents the likelihood of an opponent presence
+			li.fragment(data-fragment-index='4') when the opponent is not visible, the probabilities from the previous occupancy cells are propagated along the edges to neighboring cells
+		.text-center.fragment(data-fragment-index='1')
+			img.height-500(src=imgAssets+'occupancy_map.gif' alt='occupancy map animation')
++frameInbox('Threat map')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='1') the value at any coordinate is the damage the enemy nearby can inflict
+			li.fragment(data-fragment-index='2') can be easily integrated into pathfinding
+			li.mt-30.fragment(data-fragment-index='3') Example: combat units bypass enemy defensive structure in order to attack their infrastructure
+		.text-center.mt-80.fragment(data-fragment-index='1')
+			img.height-400(src=imgAssets+'threat_map.svg' alt='threat map diagram')

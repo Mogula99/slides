@@ -1,0 +1,146 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_blizzard/';
+- var defaultBgr = 'backgrounds/blizzard2.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('The Story of Blizzard', imgAssets+'chapter_blizzard.svg')
++frameInbox('Blizzard')
+	div
+		ul
+			li.fragment <span class="highlight">Official name</span> - Activision Blizzard
+			li.fragment <span class="highlight">Business units</span>: Activision Publishing, Blizzard Entertainment, King, Major League Gaming, Activision Blizzard Studios
+			li.fragment <span class="highlight">Major IPs</span>: Call of Duty, Crash Bandicoot, Guitar Hero, Tony Hawk's, Spyro, Skylanders, World of Warcraft, Starcraft, Diablo, Hearthstone, Heroes of the Storm, Overwatch, Candy Crush Saga
+			li.fragment <span class="highlight">Original Founders</span>: Allen Adham, Frank Pearce, Mike Morhaime
+				.center.mt-20
+					img.height-450(src=imgAssets+'blizzard_team.jpg')
+			.bottom-300.left-50
+				p.fragment Mike left in 2018
+				p.fragment Frank left in 2019
++frameInbox('Timeline')
+	div.center.fill
+		img.height-750(src=imgAssets+'timeline.svg')
+- var defaultBgr = 'backgrounds/blizzard3.jpg';
++frameInbox('')
+	div
+		div.top-380.left-0
+			img.height-600(src=imgAssets+'blz_superman.png')
+		div.top-380.left-450
+			img.height-600(src=imgAssets+'blz_blackthorne.png')
+		div.top-380.left-900
+			img.height-600(src=imgAssets+'blz_warcraft.png')
+		div.top-20.left-0
+			img.height-600(src=imgAssets+'blz_rpmracing.png')
+		div.top-20.left-450
+			img.height-600(src=imgAssets+'blz_lostvikings.png')
+		div.top-20.left-900
+			img.height-600(src=imgAssets+'blz_rnracing.png')
++frameInbox('')
+	div
+		div.top-380.left-0
+			img.height-600(src=imgAssets+'blz_lostvikings2.png')
+		div.top-380.left-450
+			img.height-600(src=imgAssets+'blz_starcraft.png')
+		div.top-380.left-900
+			img.height-600(src=imgAssets+'blz_diablo2.png')
+		div.top-20.left-0
+			img.height-600(src=imgAssets+'blz_justiceleague.png')
+		div.top-20.left-450
+			img.height-600(src=imgAssets+'blz_warcraft2.png')
+		div.top-20.left-900
+			img.height-600(src=imgAssets+'blz_diablo.png')
++frameInbox('')
+	div
+		div.top-380.left-0
+			img.height-600(src=imgAssets+'blz_diablo3.png')
+		div.top-380.left-450
+			img.height-600(src=imgAssets+'blz_hearthstone.png')
+		div.top-380.left-900
+			img.height-600(src=imgAssets+'blz_heroes.png')
+		div.top-20.left-0
+			img.height-600(src=imgAssets+'blz_warcraft3.png')
+		div.top-20.left-450
+			img.height-600(src=imgAssets+'blz_wow.png')
+		div.top-20.left-900
+			img.height-600(src=imgAssets+'blz_starcraft2.png')
++frameInbox('Blizzard Games')
+	div
+		div.top-190.left-0
+			img.height-600(src=imgAssets+'blz_overwatch.png')
+		div.top-190.left-450
+			img.height-600(src=imgAssets+'blz_diabloimmortal.png')
+		div.top-190.left-900
+			img.height-600(src=imgAssets+'blz_overwatch2.png')
+- var defaultBgr = 'backgrounds/bgr_warcraft.jpg';
++frameInbox('')
+	div
+		.top-0.left-0.fill
+			img.height-100p(src=imgAssets+'dedication.jpg')
+		.top-0.left-0.fill.bgr-rhino-100.opacity-8
+		.top-20.left-20.text-white
+			p.text-3xl BLIZZARD LEGACY
+		.top-120.left-20
+			ul.spacing-4xs
+				li.fragment(data-fragment-index='1') created world of Starcraft, Warcraft, and Diablo
+				li.fragment(data-fragment-index='2') laid down the base for esports, DOTA-like and Tower Defense games
+				li.fragment(data-fragment-index='3') perfected RPG, RTS, and MMO genre
+				li.fragment(data-fragment-index='4') perfected cinematic art for game industry
+				li.fragment(data-fragment-index='5') instilled life-lasting memories in people who became part of the unique culture that has formed around the universes the games had introduced
+		.bottom-140.left-50.fragment(data-fragment-index='1')
+			img.height-350(src=imgAssets+'arthas.jpg')
+		.bottom-90.left-600.fragment(data-fragment-index='4')
+			img.height-350(src=imgAssets+'cinematic.jpg')
+		.bottom-20.right-50.fragment(data-fragment-index='5')
+			img.height-350(src=imgAssets+'blizzcon.jpg')
++mcontainer('Final words')
+	+frameShard.height-33p.top-200.center.z-index-100
+		+quote('Blizzard was a company that made its legacy by forging new paths that formed an absolutely unique culture of players. Activision Blizzard is a company that now feels weighed down by this legacy.')
++frameInbox('Tiscali Articles about Blizzard')
+	div
+		ul.spacing-4xs
+			li.fragment
+				span.highlight 2.2.2001 
+				a(href="https://games.tiscali.cz/tema/blizzard-slavi-desate-narozeniny-233778") Blizzard slaví desáté narozeniny
+			li.fragment
+				span.highlight 1.7.2003 
+				a(href="https://games.tiscali.cz/byznys/velky-pruvan-ve-spolecnosti-blizzard-19350") Velký průvan ve společnosti Blizzard
+			li.fragment
+				span.highlight 9.2.2004 
+				a(href="https://games.tiscali.cz/byznys/studio-blizzard-opustili-dalsi-zamestnanci-24586") Studio Blizzard opustili další zaměstnanci
+			li.fragment
+				span.highlight 10.9.2011 
+				a(href="https://games.tiscali.cz/byznys/blizzard-nevidi-pokles-poctu-hracu-wow-tak-cerne-56944") Blizzard nevidí pokles počtu hráčů WoW tak černě
+			li.fragment
+				span.highlight 26.7.2013 
+				a(href="https://games.tiscali.cz/byznys/activision-blizzard-odkoupila-sama-sebe-a-ziskala-tim-nezavislost-63558") Activision Blizzard odkoupila sama sebe a získala tím nezávislost
+			li.fragment
+				span.highlight 6.11.2018 
+				a(href="https://games.tiscali.cz/tema/blizzard-dal-svym-nejvernejsim-fanouskum-facku-320291") Tragédie BlizzConu: "Do you guys not have phones?"
+			li.fragment
+				span.highlight 11.1.2019 
+				a(href="https://games.tiscali.cz/tema/odvracena-strana-activision-blizzard-odchody-velikanu-pad-akcii-diskriminace-a-rasismus-322800") Odvrácená strana Activision Blizzard: odchody velikánů, pád akcií, diskriminace a rasismus
+			li.fragment
+				span.highlight 4.3.2019 
+				a(href="https://games.tiscali.cz/byznys/activision-blizzard-ve-zprave-investorum-varuje-pred-moznymi-negativnimi-nasledky-nedavneho-propousteni-324977") Activision Blizzard ve zprávě investorům varuje před následky nedávného propouštění
+			li.fragment
+				span.highlight 23.7.2019 
+				a(href="https://games.tiscali.cz/byznys/z-blizzardu-odchazi-frank-pearce-druhy-ze-tri-zakladatelu-331006") Z Blizzardu odchází Frank Pearce, druhý ze tří zakladatelů
+			li.fragment
+				span.highlight 8.10.2019 
+				a(href="https://games.tiscali.cz/komentar/blizzard-zabanoval-streamera-ktery-verejne-vyjadril-podporu-protestum-v-hongkongu-334599") Blizzard zabanoval streamera, který veřejně vyjádřil podporu protestům v Hongkongu
+			li.fragment
+				span.highlight 9.10.2019 
+				a(href="https://games.tiscali.cz/tema/hraci-volaji-po-bojkotu-blizzardu-kvuli-cinske-cenzure-firmu-kritizuji-politici-i-zamestnanci-334652") Hráči volají po bojkotu Blizzardu kvůli čínské cenzuře. Firmu kritizují politici i zaměstnanci
+			li.fragment
+				span.highlight 4.2.2020 
+				a(href="https://games.tiscali.cz/tema/blizzard-reaguje-na-smrst-kolem-warcraft-3-reforged-a-vraci-penize-339562") Blizzard reaguje na smršť kolem Warcraft 3: Reforged a vrací peníze
+			li.fragment
+				span.highlight 22.7.2021 
+				a(href="https://games.tiscali.cz/novinky/activision-blizzard-celi-skandalu-kvuli-toxickemu-chovani-na-pracovisti-515427") Activision Blizzard čelí skandálu kvůli toxickému chování na pracovišti
+			li.fragment
+				span.highlight 3.8.2021 
+				a(href="https://games.tiscali.cz/novinky/prezident-blizzardu-s-okamzitou-platnosti-skoncil-nahradi-ho-dvojice-novych-vedoucich-516262") Prezident Blizzardu s okamžitou platností skončil, nahradí ho dvojice nových vedoucích
+			li.fragment
+				span.highlight 12.8.2021 
+				a(href="https://games.tiscali.cz/novinky/blizzard-opousteji-tri-klicovi-zamestnanci-vyvoj-diabla-iv-dostava-tvrdy-zasah-516858") Blizzard opouštějí tři klíčoví zaměstnanci, vývoj Diabla IV dostává tvrdý zásah

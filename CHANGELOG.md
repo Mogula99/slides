@@ -6,6 +6,10 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [5.10.0] - 2021-12-04
+### Added
+Lecture 10 and minitalk about Blizzard
+
 ## [5.9.0] - 2021-11-27
 ### Added
 Lecture 9 and minitalk about demoscene

@@ -1,0 +1,87 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/gameai_real/';
+- var defaultBgr = 'backgrounds/ai_chess.jpg';
+
++mchapter('Real AI in games', imgAssets+'chapter_realai.svg')
++frameInbox('Terms')
+	.important-orange
+		.scope
+			p.fragment Planning
+			ul
+				li.fragment a formalized process of searching for sequence of actions to satisfy a <span class="highlight-2">goal</span>
+		.scope.fragment
+			p Supervised learning
+			ul
+				li.fragment works just like learning at schools
+				li.fragment for certain input, there is a <span class="highlight-2">correct output</span> the algorithm has to learn
+		.scope.fragment
+			p Unsupervised learning
+			ul
+				li.fragment the output cannot be categorized as being either correct or false
+				li.fragment the algorithm learns <span class="highlight-2">patterns</span> instead
+		.scope.fragment
+			p Reinforcement learning
+			ul
+				li.fragment an agent must learn the best possible output by using trial and error
+				li.fragment for each action chosen the agent obtains a <span class="highlight-2">feedback</span>
++frameInbox('Reinforcement learning')
+	.important-green.spacing-2xs
+		ul
+			li.highlight.fragment learning what to do and how to map states to action to maximize a reward
+			li.fragment based on its action, the agent gets a <span class="highlight-2">reward</span> or <span class="highlight-2">punishment</span> - these rewards are used to learn
+			li.fragment <span class="highlight-2">Reward</span> - informs the agent to which outcome the selected action leads
+			li.fragment <span class="highlight-2">Exploration</span> - probing new regions of the search space to find new promising solutions
+			li.fragment <span class="highlight-2">Exploitation</span> - probing promising region of the search space to improve current solution
+		.scope.fragment
+			p Algorithms
+			ul
+				li.fragment Genetic Evolution
+				li.fragment Q-Learning
+				li.fragment SARSA
+				li.fragment Monte-Carlo simulation
+		.scope.fragment
+			p Models
+			ul
+				li.fragment Decision trees
+				li.fragment Bayesian networks
+				li.fragment Neural networks
+		.bottom-20.right-20.fragment
+			figure
+				img.height-440(src=imgAssets+'montecarlo.svg' alt='MonteCarlo tree search')
+				p Monte-Carlo tree search
++frameInbox('Case-based reasoning')
+	.important-green
+		.scope.fragment
+			p Main idea
+			ul
+				li.fragment when making decisions, we remember previous experiences and then apply solutions that worked in previous situations
+				li.fragment if a certain situation hasn't been encountered yet, we recall <span class="highlight-2">similar experience</span> and adjust the solution to fit the current situation
+		.scope.fragment
+			p Steps
+			ul
+				li.fragment <span class="highlight-2">Retrieve</span> - get the cases which are relevant to the given problem
+				li.fragment <span class="highlight-2">Reuse</span> - create a preliminary solution from selected cases
+				li.fragment <span class="highlight-2">Revise</span> - adapt the preliminary solution to fit the current situation
+				li.fragment <span class="highlight-2">Retain</span> - save the case into the knowledge base
++frameInbox('Example: Defcon')
+	div
+		ul
+			li.fragment multiplayer real-time strategy game
+			li.fragment players compete in a nuclear war to score points by hitting opponent cities
+			li.fragment stages: placing resources, fleet maneuvres, fighter attacks, final missile strikes
+			li.fragment AI: decision tree learning and case-based reasoning
+		.text-center.mt-40
+			img.height-500(src=imgAssets+'case_based_defcon.jpg' alt='DEFCON')
++frameInbox('Defcon: Case structure')
+	div
+		ul
+			li.fragment starting positions of units and buildings
+			li.fragment metafleet movement and attack plan
+			li.fragment performance statistics for deployed resources
+			li.fragment abstraction of the opponent attacks (time-framed clustering)
+			li.fragment routes taken by opponent fleets
+			li.fragment final scores of the two players
+		.text-center.mt-20
+			img.height-420(src=imgAssets+'case_based_diagram.svg' alt='DEFCON Case-Based diagram')

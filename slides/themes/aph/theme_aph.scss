@@ -280,6 +280,15 @@ $title-font-size: 60px;
 		animation:spin 20s linear infinite;
 	}
 
+	.pframe {
+		border: 50px solid transparent;
+		border-image-slice: 150 186 159 156;
+		border-image-width: 80px;
+		border-image-outset: 0px 0px 0px 0px;
+		border-image-repeat: repeat repeat;
+		border-image-source: url("./resources/pframe.png")
+	}
+
 	@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 	@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 	@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

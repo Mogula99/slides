@@ -1,0 +1,222 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/multiplayer_transport/';
+- var defaultBgr = 'backgrounds/bgr_packets.jpg';
+
++mchapter('Transport', imgAssets+'chapter_transport.svg')
++frameInbox('TCP vs UDP')
+	.important-green
+		ul
+			li.fragment as opposed to SW applications, games have <span class="highlight-2">two main types of messages</span>
+			li.fragment changes to the gameplay (actions, events) need to be confirmed
+			li.fragment streaming data (positions) don't need to be confirmed
+			li.fragment critical events may have higher priority over others
+			li.mt-80.fragment UDP represents a basic streaming protocol onto which engines built a customized gaming protocol
+		.space-md
+		+quote('Using TCP is the worst possible mistake you can make when developing a multiplayer game.', 'Glenn Fielder, 2008').text-lg.fragment
++frameInbox('Multiplayer engine architecture')
+	.important-green
+		.text-center.mt-20.fragment
+			img.height-400(src=imgAssets+'multiplayer_architecture.svg')
+		ul.mt-50
+			li.fragment the server is running the game and clients only process inputs and display results
+		.scope.fragment
+			p Issues
+			ul
+				li.fragment each player has only partially consistent view of the game world
+				li.fragment in some cases, the server may disagree with the client's state
+				li.fragment there is a delay between taking an action an observing the result
++frameInbox('Example: Message Header')
+	.important-green
+		ul
+			li.fragment(data-fragment-index='2') <span class="highlight">SEQ number</span> - sequential number of the message
+			li.fragment(data-fragment-index='3') <span class="highlight">ACK number</span> - number of another message to be confirmed
+			li.fragment(data-fragment-index='4') <span class="highlight">ACK bit array</span> - confirmation flags for previous 32 messages
+			li.fragment(data-fragment-index='5') <span class="highlight">Type</span> - type of the message (update, disconnect, command,...)
+			li.fragment(data-fragment-index='6') <span class="highlight">ActionID</span> - id of particular action
+		.text-center.mt-40.fragment(data-fragment-index='1')
+			img.height-350(src=imgAssets+'message_header.svg')
++frameInbox('Message Types')
+	.important-orange.spacing-4xs
+		.scope.fragment
+			p Stream
+			ul
+				li.fragment doesn't need to be confirmed, contains a collection of continuous values (e.g., position change)
+		.scope.fragment
+			p Snapshot
+			ul
+				li.fragment complete information of the game state, sent either on demand or at given intervals
+		.scope.fragment
+			p Event
+			ul
+				li.fragment messages that have an impact on the game state, have to be confirmed
+				li.fragment e.g.: UNIT_CREATED, UNIT_DESTROYED, BUILDING_COMPLETED
+		.scope.fragment
+			p Action
+			ul
+				li.fragment high-priority messages (player's inputs, fire button,...)
+		.scope.fragment
+			p Procedure Call
+			ul
+				li.fragment a generic message that allows to call any function (play sound, load assets, reset animation)
+		.scope.fragment
+			p Connection messages
+			ul
+				li.fragment messages for handshake, ID assignment, disconnect, etc.
+		.scope.fragment
+			p Beacon
+			ul
+				li.fragment regular messages to inform the server that the connection is still on
++frameInbox('Example: Goat Attacks')
+	div
+		ul
+			li <a href="http://goatattack.net">http://goatattack.net</a>
+			li messages: <span class="highlight code">GPCReady, GPCSpawnNPC, GPCJoinRequest, GPCChatMessage, GPSBomb...</span>
+		.text-center.mt-20
+			img.height-420(src=imgAssets+'goatattack.jpg')
+		.bottom-30.right-450.fragment
+			img.height-190(src=imgAssets+'goat_attacks_header.svg')
++frameInbox('Serialization')
+	div
+		ul
+			li.fragment a large game world can have hundreds of moving objects
+			li.fragment we need to remove any information that doesn't need to be sent
+			li.fragment messages should be as close in size to <span class="highlight-2">MTU (~1500B)</span> as possible
+		.scope.fragment
+			p Example with no optimization
+			ul
+				li.fragment RTS battle
+				li.fragment 5 players
+				li.fragment 500 moving units
+				li.fragment each unit has 20 attributes of 32-bit size -> 80 B per unit
+				li.fragment the server sends 30 messages per second
+				li.fragment header size is 42B (IP + UDP + networking header)
+				li.fragment required bandwidth for the server: 
+					include ../../assets/multiplayer_transport/equations_generated/serialization.svg
+					|&nbsp;Mbps
++frameInbox('Serialization - Binary Footprint')
+	div
+		ul
+			li we serialize everything - not very robust solution
+		.code.text-xs.mt-20
+			include ../../assets/multiplayer_transport/snippets_generated/serialization.html
+		.text-center.mt-20
+			figure
+				img.height-160(src=imgAssets+'serialization_binary.svg')
+				p Health = 10, Mana = 14; Little Endian
+		.bottom-0.right-20
+			img.height-180(src=imgAssets+'mage.png')
++frameInbox('Serialization - Streams')
+	div
+		ul
+			li streams allow us to customize what attributes to serialize and how
+			li better solution for collections
+		.code.text-3xs.mt-20
+			include ../../assets/multiplayer_transport/snippets_generated/serialization_stream.html
+		.bottom-0.right-20
+			img.height-180(src=imgAssets+'mage.png')
++frameInbox('Compression')
+	.important-green
+		.scope.fragment
+			p Compression of bits
+			ul
+				li.fragment it is helpful to represent values with as few bits as possible
+				li.fragment we can work with limited range and precision
+			.top-300.left-300
+				img.height-200(src=imgAssets+'compression_bits.svg')
+		.space-xl
+		.scope.fragment.mt-40
+			p Entropy Encoding
+			ul
+				li.fragment we compress data based on how unexpected it is
+				li.fragment example: we can assume that the rotation is mostly 0, hence we can use only one bit to indicate this
+			.text-center.mt-20
+				img.height-200(src=imgAssets+'compression_entropy.svg')
++frameInbox('Compression')
+	.important-green
+		.scope.fragment
+			p Compression of attributes
+			ul
+				li.fragment we can serialize only attributes that vary
+				li.fragment each object has a bit field that indicates which attributes follow in the stream
+			.text-center
+				img.height-480(src=imgAssets+'compression_attributes.svg')
+		.scope.mt-40.fragment
+			p Compression of the payload
+			ul
+				li.fragment Huffman encoding, run-length encoding, LZ4,...
++frameInbox('Compression')
+	.important-green
+		.scope.fragment
+			p Delta messages
+			ul
+				li.fragment if a number doesn't change much, nor will its bits
+				li.fragment between two frames, there is only a few changed bits for common attributes (position, rotation,...)
+				li.fragment we store only differences by using XOR operation and compress the data
+				li.fragment very effective but sensitive to packet loss
+				li.fragment we can store 2/3 of attributes as diffs and 1/3 as full data - we will only need 3 consecutive packets to retrieve the full state   
+			.text-center.mt-60
+				img.height-250(src=imgAssets+'compression_diff.svg')
++frameInbox('Replication')
+	.important-orange
+		ul
+			li.fragment the act of transmitting a state of an object from one device to another
+			li.fragment each object must be uniquely identified (network ID)
+			li.fragment the network message contains a type of an object and all parameters required to construct it
+		.code.text-sm.mt-40.fragment
+			include ../../assets/multiplayer_transport/snippets_generated/replication.html
++frameInbox('Reliability')
+	.important-orange
+		ul
+			li.fragment packets may get lost
+			li.fragment server keeps sending messages that have an impact on the game state until the client accepts them
+		.text-center.mt-100.fragment
+			img.height-400(src=imgAssets+'reliability.svg')
++frameInbox('Ordering')
+	.important-orange
+		ul
+			li.fragment packets may arrive in a different order
+			li.highlight-2.fragment the client shouldn't apply a command message to its state before it applies all previous messages
+		.text-center.mt-100.fragment
+			img.height-450(src=imgAssets+'order.svg')
++frameInbox('Latency')
+	.important-green.spacing-3xs
+		.scope.fragment
+			p Latency
+			ul
+				li.fragment the amount of time between an observable cause and its observable effect
+				li.fragment e.g. mouse click and a unit responding to its orders
+		.scope.mt-10.fragment
+			p Suitable latencies
+			ul
+				li.fragment FPS: 16-60 ms
+				li.fragment RTS: < 250 ms
+		.scope.mt-10.fragment
+			p Non-network latency
+			ul
+				li.fragment input sampling latency (~2 ms)
+				li.fragment rendering pipeline latency (< 16 ms)
+				li.fragment frame decoding latency for cloud gaming (~2-16 ms)
+		.scope.mt-10.fragment
+			p Network latency
+			ul
+				li.fragment processing delay (encryption, routing)
+				li.fragment queuing delay (router can only process a limited number of packets at a time)
+				li.fragment transmission delay (information can't travel faster than the speed of light)
+		.bottom-200.right-50
+			img.height-320(src=imgAssets+'latency_clock.svg')
++frameInbox('Latency Example')
+	.important-green
+		ul
+			li both clients have the same latency
+		.space-xl
+		.text-center
+			img.height-500(src=imgAssets+'latency_same.svg')
++frameInbox('Latency Example')
+	.important-green
+		ul
+			li client B has a higher latency
+		.space-xl
+		.text-center
+			img.height-550(src=imgAssets+'latency_higher.svg')

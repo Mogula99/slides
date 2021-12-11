@@ -1,0 +1,350 @@
+include ../mixins/title.pug
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_solodevs/';
+- var defaultBgr = 'backgrounds/bgr_samurai.jpg';
+
+// ===================================================== SLIDES =====================================================
++titleLecture('Solo Developers', 'Minitalk', imgAssets+'chapter_solodevs.svg')
++frameInbox('Solo Developers')
+	div
+		ul
+			li.fragment(data-fragment-index='1') Solo developer is a person who is capable to do several different occupations at the same time.
+			li.fragment(data-fragment-index='2') The main dilemma: programming vs design
+			li.fragment(data-fragment-index='3') There is always one side that prevails, and it's important to tailor your game around it
+			li.fragment.highlight-2(data-fragment-index='4') Do you wanna make great design with simple code or a technically top-notch game with pure design?
+			.text-center.mt-20.fragment(data-fragment-index='1')
+				img.height-520(src=imgAssets+'gaming_professions.svg')
++mcontainer()
+	+frameShard.width-70px.height-33p.top-300.center.z-index-100
+		+quote('Solo development requires effort above-and-beyond. Sleep is the first to go. Health may follow.', 'Patrick Stafford')
++frameInbox('Games made by one person')
+	div
+		.grid-rows-2.grid-cols-6.grid.gap-5.width-100p.mt-100
+			.fragment
+				+gbGameMid(imgAssets+'singledev_riverraid.jpg', 'River Raid<br>(1982)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_tetris.jpg', 'Tetris<br>(1984)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_cavestory.jpg', 'Cave Story (2004)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_braid.jpg', 'Braid<br>(2008)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_spelunky.jpg', 'Spelunky<br>(2008)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_minecraft.jpg', 'Minecraft<br>(2011)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_dust.jpg', 'Dust: An Elysian Tail (2012)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_flappy.jpg', 'Flappy Bird (2013)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_undertale.jpg', 'Undertale<br>(2015)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_axiom.jpg', 'Axiom Verge (2015)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_stardew.jpg', 'Stardew Valley (2016)')
+			.fragment
+				+gbGameMid(imgAssets+'singledev_bmemory.jpg', 'Bright Memory (2019)')
++frameInbox('River Raid')
+	div
+		ul
+			li.fragment made by Carol Shaw
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_shaw_px.png')
+			li.fragment published in 1982 by Activision for Atari 2600
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_river.jpg')
+			li.fragment one of the first top-down shoot-em-ups
+			li.fragment sold 1 mil copies and earned awards for best action game
+			li.fragment the first game banned by Germany for military content
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_river_s.jpg')
++frameInbox('Tetris')
+	div
+		ul
+			li.fragment made by Alexey Pajitnov
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_pajitnov_px.png')
+			li.fragment published in 1984 for Electronika 60
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_tetris.jpg')
+			li.fragment <span class="italic">"The Greatest Soviet Game"</span>
+			li.fragment Alexey lost control over the copyright until 1996
+			li.fragment.highlight-2 playing Tetris 30 minutes a day increases the thickness<br> of the gray matter in the brain
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_tetris_s.jpg')
++frameInbox('Cave Story')
+	div
+		ul
+			li.fragment made by Daisuke Amaya
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_amaya_px.png')
+			li.fragment published in 2004 by Studio Pixel for desktop
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_cavestory.jpg')
+			li.fragment Metroidvania-like game made piece by piece (including tools)
+			li.fragment titled as <span class="italic">"a game built solely for passion, not cash"</span>
+			li.fragment took 5 years to finish
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_cavestory_s.jpg')
++frameInbox('Braid')
+	div
+		ul
+			li.fragment made by Jonathan Blow
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_blow_px.png')
+			li.fragment published in 2009 by Number None
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_braid.jpg')
+			li.fragment a clue-less puzzle game with lots of references
+			li.fragment 1st version was released in 2005 with a simple artwork
+			li.fragment expressed the turning point of indie game development
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_braid_s.jpg')
++frameInbox('Spelunky')
+	div
+		ul
+			li.fragment made by Derek Yu
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_yu_px.png')
+			li.fragment published in 2008 by Mossmouth as a freeware for PC
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_spelunky.jpg')
+			li.fragment a game that is <span class="italic">"easy to hate and easy to love"</span>
+			li.fragment one of the first rogue-like dungeon crawlers
+			li.fragment influenced by Super Mario games
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_spelunky_s.jpg')
++frameInbox('Minecraft')
+	div
+		ul
+			li.fragment made by Markus Persson
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_persson_px.png')
+			li.fragment published in 2011 by Mojang Studios for desktop
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_minecraft.jpg')
+			li.fragment originated as a zombie survival game that never ends
+			li.fragment heavily inspired by Infiniminer
+			li.fragment one of a few examples of a successful Early Access Game
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_minecraft_s.jpg')
++frameInbox('Dust: An Elysian Tail')
+	div
+		ul
+			li.fragment made by Dean Dodrill
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_dodrill_px.png')
+			li.fragment published in 2012 by Humble Hearts
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_dust.jpg')
+			li.fragment 2D platformer with combat, RPG, and exploration elements
+			li.fragment originated as a short film, took 4 years to finish
+			li.fragment Dean made full use of his experience from Jazz Jackrabbit 2
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_dust_s.jpg')
++frameInbox('Flappy Bird')
+	div
+		ul
+			li.fragment made by Dong Nguyen
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_nguyen_px.png')
+			li.fragment published in 2013 by Gears for Android/iOS
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_flappybird.jpg')
+			li.fragment one of a few "viral success" stories
+			li.fragment became the most popular free app in the world
+			li.fragment eventually became the most hated game in the world
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_flappybird_s.jpg')
++frameInbox('Undertale')
+	div
+		ul
+			li.fragment made by Toby Fox
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_fox_px.png')
+			li.fragment published in 2015 by Toby Fox
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_undertale.jpg')
+			li.fragment one of the most enjoyable "alternative" game experiences
+			li.fragment the story changes depending on the player's choices
+			li.fragment started as a Kickstarter project with 1022% funding
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_undertale_s.jpg')
++frameInbox('Axiom Verge')
+	div
+		ul
+			li.fragment made by Thomas Happ
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_happ_px.png')
+			li.fragment published in 2015 by Thomas Happ Games
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_axiom.jpg')
+			li.fragment a side-scroller that focused on both exploration and combat
+			li.fragment inspired by Metroid and Contra
+			li.fragment originated as a side project, took 5 years to finish
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_axiom_s.jpg')
++frameInbox('Stardew Valley')
+	div
+		ul
+			li.fragment made by Eric Barone
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_barone_px.png')
+			li.fragment published in 2016 by ConcernedApe/Chucklefish
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_stardew.jpg')
+			li.fragment farming simulator with RPG aspects
+			li.fragment inspired by Harvest Moon series
+			li.fragment avoided Early Access and went public after ~4 years
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_stardew_s.jpg')
+				.tip.bottom-80.left-140.fragment
+					img.height-700(src=globalAssets+'memes/duke.jpg')
++frameInbox('Bright Memory')
+	div
+		ul
+			li.fragment made by Zeng Xiancheng
+				.top-30.right-30
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_zeng_px.png')
+			li.fragment published in 2019 by Playism for Windows/iOS/Android
+				.top-30.right-340
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'game_bright.jpg')
+			li.fragment FPS hack-and-slash game
+			li.fragment had several licensing issues over stolen assets 
+			li.fragment currently being remade into a full-length title
+				.bottom-20.left-20
+					div.relative
+						.pframe.height-440.width-1600.absolute
+						.height-440.width-1600.p-20
+							img.width-1600.object-cover(src=imgAssets+'game_bright_s.jpg')
++frameInbox('Honorable mention - Ultima Series')
+	div
+		ul
+			li.fragment open world fantasy
+			li.fragment laid the groundwork for most RPGs
+				.bottom-0.right-300
+					img.height-400(src=imgAssets+'ultima_02.jpg')
+				.bottom-0.right-0
+					img.height-400(src=imgAssets+'ultima_03.jpg')
+			li.fragment made by Richard Garriott (a.k.a Lord British)
+				.bottom-420.right-580
+					div.relative
+						.pframe.height-360.width-300.absolute
+						.height-360.width-300.p-20
+							img.width-300.object-cover(src=imgAssets+'dev_gariott_px.png')
+			li.fragment started as a student project in 1980
+				.bottom-0.right-620
+					img.height-400(src=imgAssets+'ultima_04.png')
+				.bottom-0.left-60
+					img.height-400(src=imgAssets+'ultima_07.jpg')
+				.bottom-420.right-0
+					img.height-350(src=imgAssets+'ultima_06.png')
+			li.fragment evolved into MMORPG - Ultima Online
+			li.fragment ended with failed Ultima X project in 2003

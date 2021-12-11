@@ -1,0 +1,196 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/multiplayer_architecture/';
+- var defaultBgr = 'backgrounds/bgr_particles.jpg';
+
++mchapter('Networking Architecture', imgAssets+'chapter_architecture.svg')
++mcontainer('Multiplayer')
+	+frameShard.height-33p.top-100.center.z-index-100.fragment
+		+quote('Offers a capability for multiple players to act within the same world at the same time.')
+	+frameShard.height-33p.top-150.center.z-index-100.fragment
+		+quote('A complex feature that has a significant impact on the game architecture, touching almost every fundamental structure.')
++frameInbox('Multiplayer categories')
+	div
+		ul.spacing-2xl
+			li.fragment single-screen multiplayer
+				.top-20.right-20
+					img.width-500(src=imgAssets+'types_single.jpg')
+			li.fragment split-screen multiplayer
+				.top-150.right-400
+					img.width-500(src=imgAssets+'types_split.jpg')
+			li.fragment networked multiplayer
+				.top-300.right-20
+					img.width-500(src=imgAssets+'types_multi.jpg')
+			li.fragment MMOG
+				.top-480.right-400
+					img.width-500(src=imgAssets+'types_mmo.jpg')
+			li.fragment Cloud Gaming
+				.top-580.right-20
+					img.width-500(src=globalAssets+'memes/lowq_video.jpg')
++frameInbox('Multiplayer history')
+	div.spacing-4xs
+		.scope.fragment
+			p Local multiplayer games
+			ul
+				li.fragment Spacewar! (1962)
+					.top-20.right-450
+						img.width-380(src=imgAssets+'history_spacewar.jpg')
+		.scope.fragment
+			p Networked multiplayer games
+			ul
+				li.fragment Empire (1973)
+					.top-20.right-20
+						img.width-400(src=imgAssets+'history_empire.jpg')
+		.scope.fragment
+			p Local area network games
+			ul
+				li.fragment Doom (1993)
+					.top-300.right-450
+						img.width-380(src=imgAssets+'history_doom.jpg')
+		.scope.fragment
+			p Online multiplayer games
+			ul
+				li.fragment Quake (1996)
+					.top-300.right-20
+						img.width-400(src=imgAssets+'history_quake.jpg')
+				li.fragment Unreal (1998)
+		.scope.fragment
+			p Online-only games
+			ul
+				li.fragment World of Tanks (2010)
+					.top-570.right-20
+						img.width-400(src=imgAssets+'history_wot.jpg')
+				li.fragment Diablo 3 (2012)
+		.scope.fragment
+			p MMO
+			ul
+				li.fragment Ultima Online (1997)
+					.top-600.right-450
+						img.width-380(src=imgAssets+'history_ultima.jpg')
+				li.fragment World of Warcraft (2004)
++frameInbox('Then and now')
+	div
+		.flex.flex-cols-2.mt-80
+			figure.fragment
+				img.height-540(src=imgAssets+'multiplayer_then.jpg')
+				p Multiplayer in 1977
+			figure.fragment
+				img.height-540(src=imgAssets+'multiplayer_now.jpg')
+				p Multiplayer now
++frameInbox('Libraries')
+	div.spacing-3xs
+		.scope.fragment
+			p Torque Network Library (opentnl)
+			ul
+				li.fragment uses ghost structures for object replication
+				li.fragment <a href="https://github.com/kocubinski/opentnl">https://github.com/kocubinski/opentnl</a>
+		.scope.fragment
+			p ReplicaNet
+			ul
+				li.fragment powerful library for object sharing (sessions)
+		.scope.fragment
+			p RakNet
+			ul
+				li.fragment complex networking library, free since 2014
+				li.fragment <a href="https://github.com/facebookarchive/RakNet">https://github.com/facebookarchive/RakNet</a>
+		.scope.fragment
+			p NetStalker
+			ul
+				li.fragment library for interpolated object replication
+				li.fragment created as a bachelor thesis at FEL CTU
+				li.fragment <a href="https://github.com/smrkous/nsl">https://github.com/smrkous/nsl</a>
+		.scope.fragment
+			p Netcode
+			ul
+				li.fragment networking library for Unity
+		.bottom-30.right-30
+			img.height-550(src=imgAssets+'minecraft.jpg')
++frameInbox('Issues')
+	.important-green
+		ul
+			li.fragment the main objective - how to synchronize several universes
+			li.fragment all clients have to achieve a <span class="highlight-2">certain</span> degree of synchrony
+			li.fragment attributes that affect the gameplay: <span class="highlight-2">capacity, speed, latency, jitter, packet loss</span> 
+			li.fragment there is no known real-world picture for this type of problem
+			li.fragment it's easy to convert multiplayer game into a single-player game
+			li.fragment it's very difficult to implement multiplayer features into a single-player game
+		.scope.fragment
+			p Methods
+			ul
+				li.fragment transfering a complete game state to all clients - for simple games
+				li.fragment transfering a minimal subset to reconstruct the rest - more common
+		.scope.fragment
+			p Topologies
+			ul
+				li.fragment peer-to-peer (not used anymore)
+				li.fragment client-server
+		.bottom-30.right-30
+			img.height-400(src=imgAssets+'lag.gif')
++frameInbox('Peer-to-peer architecture')
+	.important-orange
+		ul
+			li.fragment(data-fragment-index='1') each device exchanges data with each other in a fully connected graph
+			li.fragment(data-fragment-index='2') used in <span class="highlight">Doom</span>, early <span class="highlight">Command & Conquer</span> series, <span class="highlight">Age of Empires</span>, <span class="highlight">Starcraft</span>
+			li.fragment(data-fragment-index='3') given 
+				include ../../assets/multiplayer_architecture/equations_generated/peer_to_peer_01.svg
+				|&nbsp;peers, each must have 
+				include ../../assets/multiplayer_architecture/equations_generated/peer_to_peer_02.svg
+				|&nbsp;connections -> 
+				include ../../assets/multiplayer_architecture/equations_generated/peer_to_peer_03.svg
+				|&nbsp;in total
+			li.fragment(data-fragment-index='4') methods: single master, partial authority, full replication
+		.space-xl
+		.text-center.fragment(data-fragment-index='1')
+			img.height-300(src=imgAssets+'arch_peer_to_peer.svg')
++frameInbox('Peer-to-peer games')
+	.important-green
+		.scope.fragment
+			p Doom (1993)
+			ul
+				li.fragment 14.4 kbps PPP or 28.8 kbps SLIP
+				li.fragment each turn player inputs were exchanged with other peers
+				li.fragment you had to wait for the inputs from the most lagged player
+				li.fragment every 30ms, the input from each player is sampled into a <span class="highlight-2">tic command</span>
+				li.fragment when the tic commands for all players have been received, the game advances its state
+		.scope.fragment
+			p Age of Empires (1997)
+			ul
+				li.fragment for 8-player battle there could be up to 400 units
+				li.fragment used <span class="highlight-2">Turn Timer</span> - queue for commands
+				li.fragment AoE synchronizes the commands each player issued, rather than units
+				li.fragment all commands during 200ms are saved into a buffer
+				li.fragment when the 200-ms-frame is over, all commands for a player's turn are transmitted to others
++frameInbox('Client-Server architecture')
+	.important-orange
+		ul
+			li.fragment(data-fragment-index='1')
+				include ../../assets/multiplayer_architecture/equations_generated/client_server_01.svg
+				|&nbsp;devices, 
+				include ../../assets/multiplayer_architecture/equations_generated/client_server_02.svg
+				|&nbsp;connections
+			li.fragment(data-fragment-index='2') server must handle 
+				include ../../assets/multiplayer_architecture/equations_generated/client_server_03.svg
+				|&nbsp;more messages per second
+			li.fragment(data-fragment-index='3') server quickly becomes the bottleneck (lack of power and bandwidth)
+			li.fragment(data-fragment-index='5') <span class="highlight">Dedicated server</span> - only runs the game state and communicates
+			li.fragment(data-fragment-index='6') <span class="highlight">Listen server</span> - server is an active participant in the game itself
+		.text-center.mt-60.fragment(data-fragment-index='1')
+			img.height-400(src=imgAssets+'arch_client_server.svg')
++frameInbox('Example: Quake')
+	.important-green.spacing-xs
+		ul
+			li.fragment the first game that used <span class="highlight-2">partial reliability</span>
+			li.fragment each client acts as a dumb terminal
+			li.fragment outputs are picked up by the <span class="highlight-2">prediction layer</span>
+			li.fragment the server runs at <span class="highlight-2">20 FPS</span>, while the client runs at <span class="highlight-2">60 FPS</span>
+		.scope.fragment
+			p Command
+			ul
+				li.fragment the elementary unit of communication
+				li.fragment used to udpate a position of the player, orientation, HP,...
+				li.highlight-2.fragment reliable commands (with impact on the game state) have to be confirmed
+		.text-center.mt-10.fragment
+			figure
+				img.height-260(src=imgAssets+'quake_netchannel.svg')
+				p NetChannel header

@@ -289,6 +289,15 @@ $title-font-size: 60px;
 		border-image-source: url("./resources/pframe.png")
 	}
 
+	.kframe {
+		border: 20px solid transparent;
+		border-image-slice: 150 186 159 156;
+		border-image-width: 100px;
+		border-image-outset: -50px;
+		border-image-repeat: repeat repeat;
+		border-image-source: url("./resources/kframe.png")
+	}
+
 	@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 	@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 	@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

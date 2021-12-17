@@ -6,6 +6,10 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [5.12.0] - 2021-12-17
+### Added
+Lecture 12
+
 ## [5.11.0] - 2021-12-11
 ### Added
 Lecture 11 and minitalk about Solo Devs

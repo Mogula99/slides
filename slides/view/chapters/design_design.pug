@@ -1,0 +1,324 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/design_design/';
+
+- var defaultBgr = 'backgrounds/mario.jpg';
+
++mchapter('Introduction to Game Design', imgAssets+'chapter_design.svg')
++frameInbox('About me')
+	div
+		.top-250.left-150
+			img.height-450(src=imgAssets+'mehmet_picture.png')
+		.top-200.left-800
+			img.height-200(src=imgAssets+'mehmet_logo.png')
+		.top-420.left-830
+			a(href='https://www.linkedin.com/in/mehmetekmekci/')
+				img.height-60(src=imgAssets+'logo_linkedin.svg')
+		.top-520.left-830
+			a(href='https://twitter.com/eppekci')
+				img.height-60(src=imgAssets+'logo_twitter.svg')
+		.top-620.left-830
+			a(href='https://mekmekci.com')
+				img.height-60(src=imgAssets+'logo_web.svg')
+- var defaultBgr = 'backgrounds/zelda.jpg';
++mcontainer('')
+	+frameShard.width-70px.height-140p.top-340.center.z-index-100
+		+quote('An artist is someone who takes you where you could never go alone.', 'Jesse Schell, The Art of Game Design')
++frameInbox('So who is a game designer?')
+	div
+		.bottom-0.right-0
+			img.height-650(src=imgAssets+'mariodesign.png')
+		ul.spacing-2xl.text-xl
+			li.fragment What do they do?
+			li.fragment How do you become one?
+			li.fragment Why were they needed in the first place?
+			li.fragment How do they contribute to the making of games?
++frameInbox('')
+	div
+		.bottom-0.right-0
+			img.width-1700(src=imgAssets+'rewind.png')
+		.bottom-280.right-540.width-500.bgr-rhino-100.opacity-9.p-20
+			p.text-2xl.highlight But let's take a step back and see how we got to this conclusion...
+
+- var defaultBgr = 'backgrounds/island.png';
++frameInbox('What is fun?')
+	div
+		ul
+			li.fragment.text-2xl <span class="highlight">Fun</span> is defined by the Oxford English Dictionary as <span class="italic">Light-hearted pleasure, enjoyment, or amusement; boisterous joviality or merrymaking; entertainment."</span>
+				.center.mt-100
+					img.height-450(src=imgAssets+'fun.gif')
++mcontainer('')
+	+frameShard.width-70px.height-40p.top-320.center.z-index-100
+		+quote('Fun is all about our brains feeling good - the release of endorphins into our system. There are a variety of complex cocktails of chemicals that result in different sensations.', 'Raph Koster, Theory of Fun for Game Design')
+	.tip.bottom-100.left-360.z-index-200.fragment
+		img.height-600(src=imgAssets+'ea_illegal.jpg')
++mcontainer('What is play then?')
+	+frameShard.width-70px.height-60p.top-100.center.z-index-100
+		+quote('We might call it a free activity standing quite consciously outside \'ordinary\' life as being \'not serious\' but at the same time absorbing the player intensely and utterly. It is an activity connected with no material interest, and no profit can be gained by it. It proceeds within its own proper boundaries of time and space according to fixed rules and in an orderly manner.', 'Johan Huizinga, Homo Ludens (1944)')
+	.tip.bottom-300.left-400.z-index-200.fragment
+		img.height-300(src=imgAssets+'letsplay.png')
++mcontainer('Okay... What about a game?')
+	+frameShard.width-1000.top-6p.fragment.fade-up
+		+quote('A game is a problem-solving activity, approached with a playful attitude.', 'Jesse Schell, The Art of Game Design')
+	+frameShard.width-1200.top-10p.left-30p.fragment.fade-up
+		+quote('In other words, games serve as very fundamental and powerful learning tools.', 'Raph Koster, Theory of Fun for Game Design')
+- var defaultBgr = 'backgrounds/skyrimworld.jpg';
++frameInbox('So how do we construct or design a game?')
+	div
+		.grid.grid-cols-3.grid-rows-3.gap-5.ml-50
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_mario.jpg')
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_zelda.jpg')
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_metroid.jpg')
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_shootemup.jpg')
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_pokemon.jpg')
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_braid.jpg')
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_horizon.jpg')
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_lastofus.jpg')
+			div.fragment
+				.kframe.height-260.width-460.absolute
+				.height-260.width-460.p-10
+					img.width-460.object-cover(src=imgAssets+'design_hellblade.jpg')
++frameInbox('Mechanics')
+	div
+		ul
+			li.fragment Player can do an activity in the game that feels fun
+		.text-center.mt-100
+			img.height-500(src=imgAssets+'g_mechanics.png')
++frameInbox('Rules')
+	div
+		ul.spacing-xs
+			li.fragment There are rules that bound the player
+			li.fragment These rules feel fair and justified
+			li.fragment These rules are consistent
+			li.fragment They are clearly communicated to the player
+			li.fragment They can create win/lose conditions for the player to learn
+		.text-center.mt-10
+			img.height-500(src=imgAssets+'g_rules.png')
++frameInbox('Mechanics + Rules = Gameplay')
+	.top-80.right-620
+		img.height-100(src=imgAssets+'g_gameplay.png')
+	.top-220.left-400
+		img.height-500(src=imgAssets+'g_mechanics.png')
+	.top-220.right-400
+		img.height-500(src=imgAssets+'g_rules.png')
+- var defaultBgr = 'backgrounds/voxels.jpg';
++frameInbox('Laying out patterns')(autoAnimate=true)
+	div
+		.top-400.left-200
+			img.height-100(src=imgAssets+'g_gameplay.png')#g1
+		.top-400.left-750
+			img.height-100(src=imgAssets+'arrow.png')#g2
+		.top-220.right-200
+			img.height-500(src=imgAssets+'g_patterns.png')#g3
++frameInbox('Challenge the Player\'s learning')(autoAnimate=true)
+	div
+		.top-400.left-80
+			img.height-100(src=imgAssets+'g_gameplay.png')#g1
+		.top-400.left-500
+			img.height-100(src=imgAssets+'arrow.png')#g2
+		.top-220.left-670
+			img.height-500(src=imgAssets+'g_patterns.png')#g3
+		.top-400.right-450
+			img.height-100(src=imgAssets+'arrow.png')
+		.top-220.right-80
+			img.height-500(src=imgAssets+'g_challenge.png')
++frameInbox('An Ever Expanding Loop')
+	div.fill.center
+		img.height-700(src=imgAssets+'gameloop.png')
++frameInbox('A few examples')
+	div
+		ul
+			li Let's define the mechanics and the rules 
+		.fill.center.flex-row.justify-evenly.mt-50
+			div.fragment
+				a(href='https://www.youtube.com/watch?v=rLl9XBg7wSs')
+					img.width-500(src=imgAssets+'video_mario.png')
+			div.fragment
+				a(href='https://www.youtube.com/watch?v=XhYVcwhSWjI')
+					img.width-500(src=imgAssets+'video_galaxian.png')
+			div.fragment
+				a(href='https://www.youtube.com/watch?v=pumJtpbvCc0')
+					img.width-500(src=imgAssets+'video_uncharted.png')
+		div
+			div.fragment.bottom-170.left-310
+				a(href='https://www.youtube.com/watch?v=574O5cwUo-Q')
+					img.width-500(src=imgAssets+'video_zelda.png')
+			div.fragment.bottom-170.right-310
+				a(href='https://www.youtube.com/watch?v=RhiOxTfhFDc')
+					img.width-500(src=imgAssets+'video_ds.png')
+		.bottom-0.right-0
+			img.height-300(src=imgAssets+'keenworld.png')
++frameInbox('So a game designer is...')
+	div
+		ul.leading-xl.spacing-md
+			li.fragment Someone who designs & builds mechanics the player can use to interact with the game world.
+			li.fragment Someone who designs & creates rules the player and the world is bound to.
+			li.fragment Someone who creates patterns for the player to learn & master.
+			li.fragment Someone who builds challenges, so the player can test their skills through these challenges.			
+			li.fragment Someone who gives the player feedback when they succeed or fail, so the player <br>can get the validation, or learn from their mistakes.
+			li.fragment Someone who teaches this whole structure, so the player can <br>finish the game before they are bored.
+		.bottom-0.right-0
+			img.height-500(src=imgAssets+'cake.png')
+- var defaultBgr = 'backgrounds/kosterdef.jpg';
++mcontainer('')
+- var defaultBgr = 'backgrounds/hom3.jpg';
++frameInbox('Game Design Subdivisions')
+	div
+		ul
+			li.fragment(data-fragment-index='1') Gameplay Designer
+			li.fragment(data-fragment-index='2') AI Behavior Designer
+			li.fragment(data-fragment-index='3') Narrative Designer
+			li.fragment(data-fragment-index='4') Combat Designer
+			li.fragment(data-fragment-index='5') Encounter Designer
+			li.fragment(data-fragment-index='6') World Designer
+			li.fragment(data-fragment-index='7') Quest Designer
+			li.fragment(data-fragment-index='8') Level Designer
+			li.fragment Many others that keep emerging as the scope increases
+		.bottom-0.right-0
+			img.height-500(src=imgAssets+'tree.png')
+		.bottom-70.right-350.fragment(data-fragment-index='1')
+			img.height-150(src=imgAssets+'spr02.png')
+		.bottom-140.right-500.fragment(data-fragment-index='2')
+			img.height-70(src=imgAssets+'spr06.png')
+		.bottom-70.right-600.fragment(data-fragment-index='3')
+			img.height-150(src=imgAssets+'spr01.png')
+		.bottom-70.right-720.fragment(data-fragment-index='4')
+			img.height-150(src=imgAssets+'spr07.png')
+		.bottom-50.right-870.fragment(data-fragment-index='5')
+			img.height-150(src=imgAssets+'spr03.png')
+		.bottom-70.right-1000.fragment(data-fragment-index='6')
+			img.height-120(src=imgAssets+'spr05.png')
+		.bottom-70.right-1150.fragment(data-fragment-index='7')
+			img.height-130(src=imgAssets+'spr08.png')
+		.bottom-70.right-1250.fragment(data-fragment-index='8')
+			img.height-120(src=imgAssets+'spr04.png')
++frameInbox('Player Personas & Empathy Maps')
+	div
+		ul.text-xl.spacing-xl
+			li.fragment Who am I building this game for?
+			li.fragment Why should they play my game?
+			li.fragment Why should it be a game in the first place? What's the <span class="highlight">hook</span>?
+			li.fragment What am I trying to teach? What should challenge the player?
+			li.fragment Am I forcing them "to have fun"?
+		.bottom-40.right-40
+			img.height-500(src=imgAssets+'gamer.jpg')
++frameInbox('Player Personas')
+	div.fill.center
+		img.height-800(src=imgAssets+'personas.svg')
++frameInbox('Empathy map canvas')
+	div.fill.center
+		img.height-800(src=imgAssets+'permap.svg')
++frameInbox('Patterns in other games')
+	div
+		ul
+			li.italic.fragment Interesting but incomplete information can motivate exploration<br> in a variety of ways
+			li.fragment <span class="highlight">Design Problem:</span> Designers need to motivate their players<br> to explore the worlds they create.
+			li.fragment <span class="highlight">Pattern Description:</span> A designer may present the player with<br> compelling but incomplete pieces of information, and then give the player gameplay avenues that will allow them to seek out more information and solve the mysteries.
+			li.fragment <span class="highlight">Example Games:</span>
+				ul
+					li.fragment Grand Theft Auto IV - a map shows the quests you can do in the area surrounding you at the moment
+					li.fragment Skyrim - a horizontal compass in your HUD shows nearby quests and point of interest.
+					li.fragment Dear Esther - a narrative voiceover that's compelling but vague
+		.top-40.right-40
+			img.height-300(src=imgAssets+'exploration.jpg')
++frameInbox('Sources')
+	div
+		.flex-cols-3.mt-100
+			a(href="https://fernandocomet.medium.com/the-player-persona-template-d171e3e0c05d").fragment
+				figure
+					img.height-400(src=imgAssets+'sources_persona.png')
+					p The player persona template
+			a(href="https://gamestorming.com/update-to-the-empathy-map").fragment
+				figure
+					img.height-400(src=imgAssets+'sources_update.png')
+					p Update to the empathy map
+			a(href="https://patternlanguageforgamedesign.com/PatternLibraryApp/PatternLibrary/1").fragment
+				figure
+					img.height-400(src=imgAssets+'sources_mystery.png')
+					p Pattern Language For Game Design
+- var defaultBgr = 'backgrounds/nebula.jpg';
++frameInbox('Design - Prototype - Get Feedback - Iterate')
+	div
+		ul
+			li.fragment Create a game design document
+			li.fragment Include your player persona & empathy map to show why and for who
+			li.fragment Cover the important points, make it short & understandable
+			li.fragment Look at other games of similar type
+				ul
+					li.fragment How did they solve the design problems? 
+					li.fragment Look for existing patterns
+			li.fragment Get to prototyping!
+			li.fragment Show it to people, get feedback.
+			li.fragment Iterate until you get to the "sweet spot"
+			li.fragment Don't be afraid to fail
+			li.fragment Practice your design skills
+		.bottom-40.right-100
+			img.height-500(src=imgAssets+'skyrimbooks.png')
++frameOutbox('GDD Examples')
+	.width-1000.height-550.bgr-rhino-100.opacity-9.absolute
+	.width-1000.absolute
+		ul.color-white
+			li <a class="highlight" href="https://www.linkedin.com/pulse/free-game-design-doc-gdd-template-david-fox/">Free Game Design GDD Template</a>
+			li <a class="highlight" href="https://www.runawaystudios.com/articles/chris_taylor_gdd.php">Chris Taylor: GDD</a>
+			li <a class="highlight" href="http://www.cs.unc.edu/Courses/comp585-s15/DesignDocTemplate.pdf">Design Doc Template</a>
+			li <a class="highlight" href="https://whimsygames.co/blog/game-design-instructions-examples/">Game Design Instruction Examples</a>
+			li.fragment Or you can build your own. The purpose is to take your design and make it understandable.
+			li.fragment Leave certain parts up for interpretation, so you can experiment during prototyping.
+	.fill.nopadding
+		img.height-100p(src=imgAssets+'pop.jpg')
++mcontainer('')
+	+frameShard.width-70px.height-30p.top-350.center.z-index-100
+		+quote('Never forget that your ultimate goal is to create entertainment for the player.', 'Ernest Adams, Fundamentals of Game Design')
++frameInbox('Sources')
+	div
+		ul.text-xl.spacing-xl.leading-xl
+			li.fragment(data-fragment-index='1') Jesse Schell, The Art of Game Design
+			li.fragment(data-fragment-index='2') Raph Koster, A Theory of Fun
+			li.fragment(data-fragment-index='3') Ernest Adams, Fundamentals of Game Design
+			li.fragment(data-fragment-index='4') Stephen Dinehart, Narrative Designer. Fabulator Ludus
+			li.fragment(data-fragment-index='5') Chris Barney, Pattern Language for Game Design
+		.top-0.right-250.fragment(data-fragment-index='1')
+			.kframe.height-300.width-240.absolute
+			.height-300.width-240.p-10
+				img.width-240.object-cover(src=imgAssets+'src_art.jpg')
+		.top-100.right-50.fragment(data-fragment-index='2')
+			.kframe.height-300.width-240.absolute
+			.height-300.width-240.p-10
+				img.width-240.object-cover(src=imgAssets+'src_theory.jpg')
+		.top-300.right-250.fragment(data-fragment-index='3')
+			.kframe.height-300.width-240.absolute
+			.height-300.width-240.p-10
+				img.width-240.object-cover(src=imgAssets+'src_fundamentals.jpg')
+		.top-400.right-50.fragment(data-fragment-index='4')
+			.kframe.height-300.width-240.absolute
+			.height-300.width-240.p-10
+				img.width-240.object-cover(src=imgAssets+'src_ludus.jpg')
+		.top-600.right-250.fragment(data-fragment-index='5')
+			.kframe.height-300.width-240.absolute
+			.height-300.width-240.p-10
+				img.width-240.object-cover(src=imgAssets+'src_patterns.jpg')

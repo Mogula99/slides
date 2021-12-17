@@ -1,0 +1,32 @@
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+include ./mixins/title.pug
+include ./mixins/quotes.pug
+include ./mixins/summary.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+
+html(lang='en')
+	+header('Design', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+
+	.reveal
+		.slides
+			+titleLecture12('Design', 'Lecture 12', globalAssets+'lectures/ic_lecture12.svg')
+			include ./chapters/design_design.pug
+			include ./chapters/design_indiepocalypse.pug
+			+frameInbox('NI-APH legacy')
+				div
+					.text-center.mt-100
+						img.height-600(src=imgAssets+'aphclass.png')
+					div.top-220.left-550.width-580.height-300
+						ul
+							li.fragment To get a <span class="highlight">preview</span> on what game development is and what challenges we may face there. 
+							li.fragment To get enough knowledge that could be advanced further by<br> self-education.
+			+quote-keen()
+
+	+footer('Adam Vesecký & Mehmet Ekmekci', 'Architecture of Computer Games, Lecture 12: Design')
+	script(src!='../../scripts/reveal-setup.js')

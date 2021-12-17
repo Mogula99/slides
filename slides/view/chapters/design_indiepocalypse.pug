@@ -1,0 +1,216 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/design_indiepocalypse/';
+- var defaultBgr = 'backgrounds/masseffect.jpg';
+
++mchapter('Indiepocalypse', imgAssets+'chapter_indiepocalypse.svg')
+- var defaultBgr = 'backgrounds/figment.jpg';
++mcontainer('Indie Games')
+	+frameShard.width-860.top-3p.fragment.fade-up
+		p Indie game is an independent game that is identified by the <span class="highlight">freedom and courage</span> to put the idea above the profit.
+	+frameShard.width-920.top-6p.left-20p.fragment.fade-up
+		p Indie games are developed by individuals, small teams or small independent companies, having <span class="highlight">little to no budget</span> available. 
+	+frameShard.width-880.top-9p.left-46p.fragment.fade-up
+		p Indie games are games that are smaller in size, less taxing on hardware and focusing mostly on <span class="highlight">art design<span>.
++frameInbox('Indie games evolution')
+	div
+		.text-center
+			img.height-780(src=imgAssets+'indie_games.svg')
+		.bottom-20.right-140
+			img.height-690(src=imgAssets+'indie_games.png')
++frameInbox('AAA games vs INDIE games')
+	div
+		.fill.flex-row.justify-evenly
+			figure.fragment
+				img.height-300(src=imgAssets+'aaa_graphics.jpg')
+				p Cutting-edge graphics
+			figure.fragment
+				img.height-300(src=imgAssets+'aaa_building.jpg')
+				p Large studios
+			figure.fragment
+				img.height-300(src=imgAssets+'aaa_campaigns.jpg')
+				p Massive campaigns
+		.text-center.fragment
+			p.text-2xl.color-lemon VS
+		.fill.flex-row.justify-evenly
+			figure.fragment
+				img.height-300(src=imgAssets+'indie_graphics.jpg')
+				p Modest graphics
+			figure.fragment
+				img.height-300(src=imgAssets+'indie_building.jpg')
+				p Small office
+			figure.fragment
+				img.height-300(src=imgAssets+'indie_campaigns.jpg')
+				p Conference tours 
++frameInbox('AAA vs Indie')
+	div.spacing-3xs
+		.scope.fragment
+			p Indie game developer
+			ul
+				li.fragment must span a huge number of various subject areas
+				li.fragment the less resources you have, the more creative you need to be
+		.scope.fragment
+			p AAA game developer
+			ul
+				li.fragment specialized in a few areas
+				li.fragment making AAA is about delegating tasks to huge teams
+				li.fragment there isn't a lot of space for own expression
+				li.fragment many well-known AAA devs eventually went indie
+			.top-40.right-40
+				img.height-500(src=imgAssets+'aaa_indie.jpg')
+			.bottom-0.left-400
+				img.height-150(src=imgAssets+'a_braid.png')
+			.bottom-0.right-400
+				img.height-300(src=imgAssets+'a_doom.png')
++frameInbox('Games released on Steam')
+	div
+		.text-center.mt-50
+			img.height-650(src=imgAssets+'steam_release.svg')
++frameInbox('Global revenues')
+	div
+		.text-center
+			img.height-700(src=imgAssets+'market_revenues.svg')
+		.top-200.left-500.tip.fragment
+			img.height-300(src=imgAssets+'gametime1.jpg')
+		.top-500.left-500.tip.fragment
+			img.height-300(src=imgAssets+'gametime2.jpg')
+- var defaultBgr = 'backgrounds/darksouls.jpg';
++frameInbox('Game Industry Crisis')
+	div
+		ul
+			li.fragment in 1990s, the industry was small enough to come up with anything
+			li.fragment nowadays, the industry is oversaturated with games and tools
+			li.fragment it is easier than ever to develop a game
+			li.fragment it is harder than ever to develop a successful game
+			li.mt-20.fragment <span class="highlight">Issues:</span>
+				ul
+					li.fragment low barrier of entry
+					li.fragment low median ownership
+					li.fragment lack of differentiation
+		.top-100.right-40
+			img.height-550(src=imgAssets+'gamedev.jpg')
+		.bottom-0.right-0
+			img.width-1700(src=imgAssets+'particles_fire.gif')
++frameInbox('Game Developer')
+	div.center
+		.grid.grid-cols-3.grid-rows-2.gap-20.width-80p.mt-60
+			figure.fragment
+				img.height-260(src=imgAssets+'gdev_1.jpg')
+				p What my friends think I do
+			figure.fragment
+				img.height-260(src=imgAssets+'gdev_2.jpg')
+				p What my parents think I do
+			figure.fragment
+				img.height-260(src=imgAssets+'gdev_3.jpg')
+				p What society thinks I do
+			figure.fragment
+				img.height-260(src=imgAssets+'gdev_4.jpg')
+				p What the players think I do
+			figure.fragment
+				img.height-260(src=imgAssets+'gdev_5.jpg')
+				p What I think I do
+			figure.fragment
+				img.height-260(src=imgAssets+'gdev_6.jpg')
+				p What I really do
++frameInbox('I-wanna-be-a-game-developer starter pack')
+	div
+		.top-100.left-150.fragment(data-fragment-index='1')
+			img.width-660(src=imgAssets+'dev_today_fb_01.jpg')
+		.bottom-20.left-150.fragment(data-fragment-index='2')
+			img.width-660(src=imgAssets+'dev_today_fb_02.jpg')
+		.right-150.top-100.fragment(data-fragment-index='4')
+			img.width-670(src=imgAssets+'dev_today_02.jpg')
+		.bottom-20.right-150.fragment(data-fragment-index='5')
+			img.width-670(src=imgAssets+'dev_today_03.jpg')
+		.bottom-150.right-380.tip.fragment(data-fragment-index='6')
+			img.width-900(src=imgAssets+'dev_today_04.jpg')
+- var defaultBgr = 'backgrounds/backbone.jpg';
++frameInbox('How to make a game')
+	div
+		.scope.fragment
+			p Stage 1
+			ul
+				li.fragment create a few stupid simple games
+				li.fragment learn how to use tools and game assets
+		.scope.fragment
+			p Stage 2
+			ul
+				li.fragment do your research
+				li.fragment prepare a concept
+				li.fragment prototype
+		.scope.fragment
+			p Stage 3
+			ol
+				li.fragment take several months off from your day-to-day job
+				li.fragment make a unique game that stands out
+				li.fragment if you run out of budget, get a job, and go back to step 1
+		.top-120.right-50.fragment
+			img.height-500(src=imgAssets+'games_shipping.png')
+		.bottom-0.right-0
+			img.height-280(src=globalAssets+'keen.png' alt='decoration')
++frameInbox('How Not to make a game')
+	div
+		.top-100.left-40.fragment
+			img.width-470(src=imgAssets+'untitled_project.jpg')
+		.top-300.left-540.fragment
+			img.height-240(src=imgAssets+'gamedev_fail_flow.svg')
+		.bottom-40.right-20.fragment
+			img.height-300(src=imgAssets+'side_projects.jpg')
+		.bottom-40.left-40.fragment
+			img.width-470(src=imgAssets+'unfinished_projects.jpg')
+		.top-100.right-20.fragment
+			img.height-440(src=imgAssets+'unfinished_projects_2.jpg')
++frameInbox('The iceberg illusion')
+	div
+		.text-center
+			img.height-620.mt-80(src=imgAssets+'gamedev_success.svg')
+			p.pl-100.pr-100.highlight.fragment Making successful games is about persistence and hard work, as well as being in the right place at the right time with the right concept.
++frameInbox('Honorable mentions')
+	div
+		.top-100.left-20
+			a(href='http://gingearstudio.com/why-i-quit-my-dream-job-at-ubisoft')
+				img.width-500(src=imgAssets+'article_ubisoft.jpg')
+		.top-260.left-20
+			a(href='https://www.gamasutra.com/blogs/AdrielWallick/20140226/211761/Make_Many_Games_Learn_Many_Things.php')
+				img.width-500(src=imgAssets+'article_games.jpg')
+		.top-380.left-20
+			a(href='https://www.reddit.com/r/gamedev/comments/dwfwtp/three_years_ago_my_wife_and_i_quit_our_jobs_to/')
+				img.width-500(src=imgAssets+'article_ninefaced.png')
+		.top-580.left-20
+			a(href='https://enterprisecraftsmanship.com/posts/how-i-tried-to-get-into-game-development-and-failed/')
+				img.width-500(src=imgAssets+'article_khorikov.jpg')
+		.bottom-10.left-20
+			a(href='https://medium.com/@doandaniel/7-reasons-why-most-indie-game-developers-fail-5d6648ca6343/')
+				img.width-500(src=imgAssets+'article_7_mistakes.jpg')
+		.top-600.right-20
+			a(href='https://www.polygon.com/2019/2/16/18226581/activision-blizzard-layoffs-executive-pay-unions')
+				img.width-500(src=imgAssets+'article_blizzard.jpg')
+		.top-340.right-530
+			a(href='https://www.theverge.com/2018/10/4/17934166/telltale-games-studio-closed-layoffs-end-the-walking-dead')
+				img.width-580(src=imgAssets+'article_telltale.jpg')
+		.top-100.right-530
+			a(href='https://www.vice.com/en/article/mb5qpx/routine-release-date-space-horror-alien')
+				img.width-580(src=imgAssets+'article_routine.jpg')
+		.bottom-10.right-530
+			a(href='https://www.youtube.com/watch?v=JmwbYl6f11c')
+				img.width-580(src=imgAssets+'article_nohit.jpg')
+		.top-420.right-20
+			a(href='https://www.reddit.com/r/gamedev/comments/74fdi8/my_indie_game_failed_hard_on_steam/')
+				img.width-500(src=imgAssets+'article_indie_fail.jpg')
+		.top-100.right-20
+			a(href='https://www.gamasutra.com/blogs/AlvaMajo/20160801/278241/My_first_indie_game_failed_hard_Heres_the_data.php')
+				img.width-500(src=imgAssets+'article_first_game.jpg')
+		.bottom-10.right-20
+			a(href='https://siliconangle.com/2013/08/29/the-dark-side-of-failed-indie-game-developers/')
+				img.width-500(src=imgAssets+'article_failed_dev.jpg')
+		.top-250.right-20
+			a(href='https://www.gamesindustry.biz/articles/2020-07-22-how-to-guarantee-your-pitch-will-be-rejected/')
+				img.width-500(src=imgAssets+'article_pitch.jpg')
++frameInbox('Raison d\'etre')
+	div
+		ul
+			li.fragment(data-fragment-index='1') Game development is a world of many heroes, a few stars and a very few superstars
+			li.fragment(data-fragment-index='3') Yet, it's still a magnificent world that outlines a path upon which you can leave your own footprints
+		.text-center.mt-20.fragment(data-fragment-index='1')
+			img.height-600(src=imgAssets+'kingdom_come.jpg')

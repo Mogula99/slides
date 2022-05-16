@@ -286,7 +286,7 @@ $title-font-size: 60px;
 		border-image-width: 80px;
 		border-image-outset: 0px 0px 0px 0px;
 		border-image-repeat: repeat repeat;
-		border-image-source: url("./resources/pframe.png")
+		border-image-source: url("./resources/pframe.png");
 	}
 
 	.kframe {
@@ -295,7 +295,7 @@ $title-font-size: 60px;
 		border-image-width: 100px;
 		border-image-outset: -50px;
 		border-image-repeat: repeat repeat;
-		border-image-source: url("./resources/kframe.png")
+		border-image-source: url("./resources/kframe.png");
 	}
 
 	@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }

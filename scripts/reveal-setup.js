@@ -14,15 +14,6 @@ if(!isPresentationMode) {
 	document.querySelectorAll('.fragment').forEach(frag => {
 		frag.classList.remove('fragment');
 	});
-
-	// remove background images as they are distractive
-	document.querySelectorAll('[data-background-image]').forEach(section => {
-		const current = section.getAttribute('data-background-image');
-		if(current) {
-			section.removeAttribute('data-background-image');
-			section.setAttribute('data-background-color', '#151515');
-		}
-	});
 }
 
 // prepare print style if there is print-pdf in the query string

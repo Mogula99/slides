@@ -1,7 +1,7 @@
 # APHGames Slides
 
 <p align="center">
-    <img alt="NI-APH" src="./slides/logo.png" width="500">
+    <img alt="APHGames" src="./slides/logo.png" width="500">
 </p>
 
 - 🎓 intended mainly for education at FIT CTU
@@ -20,5 +20,5 @@ Changelog is available [here](./CHANGELOG.md)
 - the slides can be found on [aphgames.io](https://aphgames.io), materials tab
 
 ## License
-`SPDX-License-Identifier: MIT`
+- MIT License
 - This license applies **only to the code** in this repository. Images, SVG files, and other assets are explicitly excluded!

@@ -47,7 +47,7 @@ mixin frameInboxMid(title)
 mixin frameOutbox(title)
 	+mcontainer()&attributes(attributes).flex-col
 		if(title)
-			h3.slide-title.outbox-title!=title
+			h3.slide-title!=title
 		div(class!='frame outbox ' + (attributes.class ? attributes.class : ''))
 			block
 
@@ -56,7 +56,7 @@ mixin frameOutboxMid(title)
 	+mcontainer()&attributes(attributes).flex-col.items-center.justify-center
 		.width-80p
 			if(title)
-				h3.slide-title.outbox-title!=title
+				h3.slide-title!=title
 			div(class!='frame outbox mid ' + (attributes.class ? attributes.class : ''))
 				block
 

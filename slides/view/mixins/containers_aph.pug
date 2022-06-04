@@ -4,9 +4,9 @@
 mixin tip(text)
 	.tip.absolute.content-center.nopadding(class!=(attributes.class ? attributes.class : ''))
 		.icon.height-250.width-250.fragment.fade-up(class=attributes.imgclass ? attributes.imgclass : '')
-		.content.fragment.fade-up.bottom-100.left-250.fade-up(class!=(attributes.class ? attributes.class : ''))!=text
+		.content.fragment.fade-up.bottom-100.left-250.fade-up(class!=(attributes.contentClass ? attributes.contentClass : ''))!=text
 
-mixin tipKeen(text)
+mixin tipKeen1(text)
 	+tip(text)(class='keen')&attributes(attributes)
 
 mixin tipKeen2(text)

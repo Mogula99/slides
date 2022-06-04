@@ -1,0 +1,401 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/tutorial_git/';
+- var defaultBgr = 'backgrounds/nebula.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Základy GITu', imgAssets+'chapter_git.svg')
++frameInbox('Agenda')
+	.flex-cols-2.fill
+		div
+			ul.spacing-xl
+				li.fragment.fade-in Struktura GITu
+				li.fragment.fade-in Základní příkazy
+				li.fragment.fade-in Detached head a dangling commity
+				li.fragment.fade-in Merge a Rebase
+		div
+			img.height-400.relative.left-250.top-250(src=imgAssets+'git_icon.png')
++mchapter('Struktura GITu', imgAssets+'chapter_git.svg')
++frameInbox('Hlavní komponenty')
+	div
+		ul
+			li.fragment.fade-in
+				span.highlight-2 HEAD 
+				| - ukazatel na aktuální commit
+			li.fragment.fade-in
+				span.highlight-2 Branch 
+				| - jmenný ukazatel na commit
+			li.fragment.fade-in 
+				span.highlight-2 Working directory 
+				| - skládá se ze souborů, na kterých aktuálně pracujeme
+				ul
+					li.fragment Stavy Git souborů:
+						ul
+							li.fragment Untracked
+							li.fragment Staged
+							li.fragment Committed
+							li.fragment Modified
+			li.fragment.fade-in
+				span.highlight-2 Staging / Index 
+				| - registr modifikovaných souborů
+			li.fragment.fade-in 
+				span.highlight-2 Local repository 
+				| - kontejner, který zaznamenává změny na projektu
+			li.fragment.fade-in
+				span.highlight-2 Remote repository 
+				| - repozitář na serveru
++frameInbox('Stavy Git souborů')
+	.fill.center
+		img.width-1500(src=imgAssets+'git_filediag.svg')
++frameInbox('Git komponenty')
+	.fill.center
+		img.width-1500(src=imgAssets+'git_diagram.svg')
++frameInbox('Legenda')
+	.fill.center
+		ul
+			li.fragment.fade-in(data-fragment-index='1') Pro následující diagramy budeme používat toto značení:
+		.flex.flex-col.mt-100.pt-100
+			div.self-center
+				img.width-1400(src=imgAssets+'git_legend.svg')
++frameInbox('Git strom')
+	div
+		ul
+			li.fragment.fade-in(data-fragment-index='1') Git ukládá commity ve stromové struktuře. Každý commit může mít nula, jeden i více předků.
+		.flex.flex-col.mt-30
+			div.self-center
+				img.width-1400(src=imgAssets+'git_tree.svg')
++mchapter('Základní příkazy', imgAssets+'chapter_git.svg')
++frameInbox('Základní příkazy')
+	.center.fill
+		table.colored.text-sm
+			tr
+				th Příkaz
+				th Oblast
+				th Popis
+			tr.fragment
+				td.code git init
+				td Repo
+				td Vytvoří prázdný Git repozitář
+			tr.fragment
+				td.code git clone
+				td Repo
+				td Naklonuje repozitář do prázdného adresáře
+			tr.fragment
+				td.code git branch
+				td Repo
+				td Vytváří, zobrazuje a maže větve
+			tr.fragment
+				td.code git log
+				td Repo
+				td Zobrazí záznam commitů
+			tr.fragment
+				td.code git add
+				td File-level
+				td Přidá změny v pracovním adresáři do indexu
+			tr.fragment
+				td.code git commit
+				td Commit-level
+				td Vytvoří unikátní snapshot podle změn v indexu/stage
+			tr.fragment
+				td.code git push
+				td Commit-level
+				td Uploadne data na remote repozitář
+			tr.fragment
+				td.code git fetch
+				td Commit-level
+				td Synchronizuje změny s remote repozitářem
+			tr.fragment
+				td.code git pull
+				td Commit-level
+				td Aktualizuje HEAD s nejnovějšími změnami
+			tr.fragment
+				td.code git checkout
+				td Commit-level
+				td Přepíná mezi větvemi či commity
+			tr.fragment
+				td.code git checkout
+				td File-level
+				td Vrátí zpět změny či stáhne různé verze souborů z jiných commitů
+			tr.fragment
+				td.code git reset
+				td Commit-level
+				td Zahodí commity či necommitnutné změny
+			tr.fragment
+				td.code git reset
+				td File-level
+				td Vyhodí soubor z indexu
+			tr.fragment
+				td.code git restore
+				td File-level
+				td Zahodí změny v pracovním adresáři
+			tr.fragment
+				td.code git revert
+				td Commit-level
+				td Vytvoří revertní commit
++frameInbox('Git commit')
+	div
+		ul
+			li.fragment Vytvoří unikátní snapshot dle změn v indexu
+		.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_simple_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_simple_2.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_simple_3.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_simple_4.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_simple_5.svg')
++frameInbox('Git commit --amend')
+	div
+		ul
+			li.fragment Přidá změny k předchozímu commitu
+		.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_amend_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_amend_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_amend_3.svg')
+				+tipKeen3('Pokud aktualizujete commit, jeho hash se změní!').left-20.bottom-0
++frameInbox('Git push')
+	div
+		ul
+			li.fragment Uploadne data na remote repozitář
+		.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_push_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_push_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_push_3.svg')
++frameInbox('Git fetch')
+	div
+		ul
+			li.fragment Synchronizuje data s remote repozitářem
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_fetch_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_fetch_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_fetch_3.svg')
+			+tipKeen1('Git fetch neovlivní váš pracovní adresář ani HEAD!').left-20.bottom-0
++frameInbox('Git pull')
+	div
+		ul
+			li.fragment Aktualizuje HEAD s posledními změnami
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_pull_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_pull_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_pull_3.svg')
++frameInbox('Git reset a git restore (pro soubory)')
+	div
+		ul
+			li.fragment <span class="highlight code">git reset</span> zahodí změny v indexu, <span class="highlight code">git restore</span> zahodí změny v pracovním adresáři
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_restore_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_restore_2.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_restore_3.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_restore_4.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_restore_5.svg')
+			+tipKeen2('A co mám dělat, když zahodím změny omylem?').left-20.bottom-0
++frameInbox('Git reset (pro commity)')
+	.fill.center
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_1.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_2.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_3.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_4.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_5.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_6.svg')
+		.fragment.fade-in
+			img.width-1400(src=imgAssets+'git_reset_types_7.svg')
++frameInbox('Git checkout (pro commity)')
+	div
+		ul
+			li.fragment Umožňuje navštívit jiné commity/větve
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_checkout_branch_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_checkout_branch_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_checkout_branch_3.svg')
++frameInbox('Git checkout - relativní')
+	div
+		ul
+			li.fragment <span class="highlight code">HEAD~</span> - ukazuje na prvního předka
+			li.fragment <span class="highlight code">HEAD^2</span> - ukazuje na druhého předka
+			li.fragment <span class="highlight code">HEAD@{N}</span> - ukazuje na dangling commit
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute
+				img.width-1400(src=imgAssets+'git_checkout_move.svg')
++mchapter('Detached HEAD a dangling commity', imgAssets+'chapter_git.svg')
++frameInbox('Detached HEAD')
+	div
+		ul
+			li.fragment Nastane, když posuneme HEAD tam, kde není odkaz na žádnou větev
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_checkout_commit_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_checkout_commit_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_checkout_commit_3.svg')
++frameInbox('Dangling commity')
+	.fill.flex.flex-col.items-center
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_hard_1.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_hard_2.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_hard_3.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_hard_4.svg')
+		.fragment.fade-in
+			img.width-1400(src=imgAssets+'git_reset_hard_5.svg')
+		div.mt-30
+			ul
+				li.fragment <span class="highlight code">git checkout</span> posune HEAD, <span class="highlight code">git reset</span> posune také ukazatel na větev
+				li.fragment Dangling commity jsou sirotci, kteří už neodkazují na hlavní strom
++frameInbox('Dangling commity a reflog')
+	div
+		ul
+			li.fragment <span class="highlight code">git reflog</span> zobrazí historii všech operací
+			li.fragment Může být použit pro jakoukoliv undo operaci
+			li.fragment Příklad: reflog pro daný strom
+				div.my-30
+					img.width-800(src=imgAssets+'git_reflog.svg')
+				.code.text-sm.fragment
+					include ../../assets/tutorial_git/snippets_generated/reflog.html
++mchapter('Merge a Rebase', imgAssets+'chapter_git.svg')
++frameInbox('Čistý merge')
+	div
+		ul
+			li.fragment Mergne jednu větev do jiné. Nastává, kdy tu nejsou paralelní commity.
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_merge_clean_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_merge_clean_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_merge_clean_3.svg')
++frameInbox('Špinavý merge')
+	div
+		ul
+			li.fragment Nastává u veřejných větví
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_merge_messy_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_merge_messy_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_merge_messy_3.svg')
+		+tipKeen4('Keen ví, že tento přístup není nejvhodnější!').left-20.top-80
+		+tipKeen2('Keen má raději git <br>rebase!')(contentClass='right').right-20.top-80
+		+tipKeen1('Keen je chytrý!').left.left-20.bottom-0
+		+tipKeen3('Buďte jako Keen!')(contentClass='right').right-20.bottom-0
++frameInbox('Git rebase')
+	div
+		ul
+			li.fragment Pomůže integrovat větve tak, aby na sebe bezkonfliktně navazovaly
+			li.fragment Může vytvořit nové commity nebo odstranit ty staré
+			.fragment.text-center.mt-100
+				img.width-1400(src=imgAssets+'git_rebase_pnt.svg')
++frameInbox('Git rebase - příklad')
+	.fill.center
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1200(src=imgAssets+'git_rebase_1.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1200(src=imgAssets+'git_rebase_2.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1200(src=imgAssets+'git_rebase_3.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1200(src=imgAssets+'git_rebase_4.svg')
+		.fragment.fade-in
+			img.width-1200(src=imgAssets+'git_rebase_5.svg')
+			+tipKeen1('Git rebase zpravidla vytváří nové commity a modifikuje strom!').left-80.bottom-0
++frameInbox('Git merge vs Git rebase')
+	.fill.center
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_rebase_merge_1.svg')
+		.fragment.fade-in.absolute
+			img.width-1400(src=imgAssets+'git_rebase_merge_2.svg')
++frameInbox('Git merge vs Git rebase')
+	div
+		.flex-cols-2
+			div
+				div.fragment.fade-up
+					.scope
+						p Výhody
+						ul.text-sm
+							li.upside.fragment.fade-in <span class="highlight code">git merge</span> je nedestruktivní operace
+							li.upside.fragment.fade-in <span class="highlight code">git rebase</span> má za výsledek mnohem čistší a lineární historii
+			div
+				div.fragment.fade-up
+					.scope
+						p Nevýhody
+						ul.text-sm
+							li.downside.fragment.fade-in U aktivních veřejných větví může <span class="highlight code">git merge</span> zaneřádit historii
+							li.downside.fragment.fade-in  <span class="highlight code">git rebase</span> ztrácí kontext, který naopak poskytuje merge commit
+		.space-md
+		div.fragment.text-center.font-bold Pokud používáte <span class="highlight code">git merge</span> v týmovém projektu často, vaše repo se nakonec promění v Guitar Hera
+			div
+				img.height-400.mt-30(src=imgAssets+'git_mess.png')
++frameInbox('Interaktivní rebase')
+	div
+		ul
+			li.fragment <span class="highlight code">git rebase -i</span>
+			li.fragment Můžeme rozšířit a různě upravit jednotlivé commity
+			li.fragment Může být použit pro vyčištění zbastlené historie před čistým mergem
+			li.fragment Příklad:
+				.code.mt-20.text-sm
+					include ../../assets/tutorial_git/snippets_generated/rebase.html
+			li.fragment <span class="highlight code">p (pick)</span> - použij commit
+			li.fragment <span class="highlight code">r (reword)</span> - použij commit a edituj zprávu
+			li.fragment <span class="highlight code">e (edit)</span> - použij commit a sluč s tím předchozím
+			li.fragment <span class="highlight code">s (squash)</span> - spoj commit a zachovej zprávu
+			li.fragment <span class="highlight code">f (fixup)</span> - spoj commit a zahoď zprávu
+			li.fragment <span class="highlight code">x (exec)</span> - spusť shellový příkaz
++frameInbox('Zlaté pravidlo při Rebase')
+	div
+		ul
+			li.fragment.text-sm.highlight Nikdy neprovádějte rebase u veřejných větví. Budete potřebovat force-push a způsobíte problémy ostatním.
+			li.fragment Zde: někdo force-pushnul commity D a E a ostatní se snaží pullnout změny.
+		.fill.flex.flex-col.items-center.mt-20
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_pull_messy_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_pull_messy_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_pull_messy_3.svg')
++frameInbox('Shrnutí')
+	div
+		ul
+			li.fragment Hash commitu se nedá změnit. Pokud změníte commit, git vytvoří nový a zahodí starý
+			li.fragment <span class="highlight code">git fetch</span> stahuje poslední změny, <span class="highlight code">git pull</span> zároveň posune HEAD
+			li.fragment Detached head nastane pokud posuneme HEAD tam, kde není ukazatel na žádnou větev
+			li.fragment <span class="highlight code">git checkout</span> posune HEAD, <span class="highlight code">git reset</span> zároveň posune ukazatel na větev
+			li.fragment Pokud ztratíte některé commity, můžete je najít přes <span class="highlight code">git reflog</span>
+			li.fragment <span class="highlight code">git rebase</span> vytváří nové commity a modifikuje strom
+			li.fragment <span class="highlight code">git merge</span> je nedestruktivní operace, <span class="highlight code">git rebase</span> ztrácí po aplikaci kontext
+			li.fragment Nikdy neprovádějte rebase u veřejných větví
+			li.fragment Co jsme se naučili: 
+				span.code init, clone, status, branch, log, add, commit, switch, whatchanged, push, fetch, pull, checkout, reset, restore, revert, merge, rebase, reflog, diff, remote
+			li.fragment Kompletní cheatsheet je k dispozici <a href="https://aphgames.cz/docs/niaph/cheatsheets/git">zde</a>

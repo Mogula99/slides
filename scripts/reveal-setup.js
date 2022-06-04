@@ -2,7 +2,7 @@ import Reveal from 'reveal.js';
 (window).Reveal = Reveal;
 
 const isPresentationMode = window.location.search.match(/presentation/gi);
-const margin = isPresentationMode ? 0.12 : 0.05; // % margins of the slides after scale
+const margin = isPresentationMode ? 0.08 : 0.05; // % margins of the slides after scale
 
 // disable tips, all fragments, and replace the default background
 if(!isPresentationMode) {

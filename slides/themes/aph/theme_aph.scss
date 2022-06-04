@@ -229,6 +229,16 @@ $title-font-size: 60px;
 
 			.content {
 				border-image-source: url("./resources/hint_frame_keen.png");
+				border-image-width: 50px;
+				border-image-outset: 30px 30px 30px 30px;
+				border-image-repeat: repeat repeat;				
+				
+				&.left {
+					@extend .left-200;
+				}
+				&.right {	
+					@extend .right-200;
+				}
 			}
 			.icon {
 				background-image: url('./resources/keen.png');

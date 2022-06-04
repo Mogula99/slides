@@ -1,0 +1,401 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/tutorial_git/';
+- var defaultBgr = 'backgrounds/nebula.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Git Basics', imgAssets+'chapter_git.svg')
++frameInbox('Agenda')
+	.flex-cols-2.fill
+		div
+			ul.spacing-xl
+				li.fragment.fade-in Git structure
+				li.fragment.fade-in Basic commands
+				li.fragment.fade-in Detached head and dangling commits
+				li.fragment.fade-in Merge and Rebase
+		div
+			img.height-400.relative.left-250.top-250(src=imgAssets+'git_icon.png')
++mchapter('Git Structure', imgAssets+'chapter_git.svg')
++frameInbox('Main components')
+	div
+		ul
+			li.fragment.fade-in
+				span.highlight-2 HEAD 
+				| - the pointer to the current commit reference
+			li.fragment.fade-in
+				span.highlight-2 Branch 
+				| - a named pointer to a commit reference
+			li.fragment.fade-in 
+				span.highlight-2 Working directory 
+				| - consists of files you are currently working on
+				ul
+					li.fragment States of Git files:
+						ul
+							li.fragment Untracked
+							li.fragment Staged
+							li.fragment Committed
+							li.fragment Modified
+			li.fragment.fade-in
+				span.highlight-2 Staging / Index 
+				| - area of modified files
+			li.fragment.fade-in 
+				span.highlight-2 Local repository 
+				| - container that tracks the changes to the project
+			li.fragment.fade-in
+				span.highlight-2 Remote repository 
+				| - repository deployed on a server
++frameInbox('States of Git files')
+	.fill.center
+		img.width-1500(src=imgAssets+'git_filediag.svg')
++frameInbox('Git components')
+	.fill.center
+		img.width-1500(src=imgAssets+'git_diagram.svg')
++frameInbox('Legend')
+	.fill.center
+		ul
+			li.fragment.fade-in(data-fragment-index='1') For all diagrams, the following markings will be used
+		.flex.flex-col.mt-100.pt-100
+			div.self-center
+				img.width-1400(src=imgAssets+'git_legend.svg')
++frameInbox('Git tree')
+	div
+		ul
+			li.fragment.fade-in(data-fragment-index='1') Git stores commits in a tree-like structure. One commit can have zero, one or more parents.
+		.flex.flex-col.mt-30
+			div.self-center
+				img.width-1400(src=imgAssets+'git_tree.svg')
++mchapter('Basic Commands', imgAssets+'chapter_git.svg')
++frameInbox('Basic Commands')
+	.center.fill
+		table.colored.text-sm
+			tr
+				th Command
+				th Scope
+				th Description
+			tr.fragment
+				td.code git init
+				td Repo
+				td Creates an empty Git repository
+			tr.fragment
+				td.code git clone
+				td Repo
+				td Clones a repository into a new directory
+			tr.fragment
+				td.code git branch
+				td Repo
+				td Creates, lists, renames or deletes branches
+			tr.fragment
+				td.code git log
+				td Repo
+				td Displays a record of commits
+			tr.fragment
+				td.code git add
+				td File-level
+				td Adds a change in the working directory to the index
+			tr.fragment
+				td.code git commit
+				td Commit-level
+				td Creates a unique snapshot of the staging area
+			tr.fragment
+				td.code git push
+				td Commit-level
+				td Uploads data to a remote repository
+			tr.fragment
+				td.code git fetch
+				td Commit-level
+				td Synchronizes with a remote repository
+			tr.fragment
+				td.code git pull
+				td Commit-level
+				td Updates the HEAD with the latest changes
+			tr.fragment
+				td.code git checkout
+				td Commit-level
+				td Switches between branches or inspects other commits
+			tr.fragment
+				td.code git checkout
+				td File-level
+				td Discards changes or replaces files with versions from other commits
+			tr.fragment
+				td.code git reset
+				td Commit-level
+				td Discards commits or throws away uncommited changes
+			tr.fragment
+				td.code git reset
+				td File-level
+				td Unstages a file
+			tr.fragment
+				td.code git restore
+				td File-level
+				td Discards changes in the working directory
+			tr.fragment
+				td.code git revert
+				td Commit-level
+				td Undoes commits
++frameInbox('Git commit')
+	div
+		ul
+			li.fragment Creates a unique snapshot of the staging area
+		.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_simple_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_simple_2.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_simple_3.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_simple_4.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_simple_5.svg')
++frameInbox('Git commit --amend')
+	div
+		ul
+			li.fragment Appends staging area to the previous commit
+		.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_amend_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_amend_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_amend_3.svg')
+				+tipKeen3('When you update a commit, its hash will change!').left-20.bottom-0
++frameInbox('Git push')
+	div
+		ul
+			li.fragment Uploads data to a remote repository
+		.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_push_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_push_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_push_3.svg')
++frameInbox('Git fetch')
+	div
+		ul
+			li.fragment Synchronizes with a remote repository
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_fetch_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_fetch_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_fetch_3.svg')
+			+tipKeen1('Git fetch DOES NOT affect your working directory or HEAD!').left-20.bottom-0
++frameInbox('Git pull')
+	div
+		ul
+			li.fragment Updates the HEAD with the latest changes
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_pull_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_pull_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_pull_3.svg')
++frameInbox('Git reset and git restore (file-level)')
+	div
+		ul
+			li.fragment <span class="highlight code">git reset</span> discards the staging area (index), <span class="highlight code">git restore</span> discards the working directory
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_restore_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_restore_2.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_restore_3.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_restore_4.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_restore_5.svg')
+			+tipKeen2('And what should I do when I discard my changes by mistake?').left-20.bottom-0
++frameInbox('Git reset (commit-level)')
+	.fill.center
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_1.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_2.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_3.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_4.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_5.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_types_6.svg')
+		.fragment.fade-in
+			img.width-1400(src=imgAssets+'git_reset_types_7.svg')
++frameInbox('Git checkout (commit-level)')
+	div
+		ul
+			li.fragment Inspects other commits/branches
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_checkout_branch_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_checkout_branch_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_checkout_branch_3.svg')
++frameInbox('Git checkout - relative')
+	div
+		ul
+			li.fragment <span class="highlight code">HEAD~</span> - points to the first parent
+			li.fragment <span class="highlight code">HEAD^2</span> - points to the second parent
+			li.fragment <span class="highlight code">HEAD@{N}</span> - points to a loose commit
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute
+				img.width-1400(src=imgAssets+'git_checkout_move.svg')
++mchapter('Detached HEAD and dangling commits', imgAssets+'chapter_git.svg')
++frameInbox('Detached HEAD')
+	div
+		ul
+			li.fragment Occurs when there is no branch pointer for the HEAD
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_checkout_commit_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_checkout_commit_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_checkout_commit_3.svg')
+			+tipKeen4('So how do I re-attach a detached HEAD?').left-420.bottom-0
++frameInbox('Dangling commits')
+	.fill.flex.flex-col.items-center
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_hard_1.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_hard_2.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_hard_3.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_reset_hard_4.svg')
+		.fragment.fade-in
+			img.width-1400(src=imgAssets+'git_reset_hard_5.svg')
+		div.mt-30
+			ul
+				li.fragment <span class="highlight code">git checkout</span> moves the HEAD, <span class="highlight code">git reset</span> also moves the branch pointer
+				li.fragment Dangling commits are orphans that have no connection to the main tree
++frameInbox('Dangling commits and reflog')
+	div
+		ul
+			li.fragment <span class="highlight code">git reflog</span> displays history of all operations
+			li.fragment Can be used for any kind of undo
+			li.fragment Example: reflog for the following tree
+				div.my-30
+					img.width-800(src=imgAssets+'git_reflog.svg')
+				.code.text-sm.fragment
+					include ../../assets/tutorial_git/snippets_generated/reflog.html
++mchapter('Merge and Rebase', imgAssets+'chapter_git.svg')
++frameInbox('Clean merge')
+	div
+		ul
+			li.fragment Merges one branch into another. Occurs when there are no parallel commits.
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_merge_clean_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_merge_clean_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_merge_clean_3.svg')
++frameInbox('Messy merge')
+	div
+		ul
+			li.fragment Occurs mostly in public branches
+		.fill.flex.flex-col.items-center.mt-30
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_merge_messy_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_merge_messy_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_merge_messy_3.svg')
+		+tipKeen4('Keen knows that this is an ugly approach!').left-20.top-80
+		+tipKeen2('Keen prefers git <br>rebase instead!')(contentClass='right').right-20.top-80
+		+tipKeen1('Keen is smart!').left.left-20.bottom-0
+		+tipKeen3('Be like Keen!')(contentClass='right').right-20.bottom-0
++frameInbox('Git rebase')
+	div
+		ul
+			li.fragment Helps integrate branches so that one smoothly extends another without conflicts
+			li.fragment May create new commits or discard old ones
+			.fragment.text-center.mt-100
+				img.width-1400(src=imgAssets+'git_rebase_pnt.svg')
++frameInbox('Git rebase - example')
+	.fill.center
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1200(src=imgAssets+'git_rebase_1.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1200(src=imgAssets+'git_rebase_2.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1200(src=imgAssets+'git_rebase_3.svg')
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1200(src=imgAssets+'git_rebase_4.svg')
+		.fragment.fade-in
+			img.width-1200(src=imgAssets+'git_rebase_5.svg')
+			+tipKeen1('Git rebase usually creates NEW commits and modifies the worktree!').left-80.bottom-0
++frameInbox('Git merge vs Git rebase')
+	.fill.center
+		.fragment.fade-in-then-out.absolute.tip
+			img.width-1400(src=imgAssets+'git_rebase_merge_1.svg')
+		.fragment.fade-in.absolute
+			img.width-1400(src=imgAssets+'git_rebase_merge_2.svg')
++frameInbox('Git merge vs Git rebase')
+	div
+		.flex-cols-2
+			div
+				div.fragment.fade-up
+					.scope
+						p Pros
+						ul.text-sm
+							li.upside.fragment.fade-in <span class="highlight code">git merge</span> is a non-destructive operation
+							li.upside.fragment.fade-in <span class="highlight code">git rebase</span> gets much cleaner and linear history
+			div
+				div.fragment.fade-up
+					.scope
+						p Cons
+						ul.text-sm
+							li.downside.fragment.fade-in If the public branch is very active,  <span class="highlight code">git merge</span> can pollute the history
+							li.downside.fragment.fade-in  <span class="highlight code">git rebase</span> loses the context provided by a merge commit
+		.space-md
+		div.fragment.text-center.font-bold If you use <span class="highlight code">git merge</span> in a team project too often, your worktree will turn into Guitar Hero
+			img.height-400.mt-30(src=imgAssets+'git_mess.png')
++frameInbox('Interactive rebase')
+	div
+		ul
+			li.fragment <span class="highlight code">git rebase -i</span>
+			li.fragment You can alter commits as they are moved to the new branch
+			li.fragment Can be used to clean up messy history before performing a clean merge
+			li.fragment Example:
+				.code.mt-20.text-sm
+					include ../../assets/tutorial_git/snippets_generated/rebase.html
+			li.fragment <span class="highlight code">p (pick)</span> - use commit
+			li.fragment <span class="highlight code">r (reword)</span> - use commit and edit the message
+			li.fragment <span class="highlight code">e (edit)</span> - use commit and merge with previous commit
+			li.fragment <span class="highlight code">s (squash)</span> - squash the commit, keep the log message
+			li.fragment <span class="highlight code">f (fixup)</span> - squash + discard log message
+			li.fragment <span class="highlight code">x (exec)</span> - run a command using shell
++frameInbox('The Golden Rule of rebasing')
+	div
+		ul
+			li.fragment.highlight Never rebase on public branches. You would need to use force-push and others will struggle.
+			li.fragment Here: someone force-pushed commits D and E on remote and others try to pull the changes.
+		.fill.flex.flex-col.items-center.mt-20
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_pull_messy_1.svg')
+			.fragment.fade-in-then-out.absolute.tip
+				img.width-1400(src=imgAssets+'git_pull_messy_2.svg')
+			.fragment.fade-in
+				img.width-1400(src=imgAssets+'git_pull_messy_3.svg')
++frameInbox('Summary')
+	div
+		ul
+			li.fragment A commit hash can't be changed. When you "update" a commit, git will create a new one
+			li.fragment <span class="highlight code">git fetch</span> downloads latest changes, <span class="highlight code">git pull</span> also moves the HEAD
+			li.fragment Detached head occurs when there is no branch pointer for the HEAD
+			li.fragment <span class="highlight code">git checkout</span> moves the HEAD, <span class="highlight code">git reset</span> also moves the branch pointer
+			li.fragment If you lose your commits, you can find them via <span class="highlight code">git reflog</span>
+			li.fragment <span class="highlight code">git rebase</span> creates new commits and modifies the worktree
+			li.fragment <span class="highlight code">git merge</span> is a non-destructive operation, <span class="highlight code">git rebase</span> loses the context provided by a merge commit
+			li.fragment Never rebase on public branches
+			li.fragment Commands we learned: 
+				span.code init, clone, status, branch, log, add, commit, switch, whatchanged, push, fetch, pull, checkout, reset, restore, revert, merge, rebase, reflog, diff, remote
+			li.fragment You can find the complete cheatsheet <a href="https://aphgames.io/docs/niaph/cheatsheets/git">here</a>

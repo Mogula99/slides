@@ -1,0 +1,16 @@
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+
+html(lang='en')
+	+header('Tutoriál: Základy GITu', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			include ./chapters/tutorial_git_cs.pug
+					
+	+footer('Adam Vesecký', 'APHGames, Tutoriál: Základy GITu')
+	script(src!='../../scripts/reveal-setup.js')

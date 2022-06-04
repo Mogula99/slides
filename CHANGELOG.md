@@ -6,6 +6,11 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+
+## [6.1.0] - 2022-06-04
+### Added
+GIT Tutorial
+
 ## [6.0.0] - 2022-05-16
 ### Changed
 Project revitalization

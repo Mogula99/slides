@@ -7,6 +7,10 @@ Versioning info:
 - third number indicates minor changes, such as hotfixes and updates
 
 
+## [6.2.0] - 2022-06-14
+### Added
+GIT Advanced Tutorial
+
 ## [6.1.0] - 2022-06-04
 ### Added
 GIT Tutorial

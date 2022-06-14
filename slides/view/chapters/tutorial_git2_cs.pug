@@ -1,0 +1,251 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/tutorial_git2/';
+- var defaultBgr = 'backgrounds/nebula.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Pokročilý GIT', imgAssets+'chapter_git2.svg')
++frameInbox('Agenda')
+	.flex-cols-2.fill
+		div
+			ul.spacing-md
+				li.fragment.fade-in Git Commits - tipy
+				li.fragment.fade-in Git Stash
+				li.fragment.fade-in Git Ignore
+				li.fragment.fade-in Git Attributes
+				li.fragment.fade-in Git Config
+				li.fragment.fade-in Git Cherry-pick
+				li.fragment.fade-in Git Apply
+				li.fragment.fade-in Git Submodules
+				li.fragment.fade-in Git Worktree
+				li.fragment.fade-in Git Bisect
+		div
+			img.height-400.relative.left-250.top-250(src=imgAssets+'git_icon.png')
++frameInbox('Git Commits - Tipy')
+	div
+		ul
+			li.fragment Commit shrnuje poslední změny
+			li.fragment Neposílejte commity rozpracované práce do veřejných větví
+			li.fragment <span>Pište správně commit zprávy</span>
+				ul
+					li.fragment používejte imperativ v předmětu zprávy
+					li.fragment max 50 písmen, detailní informace jen pokud je to nutné
+						ul
+							li.fragment Příklad vhodné zprávy: <span class="code highlight">CMA-5430: Add pulsar icon to the user section</span>
+							li.fragment Příklad nevhodné zprávy: <span class="code highlight">Progress</span>
+							li.fragment Příklad nevhodné zprávy: <span class="code highlight">Add tooltip, fix alignment, delete old config</span>
+			li.fragment <span>Používejte větve</span>
+				ul
+					li.fragment Větvení vám pomůže vyvarovat se míchání paralelních úrovní vývoje
+			li.fragment Zachovávejte historii a dohledatelnost
++frameInbox('Git Stash')
+	div
+		ul.text-sm
+			li.fragment Umožní vám uložit změny bez vytvoření commitu
+				.bottom-0.right-0
+					img.width-1000(src=imgAssets+'git_stash.svg')
+			li.fragment <span class="highlight code">git stash</span> - "stashne" všechny trackované soubory
+			li.fragment <span class="highlight code">git stash -- #files</span> - stashne dané soubory
+			li.fragment <span class="highlight code">git stash list</span> - zobrazí všechny stashnuté změny
+			li.fragment <span class="highlight code">git stash apply</span> - načte uložené změny
+			li.fragment <span class="highlight code">git stash apply stash@{1}</span> - aplikuje daný stash
+			li.fragment <span class="highlight code">git stash push -m [message]</span> - přidá ke stashi zprávu 
+			li.fragment <span class="highlight code">git stash drop</span> - zahodí stashnutý obsah
+			li.fragment <span class="highlight code">git stash pop</span> - apply + drop
+			li.fragment <span class="highlight code">git stash save</span> - uloží modifikovaný soubor
++frameInbox('Git Ignore')
+	div
+		div
+			ul
+				li.fragment <span class="highlight code">.gitignore</span> je soubor, který eviduje ignorované soubory
+				li.fragment Každý glob pattern je ověřován relativně od adresáře, kde se nachází <span class="highlight code">.gitignore</span> soubor
+		.flex-cols-2.mt-20
+			div
+				ul
+					li.fragment <span class="highlight">Obsah:</span>
+						ul
+							li.fragment dependency cache (node_modules)
+							li.fragment zkompilovaný kód
+							li.fragment výstupní adresář (bin, build)
+							li.fragment skryté systémové soubory
+							li.fragment osobní nastavení (IDE config, .env soubor)
+			div
+				ul
+					li.fragment Příklad: <span class="highlight code">.gitignore</span> pro C++
+						.code.text-3xs.mt-10
+							include ../../assets/tutorial_git2/snippets_generated/gitignore.html
++frameInbox('Git Attributes')
+	div
+		ul
+			li.fragment Obsahuje několik nastavení, například:
+				ul
+					li.fragment nastavení konce řádky
+					li.fragment LFS nastavení
+					li.fragment jak zacházet s binárními a textovými soubory
+			li.fragment <span class="highlight code">*.{bat, [bB][aA][tT]} text eol=crlf</span> 
+				span.fragment - vynutí použití CRLF, aby .bat soubory fungovaly ve Windows
+			li.fragment <span class="highlight code">*.sh text eol=lf</span> 
+				span.fragment - vynutí, aby bash skripty vždy používaly LF
+			li.fragment <span class="highlight code">*.blend binary</span> 
+				span.fragment - bude zacházet s blend soubory jako s binárními soubory
+			li.fragment <span class="highlight code">*.cs text diff=csharp</span> 
+				span.fragment - použije csharp modul pro zvýraznění cs souborů
++frameInbox('.gitattributes příklad')
+	.fill.center
+		.code.text-xs
+			include ../../assets/tutorial_git2/snippets_generated/gitattr.html
++frameInbox('Git Config')
+	div
+		ul
+			li.fragment Obsahuje konfiguraci Gitu na globální i lokální úrovni
+			li.fragment Můžeme k němu přistoupit přes <span class="highlight code">git config [attributes]</span>
+			li.fragment <span class="highlight code">git config --list</span> - zobrazí oba configy
+			li.fragment.fragment <span class="highlight code">git config --global user.name "Dave Dangerous"</span> - nastaví globálně jméno
+			li.fragment <span class="highlight code">git config --global user.email "dave@dangerous.com"</span> - nastaví globálně e-mail
+			li.fragment <span class="highlight code">git config --global core.editor "nano -w"~</span> - nastaví nano jako defaultní git textový editor
+			li.fragment Příklad: Local config
+				.code.text-sm
+					include ../../assets/tutorial_git2/snippets_generated/gitconfig.html
+			+tipKeen1('Nezapomeň nastavit <br>globálně své<br> jméno a e-mail!').right-400.bottom-0
++frameInbox('Git Cherry-pick')
+	div
+		ul
+			li.fragment <span class="highlight code">git cherry-pick #commit</span>
+			li.fragment Vezme commit z jedné větve a aplikuje jej do jiné
+			li.fragment Užitečné, když vytvoříme commit ve špatné větvi a rychle jej chceme přidat do té správné 
+		.flex.flex-col.items-center.mt-20.fragment.fade-in-then-out.absolute.ml-40
+			img.width-1100(src=imgAssets+'git_cherrypick_1.svg')
+		.flex.flex-col.items-center.mt-20.fragment.absolute.ml-40
+			img.width-1100(src=imgAssets+'git_cherrypick_2.svg')
+		.bottom-20.right-20.fragment
+			figure
+				img.height-550(src=imgAssets+'cherry-picker.jpg')
+				p Cherry-picker
++frameInbox('Git Apply')
+	div
+		ul
+			li.fragment.mb-30 Aplikuje patch diffu. Používá se společně s <span class="highlight code">git diff > patchfile.patch</span> příkazem
+		.fragment.fade-in-then-out.absolute.left-200
+			img.width-1200(src=imgAssets+'git_apply_1.svg')
+		.fragment.fade-in-then-out.absolute.left-200
+			img.width-1200(src=imgAssets+'git_apply_2.svg')
+		.fragment.absolute.left-200
+			img.width-1200(src=imgAssets+'git_apply_3.svg')
++frameInbox('Git Submodules')
+	div
+		ul
+			li.fragment Uchovává git repozitář jako podadresář jiného repozitáře
+				.bottom-40.right-40
+					img.height-400(src=imgAssets+'git_submodules.svg')
+			li.fragment Umožňuje trasovat historii externího kódu
+			li.fragment <span class="highlight">Příklady použití</span>
+				ul
+					li.fragment externí komponenta se mění příliš často
+					li.fragment máte komponentu, kterou chcete evidovat jako "vendor dependency"
+					li.fragment delegujete část projektu na třetí stranu
+			li.fragment Mapování je uchováváno v souboru <span class="highlight code">.gitmodules</span>
+			li.fragment <span class="code">git submodule add [url]</span> - převede podadresář do submodulu
+			li.fragment <span class="highlight">Klonování projektu se submoduly:</span>
+				ol.code
+					li.fragment git clone /url/to/project
+					li.fragment git submodule init
+					li.fragment git submodule update	
++frameInbox('Git Worktree')
+	div
+		ul
+			li.fragment Alternativa pro <span class="highlight code">git stash</span>
+			li.fragment Vytvoří linkovanou kopii vašeho repozitáře v jiné složce
+				.bottom-0.right-0
+					img.width-900(src=imgAssets+'git_worktree.svg')
+			li.fragment Můžete pracovat na vícero větvích zároveň
+			li.fragment <span class="highlight code">git worktree add ../myfeature</span> - vytvoří nový worktree
+			li.fragment <span class="highlight code">git worktree list</span> - zobrazí seznam worktrees
+			li.fragment <span class="highlight code">git worktree remove myfeature</span> - odstraní worktree
+			li.fragment.mt-40 <span class="highlight">Postup</span>
+				ul
+					li.fragment Vytvořte worktree
+					li.fragment Proveďte, co potřebujete
+					li.fragment Vytvořte commit
+					li.fragment Odstraňte váš worktree
++frameInbox('Git Bisect')
+	div
+		ul
+			li.fragment Provede binární vyhledávání mezi dvěma danými commity
+				.bottom-0.right-0
+					img.height-440(src=imgAssets+'binary_search.svg')
+			li.fragment Může se použít pro vyhledání místa prvního výskytu bugu
+			li.fragment <span class="code highlight">git bisect start</span> - inicializuje bisect proces
+			li.fragment <span class="code highlight">git bisect good #hash</span> - označí dobrý commit
+			li.fragment <span class="code highlight">git bisect bad #hash</span> - označí špatný commit
+			li.fragment <span class="code highlight">git bisect good</span> - označí aktuální commit jako dobrý
+			li.fragment <span class="code highlight">git bisect bad</span> - označí aktuální commit jako špatný
+			li.fragment <span class="code highlight">git bisect reset</span> - ukončí bisect proces
+			li.fragment <span class="code highlight">git bisect log</span> - ukáže, co se doposud otestovalo
+			li.fragment <span class="code highlight">git bisect run #script</span> - spustí testy
+			li.fragment <span class="code highlight">git bisect start #bad #good</span> - zkratka
++frameInbox('Git Bisect Příklad')
+	.fill.center
+		.fragment.fade-in-then-out.absolute
+			img.width-1100(src=imgAssets+'git_bisect_1.svg')
+		.fragment.fade-in-then-out.absolute
+			img.width-1100(src=imgAssets+'git_bisect_2.svg')
+		.fragment.fade-in-then-out.absolute
+			img.width-1100(src=imgAssets+'git_bisect_3.svg')
+		.fragment.fade-in-then-out.absolute
+			img.width-1100(src=imgAssets+'git_bisect_4.svg')
+		.fragment.fade-in
+			img.width-1100(src=imgAssets+'git_bisect_5.svg')
++frameInbox('Příklady')
+	.fill
+		ul
+			li Chci vidět, jak vypadal soubor myfile.txt v předchozím commitu
+		.space-xl
+		.center.text-md.mt-100.fragment
+			.code.mt-100
+				include ../../assets/tutorial_git2/snippets_generated/gitshow_previous.html
++frameInbox('Příklady')
+	.fill
+		ul
+			li Chci zkopírovat pár souborů z jiné větve do té aktuální
+		.space-md
+		.center.text-md.mt-100.fragment
+			.code
+				include ../../assets/tutorial_git2/snippets_generated/gitcopy.html
++frameInbox('Příklady')
+	.fill
+		ul
+			li Chci vidět, co se v souboru historicky změnilo
+		.space-xl
+		.center.text-md.mt-100.fragment
+			.code
+				include ../../assets/tutorial_git2/snippets_generated/gitshow.html
++frameInbox('Příklady')
+	.fill
+		ul
+			li Chci si pullnout větev, která byla rebasnuta přímo na originu, aniž bych musel vytvořit merge
+		.center.text-md.mt-100.fragment
+			.code
+				include ../../assets/tutorial_git2/snippets_generated/pull_rebase.html
++frameInbox('Příklady')
+	.fill
+		ul
+			li Chci sloučit všechny commity od B do F do jednoho
+		.text-center.mt-40
+			img.height-300(src=imgAssets+'git_squash.svg')
+		.center.text-md.mt-100.fragment
+			.code
+				include ../../assets/tutorial_git2/snippets_generated/squash.html
++frameInbox('Shrnutí')
+	div
+		ul
+			li.fragment Commit shrnuje poslední změny
+			li.fragment <span class="code">git stash</span> umožní uložit změny bez vytvoření commitu
+			li.fragment <span class="code">.gitignore</span> je soubor, který eviduje ignorované soubory
+			li.fragment <span class="code">.gitattributes</span> může být použit pro konfiguraci znaků nové řádky
+			li.fragment Git config obsahuje konfiguraci na globální i lokální úrovni
+			li.fragment <span class="code">git cherry-pick</span> vezme commit z dané větve a aplikuje jej do jiné větve
+			li.fragment <span class="code">git apply</span> aplikuje patch diffu
+			li.fragment Git submodules uchovává git repozitář jako podadresář jiného repozitáře
+			li.fragment <span class="code">git worktree</span> vytvoří linkovanou kopii vašeho repozitáře v jiné složce
+			li.fragment <span class="code">git bisect</span> provede binární vyhledávání mezi dvěma danými commity

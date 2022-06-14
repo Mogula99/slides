@@ -1,0 +1,251 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/tutorial_git2/';
+- var defaultBgr = 'backgrounds/nebula.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Git Advanced', imgAssets+'chapter_git2.svg')
++frameInbox('Agenda')
+	.flex-cols-2.fill
+		div
+			ul.spacing-md
+				li.fragment.fade-in Git Commits - Best Practices
+				li.fragment.fade-in Git Stash
+				li.fragment.fade-in Git Ignore
+				li.fragment.fade-in Git Attributes
+				li.fragment.fade-in Git Config
+				li.fragment.fade-in Git Cherry-pick
+				li.fragment.fade-in Git Apply
+				li.fragment.fade-in Git Submodules
+				li.fragment.fade-in Git Worktree
+				li.fragment.fade-in Git Bisect
+		div
+			img.height-400.relative.left-250.top-250(src=imgAssets+'git_icon.png')
++frameInbox('Git Commits - Best Practices')
+	div
+		ul
+			li.fragment A commit should be a wrapper for related changes
+			li.fragment Don't commit half-done work into public branches
+			li.fragment <span>Write good commit messages</span>
+				ul
+					li.fragment use the imperative style in the subject line
+					li.fragment up to 50 characters, provide detailed information if necessary
+						ul
+							li.fragment Good commit message: <span class="code highlight">CMA-5430: Add pulsar icon to the user section</span>
+							li.fragment Bad commit message: <span class="code highlight">Progress</span>
+							li.fragment Bad commit message: <span class="code highlight">Add tooltip, fix alignment, delete old config</span>
+			li.fragment <span>Use branches</span>
+				ul
+					li.fragment Branching helps you avoid mixing up different lines of development
+			li.fragment Preserve history and traceability
++frameInbox('Git Stash')
+	div
+		ul.text-sm
+			li.fragment Enables you to save your code without making a commit
+				.bottom-0.right-0
+					img.width-1000(src=imgAssets+'git_stash.svg')
+			li.fragment <span class="highlight code">git stash</span> - stashes all tracked files
+			li.fragment <span class="highlight code">git stash -- #files</span> - stashes the given files
+			li.fragment <span class="highlight code">git stash list</span> - displays all stashed changes
+			li.fragment <span class="highlight code">git stash apply</span> - reapplies the stashed content
+			li.fragment <span class="highlight code">git stash apply stash@{1}</span> - applies selected stash
+			li.fragment <span class="highlight code">git stash push -m [message]</span> - creates a stash with a message 
+			li.fragment <span class="highlight code">git stash drop</span> - drops the stashed content
+			li.fragment <span class="highlight code">git stash pop</span> - apply + drop
+			li.fragment <span class="highlight code">git stash save</span> - saves the modified file
++frameInbox('Git Ignore')
+	div
+		div
+			ul
+				li.fragment <span class="highlight code">.gitignore</span> is a file that tracks ignored files
+				li.fragment Each glob pattern is tested relative to the directory containing the <span class="highlight code">.gitignore</span> file  
+		.flex-cols-2.mt-20
+			div
+				ul
+					li.fragment <span class="highlight">Content:</span>
+						ul
+							li.fragment dependency cache (node_modules)
+							li.fragment compiled code
+							li.fragment build output directory (bin, build)
+							li.fragment hidden system files
+							li.fragment personal files (IDE config, .env file)
+			div
+				ul
+					li.fragment Example: <span class="highlight code">.gitignore</span> for C++
+						.code.text-3xs.mt-10
+							include ../../assets/tutorial_git2/snippets_generated/gitignore.html
++frameInbox('Git Attributes')
+	div
+		ul
+			li.fragment Controls a bunch of Git settings, for instance:
+				ul
+					li.fragment line endings settings
+					li.fragment LFS settings
+					li.fragment binary/text files handling
+			li.fragment <span class="highlight code">*.{bat, [bB][aA][tT]} text eol=crlf</span> 
+				span.fragment - forces to use CRLF so that if a repo is accessed in Windows, the script will work
+			li.fragment <span class="highlight code">*.sh text eol=lf</span> 
+				span.fragment - forces bash scripts to always use LF line endings
+			li.fragment <span class="highlight code">*.blend binary</span> 
+				span.fragment - will treat blend files as binary files
+			li.fragment <span class="highlight code">*.cs text diff=csharp</span> 
+				span.fragment - will treat cs files as text files and uses csharp module for highlighting
++frameInbox('.gitattributes example')
+	.fill.center
+		.code.text-xs
+			include ../../assets/tutorial_git2/snippets_generated/gitattr.html
++frameInbox('Git Config')
+	div
+		ul
+			li.fragment Contains Git configuration on a global or local project level
+			li.fragment Can be accessed by using <span class="highlight code">git config [attributes]</span>
+			li.fragment <span class="highlight code">git config --list</span> - displays both configs
+			li.fragment.fragment <span class="highlight code">git config --global user.name "Dave Dangerous"</span> - sets a global name
+			li.fragment <span class="highlight code">git config --global user.email "dave@dangerous.com"</span> - sets a global e-mail
+			li.fragment <span class="highlight code">git config --global core.editor "nano -w"~</span> - sets nano as the default git editor
+			li.fragment Example: Local config
+				.code.text-sm
+					include ../../assets/tutorial_git2/snippets_generated/gitconfig.html
+			+tipKeen1('Don\'t forget to set up your global name and e-mail!').right-400.bottom-0
++frameInbox('Git Cherry-pick')
+	div
+		ul
+			li.fragment <span class="highlight code">git cherry-pick #commit</span>
+			li.fragment Takes a commit from any branch and applies it to a different branch
+			li.fragment Useful when you made a commit to the wrong branch, and you want to apply it quickly to the right one 
+		.flex.flex-col.items-center.mt-20.fragment.fade-in-then-out.absolute.ml-40
+			img.width-1100(src=imgAssets+'git_cherrypick_1.svg')
+		.flex.flex-col.items-center.mt-20.fragment.absolute.ml-40
+			img.width-1100(src=imgAssets+'git_cherrypick_2.svg')
+		.bottom-20.right-20.fragment
+			figure
+				img.height-550(src=imgAssets+'cherry-picker.jpg')
+				p Cherry-picker
++frameInbox('Git Apply')
+	div
+		ul
+			li.fragment.mb-30 Applies a patch of a diff. Used together with <span class="highlight code">git diff > patchfile.patch</span> command
+		.fragment.fade-in-then-out.absolute.left-200
+			img.width-1200(src=imgAssets+'git_apply_1.svg')
+		.fragment.fade-in-then-out.absolute.left-200
+			img.width-1200(src=imgAssets+'git_apply_2.svg')
+		.fragment.absolute.left-200
+			img.width-1200(src=imgAssets+'git_apply_3.svg')
++frameInbox('Git Submodules')
+	div
+		ul
+			li.fragment Keep a git repository as a subdirectory of another git repository
+				.bottom-40.right-40
+					img.height-400(src=imgAssets+'git_submodules.svg')
+			li.fragment You can incorporate and track version history of external code
+			li.fragment <span class="highlight">Use-cases</span>
+				ul
+					li.fragment an external component is changing too fast
+					li.fragment you have a component you want to track as a vendor dependency
+					li.fragment you are delegating a piece of the project to a third party
+			li.fragment Mapping is managed in a <span class="highlight code">.gitmodules</span> file
+			li.fragment <span class="code">git submodule add [url]</span> - transforms a subdirectory into a submodule
+			li.fragment <span class="highlight">Cloning a project with submodules:</span>
+				ol.code
+					li.fragment git clone /url/to/project
+					li.fragment git submodule init
+					li.fragment git submodule update	
++frameInbox('Git Worktree')
+	div
+		ul
+			li.fragment Alternative for <span class="highlight code">git stash</span>
+			li.fragment Creates a linked copy of your git repository under a separate path
+				.bottom-0.right-0
+					img.width-900(src=imgAssets+'git_worktree.svg')
+			li.fragment You can check out multiple branches at the same time
+			li.fragment <span class="highlight code">git worktree add ../myfeature</span> - creates a new worktree
+			li.fragment <span class="highlight code">git worktree list</span> - will display the list of worktrees
+			li.fragment <span class="highlight code">git worktree remove myfeature</span> - will remove the worktree
+			li.fragment.mt-40 <span class="highlight">Workflow</span>
+				ul
+					li.fragment Create a worktree
+					li.fragment Do the task that requires it
+					li.fragment Commit the work
+					li.fragment Remove your worktree
++frameInbox('Git Bisect')
+	div
+		ul
+			li.fragment Performs a binary search between two given commits
+				.bottom-0.right-0
+					img.height-440(src=imgAssets+'binary_search.svg')
+			li.fragment Can be used to chase down the commit where a bug first appeared
+			li.fragment <span class="code highlight">git bisect start</span> - inits the bisect process
+			li.fragment <span class="code highlight">git bisect good #hash</span> - marks the good commit
+			li.fragment <span class="code highlight">git bisect bad #hash</span> - marks the bad commit
+			li.fragment <span class="code highlight">git bisect good</span> - marks the current commit as good
+			li.fragment <span class="code highlight">git bisect bad</span> - marks the current commit as bad
+			li.fragment <span class="code highlight">git bisect reset</span> - ends the bisect process
+			li.fragment <span class="code highlight">git bisect log</span> - shows what has been tested so far
+			li.fragment <span class="code highlight">git bisect run #script</span> - runs tests along the way
+			li.fragment <span class="code highlight">git bisect start #bad #good</span> - short-hand
++frameInbox('Git Bisect Example')
+	.fill.center
+		.fragment.fade-in-then-out.absolute
+			img.width-1100(src=imgAssets+'git_bisect_1.svg')
+		.fragment.fade-in-then-out.absolute
+			img.width-1100(src=imgAssets+'git_bisect_2.svg')
+		.fragment.fade-in-then-out.absolute
+			img.width-1100(src=imgAssets+'git_bisect_3.svg')
+		.fragment.fade-in-then-out.absolute
+			img.width-1100(src=imgAssets+'git_bisect_4.svg')
+		.fragment.fade-in
+			img.width-1100(src=imgAssets+'git_bisect_5.svg')
++frameInbox('Examples')
+	.fill
+		ul
+			li I want to see how the content of myfile.txt looked in the previous commit
+		.space-xl
+		.center.text-md.mt-100.fragment
+			.code.mt-100
+				include ../../assets/tutorial_git2/snippets_generated/gitshow_previous.html
++frameInbox('Examples')
+	.fill
+		ul
+			li I want to copy-paste a few files from a different branch into my current branch
+		.space-md
+		.center.text-md.mt-100.fragment
+			.code
+				include ../../assets/tutorial_git2/snippets_generated/gitcopy.html
++frameInbox('Examples')
+	.fill
+		ul
+			li I want to see what has changed in a file over time
+		.space-xl
+		.center.text-md.mt-100.fragment
+			.code
+				include ../../assets/tutorial_git2/snippets_generated/gitshow.html
++frameInbox('Examples')
+	.fill
+		ul
+			li I want to pull a branch that has been rebased and force-pushed on the origin server, without creating a merge request
+		.center.text-md.mt-100.fragment
+			.code
+				include ../../assets/tutorial_git2/snippets_generated/pull_rebase.html
++frameInbox('Examples')
+	.fill
+		ul
+			li I want to squash all commits from B to F into one
+		.text-center.mt-40
+			img.height-300(src=imgAssets+'git_squash.svg')
+		.center.text-md.mt-100.fragment
+			.code
+				include ../../assets/tutorial_git2/snippets_generated/squash.html
++frameInbox('Summary')
+	div
+		ul
+			li.fragment A commit should be a wrapper for related changes
+			li.fragment <span class="code">git stash</span> enables to save your code without making a commit
+			li.fragment <span class="code">.gitignore</span> is a file that tracks ignored files
+			li.fragment <span class="code">.gitattributes</span> can be used to configure line endings settings
+			li.fragment Git config contains Git configuration on a global or local project level
+			li.fragment <span class="code">git cherry-pick</span> takes a commit from any branch and applies it to a different branch
+			li.fragment <span class="code">git apply</span> applies a patch of a diff
+			li.fragment Git submodules keep a git repository as a subdirectory of another git repository
+			li.fragment <span class="code">git worktree</span> creates a linked copy of your git repository under a separate path
+			li.fragment <span class="code">git bisect</span> performs a binary search between two given commits

@@ -1,16 +1,14 @@
 # APHGames Slides
 
-<p align="center">
-    <img alt="APHGames" src="./slides/logo.png" width="500">
-</p>
+![APHSlides](./img.png)
 
-- 🎓 intended mainly for education at FIT CTU
-- 📦 built by using [parcelJS](https://parceljs.org) pipeline
-
+- 🎓 lectures for [APHGames](https://aphgames.io) courses
+- 🎈 declared by using DoDo's [Slides Template](https://github.com/dodolab/slides-template)
+- 📦 bundled by using [parcelJS](https://parceljs.org) pipeline
 
 ## How to build this project
 - clone it
-- install [nodeJS](https://nodejs.org/en/download/), LTS version if possible 
+- install [NodeJS](https://nodejs.org/en/download/), LTS version if possible 
 - execute `npm install`
 - run `npm run dev` and navigate to `localhost:1234/index.html`
 

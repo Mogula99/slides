@@ -1,0 +1,64 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/tutorial_ackermann/';
+- var defaultBgr = 'backgrounds/blur.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Ackermannova Dynamika', imgAssets+'chapter_ackermann.svg')
++frameInbox('Ackermannova Dynamika')
+	div
+		ul
+			li.fragment Teoretický koncept pro zatáčení vozidel
+				.bottom-0.right-40
+					img.height-400(src=imgAssets+'car.jpg')
+			li.fragment Vynalezen <span class="highlight">Rudolphem Ackermannem</span> roku 1818. Předtím docházelo při zatáčení kočárů ke smyku, protože byla obě kola natočena stejně
+				.bottom-0.right-650
+					img.height-400(src=imgAssets+'rudolph_ackermann.jpg')
+			li.fragment Pokud vozidlo jede podél křivky, každé kolo následuje svou vlastní trajektorii okolo společného středu
+				.bottom-0.left-40
+					img.height-400(src=imgAssets+'principle.svg')
+			li.fragment Aby nedošlo ke smyku, geometrie vozidla musí natočit vnitřní přední kolo více než to vnější
+			li.fragment Tato technika předpokládá zatáčení při nízkých rychlostech, což platí pro osobní vozidla. Závodní auta používají koncept paralelního zatáčení.
++frameInbox('Rovnice')
+	div
+		ul
+			li.fragment Nechť 
+				include ../../assets/tutorial_ackermann/equations_generated/expression_01.svg
+				|&nbsp;je rozchod kol, 
+				include ../../assets/tutorial_ackermann/equations_generated/expression_02.svg
+				|&nbsp;rozvor náprav, 
+				include ../../assets/tutorial_ackermann/equations_generated/expression_03.svg
+				|&nbsp;relativní úhel vnitřního kola, 
+				include ../../assets/tutorial_ackermann/equations_generated/expression_04.svg
+				|&nbsp;relativní úhel vnějšího kola, a 
+				include ../../assets/tutorial_ackermann/equations_generated/expression_05.svg
+				|&nbsp;vzdálenost mezi středem křivosti ICC a středem auta, můžeme psát následující:
+				.bottom-40.right-40
+					img.height-620(src=imgAssets+'math.svg')
+			li.fragment
+				include ../../assets/tutorial_ackermann/equations_generated/expression_07.svg
+			li.fragment
+				include ../../assets/tutorial_ackermann/equations_generated/expression_08.svg
+			li.fragment
+				include ../../assets/tutorial_ackermann/equations_generated/expression_09.svg
+			li.fragment Pokud rovnice od sebe odečteme, můžeme s využitím faktu<br> 
+				include ../../assets/tutorial_ackermann/equations_generated/expression_10.svg  
+				|&nbsp;odvodit:
+			li.fragment
+				include ../../assets/tutorial_ackermann/equations_generated/expression_11.svg
+			li.fragment
+				include ../../assets/tutorial_ackermann/equations_generated/expression_12.svg
++frameInbox('Hratelné demo')
+	div
+		ul
+			li <a href="https://aphgames.cz/docs/learning/examples/dynamics/ackermann-simple">Ackermann - jednoduchý příklad</a>
+			li <a href="https://aphgames.cz/docs/learning/examples/dynamics/ackermann-advanced">Ackermann - pokročilý příklad</a>
+		.space-xl
+		.flex-cols-2
+			figure
+				img.height-500(src=imgAssets+'example_simple.jpg')
+				p Ackermann - jednoduchý
+			figure
+				img.height-500(src=imgAssets+'example_advanced.jpg')
+				p Ackermann - pokročilý

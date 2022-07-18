@@ -6,6 +6,12 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [6.3.0] - 2022-07-18
+### Added
+Ackermann Tutorial
+
+### Changed
+Updated libraries
 
 ## [6.2.0] - 2022-06-14
 ### Added

@@ -6,11 +6,11 @@ include ./mixins/containers_aph.pug
 - var themePath = '../themes/aph/';
 - var globalAssets = '../assets/all/';
 
-html(lang='cs')
-	+header('Tutoriál: Základy GITu', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+html(lang='en')
+	+header('Tutorial: Ackermann Steering', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
 	.reveal
 		.slides
-			include ./chapters/tutorial_git_cs.pug
+			include ./chapters/tutorial_ackermann.pug
 					
-	+footer('Adam Vesecký', 'APHGames, Tutoriál: Základy GITu')
+	+footer('Adam Vesecký', 'APHGames, Tutorial: Ackermann Steering')
 	script(src!='../../scripts/reveal-setup.js')

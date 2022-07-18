@@ -7,10 +7,10 @@ include ./mixins/containers_aph.pug
 - var globalAssets = '../assets/all/';
 
 html(lang='cs')
-	+header('Tutoriál: Základy GITu', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	+header('Tutoriál: Ackermannova Dynamika', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
 	.reveal
 		.slides
-			include ./chapters/tutorial_git_cs.pug
+			include ./chapters/tutorial_ackermann_cs.pug
 					
-	+footer('Adam Vesecký', 'APHGames, Tutoriál: Základy GITu')
+	+footer('Adam Vesecký', 'APHGames, Tutoriál: Ackermannova Dynamika')
 	script(src!='../../scripts/reveal-setup.js')

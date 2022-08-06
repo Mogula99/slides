@@ -1,0 +1,98 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/games_intro/';
+- var defaultBgr = 'backgrounds/bgr_road.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('What are games', imgAssets+'chapter_game.svg')
++mcontainer('What is a game?')
+	+frameShard.width-880.top-3p.fragment.fade-up
+		div A <span class="highlight">game</span> is something you <span class="highlight">play</span>. 
+			|Something that is <span class="highlight">fun</span> to play. 
+			|A fun is a pleasure with <span class="highlight">surprises</span>. 
+			span.highlight-2 (Jesse Schell)
+	+frameShard.width-860.top-4p.left-15p.fragment.fade-up
+		div A game is an interactive structure of <span class="highlight">endogeneous</span> meaning 
+			|that requires player to struggle toward a goal. 
+			span.highlight-2 (Greg Costikyan)
+	+frameShard.width-860.top-5p.left-30p.fragment.fade-up
+		div Games are exercise of control systems, in which there is a contest between powers, confined by 
+			|<span class="highlight">rules</span>, producing a disequlibrial 
+			|<span class="highlight">outcome</span>. 
+			span.highlight-2 (Elliot Avendon)
+	+frameShard.width-900.top-6p.left-50p.fragment.fade-up
+		div A game is an <span class="highlight">activity</span> defined by rules in which players try 
+			|to reach some sort of <span class="highlight">goal</span>. 
+			span.highlight-2 (Alexander Galloway)
++frameInbox('What is a game?')
+	.fill.center
+		img.height-300(src=globalAssets+'circle.svg')
+	.top-5p.left-40p.text-xl curiosity
+	.top-13p.left-24p.text-5xl system
+	.top-13p.left-58p.text-3xl outcome
+	.top-30p.left-20p.text-4xl conflict
+	.top-30p.left-63p.text-2xl activity
+	.top-45p.left-18p.text-xs endogeneous
+	.top-45p.left-60p.text-6xl goal
+	.top-60p.left-28p.text-md surprise
+	.top-65p.left-57p.text-sm rules
+	.top-72p.left-42p.text-xl choices
++frameInbox('What is a computer game?')
+	div.important-orange.spacing-xs
+		.scope.fragment
+			p Computer Application
+			ul
+				li a computer program that <span class="highlight-2">helps</span> the user to perform tasks
+		.scope.fragment
+			p Computer game
+			ul
+				li a computer program where players interact with objects on a screen for the sake of <span class="highlight-2">entertainment</span>
+		.scope.fragment
+			p Gamification
+			ul
+				li application of game elements to other areas to encourage engagement with a product or sevice
+		.fragment.flex.flex-row.center
+			figure.m-50
+				img.height-280(src=imgAssets+'habitica.png')
+				p Habitica
+			figure.m-10
+				img.height-280(src=imgAssets+'gather.jpg')
+				p Gather.town
+	+tipKeen("Computer games are not applications! Yet the line between them is blur.")(class='bottom-0p left-0p')
++mcontainer('Technical definition')
+	+frameShard.width-70px.height-20p.top-280.center.z-index-100
+		p.text-xl Computer games are real-time interactive agent-based simulators.
++frameInbox('Game genres')(autoAnimate=true)
+	.center
+		.grid-rows-3.grid-cols-4.grid.gap-10.width-65p
+			+gbGame(imgAssets+'genre_arcade.jpg', 'Arcade').fragment#g1
+			+gbGame(imgAssets+'genre_shooter.jpg', 'FPS').fragment
+			+gbGame(imgAssets+'genre_platformer.jpg', 'Platformer').fragment
+			+gbGame(imgAssets+'genre_adventure.jpg', 'Adventure').fragment
+			+gbGame(imgAssets+'genre_puzzle.jpg', 'Puzzle').fragment#g4
+			+gbGame(imgAssets+'genre_rpg.jpg', 'RPG').fragment
+			+gbGame(imgAssets+'genre_strategy.jpg', 'Strategy').fragment
+			+gbGame(imgAssets+'genre_casual.jpg', 'Simulations').fragment#g3
+			+gbGame(imgAssets+'genre_sports.jpg', 'Sports').fragment
+			+gbGame(imgAssets+'genre_racing.jpg', 'Racing').fragment#g2
+			+gbGame(imgAssets+'genre_fighting.jpg', 'Fighting').fragment
+			+gbGame(imgAssets+'genre_sandbox.jpg', 'Sandbox').fragment
++frameInbox('Game categories')(autoAnimate=true)
+	.center.fill
+		.grid.grid-rows-1.grid-cols-4.width-90p
+			+floppyApp(imgAssets+'genre_racing.jpg', 'AAA Games')#g1
+			+floppyApp(imgAssets+'genre_platformer.jpg', 'Indie Games')#g2
+			+floppyApp(imgAssets+'genre_casual.jpg', 'Casual')#g3
+			+floppyApp(imgAssets+'genre_puzzle.jpg', 'Hyper casual')#g4
++frameInbox('Game spaces')(autoAnimate=true)
+	.center.fill
+		.grid.grid-rows-1.grid-cols-5.width-100p
+			+dsGame(imgAssets+'genre_platformer.jpg', '2D')#g1
+			+dsGame(imgAssets+'space_isometric.jpg', 'Isometric 2D')#g2
+			+dsGame(imgAssets+'space_fake3D.jpg', 'Fake 3D')#g3
+			+dsGame(imgAssets+'space_25D.jpg', '2.5 D')#g4
+			+dsGame(imgAssets+'genre_racing.jpg', '3D')
++frameInbox('Milestones of game industry')
+	.center
+		img.height-750(src=imgAssets+'games_history.svg')

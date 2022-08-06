@@ -1,0 +1,26 @@
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+include ./mixins/title.pug
+include ./mixins/quotes.pug
+include ./mixins/summary.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+
+html(lang='en')
+	+header('Games', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+
+	.reveal
+		.slides
+			+titleLecture('Games', 'Lecture 1', 'color-azure-light', globalAssets+'lectures/ic_lecture01.svg')
+			include ./chapters/games_intro.pug
+			include ./chapters/games_mechanics.pug
+			- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+			+summary_lecture01()
+			+quote-pokemon()
+					
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Lecture 1: Games')
+	script(src!='../../scripts/reveal-setup.js')

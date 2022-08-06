@@ -1,0 +1,171 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/games_mechanics/';
+- var defaultBgr = 'backgrounds/bgr_limbo.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Game Mechanics', imgAssets+'chapter_mechanics.svg')
++frameInbox('Terms')
+	div.important-orange.spacing-3xs
+		div
+			.scope.fragment 
+				p Emergence
+				ul
+					li refers to the fact that the behavior is the result of a complex and dynamic system of rules
+			.scope.fragment 
+				p Progression
+				ul
+					li refers to the structures in games where a designer outlined the possible game states beforehand, usually through level design
+			.scope.fragment
+				p Gameplay
+				ul
+					li an emergent property of the game as defined by its rules
+			.scope.fragment 
+				p Mechanics
+				ul
+					li a set of rules governing the behavior of a single game element
+			.scope.fragment 
+				p System
+				ul
+					li interacting group of game elements forming a unified whole
+			.scope.fragment 
+				p Level
+				ul
+					li a structure in a game that dictates what challenges players encounter
++frameInbox('Game Basic Elements')
+	div.important-orange.spacing-2xs
+		div
+			.scope.fragment
+				p Mechanics
+				ul
+					li a set of rules governing the behavior of a single game element
+					li.fragment <span class="highlight-2">design hook</span> - the core mechanic that sells the game
+					li.fragment <span class="highlight-2">subelements</span> - space, objects, actions, rules
+			.scope.fragment
+				p Story
+				ul
+					li a sequence of events that unfolds in the game
+			.scope.fragment
+				p Aesthetics
+				ul
+					li how the game looks, sounds, feels,...
+			.scope.fragment
+				p Technology
+				ul
+					li any materials and interactions that make the game possible
+			.scope.fragment
+				p Goals
+				ul
+					li define what players try to achieve
+		.bottom-40.right-40.fragment
+			img.width-700(src=imgAssets+'visible_mechanics.svg')
++frameInbox('Mechanics')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'factorio.jpg')
+			p Factorio
++frameInbox('Story')
+	figure.top-20.right-0.fragment
+		img.height-350(src=imgAssets+'story_naughdog.jpg')
+		p Naughty Dog Games
+	figure.top-100.right-400.fragment
+		img.height-350(src=imgAssets+'story_bethesda.jpg')
+		p Bethesda Games
+	figure.top-250.right-800.fragment
+		img.height-350(src=imgAssets+'story_ea.jpg')
+		p EA Games
+	figure.top-400.left-0.fragment
+		img.height-350(src=imgAssets+'story_valve.jpg')
+		p Valve Games
+	+tipGordon('...').bottom-0.right-0
++frameInbox('Aesthetics')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'inside.jpg')
+			p INSIDE
++frameInbox('Technology')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'spore.jpg')
+			p Spore
++frameInbox('Goals')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'wow.jpg')
+			p World of Warcraft
++frameInbox('Example: Space Invaders')
+	div.leading-lg
+		p <span class="font-bold highlight">Mechanics</span> - introduced the concept of a highscore
+		p <span class="font-bold highlight">Story</span> - didn't need to have a story
+		p <span class="font-bold highlight">Aesthetics</span> - three different alien designs
+		p <span class="font-bold highlight">Technology</span> - first videogame of its kind
+		p <span class="font-bold highlight">Goals</span> - survive as long as you can
+	.flex-row.justify-center.bottom-0.width-100p.nopadding
+		img.height-440(src=imgAssets+'invaders.jpg')
++frameInbox('Example: Doom')
+	div.leading-lg
+		p <span class="font-bold highlight">Mechanics</span> - levels, ambushes powerkits, keys, doors, elevators,...
+		p <span class="font-bold highlight">Story</span> - unnamed hero (Doomguy) fighting against invading demons
+		p <span class="font-bold highlight">Aesthetics</span> - advanced level design (for that period)
+		p <span class="font-bold highlight">Technology</span> - pseudo 3D FPS perspective
+		p <span class="font-bold highlight">Goals</span> - hunt down keys, beat all levels
+	.flex-row.justify-center.bottom-0.width-100p.nopadding
+		img.height-440(src=imgAssets+'doom.jpg')
++frameInbox('Example: No man\'s sky')
+	div.leading-lg
+		p <span class="font-bold highlight">Mechanics</span> - exploration, crafting, gathering, building
+		p <span class="font-bold highlight">Story</span> - space-exploration game with heavy resource-gathering elements
+		p <span class="font-bold highlight">Aesthetics</span> - visually stunning lush world
+		p <span class="font-bold highlight">Technology</span> - (pseudo) random generated world
+		p <span class="font-bold highlight">Goals</span> - get to the centre of the galaxy
+	.flex-row.justify-center.bottom-0.width-100p.nopadding
+		img.height-440(src=imgAssets+'nomansky.jpg')
+	.fragment.tip.bottom-0.left-410
+		img.height-440(src=globalAssets+'memes/nmsky.jpg')
++frameInbox('Baba is You')
+	div.leading-lg
+		p <span class="font-bold highlight">Mechanics</span> - building new rules by composing words (rule-based progressing)
+		p <span class="font-bold highlight">Story</span> - without narrative concepts 
+		p <span class="font-bold highlight">Aesthetics</span> - cartoonish pixel art
+		p <span class="font-bold highlight">Technology</span> - predefined logic operators
+		p <span class="font-bold highlight">Goals</span> - compose the right rule/command to advance, beat all levels
+	.flex-row.justify-center.bottom-0.width-100p.nopadding
+		img.height-440(src=imgAssets+'babaisyou.jpg')
+
++frameInbox('Game Mechanic Entities')
+	div.important-orange
+		.scope.fragment.fade-up(data-fragment-index='1')
+			p Space
+			ul
+				li various spaces that can exist in a game and how they are related
+				li physical and conceptual relationships
+		.scope.fragment.fade-up(data-fragment-index='2')
+			p Objects
+			ul
+				li entities that can be seen or manipulated
+		.scope.fragment.fade-up(data-fragment-index='3')
+			p Actions
+			ul
+				li processes that change the game state <br> as a reaction to some sort of input
+		.scope.fragment.fade-up(data-fragment-index='4')
+			p Rules
+			ul
+				li statements that describe constraints and consequences
+		.bottom-0.right-0.width-550.fragment(data-fragment-index='4')
+			img(src=globalAssets+'memes/blocked_path.jpg')
++frameInbox('Example: Pong')
+	div
+		.spacing-2xs
+			p.fragment <span class="font-bold highlight">Space</span> - 2D board
+			p.fragment.mt-10 <span class="font-bold highlight">Objects</span> - two players (paddles), colliding ball, score
+			p.fragment.mt-10 <span class="font-bold highlight">Actions</span> - move up/down (1 degree of freedom), release the ball
+			p.fragment.mt-10 <span class="font-bold highlight">Rules</span>
+				ul
+					li.fragment the ball has a constant linear velocity
+					li.fragment the angle of incidence is the angle of reflection
+					li.fragment player earns one point when the other player fails to return the ball
+					li.fragment the winner is the one who reaches eleven points before the opponent
+		.center.bottom-0.width-100p
+			img.height-380(src=imgAssets+'pong.gif')
+

@@ -1,0 +1,7 @@
+mixin quote-pokemon()
+    +mcontainer('Goodbye Quote')(autoAnimate)
+        +frameShard().top-25p.left-35p.width-30p
+                +quote('It\'s super effective.', '')(class="font-dos not-italic")
+    +mcontainer('Goodbye Quote')(bgr='backgrounds/pokemon.jpg', autoAnimate=true)
+        +frameShard().top-25p.left-30p.width-42p
+                +quote('It\'s super effective.', 'Pokémon Series')(class="font-dos not-italic")

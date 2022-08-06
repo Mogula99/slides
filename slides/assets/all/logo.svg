@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="653.63" height="305.06" version="1.1" viewBox="0 0 172.94 80.715" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="matrix(7.2627 0 0 7.2627 -682.16 -695.34)" stroke-width=".13769">
+  <rect x="94.208" y="96.454" width="23.308" height="9.7115" fill="#1d232d" style="paint-order:normal"/>
+  <circle transform="scale(-1)" cx="-104.89" cy="-101.31" r=".38846" fill="#fff"/>
+  <path d="m99.063 98.396v1.9423h-1.9423v1.9423h1.9423v1.9423h1.9423v-1.9423h1.9423v-1.9423h-1.9423v-1.9423z" fill="#7b8694"/>
+  <circle cx="113.63" cy="101.31" r=".97115" fill="#47d58a"/>
+  <circle cx="111.69" cy="99.367" r=".97115" fill="#cf2f25"/>
+  <circle cx="111.69" cy="103.25" r=".97115" fill="#2c57df"/>
+  <path d="m109.74 100.34a0.97115 0.97115 0 0 0-0.68659 0.2847l0.68659 0.6866-0.68659 0.68665a0.97115 0.97115 0 0 0 0.68659 0.2847 0.97115 0.97115 0 0 0 0.97119-0.97114 0.97115 0.97115 0 0 0-0.97119-0.97114z" fill="#e9e56f"/>
+  <circle transform="scale(-1)" cx="-107.8" cy="-101.31" r=".38846" fill="#fff"/>
+  <g fill="#7b8694">
+   <path d="m94.596 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m96.538 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m98.481 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m100.42 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m102.37 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m104.31 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m106.25 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m108.19 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m110.13 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m112.08 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m114.02 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m115.96 96.26h1.1654v0.19408h-1.1654z"/>
+   <path d="m115.96 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m114.02 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m112.08 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m110.13 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m108.19 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m106.25 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m104.31 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m102.37 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m100.42 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m98.481 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m96.538 106.17h1.1654v0.19405h-1.1654z"/>
+   <path d="m94.596 106.17h1.1654v0.19405h-1.1654z"/>
+  </g>
+ </g>
+</svg>

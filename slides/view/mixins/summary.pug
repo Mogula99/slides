@@ -1,0 +1,17 @@
+mixin summary()
+	+mcontainer()&attributes(attributes)
+		div(class!='frame inbox ' + (attributes.class ? attributes.class : ''))
+			h3.slide-title.color-manhattan Lecture Summary
+			.bottom-0.right-0
+				img.height-300(src=globalAssets+'keen_summary.png')
+			.important-orange
+				block
+
+mixin summary_lecture01()
+	+summary()
+		ul.leading-2xl
+			li.fragment I know the difference between games and applications
+			li.fragment I know the difference between emergence and progression
+			li.fragment I know terms like gameplay, mechanics, system, level
+			li.fragment I know game basic elements
+			li.fragment I know elements/entities of game mechanics

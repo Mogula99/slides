@@ -1,0 +1,47 @@
+
+mixin titleCommon(title)
+	+frameOutbox()
+		.absolute.left-10.top-15
+			.flex-row
+				div.mt-10
+					img.height-70(src!=globalAssets+'cvut_logo.svg')
+				.flex-col.font-light.text-sm.ml-10
+					p FIT CTU
+					p.mt-8 Adam Vesecký
+		.absolute.right-10.top-15
+			.flex-col.font-light.text-xl.text-right
+				.text-md NI-APH
+				.text-md.text-md.mt-2!=subtitle
+		.absolute.bottom-100.right-0.-mr-45.rotate-270
+			p.font-light.color-lemon <a class="highlight" href="https://aphgames.io">APHGames.io</a>
+			div.width-200.height-2.bgr-lemon
+		.height-280
+		div.flex-col.items-center.text-center
+			div.relative
+				.absolute.pacman.left-400.bottom-150
+				img.width-650(id='logo_title', src=globalAssets+'logo_title.svg')
+			div.text-center.text-center.width-700
+				h2.font-thin.uppercase!=title
+
+mixin titleLecture(name, label, color, icon)
+	+frameOutbox()
+		.absolute.left-10.top-15
+			.flex-row
+				div.mt-10
+					img.height-70(src!=globalAssets+'cvut_logo.svg')
+				.flex-col.font-light.text-sm.ml-10
+					p FIT CTU
+					p.mt-8 Adam Vesecký
+		.absolute.right-10.top-15
+			.flex-col.font-light.text-xl.text-right
+				.text-xs NI-APH
+				.text-xs.mt-2!=label
+		.absolute.bottom-100.right-0.-mr-45.rotate-270
+			p.font-light.color-lemon <a class="highlight" href="https://aphgames.io">APHGames.io</a>
+			div.width-200.height-2.bgr-lemon
+		.height-280
+		div.flex-col.items-center.text-center
+			div.relative
+				img.width-650(id='logo_title', src=icon)
+			div.text-center.text-center.width-700
+				h2.font-thin.uppercase!=name

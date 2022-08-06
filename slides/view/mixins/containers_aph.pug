@@ -1,0 +1,68 @@
+- var themePath = '../themes/aph/';
+
+// bubble tooltip
+mixin tip(text)
+	.tip.absolute.content-center.nopadding(class!=(attributes.class ? attributes.class : ''))
+		.icon.height-250.width-250.fragment.fade-up(class=attributes.imgclass ? attributes.imgclass : '')
+		.content.fragment.fade-up.bottom-100.left-250.fade-up(class!=(attributes.class ? attributes.class : ''))!=text
+
+mixin tipKeen(text)
+	+tip(text)(class='keen')&attributes(attributes)
+
+mixin tipKeen2(text)
+	+tip(text)(class='keen keen2')&attributes(attributes)
+
+mixin tipKeen3(text)
+	+tip(text)(class='keen keen3')&attributes(attributes)
+
+mixin tipKeen4(text)
+	+tip(text)(class='keen keen4')&attributes(attributes)
+
+mixin tipGordon(text)
+	.tip.absolute.content-center.nopadding.gordon&attributes(attributes)
+		.icon.height-420.width-450.fragment.fade-up(class=attributes.imgclass ? attributes.imgclass : '')
+		.content.fragment.fade-up.bottom-280.right-280.fade-up(class!=(attributes.class ? attributes.class : ''))!=text
+
+
+mixin gbGame(image, text)
+	div.relative.height-250()&attributes(attributes)
+		img.absolute.height-250(src=globalAssets+'gb_cartridge.png')
+		.absolute.height-150.left-30.bottom-30.opacity-8.p-3.mb-2
+			img(src!=image)
+		div.absolute.bottom-30.pr-4.pl-2.pb-3.width-170.left-30
+			.text-center.text-xs.font-bold.color-rhino-50.bgr-rhino-100-semi!=text
+
+mixin gbGameBig(image, text)
+	div.relative.height-350()&attributes(attributes)
+		img.absolute.height-350(src=globalAssets+'gb_cartridge.png')
+		.absolute.height-200.left-40.bottom-50.opacity-8.ml-8.mb-1
+			img(src!=image)
+		.absolute.width-220.height-50.bottom-50.left-40.bgr-rhino-100.ml-6.opacity-7
+		div.absolute.bottom-60.width-220.left-40.ml-6.text-center.text-2xs.font-bold.color-rhino-50!=text
+
+
+mixin dsGame(image, text)
+	div.relative.height-330()&attributes(attributes)
+		img.absolute.height-330(src=globalAssets+'ds_cartridge.png')
+		.absolute.width-260.height-280.left-30.bottom-30.opacity-8.p-3.mb-2
+			img(src!=image).width-260.height-280.object-cover
+		div.absolute.bottom-30.pr-2.pb-3.width-260.left-30
+			.text-center.text-md.font-bold.color-rhino-50.bgr-rhino-100-semi!=text
+
+
+mixin floppyApp(image, text, year)
+	div.relative.height-350()&attributes(attributes)
+		img.absolute.height-350(src=globalAssets+'disk_floppy.png')
+		.absolute.width-250.left-40.top-140.opacity-8.ml-2
+			img(src!=image).width-250.height-200.object-cover
+		.absolute.width-250.height-70.bottom-0.left-40.bgr-rhino-100.mb-1.ml-2.opacity-9
+		div.absolute.bottom-0.width-250.height-80.left-40.text-center.text-xs.color-rhino-50.flex.items-center.justify-center
+			div!=text
+		div.absolute.left-90.top-50.color-rhino-5.opacity-6!=year
+
+mixin mchapter(text, icon)
+	+frameOutbox()&attributes(attributes)
+		.flex-col.items-center
+			.top-32p.text-center
+				img.width-650(src!=icon)
+				h2.uppercase.font-light.highlight.mt-20.color-rhino-20!=text

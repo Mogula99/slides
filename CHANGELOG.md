@@ -6,6 +6,11 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [6.3.1] - 2022-09-30
+### Added
+Slide info generator script
+Github actions
+
 ## [6.3.0] - 2022-07-18
 ### Added
 Ackermann Tutorial

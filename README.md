@@ -10,7 +10,9 @@
 - clone it
 - install [NodeJS](https://nodejs.org/en/download/), LTS version if possible 
 - execute `npm install`
-- run `npm run dev` and navigate to `localhost:1234/index.html`
+- run `npm run generate-index` to generate json descriptor and index.html with the list of slides
+- run `npm run dev` and navigate to `localhost:1234/index.html` to see the list
+- you can build the project by running `npm run build`
 
 Changelog is available [here](./CHANGELOG.md)
 

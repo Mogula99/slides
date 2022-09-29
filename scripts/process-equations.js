@@ -19,6 +19,7 @@ module.exports = {
 
 		let equationFiles = utils.searchFiles('./slides/assets', '.tex', 'equations');
 		for (let file of equationFiles) {
+			console.log(`Parsing equation from ${file}`);
 			let equation = utils.fileToStr(file);
 			let equations;
 			if (equation.indexOf('\n') !== -1) {

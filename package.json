@@ -1,13 +1,14 @@
 {
   "name": "aph-slides",
   "author": "Adam Vesecký",
-  "version": "6.3.0",
+  "version": "6.3.1",
   "license": "MIT",
   "scripts": {
-    "dev": "npm run prebuild && npm run serve",
+    "dev": "npm run copydata && npm run serve",
     "serve": "parcel slides/view/*.html slides/view/*.pug --out-dir build",
-    "prebuild": "node scripts/prebuild.js",
-    "deploy": "npm run prebuild && parcel build slides/view/*.html slides/view/*.pug --out-dir build --public-url PUBLICURL --no-cache --no-source-maps --no-minify && node scripts/fix-links.js"
+    "copydata": "node scripts/copydata.js",
+    "build": "npm run generate-index && npm run copydata && parcel build slides/view/*.html slides/view/*.pug --out-dir build --public-url PUBLICURL --no-cache --no-source-maps --no-minify && node scripts/fix-links.js",
+    "generate-index": "node scripts/generate-index.js"
   },
   "dependencies": {
     "reveal.js": "^4.3.1"

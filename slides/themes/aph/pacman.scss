@@ -16,7 +16,7 @@ $ball-size: 16px;
 .pacman::before {
 	width: $pacman-size;
 	height: math.div($pacman-size, 2);
-	background: $color-lemon;
+	background: $color-white;
 }
 
 .pacman::before {

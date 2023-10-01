@@ -1,7 +1,8 @@
-// GROUP=General
+// GROUP=Hlavní
+// CATEGORY=Hlavní
 // COURSE=APH
-// NAME=Course Organization
-// LOCALE=en
+// NAME=Organizační informace
+// LOCALE=cs
 doctype html
 include ./mixins/header.pug
 include ./mixins/containers.pug
@@ -15,87 +16,86 @@ include ./mixins/quotes.pug
 - var imgAssets = assets + 'organization/';
 - var defaultBgr = 'backgrounds/minecraft_blocks.png';
 
-html(lang='en')
-	+header('Course Organization', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+html(lang='cs')
+	+header('Organizace předmětu', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
 
 	// ===================================================== SLIDES =====================================================
 	.reveal
 		.slides
 			// ============================================================
-			+titleCommon('Course Organization')
+			+titleCommonCs('Organizace předmětu')
 			// ============================================================
-			+mchapter('What is ahead of us', imgAssets+'chapter_organization.svg')
+			+mchapter('Co nás čeká', imgAssets+'chapter_organization.svg')
 			+mcontainer
-				h3 (De)motivation quotes
+				h3 (De)motivační citáty
 				+frameShard().top-5p.width-78p.left-12p.fragment.fade-up
 					+quote('Nobody in this industry knows what they are doing. We just have a gut assumption.', 'Cliff Bleszinski').text-xl
 				+frameShard().top-10p.width-78p.left-12p.fragment.fade-up
 					+quote('Focus is a matter of deciding what things you\'re not going to do.', 'John Carmack').text-xl
 				+frameShard().top-15p.width-78p.left-12p.fragment.fade-up
 					+quote('Games are great to work on because they are as much about art as they are science.', 'Mike McShaffry').text-xl
-			+frameInboxMid('What is the mission statement of the course')
+			+frameInboxMid('Jaké jsou cíle předmětu')
 				.absolute.center.fill
 					img.height-550.opacity-2(src=imgAssets+'gate.png' alt='decoration')
 				ul.spacing-xl
-					li.fragment.fade-up To be able to distinguish gaming concepts from software application concepts
-					li.fragment.fade-up Understand how game engines work
-					li.fragment.fade-up Understand modular architecture used in game development
-					li.fragment.fade-up Understand the fundamentals of mathematical and physical aspects in games
-					li.fragment.fade-up Understand the basics of game AI
-					li.fragment.fade-up Understand the technical principles of multiplayer
-					li.fragment.fade-up Design and program a simple game from a developer's perspective
-			+frameInbox('APH History')
+					li.fragment.fade-up Umět odlišit herní koncepty od konceptů softwarových aplikací
+					li.fragment.fade-up Porozumět, jak fungují herní enginy
+					li.fragment.fade-up Porozumět modulární architektuře používané při vývoji her
+					li.fragment.fade-up Porozumět základům matematických a fyzikálních aspektů ve hrách
+					li.fragment.fade-up Porozumět základům herního AI
+					li.fragment.fade-up Porozumět technickým principům multiplayeru
+					li.fragment.fade-up Navrhnout a naprogramovat si jednoduchou hru z perspektivy vývojáře
+			+frameInbox('Historie APHček')
 				.flex-cols-2
 					div.spacing-3xs
 						.scope.fragment.fade-in(data-fragment-index="1")
 							p 2017
 							ul
-								li first run (chaos as hell)
+								li první běh (děs a běs)
 								li OpenFrameworks engine, C++
-								li no semester projects, only homeworks
-								li 47 students, 25 completed the course
-								li Average grade: 1.48
+								li bez semestrálek, pouze domácí úkoly
+								li 47 studentů, 25 kurz dokončilo
+								li Průměrný prospěch: 1.48</span>
 						.scope.fragment.fade-in.mt-100(data-fragment-index="2")
 							p 2018
 							ul
-								li improved design and new videos
-								li migration from C++ to TypeScript (PixiJS)
-								li 50 students, 30 completed the course
-								li Average grade: 1.50
+								li vylepšený design a nová doprovodná videa
+								li migrace z C++ na TypeScript (PixiJS)
+								li 50 studentů, 30 kurz dokončilo
+								li Průměrný prospěch: 1.50</span>
 					div
 						.text-center.fragment.fade-in(data-fragment-index="1")
 							img.width-600(src=imgAssets+'aph_01.jpg' alt='MI-APH 2017')
 						.text-center.fragment.fade-in(data-fragment-index="2")
 							img.width-600.mt-30(src=imgAssets+'aph_02.jpg' alt='MI-APH 2018')
-			+frameInbox('APH History')
+			+frameInbox('Historie APHček')
 				.flex-cols-2
 					div.spacing-xs
 						.scope.fragment.fade-in
 							p 2019
 							ul
-								li Slides entirely in HTML
-								li 50 students, 33 completed the course
-								li Average grade: <span class="highlight">1.67</span>
-
+								li Slidy plně v HTML
+								li 50 studentů, 33 kurz dokončilo
+								li Průměrný prospěch: <span clas="highlight">1.67</span>
 						.scope.fragment.fade-in.mt-30
 							p 2020
 							ul
-								li website, trailer, mini-talks, new lectures
-								li 50 students, 38 completed the course
-								li Average grade: <span class="highlight">1.61</span>
+								li web, trailer, minitalky, nové přednášky
+								li 50 studentů, 38 kurz dokončilo
+								li Průměrný prospěch: <span clas="highlight">1.61</span>
 						.scope.fragment.fade-in.mt-30
 							p 2021
 							ul
-								li minor update
-								li 50 students, 26 completed the course
-								li Average grade: <span class="highlight">1.27</span>
-						+tipKeen2("In 2022, revitalization was taking place.").bottom-0
+								li minoritní update
+								li 50 studentů, 26 kurz dokončilo
+								li Průměrný prospěch: <span clas="highlight">1.27</span>
+						+tipKeen2("A v roce 2022 probíhala revitalizace").bottom-0
 					div
 						.text-center.fragment.fade-in(data-fragment-index="1")
 							img.width-650(src=imgAssets+'aph_03.jpg' alt='MI-APH 2019')
 						.text-center.fragment.fade-in(data-fragment-index="2")
 							img.width-650.mt-20(src=imgAssets+'aph_04.jpg' alt='NI-APH 2020')
-			+frameInbox('And how this is gonna go on')
+			+frameInbox('A jak to bude dál')
 				.center.mt-30.fragment
 					img.height-760(src=imgAssets+'dph.jpg')
 			- defaultBgr = 'backgrounds/bgr_microchip.jpg';
@@ -107,103 +107,108 @@ html(lang='en')
 					+frameShard().width-50p
 						div.spacing-2xs
 							.scope
-								.highlight.font-bold Slides and materials
+								.highlight.font-bold Slidy a materiály
 								ul
 									li
-										a(href="https://aphgames.io") https://aphgames.io
+										a(href="https://aphgames.cz") https://aphgames.cz
+							.scope
+								.highlight.font-bold Youtube kanál
+								ul
+									li 
+										a(href="https://www.youtube.com/channel/UC1PTa9NCygXV_0IgOBRMw-Q") APHGames
 							.scope
 								.highlight.font-bold Github
 								ul
 									li 
 										a(href="https://github.com/APHGames") https://github.com/APHGames
 							.scope
-								.highlight.font-bold Lectures and labs
+								.highlight.font-bold Přednášky a laborky
 								ul
-									li Tuesday, 16:15, TH-A:1455
+									li Úterý, 16:15, TH-A:1455
 			+mcontainer()
-				h3 Points
+				h3 Bodování
 				.top-0p.left-40p
 					img.height-300(src=themePath+'resources/keen.png' alt='decoration')
 				.center.top-20p.z-index-100.width-100p
 					+frameShard().width-55p
 						div.spacing-2xs
 							.scope.fragment
-								p Semester Project
+								p Semestrálka
 								ul
-									li <span class="highlight-2">60</span> points, at least <span class="highlight-2">30</span> required
+									li <span class="highlight-2">60</span> bodů, nutno splnit alespoň <span class="highlight-2">30</span>
 							.scope.fragment
-								p Exam
+								p Zkouška
 								ul
-									li Informal discussion on various lecture topics
-									li <span class="highlight-2">30</span> points, minimum <span class="highlight-2">15</span> required
+									li neformální diskuse nad různými tématy z přednášek
+									li <span class="highlight-2">30</span> bodů, nutné minimum <span class="highlight-2">15</span>
 							.scope.fragment
 								p Minitest
 								ul
-									li Given on the last lecture
-									li <span class="highlight-2">10</span> points, no minimum required
+									li na poslední přednášce
+									li <span class="highlight-2">10</span> bodů, není minimum
 							.scope.fragment
-								p Optional and Bonus Points
+								p Nepovinné a bonusové body
 								ul
-									li Quiz - <span class="highlight-2">~10</span> points (2 points for the top 3 places, 1 point otherwise)
-									li Technical article for the blog - <span class="highlight-2">10</span> points
-									li Semester project running on ggBlaster - <span class="highlight-2">10</span> points
-					+tipKeen3("Anyone with 95+ points will receive an APH t-shirt").bottom-0
+									li kvíz - <span class="highlight-2">~10</span> bodů (2 body za první 3 místa, jinak 1 bod)
+									li technický článek pro blog - <span class="highlight-2">10</span> bodů
+									li semestrálka běžící na ggBlasteru - <span class="highlight-2">10</span> bodů
+						+tipKeen3("A kdo bude mít 95+ bodů, dostane APH tričko").bottom-0
 			- defaultBgr = 'backgrounds/bgr_gradient.jpg'
 			+mcontainer()
-				h3 Timeline
-					.top-40p.left-6p
-						img.height-340(src=imgAssets+'timeline.svg')
-			+frameInboxMid('Lectures')
+				h3 Časová osa
+				.top-40p.left-6p
+					img.height-340(src=imgAssets+'timeline_cs.svg')
+			+frameInboxMid('Přednášky')
 				div.center
 					table.width-70p.text-left
 						tr
-							th Week
-							th Date
-							th Content
+							th Týden
+							th Datum
+							th Obsah
 						tr
 							td.text-center 01
 							td 26.9.2023
-							td Introduction
+							td Úvod
 						tr
 							td.text-center 02
 							td 3.10.2023
-							td Games
+							td Svět her a enginů
 						tr
 							td.text-center 03
 							td 10.10.2023
-							td Engines
+							td Enginy
 						tr
 							td.text-center 04
 							td 17.10.2023
-							td Assets
+							td Herní assety
 						tr
 							td.text-center 05
 							td 24.10.2023
-							td Component Architecture
+							td Komponentová architektura
 						tr
 							td.text-center 06
 							td 31.10.2023
-							td Patterns
+							td Patterny a postupy
 						tr
 							td.text-center 07
 							td 7.11.2023
-							td Music and sounds
+							td Hudba a zvuky
 						tr
 							td.text-center 08
 							td 14.11.2023
-							td Space
+							td Herní prostor
 						tr
 							td.text-center 09
 							td 21.11.2023
-							td Physics
+							td Fyzika
 						tr
 							td.text-center 10
 							td 28.11.2023
-							td Graphics
+							td Grafika
 						tr
 							td.text-center 11
 							td 5.12.2023
-							td Game AI
+							td Herní AI
 						tr
 							td.text-center 12
 							td 12.12.2023
@@ -212,104 +217,104 @@ html(lang='en')
 							td.text-center 13
 							td 19.12.2023
 							td Design
-				+tipKeen3("And there will also be a minitalk here and there").bottom-0
-			+frameInboxMid('Labs')
+				+tipKeen3("A občas bude i nějaký ten minitalk").bottom-0
+			+frameInboxMid('Laborky')
 				div.center
 					table.width-90p.text-left
 						tr
-							th Week
-							th Date
-							th Content
+							th Týden
+							th Datum
+							th Obsah
 						tr
 							td.text-center 01
 							td 26.9.2023
-							td Introduction to the environment
+							td Úvod a seznámení s prostředím
 						tr
 							td.text-center 02
 							td 3.10.2023
-							td Introduction to the environment
+							td Úvod a seznámení s prostředím
 						tr
 							td.text-center 03
 							td 10.10.2023
-							td Technical design
+							td Technický návrh mechanik
 						tr
 							td.text-center 04
 							td 17.10.2023
-							td Technical design
+							td Technický návrh mechanik
 						tr
 							td.text-center 05
 							td 24.10.2023
-							td Consultations
+							td Konzultace
 						tr
 							td.text-center 06
 							td 31.10.2023
-							td Consultations
+							td Konzultace
 						tr
 							td.text-center 07
 							td 7.11.2023
-							td Consultations
+							td Konzultace
 						tr
 							td.text-center 08
 							td 14.11.2023
-							td Consultations
+							td Konzultace
 						tr
 							td.text-center 09
 							td 21.11.2023
-							td Progress presentation
+							td Prezentace progresu
 						tr
 							td.text-center 10
 							td 28.11.2023
-							td Progress presentation
+							td Prezentace progresu
 						tr
 							td.text-center 11
 							td 5.12.2023
-							td Consultations
+							td Konzultace
 						tr
 							td.text-center 12
 							td 12.12.2023
-							td Consultations
+							td Konzultace
 						tr
 							td.text-center 13
 							td 19.12.2023
-							td Reserve
+							td Rezerva
 			+mcontainer()
-				h3 Bulbs
+				h3 Žárovičky ve slidech
 				.center
 					.flex-cols-3.width-80p.top-20p
 						div.text-center.p-20
 							img.opacity-4.height-350(src='../themes/aph/resources/bulb_green_4x.png' alt='green bulb')
-							p.color-emerald.font-bold.text-xl Green
-							p Something that requires an attention
+							p.color-emerald.font-bold.text-xl Zelená
+							p Něco, co stojí za pozornost
 						div.text-center.p-20
 							img.opacity-7.height-350(src='../themes/aph/resources/bulb_orange_4x.png' alt='orange bulb')
-							p.color-manhattan.font-bold.text-xl Orange
-							p Something you should know
+							p.color-manhattan.font-bold.text-xl Oranžová
+							p Něco, byste měli vědět
 						div.text-center.p-20
 							img.height-350(src='../themes/aph/resources/bulb_red_4x.png' alt='red bulb')
-							p.color-tomato.font-bold.text-xl Red
-							p Something you <span class="font-bold">ought to</span> know
+							p.color-tomato.font-bold.text-xl Červená
+							p Něco, co <span class="font-bold">musíte</span> vědět
 			+mcontainer
-				h3 GDS invitation
+				h3 GDS pozvánka
 				.center
 					img.height-850(src=imgAssets+'GDS.png')
 			+mcontainer
-				h3 Literature
+				h3 Literatura
 				.center
 					img.height-850(src=imgAssets+'literature.png' alt='NI-APH literature')
-			+mcontainer('Literature')
+			+mcontainer('Literatura')
 				+frameShard().top-200
 					div
 						.scope
-							p For development
+							p Pro vývoj
 							ul
 								li
 									a(href='https://www.amazon.co.uk/Engine-Architecture-Third-Jason-Gregory/dp/1138035459') Gregory, Json. 2018. Game Engine Architecture (3rd ed.)
 						.scope
-							p For design
+							p Pro design
 							ul
 								li 
 									a(href='https://www.amazon.com/Art-Game-Design-Lenses-Third/dp/1138632090') Schell, Jesse. 2004. The Art of Game Design: A Book of Lenses (3rd ed.)
 					
 
-	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Video Games')
+	+footer('Adam Vesecký (FIT ČVUT)', 'Architektura Počítačových Her')
 	script(src!='../../scripts/reveal-setup.js')

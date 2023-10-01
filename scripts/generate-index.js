@@ -5,8 +5,8 @@ const path = require("path");
 
 const ICONS_PATH = path.resolve('slides', 'icons');
 const SLIDES_PATH = path.resolve('slides', 'view');
-const ATTRIBUTES = ['GROUP', 'CATEGORY', 'NAME', 'LOCALE', 'ORDER'];
-const MANDATORY_ATTRIBUTES = ['CATEGORY', 'NAME'];
+const ATTRIBUTES = ['GROUP', 'NAME', 'COURSE', 'LOCALE', 'ORDER'];
+const MANDATORY_ATTRIBUTES = ['GROUP', 'NAME'];
 const OUTPUT_INFO_FILE = 'slides-info.json';
 
 console.log('Generating index');
@@ -57,10 +57,6 @@ for (let lecture of lectures) {
     }
 
 	// assign missing parameters
-	if(!data['group']) {
-		data['group'] = data['category'];
-	}
-
 	if(!data['locale']) {
 		data['locale'] = 'en';
 	}
@@ -102,26 +98,31 @@ lectureInfo.forEach(l => {
 fs.writeFileSync(path.resolve('slides', OUTPUT_INFO_FILE), JSON.stringify(lectureInfo));
 console.log('JSON SAVED');
 
-// generate index.html
-let indexTemplate = fs.readFileSync(path.resolve('scripts', 'index_template.html'), "utf8");
-const groups = [...new Set(lectureInfo.map(l => l['group']))];
-let str = '';
+// generate index.html for each language
+const locales = [...new Set(lectureInfo.map(l => l['locale']))];
 
-for(let group of groups) {
-	const groupSlides = lectureInfo.filter(l => l['group'] === group);
-	str += `<h2>${group}</h2>`;
-	str += "<div class='list'>";
-
-	// add links
-	for(slides of groupSlides) {
-		str += `<a href='./${slides['file_name']}.html'>${slides['category']}: ${slides['name']}</a>`;
+for(let locale of locales) {
+	let indexTemplate = fs.readFileSync(path.resolve('scripts', 'index_template.html'), "utf8");
+	const groups = [...new Set(lectureInfo.filter(inf => inf['locale'] === locale).map(l => l['group']))];
+	let str = '';
+	
+	for(let group of groups) {
+		const groupSlides = lectureInfo.filter(l => l['group'] === group && l['locale'] === locale);
+		str += `<h2>${group}</h2>`;
+		str += "<div class='list'>";
+	
+		// add links
+		for(slides of groupSlides) {
+			str += `<a href='./${slides['file_name']}.html'>${slides['name']}</a>`;
+		}
+	
+		str += "</div>";
 	}
-
-	str += "</div>";
+	
+	indexTemplate = indexTemplate.replace('#PLACEHOLDER', str);
+	// put the file into the slides folder
+	fs.writeFileSync(path.resolve('slides', locale == 'en' ? 'index.html' : `index_${locale}.html`), indexTemplate);
 }
 
-indexTemplate = indexTemplate.replace('#PLACEHOLDER', str);
 
-// put the file into the slides folder
-fs.writeFileSync(path.resolve('slides', 'index.html'), indexTemplate);
 console.log('HTML INDEX SAVED');

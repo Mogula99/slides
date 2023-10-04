@@ -5,7 +5,7 @@ const path = require("path");
 
 const ICONS_PATH = path.resolve('slides', 'icons');
 const SLIDES_PATH = path.resolve('slides', 'view');
-const ATTRIBUTES = ['GROUP', 'NAME', 'COURSE', 'LOCALE', 'ORDER'];
+const ATTRIBUTES = ['GROUP', 'NAME', 'COURSE', 'LOCALE', 'ORDER', 'LOCKED'];
 const MANDATORY_ATTRIBUTES = ['GROUP', 'NAME'];
 const OUTPUT_INFO_FILE = 'slides-info.json';
 

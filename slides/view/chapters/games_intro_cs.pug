@@ -5,8 +5,8 @@ include ../mixins/containers_aph.pug
 - var defaultBgr = 'backgrounds/tree.png';
 
 // ===================================================== SLIDES =====================================================
-+mchapter('What are games?', imgAssets+'chapter_game.svg')
-+mcontainer('What is a game?')
++mchapter('Co jsou hry?', imgAssets+'chapter_game.svg')
++mcontainer('Co je to hra?')
 	+frameShard.width-880.top-3p.fragment.fade-up
 		div A <span class="highlight">game</span> is something you <span class="highlight">play</span>. 
 			|Something that is <span class="highlight">fun</span> to play. 
@@ -25,38 +25,38 @@ include ../mixins/containers_aph.pug
 		div A game is an <span class="highlight">activity</span> defined by rules in which players try 
 			|to reach some sort of <span class="highlight">goal</span>. 
 			span.highlight-2 (Alexander Galloway)
-+frameInbox('What is a game?')
++frameInbox('Co je to hra?')
 	.fill.center
 		img.height-300(src=globalAssets+'circle.svg')
-	.top-5p.left-40p.text-xl curiosity
-	.top-13p.left-24p.text-5xl system
-	.top-13p.left-58p.text-3xl outcome
-	.top-30p.left-20p.text-4xl conflict
-	.top-30p.left-63p.text-2xl activity
-	.top-45p.left-18p.text-xs endogeneous
-	.top-45p.left-60p.text-6xl goal
-	.top-60p.left-28p.text-md surprise
-	.top-65p.left-57p.text-sm rules
-	.top-72p.left-42p.text-xl choices
-+frameInbox('Gaming history')
+	.top-5p.left-40p.text-xl pravidla
+	.top-13p.left-24p.text-5xl zábava
+	.top-13p.left-58p.text-3xl výsledek
+	.top-30p.left-20p.text-4xl konflikt
+	.top-30p.left-63p.text-2xl aktivita
+	.top-45p.left-18p.text-xs systém
+	.top-45p.left-60p.text-6xl cíl
+	.top-60p.left-28p.text-md překvapení
+	.top-65p.left-57p.text-sm zvědavost
+	.top-72p.left-42p.text-xl volba
++frameInbox('Historie hraní')
 	div.nopadding.fill.center.absolute
-		img.height-900(src=imgAssets+'games_overall_history.svg')
+		img.height-900(src=imgAssets+'games_overall_history_cs.svg')
 	div.nopadding.fill.center.absolute
 		img.height-900(src=imgAssets+'games_overall_history_pic.png')
-+frameInbox('What is a video game?')
++frameInbox('Co je to počítačová hra?')
 	div.important-orange.spacing-xs
 		.scope.fragment
-			p Software application
+			p Počítačová aplikace
 			ul
-				li.fragment a computer program that <span class="highlight-2">helps</span> the user to perform tasks
+				li.fragment program, který <span class="highlight-2">pomáhá</span> uživateli provést daný úkol
 		.scope.fragment
-			p Video game
+			p Počítačová hra
 			ul
-				li.fragment a computer program where players interact with objects on a screen for the sake of <span class="highlight-2">entertainment</span>
+				li.fragment interaktivní počítačový program, kde je primárním prvkem <span class="highlight-2">zábava</span>
 		.scope.fragment
-			p Gamification
+			p Gamifikace
 			ul
-				li.fragment application of game elements to other areas to encourage engagement with a product or sevice
+				li.fragment aplikování herních elementů do oblastí, které pro ně nejsou typické, především z důvodu posílení motivace či vztahu k produktu/službě
 		.fragment.flex.flex-row.center
 			figure.m-20
 				img.height-280(src=imgAssets+'habitica.png')
@@ -64,51 +64,51 @@ include ../mixins/containers_aph.pug
 			figure.m-20
 				img.height-280(src=imgAssets+'gather.jpg')
 				p Gather.town
-	+tipKeen1("Computer games are not applications! Yet the line between them is blur.")(class='bottom-0p left-0p')
-+mcontainer('Technical definition')
+	+tipKeen1("Počítačové hry nejsou aplikace. Byť, hranice mezi nimi je tenká.")(class='bottom-0p left-0p')
++mcontainer('Technická definice')
 	+frameShard.width-70px.height-20p.top-280.center.z-index-100
-		p.text-xl Computer games are real-time interactive agent-based simulators.
-+frameInbox('Game genres')(autoAnimate=true)
+		p.text-xl Počítačové hry jsou interaktivní simulátory běžící v reálném čase.
++frameInbox('Herní žánry')(autoAnimate=true)
 	.center
 		.grid-rows-3.grid-cols-4.grid.gap-10.width-65p
-			+gbGame(imgAssets+'genre_arcade.jpg', 'Arcade').fragment#g1
+			+gbGame(imgAssets+'genre_arcade.jpg', 'Arkády').fragment#g1
 			+gbGame(imgAssets+'genre_shooter.jpg', 'FPS').fragment
-			+gbGame(imgAssets+'genre_platformer.jpg', 'Platformer').fragment
-			+gbGame(imgAssets+'genre_adventure.jpg', 'Adventure').fragment
+			+gbGame(imgAssets+'genre_platformer.jpg', 'Platformery').fragment
+			+gbGame(imgAssets+'genre_adventure.jpg', 'Adventury').fragment
 			+gbGame(imgAssets+'genre_puzzle.jpg', 'Puzzle').fragment#g4
 			+gbGame(imgAssets+'genre_rpg.jpg', 'RPG').fragment
-			+gbGame(imgAssets+'genre_strategy.jpg', 'Strategy').fragment
-			+gbGame(imgAssets+'genre_casual.jpg', 'Simulations').fragment#g3
-			+gbGame(imgAssets+'genre_sports.jpg', 'Sports').fragment
-			+gbGame(imgAssets+'genre_racing.jpg', 'Racing').fragment#g2
-			+gbGame(imgAssets+'genre_fighting.jpg', 'Fighting').fragment
-			+gbGame(imgAssets+'genre_sandbox.jpg', 'Sandbox').fragment
-+frameInbox('Game categories')(autoAnimate=true)
+			+gbGame(imgAssets+'genre_strategy.jpg', 'Strategie').fragment
+			+gbGame(imgAssets+'genre_casual.jpg', 'Simulace').fragment#g3
+			+gbGame(imgAssets+'genre_sports.jpg', 'Sportovní').fragment
+			+gbGame(imgAssets+'genre_racing.jpg', 'Závodní').fragment#g2
+			+gbGame(imgAssets+'genre_fighting.jpg', 'Bojové').fragment
+			+gbGame(imgAssets+'genre_sandbox.jpg', 'Sandboxy').fragment
++frameInbox('Herní kategorie')(autoAnimate=true)
 	.center.fill
 		.grid.grid-rows-1.grid-cols-4.width-90p
-			+floppyApp(imgAssets+'genre_racing.jpg', 'AAA Games')#g1
-			+floppyApp(imgAssets+'genre_platformer.jpg', 'Indie Games')#g2
+			+floppyApp(imgAssets+'genre_racing.jpg', 'AAA hry')#g1
+			+floppyApp(imgAssets+'genre_platformer.jpg', 'Indie hry')#g2
 			+floppyApp(imgAssets+'genre_casual.jpg', 'Casual')#g3
 			+floppyApp(imgAssets+'genre_puzzle.jpg', 'Hyper casual')#g4
-+frameInbox('Game spaces')(autoAnimate=true)
++frameInbox('Herní prostory')(autoAnimate=true)
 	.center.fill
 		.grid.grid-rows-1.grid-cols-5.width-100p
 			+dsGame(imgAssets+'genre_platformer.jpg', '2D')#g1
-			+dsGame(imgAssets+'space_isometric.jpg', 'Isometric 2D')#g2
-			+dsGame(imgAssets+'space_fake3D.jpg', 'Fake 3D')#g3
+			+dsGame(imgAssets+'space_isometric.jpg', 'Izometrické 2D')#g2
+			+dsGame(imgAssets+'space_fake3D.jpg', 'Pseudo 3D')#g3
 			+dsGame(imgAssets+'space_25D.jpg', '2.5 D')#g4
 			+dsGame(imgAssets+'genre_racing.jpg', '3D')
 - var defaultBgr = 'backgrounds/old_gadgets.jpg';
-+frameInbox('Evolution of video games')
++frameInbox('Evoluce počítačových her')
 	div.nopadding.fill.center.absolute
 		img.height-900(src=imgAssets+'games_evolution.svg')
 	div.nopadding.fill.center.absolute.top-50
 		img.height-700(src=imgAssets+'games_evolution.png')
-+frameInbox('Milestones of game industry')
++frameInbox('Milníky herní historie')
 	.center
-		img.height-750(src=imgAssets+'games_history.svg')
+		img.height-750(src=imgAssets+'games_history_cs.svg')
 	.tip.fragment.bottom-20.right-450
 		img.height-850(src=globalAssets+'memes/games_then_now.gif')
-+frameInbox('Technologies of game industry')
++frameInbox('Technologie herní historie')
 	.center
-		img.height-750(src=imgAssets+'tech_history.svg')
+		img.height-750(src=imgAssets+'tech_history_cs.svg')

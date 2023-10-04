@@ -1,7 +1,7 @@
 // GROUP=Lectures
 // COURSE=APH
 // NAME=Games
-// LOCALE=en 
+// LOCALE=en
 // ORDER=1
 doctype html
 include ./mixins/header.pug
@@ -13,19 +13,19 @@ include ./mixins/summary.pug
 
 - var themePath = '../themes/aph/';
 - var globalAssets = '../assets/all/';
-- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+- var defaultBgr = 'backgrounds/tree.png';
 
 html(lang='en')
 	+header('Games', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
 
 	.reveal
 		.slides
-			+titleLecture('Games', 'Lecture 1', globalAssets+'lectures/ic_lecture01.svg')
+			+titleLectureCs('Games', 'Lecture 1', globalAssets+'lectures/ic_lecture01.svg')
 			include ./chapters/games_intro.pug
 			include ./chapters/games_mechanics.pug
 			- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
 			+summary_lecture01()
-			+quote-pokemon()
+			+quote-halflife()
 					
-	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Lecture 1: Games')
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Games, Lecture 1: Games')
 	script(src!='../../scripts/reveal-setup.js')

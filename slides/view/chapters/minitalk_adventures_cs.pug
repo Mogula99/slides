@@ -1,0 +1,108 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_adventures/';
+- var defaultBgr = 'backgrounds/adventures.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Adventury', imgAssets+'chapter_adventures.svg')
++frameInbox('Adventury')
+	div
+		ul
+			li.fragment <span class="highlight">adventura</span> - hra, ve které dominuje příběh a puzzle elementy
+			li.fragment největší popularita v 80. a první polovině 90. letech
+			li.fragment <span class="highlight">typy her</span> - textovky, P&C adventury, interaktivní filmy, narrative-based hry
+			li.fragment od roku 2000 se adventurní aspekty přelily do jiných žánrů, které později dominovaly hernímu průmyslu 
+			li.fragment <span class="highlight">typické znaky</span>
+				.bottom-20.right-20
+					figure
+						img.height-450(src=imgAssets+'intergame_kyrandia.jpg')
+						p Legend of Kyrandia (1993)
+				ul
+					li.fragment event-based progresivní gameplay
+					li.fragment limitovaná interakce (seber, otevři, prozkoumej, mluv)
+					li.fragment dialogy a dialogové stromy
+					li.fragment puzzle elementy
+					li.fragment sbírání a kombinovaní předmětů
+					li.fragment skromný budget na výrobu
++mcontainer
+	+frameShard().top-20p.fragment
+		+quote('Adventures are just too art intensive, and art is expensive to produce and to show.', 'Lori Ann').text-xl
+	+frameShard().top-40p.fragment
+		+quote('If you even utter the words \'adventure game\' in a meeting with a publisher you can just pack up your spiffy concept art and leave.', 'Ron Gilbert').text-xl
++frameInbox('Historie adventur')
+	.center.fill
+		img.height-700(src=imgAssets+'adventures_international_cs.svg')
++frameInbox('Textovky a texto-grafické adventury')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'intergame_adventure.jpg', 'Microsoft Adventure (1979)').fragment
+		+dsGameBigTop(imgAssets+'intergame_zork.jpg', 'Zork (1980)').fragment
+		+dsGameBigTop(imgAssets+'intergame_rogue.jpg', 'Rogue (1980)').fragment
+		+dsGameBigTop(imgAssets+'intergame_kingsquest.jpg', 'King\'s Quest série (1983+)').fragment.bottom-250.left-260
+		+dsGameBigTop(imgAssets+'intergame_oregontrail.jpg', 'Oregon Trail (1985)').fragment.bottom-250.left-260
++frameInbox('Vzestup adventur')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'intergame_maniac.jpg', 'Maniac Mansion (1987)').fragment
+		+dsGameBigTop(imgAssets+'intergame_quest.jpg', 'Quest for Glory (1989)').fragment
+		+dsGameBigTop(imgAssets+'intergame_loom.jpg', 'Loom (1990)').fragment
+		+dsGameBigTop(imgAssets+'intergame_monkey.jpg', 'The Secret of Monkey Island (1990)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'intergame_indy.jpg', 'Indiana Jones and the Fate of Atlantis (1992)').fragment.bottom-250.left-260
++frameInbox('Zlatý věk adventur')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'intergame_myst.jpg', 'Myst series (1993+)').fragment
+		+dsGameBigTop(imgAssets+'intergame_kyrandia.jpg', 'Legend of Kyrandia series (1993+)').fragment
+		+dsGameBigTop(imgAssets+'intergame_tentacle.jpg', 'Day of the Tentacle (1993)').fragment
+		+dsGameBigTop(imgAssets+'intergame_nomouth.jpg', 'I Have No Mouth and I Must Scream (1995)').fragment.bottom-250.left-260
+		+dsGameBigTop(imgAssets+'intergame_throttle.jpg', 'Full Throttle (1995)').fragment.bottom-250.left-260
++frameInbox('Úpadek adventur')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'intergame_dig.jpg', 'The Dig (1995)').fragment
+		+dsGameBigTop(imgAssets+'intergame_brokensword.jpg', 'Broken Sword (1996)').fragment
+		+dsGameBigTop(imgAssets+'intergame_normality.jpg', 'Normality (1996)').fragment
+		+dsGameBigTop(imgAssets+'intergame_journey.jpg', 'The Longest Journey Saga (1999+)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'intergame_syberia.jpg', 'Syberia (2002)').fragment.bottom-250.left-260
++frameInbox('Znovuzrození v jiných žánrech')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'intergame_amnesia.jpg', 'Amnesia: The Dark Descent (2010)').fragment
+		+dsGameBigTop(imgAssets+'intergame_esther.jpg', 'Dear Esther (2012)').fragment
+		+dsGameBigTop(imgAssets+'intergame_tormentum.jpg', 'Tormentum: Dark Sorrow (2015)').fragment
+		+dsGameBigTop(imgAssets+'intergame_hellblade.jpg', 'Hellblade: Senua\'s Sacrifice (2017)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'intergame_backbone.jpg', 'Backbone (2021)').fragment.bottom-250.left-260
++frameInbox('České adventury')
+	.center.fill
+		img.height-630(src=imgAssets+'adventures_czech.svg')
++frameInbox('České textovky')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'czgame_diktator.jpg', 'Diktátor (1987)').fragment
+		+dsGameBigTop(imgAssets+'czgame_atarista.jpg', 'Pomsta Šíleného Ataristy (1989)').fragment
+		+dsGameBigTop(imgAssets+'czgame_belegost.jpg', 'Belegost (1991)').fragment
+		+dsGameBigTop(imgAssets+'czgame_plponie.jpg', 'Plponie aneb Plpa jistě králem (1994)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'czgame_bimbo.jpg', 'Bimbo aneb cesta tam a nikam jinam (1994)').fragment.bottom-250.left-240
++frameInbox('Vzestup českých adventur')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'czgame_sedmnoci.jpg', 'Sedm dní a sedm nocí (1994)').fragment
+		+dsGameBigTop(imgAssets+'czgame_osliostrov.jpg', 'Tajemství Oslího ostrova (1994)').fragment
+		+dsGameBigTop(imgAssets+'czgame_dracihistorie.jpg', 'Dračí historie (1995)').fragment
+		+dsGameBigTop(imgAssets+'czgame_horkeleto.jpg', 'Horké Léto (1998)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'czgame_polda1.jpg', 'Polda (1998)').fragment.bottom-250.left-240
++frameInbox('Zlatý věk českých adventur')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'czgame_polda2.jpg', 'Polda 2 (1999)').fragment
+		+dsGameBigTop(imgAssets+'czgame_horkeleto2.jpg', 'Horké Léto 2 (1999)').fragment
+		+dsGameBigTop(imgAssets+'czgame_havran.jpg', 'Ve stínu havrana (1999)').fragment
+		+dsGameBigTop(imgAssets+'czgame_polda3.jpg', 'Polda 3 (2000)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'czgame_polda4.jpg', 'Polda 4 (2002)').fragment.bottom-250.left-240
++frameInbox('Úpadek českých adventur')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'czgame_zivot.jpg', 'Život není krásný (2002)').fragment
+		+dsGameBigTop(imgAssets+'czgame_posel.jpg', 'Posel Smrti (2003)').fragment
+		+dsGameBigTop(imgAssets+'czgame_samorost.jpg', 'Samorost (2003)').fragment
+		+dsGameBigTop(imgAssets+'czgame_polda5.jpg', 'Polda 5 (2005)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'czgame_nibiru.jpg', 'Nibiru: Posel Bohů (2005)').fragment.bottom-250.left-240
++frameInbox('Znovuzrození českých adventur')
+	.flex-cols-3.height-650
+		+dsGameBigTop(imgAssets+'czgame_machinarium.jpg', 'Machinarium (2009)').fragment
+		+dsGameBigTop(imgAssets+'czgame_botanicula.jpg', 'Botanicula (2012)').fragment
+		+dsGameBigTop(imgAssets+'czgame_polda6.jpg', 'Polda 6 (2014)').fragment
+		+dsGameBigTop(imgAssets+'czgame_chuchel.jpg', 'Chuchel (2018)').fragment.bottom-250.left-240
+		+dsGameBigTop(imgAssets+'czgame_polda7.jpg', 'Polda 7 (2022)').fragment.bottom-250.left-240

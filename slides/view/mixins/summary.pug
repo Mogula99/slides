@@ -7,6 +7,25 @@ mixin summary()
 			.important-orange
 				block
 
+mixin summarycs()
+	+mcontainer()&attributes(attributes)
+		div(class!='frame inbox ' + (attributes.class ? attributes.class : ''))
+			h3.slide-title.color-manhattan Co jsme si řekli
+			.bottom-0.right-0
+				img.height-300(src=globalAssets+'keen_summary.png')
+			.important-orange
+				block
+
+mixin summary_lecture01cs()
+	+summarycs()
+		ul.leading-2xl
+			li.fragment Něco málo o definici her
+			li.fragment Něco málo o historii her
+			li.fragment Vyjmenovali jsme si pojmy jako gameplay, mechaniky, emergence a progrese
+			li.fragment Popsali jsme si základní elementy hry
+			li.fragment Popsali jsme si herní mechaniky
+
+
 mixin summary_lecture01()
 	+summary()
 		ul.leading-2xl

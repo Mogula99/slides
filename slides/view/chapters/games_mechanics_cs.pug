@@ -1,0 +1,161 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/games_mechanics/';
+- var defaultBgr = 'backgrounds/mario.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Herní mechaniky', imgAssets+'chapter_mechanics.svg')
++frameInbox('Definice')
+	div.important-orange.spacing-3xs
+		div
+			.scope.fragment 
+				p Emergence
+				ul
+					li.fragment komplexní chování, které je výsledkem aplikace obvykle jednoduchých pravidel
+			.scope.fragment 
+				p Progrese
+				ul
+					li.fragment chování, které následuje předem připravený scénář
+			.scope.fragment
+				p Gameplay
+				ul
+					li.fragment specifický způsob, jakým hráč se hrou interaguje
+			.scope.fragment 
+				p Mechaniky
+				ul
+					li.fragment soubor interakcí mezi hráčem a hrou
+			.scope.fragment 
+				p Systém
+				ul
+					li.fragment interagující skupina herních elementů, tvořících jeden celek
+			.scope.fragment 
+				p Level
+				ul
+					li.fragment topologická struktura ve hře, která určuje, jakým výzvám bude hráč čelit
++frameInbox('Základní herní prvky')
+	div.important-orange.spacing-2xs
+		div
+			.scope.fragment
+				p Mechaniky
+				ul
+					li soubor interakcí mezi hráčem a hrou
+					li.fragment <span class="highlight-2">game hook</span> - hlavní mechanika hry
+					li.fragment <span class="highlight-2">části mechanik</span> - prostor, objekty, akce, pravidla
+			.scope.fragment
+				p Příběh
+				ul
+					li.fragment sekvence událostí, které se ve hře vyskytují
+			.scope.fragment
+				p Estetika
+				ul
+					li.fragment jak hra vypadá, zní, jak se v ní hráč cítí,...
+			.scope.fragment
+				p Technologie
+				ul
+					li.fragment veškeré technické náležitosti, díky kterým hra funguje
+			.scope.fragment
+				p Cíle
+				ul
+					li.fragment milníky ve hře, které mají hráče motivovat
+		.bottom-40.right-40.fragment
+			img.width-750(src=imgAssets+'visible_mechanics_cs.svg')
++frameInbox('Mechaniky')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'factorio.jpg')
+			p Factorio
++frameInbox('Příběh')
+	figure.top-20.right-0.fragment
+		img.height-350(src=imgAssets+'story_naughdog.jpg')
+		p Naughty Dog hry
+	figure.top-100.right-380.fragment
+		img.height-350(src=imgAssets+'story_bethesda.jpg')
+		p Bethesda hry
+	figure.top-250.right-730.fragment
+		img.height-350(src=imgAssets+'story_ea.jpg')
+		p EA hry
+	figure.top-410.left-0.fragment
+		img.height-350(src=imgAssets+'story_valve.jpg')
+		p Valve hry
+	figure.top-0.left-0.fragment
+		img.height-350(src=imgAssets+'story_cdprojekt.jpg')
+		p.text-left CD projekt hry
+	+tipGordon('...').bottom-0.right-0
++frameInbox('Estetika')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'inside.jpg')
+			p INSIDE
++frameInbox('Technologie')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'spore.jpg')
+			p Spore
++frameInbox('Cíle')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'wow.jpg')
+			p World of Warcraft
++frameInbox('Příklad: Space Invaders')
+	div.leading-lg
+		p.fragment <span class="font-bold highlight">Mechaniky</span> - první hra s highscore
+		p.fragment <span class="font-bold highlight">Příběh</span> - "Save the Earth" na plakátech
+		p.fragment <span class="font-bold highlight">Estetika</span> - tři druhy mimozemšťanů
+		p.fragment <span class="font-bold highlight">Technologie</span> - HW navržený jen pro danou hru
+		p.fragment <span class="font-bold highlight">Cíle</span> - survival mód, nejvyšší možné score
+	.flex-row.justify-center.bottom-0.width-100p.nopadding
+		img.height-440(src=imgAssets+'invaders.jpg')
++frameInbox('Příklad: Doom')
+	div.leading-lg
+		p.fragment <span class="font-bold highlight">Mechaniky</span> - levely, pasti, power kity, klíče, dveře, výtahy,...
+		p.fragment <span class="font-bold highlight">Příběh</span> - Doomguy bojující s démony
+		p.fragment <span class="font-bold highlight">Estetika</span> - na tu dobu nevídaný level design
+		p.fragment <span class="font-bold highlight">Technologie</span> - pseudo 3D s perspektivní korekcí
+		p.fragment <span class="font-bold highlight">Cíle</span> - sebrat klíče, dokončit levely,...
+	.flex-row.justify-center.bottom-0.width-100p.nopadding
+		img.height-440(src=imgAssets+'doom.jpg')
++frameInbox('Příklad: Baba is You')
+	div.leading-lg
+		p.fragment <span class="font-bold highlight">Mechaniky</span> - rule-based progrese
+		p.fragment <span class="font-bold highlight">Příběh</span> - bez příběhu 
+		p.fragment <span class="font-bold highlight">Estetika</span> - pixel art
+		p.fragment <span class="font-bold highlight">Technologie</span> - předdefinované logické operátory
+		p.fragment <span class="font-bold highlight">Cíle</span> - kompozice pravidel k pokoření levelu
+	.flex-row.justify-center.bottom-0.width-100p.nopadding
+		img.height-520(src=imgAssets+'babaisyou.jpg')
++frameInbox('Části herních mechanik')
+	div.important-orange
+		.scope.fragment.fade-up(data-fragment-index='1')
+			p Prostor
+			ul
+				li prostory existující ve hře a jejich vzájemné vazby
+		.scope.fragment.fade-up(data-fragment-index='2')
+			p Objekty
+			ul
+				li vše, co vidíme a s čím případně můžeme manipulovat
+		.scope.fragment.fade-up(data-fragment-index='3')
+			p Akce
+			ul
+				li proces, který mění stav hry, obvykle v závislosti na vstupu od hráče
+		.scope.fragment.fade-up(data-fragment-index='4')
+			p Pravidla
+			ul
+				li popisují herní omezení a následky jejich porušení
+		.bottom-0.right-0.width-550.fragment(data-fragment-index='4')
+			img.width-550(src=globalAssets+'memes/blocked_path.jpg')
++frameInbox('Příklad: Pong')
+	div
+		.spacing-2xs
+			p.fragment <span class="font-bold highlight">Prostor</span> <span class="fragment">- 2D scéna</span>
+			p.fragment.mt-10 <span class="font-bold highlight">Objekty</span> <span class="fragment">- dva hráči (obdélníčky), míček, skóre</span>
+			p.fragment.mt-10 <span class="font-bold highlight">Akce</span> <span class="fragment">- 1 stupeň volnosti (nahoru/dolů), uvolnění míčku</span>
+			p.fragment.mt-10 <span class="font-bold highlight">Pravidla</span>
+				ul
+					li.fragment míček má konstantní rychlost
+					li.fragment úhel dopadu = úhel odrazu
+					li.fragment hráč dostane jeden bod, pokud druhý hráč nechytne míček
+					li.fragment kdo dostane 11 bodů, vyhrál
+		.center.bottom-0.width-100p
+			img.height-380(src=imgAssets+'pong.jpg')
+

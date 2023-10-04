@@ -1,0 +1,31 @@
+// GROUP=Přednášky
+// COURSE=APH
+// NAME=Hry
+// LOCALE=cs
+// ORDER=1
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+include ./mixins/title.pug
+include ./mixins/quotes.pug
+include ./mixins/summary.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+- var defaultBgr = 'backgrounds/tree.png';
+
+html(lang='cs')
+	+header('Svět her', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+
+	.reveal
+		.slides
+			+titleLectureCs('Svět her', 'Přednáška 1', globalAssets+'lectures/ic_lecture01.svg')
+			include ./chapters/games_intro_cs.pug
+			include ./chapters/games_mechanics_cs.pug
+			- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
+			+summary_lecture01cs()
+			+quote-halflifecs()
+					
+	+footer('Adam Vesecký (FIT ČVUT)', 'Architektura Počítačových Her, Přednáška 1: Svět her')
+	script(src!='../../scripts/reveal-setup.js')

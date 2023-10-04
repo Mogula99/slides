@@ -2,11 +2,11 @@ include ../mixins/containers.pug
 include ../mixins/containers_aph.pug
 
 - var imgAssets = '../assets/games_mechanics/';
-- var defaultBgr = 'backgrounds/bgr_limbo.jpg';
+- var defaultBgr = 'backgrounds/mario.jpg';
 
 // ===================================================== SLIDES =====================================================
 +mchapter('Game Mechanics', imgAssets+'chapter_mechanics.svg')
-+frameInbox('Terms')
++frameInbox('Definition')
 	div.important-orange.spacing-3xs
 		div
 			.scope.fragment 
@@ -59,7 +59,7 @@ include ../mixins/containers_aph.pug
 				ul
 					li define what players try to achieve
 		.bottom-40.right-40.fragment
-			img.width-700(src=imgAssets+'visible_mechanics.svg')
+			img.width-750(src=imgAssets+'visible_mechanics.svg')
 +frameInbox('Mechanics')
 	.fill.center
 		figure
@@ -69,13 +69,13 @@ include ../mixins/containers_aph.pug
 	figure.top-20.right-0.fragment
 		img.height-350(src=imgAssets+'story_naughdog.jpg')
 		p Naughty Dog Games
-	figure.top-100.right-400.fragment
+	figure.top-100.right-380.fragment
 		img.height-350(src=imgAssets+'story_bethesda.jpg')
 		p Bethesda Games
-	figure.top-250.right-800.fragment
+	figure.top-250.right-730.fragment
 		img.height-350(src=imgAssets+'story_ea.jpg')
 		p EA Games
-	figure.top-400.left-0.fragment
+	figure.top-410.left-0.fragment
 		img.height-350(src=imgAssets+'story_valve.jpg')
 		p Valve Games
 	+tipGordon('...').bottom-0.right-0
@@ -112,17 +112,6 @@ include ../mixins/containers_aph.pug
 		p <span class="font-bold highlight">Goals</span> - hunt down keys, beat all levels
 	.flex-row.justify-center.bottom-0.width-100p.nopadding
 		img.height-440(src=imgAssets+'doom.jpg')
-+frameInbox('Example: No man\'s sky')
-	div.leading-lg
-		p <span class="font-bold highlight">Mechanics</span> - exploration, crafting, gathering, building
-		p <span class="font-bold highlight">Story</span> - space-exploration game with heavy resource-gathering elements
-		p <span class="font-bold highlight">Aesthetics</span> - visually stunning lush world
-		p <span class="font-bold highlight">Technology</span> - (pseudo) random generated world
-		p <span class="font-bold highlight">Goals</span> - get to the centre of the galaxy
-	.flex-row.justify-center.bottom-0.width-100p.nopadding
-		img.height-440(src=imgAssets+'nomansky.jpg')
-	.fragment.tip.bottom-0.left-410
-		img.height-440(src=globalAssets+'memes/nmsky.jpg')
 +frameInbox('Baba is You')
 	div.leading-lg
 		p <span class="font-bold highlight">Mechanics</span> - building new rules by composing words (rule-based progressing)
@@ -132,7 +121,6 @@ include ../mixins/containers_aph.pug
 		p <span class="font-bold highlight">Goals</span> - compose the right rule/command to advance, beat all levels
 	.flex-row.justify-center.bottom-0.width-100p.nopadding
 		img.height-440(src=imgAssets+'babaisyou.jpg')
-
 +frameInbox('Game Mechanic Entities')
 	div.important-orange
 		.scope.fragment.fade-up(data-fragment-index='1')
@@ -153,7 +141,7 @@ include ../mixins/containers_aph.pug
 			ul
 				li statements that describe constraints and consequences
 		.bottom-0.right-0.width-550.fragment(data-fragment-index='4')
-			img(src=globalAssets+'memes/blocked_path.jpg')
+			img.width-550(src=globalAssets+'memes/blocked_path.jpg')
 +frameInbox('Example: Pong')
 	div
 		.spacing-2xs
@@ -167,5 +155,5 @@ include ../mixins/containers_aph.pug
 					li.fragment player earns one point when the other player fails to return the ball
 					li.fragment the winner is the one who reaches eleven points before the opponent
 		.center.bottom-0.width-100p
-			img.height-380(src=imgAssets+'pong.gif')
+			img.height-380(src=imgAssets+'pong.jpg')
 

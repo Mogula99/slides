@@ -6,6 +6,11 @@ Versioning info:
 - second number indicates a week (1 for the first week)
 - third number indicates minor changes, such as hotfixes and updates
 
+## [6.3.3] - 2023-10-04
+### Added
+Lecture 1 new slides
+LOCKED attribute
+
 ## [6.3.2] - 2023-10-01
 ### Added
 APH course organization slides

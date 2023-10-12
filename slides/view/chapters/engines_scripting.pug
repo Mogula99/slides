@@ -9,12 +9,11 @@ include ../mixins/containers_aph.pug
 +frameInbox('Scripts')
 	.important-green
 		.scope.fragment
-			p Scripts in games
+			p Scripting in games
 			ul
-				li.fragment allow rapid prototyping
-				li.fragment can be reloaded at runtime 
-				li.fragment can separate gameplay and core components 
-				li.fragment can be exposed to the end users for modding
+				li.fragment allows rapid prototyping
+				li.fragment separates gameplay and engine core
+				li.fragment used to be the only way<br> to mod a closed game
 		.bottom-30.left-30.fragment
 			figure
 				img.height-400(src=imgAssets+'hexen.jpg')
@@ -48,9 +47,10 @@ include ../mixins/containers_aph.pug
 				li.fragment more scripting languages = more bridges to maintain
 				li.fragment <span class="highlight">Marshalling</span> - transforming memory representation of an object between two domains (different programming languages)
 				li.fragment <span class="highlight">Semantic gap</span> - descriptive difference of an object in various representations (e.g. relational database vs object-oriented structure)
-				li.fragment applies to visual representations as well
-					.text-center.mt-20
-						img.height-300(src=imgAssets+'blueprints.png')
+					ul
+						li.fragment applies to visual scripting too
+							.text-center.mt-20
+								img.height-300(src=imgAssets+'blueprints.png')
 +frameInbox('Example: Atomic Game Engine JS API')
 	div
 		.code.text-xs
@@ -58,6 +58,6 @@ include ../mixins/containers_aph.pug
 +frameInbox('Example: Atomic Game Engine C# API')
 	div
 		ul
-			li mapping from C++ to C# is easy
+			li mapping from C++ to C#
 		.code.text-sm.mt-40
 			include ../../assets/engines_scripting/snippets_generated/age_csharpapi.html

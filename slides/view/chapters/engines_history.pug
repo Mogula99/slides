@@ -8,11 +8,11 @@ include ../mixins/containers_aph.pug
 +mchapter('History of game engines', imgAssets+'chapter_engines_history.svg')
 +frameInbox('Pre-engine era')
 	.center.fill
-		.grid.grid-cols-3.grid-rows-2.gap-40.width-80p
+		.grid.grid-cols-3.grid-rows-2.gap-20.width-80p
 			+floppyFive(imgAssets+'engine_pinball.jpg', 'Pinball Construction Kit', '1983')
-			+floppyFive(imgAssets+'engine_tforce.jpg', 'Thunder Force Construction', '1984')
 			+floppyFive(imgAssets+'engine_adventure.jpg', 'Adventure Construction Kit', '1984')
 			+floppyFive(imgAssets+'engine_gamemaker.jpg', 'Garry Kitchen\'s GameMaker', '1988')
+			+floppyFive(imgAssets+'freescape.png', 'Freescape Engine', '1987')
 			+floppyFive(imgAssets+'engine_arcade.jpg', 'Arcade Construction Kit', '1988')
 			+floppyFive(imgAssets+'engine_rpgmaker.jpg', 'RPG Maker', '1990')
 +frameInbox('Example: Vlak (1993)')
@@ -22,7 +22,6 @@ include ../mixins/containers_aph.pug
 		.top-100.right-20
 			img.height-350(src=imgAssets+'vlak.png')
 			p.mt-10 Source code for MS-DOS: <a href="https://github.com/oldcompcz/vlak">link</a>
-
 +frameInbox('ID Tech')
 	div.important-orange
 		ul
@@ -42,16 +41,23 @@ include ../mixins/containers_aph.pug
 		div
 			img.height-550(src=imgAssets+'doom.jpg')
 			p Source code: <a href"https://github.com/id-Software/DOOM/tree/master/linuxdoom-1.10">link</a>
++frameInbox('Other pseudo-3D engines')
+	div
+		.space-md
+		.flex-cols-3.mt-100.ml-100
+			+floppyAppBig(imgAssets+'other_voxel.jpg', 'Voxel Space Engine', '1992').fragment
+			+floppyAppBig(imgAssets+'other_darkforces.jpg', 'Jedi Engine', '1995').fragment
+			+floppyAppBig(imgAssets+'other_duke.jpg', 'Build Engine', '1996').fragment
 +frameInbox('Quake Engine')
 	div.important-orange
 		.flex-cols-2
 			div
 				ul
-					li.fragment ~id Tech 1
+					li.fragment ~id Tech 2
 					li.fragment released by ID Software in 1996
 					li.fragment initiated the rise of 3D gaming
 					li.fragment true 3D real-time rendering, 3D light sources
-					li.fragment <span class="highlight">Id Tech 1 Games</span>: 
+					li.fragment <span class="highlight">Id Tech 2 Games</span>: 
 						ul
 							li.fragment Quake, Hexen 2, Silver Wings
 					li.fragment <span class="highlight">Other IdTech-based games:</span>
@@ -62,12 +68,10 @@ include ../mixins/containers_aph.pug
 							li.fragment Half-Life (forked Source Engine)
 					li.fragment <span class="highlight">Successors:</span>
 						ul
-							li.fragment id Tech 2, 3, 4, 5, 6, 7 (2020)
-
+							li.fragment id Tech 3, 4, 5, 6, 7
 			div.fragment
 				img.height-550(src=imgAssets+'quake.jpg')
 				p Quake source code: <a href="https://github.com/id-Software/Quake">link</a>
-
 +frameInbox('Quake engine family')
 	.center
 		img.height-750(src=imgAssets+'idtech_family.svg')

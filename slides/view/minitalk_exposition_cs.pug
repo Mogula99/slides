@@ -1,0 +1,20 @@
+// GROUP=Minitalky
+// NAME=Expozice
+// LOCALE=cs 
+// ORDER=1
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+
+html(lang='cs')
+	+header('Minitalk: Expozice', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			include ./chapters/minitalk_exposition_cs.pug
+
+	+footer('Adam Vesecký (FIT ČVUT)', 'Architektura Počítačových Her, Minitalk: Expozice')
+	script(src!='../../scripts/reveal-setup.js')

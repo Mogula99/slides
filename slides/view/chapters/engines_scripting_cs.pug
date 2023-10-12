@@ -1,0 +1,63 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_scripting/';
+- var defaultBgr = 'backgrounds/script.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Skriptovací engine', imgAssets+'chapter_engines_scripting.svg')
++frameInbox('Skripty')
+	.important-green
+		.scope.fragment
+			p Skripty ve hrách
+			ul
+				li.fragment umožňují rapidní prototypování
+				li.fragment oddělují gameplay a jádro enginu
+				li.fragment dříve jediný způsob, jak<br> modifikovat uzavřenou hru
+		.bottom-30.left-30.fragment
+			figure
+				img.height-400(src=imgAssets+'hexen.jpg')
+				p Hexen (1995) - jedna z prvních skriptovaných her
+		.bottom-80.right-30.fragment
+			img.height-650(src=imgAssets+'scripting_engine.svg')
++frameInboxMid('Příklad: Hexen ACS Script')
+	div
+		.code.text-md
+			include ../../assets/engines_scripting/snippets_generated/hexen.html
++frameInbox('Příklad: Arma 2 SQS Script')
+	.flex-cols-2
+		div
+			.code.text-xs
+				include ../../assets/engines_scripting/snippets_generated/arma2.html
+		div.text-right
+			img.height-400(src=imgAssets+'arma.jpg')
++frameInbox('Příklad: Godot GDScript')
+	.flex-cols-2
+		div
+			.code.text-sm
+				include ../../assets/engines_scripting/snippets_generated/pong.html
+		div.text-right.bottom-30.right-30
+			img.height-400(src=imgAssets+'pong.gif')
++frameInbox('Game Engine Skriptovací API')
+	.important-orange
+		div
+			ul
+				li.fragment engine musí komunikovat se skriptem - řeší se <span class="highlight">bridgingem</span>
+				li.fragment bridge je výkonnostní bottleneck, především pro per-frame operace
+				li.fragment více skriptovacích jazyků = více práce na údržbu
+				li.fragment <span class="highlight">Marshalling</span> - transformace paměťové reprezentace objektu mezi doménami (např. různými jazyky)
+				li.fragment <span class="highlight">Sémantická mezera</span> - rozdíl v deklaraci objektu v různých doménách (např. relační databáze a OO struktura)
+					ul
+						li.fragment platí i pro vizuální skriptování
+							.text-center.mt-20
+								img.height-300(src=imgAssets+'blueprints.png')
++frameInbox('Příklad: Atomic Game Engine JS API')
+	div
+		.code.text-xs
+			include ../../assets/engines_scripting/snippets_generated/age_jsapi.html
++frameInbox('Příklad: Atomic Game Engine C# API')
+	div
+		ul
+			li mapování z C++ do C#
+		.code.text-sm.mt-40
+			include ../../assets/engines_scripting/snippets_generated/age_csharpapi.html

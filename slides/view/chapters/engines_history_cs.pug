@@ -1,0 +1,82 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_history/';
+- var defaultBgr = 'backgrounds/bgr_engine.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Historie herních enginů', imgAssets+'chapter_engines_history.svg')
++frameInbox('Pre-engine období')
+	.center.fill
+		.grid.grid-cols-3.grid-rows-2.gap-20.width-80p
+			+floppyFive(imgAssets+'engine_pinball.jpg', 'Pinball Construction Kit', '1983')
+			+floppyFive(imgAssets+'engine_adventure.jpg', 'Adventure Construction Kit', '1984')
+			+floppyFive(imgAssets+'engine_gamemaker.jpg', 'Garry Kitchen\'s GameMaker', '1988')
+			+floppyFive(imgAssets+'freescape.png', 'Freescape Engine', '1987')
+			+floppyFive(imgAssets+'engine_arcade.jpg', 'Arcade Construction Kit', '1988')
+			+floppyFive(imgAssets+'engine_rpgmaker.jpg', 'RPG Maker', '1990')
++frameInbox('Příklad: Vlak (1993)')
+	div
+		.code.tiny.font-dos.text-sm
+			include ../../assets/engines_history/snippets_generated/vlak.html
+		.top-100.right-20
+			img.height-350(src=imgAssets+'vlak.png')
+			p.mt-10 Zdrojový kód pro MS-DOS: <a href="https://github.com/oldcompcz/vlak">odkaz</a>
++frameInbox('ID Tech')
+	div.important-orange
+		ul
+			li.fragment rodina herních enginů vyvinutá firmou <span class="highlight">ID Software</span>
+			li.fragment <span class="highlight">Id Tech 0</span> - první plnohodnotný herní engine
+			li.fragment každá další hra měla pokročilejší technologii
+			li.fragment až do roku 1996 byly všechny hry postavené na raycastingu
+		.flex-cols-4.mt-80
+			+floppyApp(imgAssets+'idtech_hovertank.jpg', 'Hovertank 3-D', '1991').fragment
+			+floppyApp(imgAssets+'idtech_catacomb.jpg', 'Catacomb 3-D', '1991').fragment
+			+floppyApp(imgAssets+'idtech_wolfenstein.jpg', 'Wolfenstein 3-D', '1992').fragment
+			+floppyApp(imgAssets+'idtech_doom.jpg', 'Doom', '1993').fragment
++frameInbox('1993: Doom')
+	.flex-cols-2
+		.code.tiny.text-xs
+			include ../../assets/engines_history/snippets_generated/doom.html 
+		div
+			img.height-550(src=imgAssets+'doom.jpg')
+			p Zdrojový kód: <a href"https://github.com/id-Software/DOOM/tree/master/linuxdoom-1.10">odkaz</a>
++frameInbox('Další pseudo-3D enginy')
+	div
+		.space-md
+		.flex-cols-3.mt-100.ml-100
+			+floppyAppBig(imgAssets+'other_voxel.jpg', 'Voxel Space Engine', '1992').fragment
+			+floppyAppBig(imgAssets+'other_darkforces.jpg', 'Jedi Engine', '1995').fragment
+			+floppyAppBig(imgAssets+'other_duke.jpg', 'Build Engine', '1996').fragment
++frameInbox('Quake Engine')
+	div.important-orange
+		.flex-cols-2
+			div
+				ul
+					li.fragment ~id Tech 2
+					li.fragment vyvinut ID Software v roce 1996
+					li.fragment nastartoval příchod 3D her
+					li.fragment 3D real-time rendering, 3D světla
+					li.fragment <span class="highlight">Id Tech 1 hry</span>: 
+						ul
+							li.fragment Quake, Hexen 2, Silver Wings
+					li.fragment <span class="highlight">Další hry postavené na IdTech:</span>
+						ul
+							li.fragment Call of Duty
+							li.fragment Medal of Honor
+							li.fragment Daikatana
+							li.fragment Half-Life (forknutý Source Engine)
+					li.fragment <span class="highlight">Následníci:</span>
+						ul
+							li.fragment id Tech 2, 3, 4, 5, 6, 7
+			div.fragment
+				img.height-550(src=imgAssets+'quake.jpg')
+				p Quake (zdrojový kód <a href="https://github.com/id-Software/Quake">zde</a>)
++frameInbox('Rodina Quake enginů')
+	.center
+		img.height-750(src=imgAssets+'idtech_family.svg')
++frameInbox('Vliv herních enginů')
+	div.nopadding.fill.center.absolute
+		img.height-900(src=imgAssets+'games_evolution.svg')
+	div.nopadding.fill.center.absolute.top-50
+		img.height-700(src=imgAssets+'games_evolution.png')

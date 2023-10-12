@@ -5,13 +5,19 @@ include ../mixins/containers_aph.pug
 - var defaultBgr = 'backgrounds/bgr_wolfenstein.jpg';
 
 // ===================================================== SLIDES =====================================================
-+mchapter('Game Engines Overview', imgAssets+'chapter_engines_intro.svg')
++mchapter('Game Engines - overview', imgAssets+'chapter_engines_intro.svg')
 +frameInbox('Game Engines Today')
 	div.nopadding.fill.center.absolute
-		img.height-630(src=imgAssets+'engines_today.svg')
+		img.height-640(src=imgAssets+'engines_today.svg')
 	div.nopadding.fill.center.absolute
-		img.height-560.left-350.bottom-140(src=imgAssets+'engines.png')
+		img.height-550.left-350.bottom-140(src=imgAssets+'engines.png')
 	.important-green.fill.nopadding
++frameInbox('Trends - 2014')
+	div.nopadding.fill.center.absolute
+		img.height-630(src=imgAssets+'trends_2014.svg')
++frameInbox('Trends - 2022')
+	div.nopadding.fill.center.absolute
+		img.height-630(src=imgAssets+'trends_2022.svg')
 +frameInbox('Unreal Engine')
 	div.important-green
 		div.z-index-1000
@@ -25,12 +31,12 @@ include ../mixins/containers_aph.pug
 					.scope.fragment(data-fragment-index="1")
 						p Unreal Engine 4
 						ul
-							li film-Quality postprocessing
+							li film-quality postprocessing
 							li VFX & Particle Systems
 							li beta Raytracing
 				div
 					.scope.fragment(data-fragment-index="2")
-						p Unreal Engine 5
+						p Unreal Engine 5.3
 						ul
 							li Nanite virtualized geometry
 							li Lumen illumination engine
@@ -46,35 +52,59 @@ include ../mixins/containers_aph.pug
 				img.height-270(src=imgAssets+'unreal_engine_2.jpg')
 			div.text-center.fragment(data-fragment-index="2")
 				img.height-270(src=imgAssets+'unreal_engine_3.jpg')
++frameInbox('Unreal games')
+	div
+		div.flex-cols-3
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_batman.jpg')
+				p Batman Arkham Knight
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_sw.jpg')
+				p Star Wars Jedi: Fallen Order
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_hellblade.jpg')
+				p Hellblade: Senua's Sacrifice
+		div.flex-cols-3.mt-50
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_borderlands.jpg')
+				p Borderlands
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_fortnite.jpg')
+				p Fortnite
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_alpha.jpg')
+				p Planet Alpha
 +frameInbox('Unity')
 	div.important-green
 		ul
 			li.fragment all-purpose (not only) game engine 
-			li.fragment first announced for MacOS in 2005
-			li.fragment over 27 platforms supported
-			li.fragment most common choice for indie developers
-			li.downside.fragment source code is not available
+			li.fragment first release in 2005
+			li.fragment supports all main platforms
+			li.fragment the most common engine for indie developers
+			li.downside.fragment source code is available only to enterprise users
 		.scope.fragment
-			p Unity 2021.1.22 - current version
+			p Unity 2023.3 - current version
 			ul
+				li.fragment UVS - visual language (formerly Bolt)
 				li.fragment Universal Render Pipeline
-				li.fragment visual scripting with Bolt engine
-				li.fragment new networking engine
+				li.fragment Split Graphics Jobs
+				li.fragment new multiplayer engine
+				li.fragment ECS component engine
 	div
 		img.height-300.right-0.top-40(src=imgAssets+'unity_ori.jpg')
-		p.right-560.top-40 Ori
+		p.right-560.top-40.highlight Ori
 		img.height-300.right-130.top-290(src=imgAssets+'unity_besiege.jpg')
-		p.right-680.top-290 Besiege
+		p.right-680.top-290.highlight Besiege
 		img.height-300.right-260.top-540(src=imgAssets+'unity_cuphead.jpg')
-		p.right-810.top-540 Cuphead
+		p.right-810.top-540.highlight Cuphead
 +frameInbox('Godot')
 	div.important-green
 		ul
-			li.fragment(data-fragment-index="0") 2D and 3D game engine
+			li.fragment(data-fragment-index="0") 2D and 3D engine
 			li.fragment(data-fragment-index="1") GDScript scripting language
-			li.fragment(data-fragment-index="2") component architecture
-			li.upside.fragment(data-fragment-index="3") MIT license, completely free
-			li.downside.fragment(data-fragment-index="4") no famous games so far
+			li.fragment(data-fragment-index="2") uses OOP architecture
+			li.upside.fragment(data-fragment-index="3") MIT license
+			li.downside.fragment(data-fragment-index="4") no well-known games so far
 	div
 		img.height-300.left-770.top-50.fragment(src=imgAssets+'godot.png', data-fragment-index='0')
 		img.height-350.left-50.bottom-50.fragment(src=imgAssets+'godot_interface.jpg', data-fragment-index='1')
@@ -86,20 +116,18 @@ include ../mixins/containers_aph.pug
 			li.fragment more complex games can be made in graphics libraries
 			li.fragment Unity is great for 2D and 3D indie games, but doesn't offer low-level customization
 			li.fragment Unreal is difficult to master, yet it can be customized in any way
-			li.fragment for complex games, migration between engines is practically impossible
 			li.fragment open-source game engines heavily depend on the community and their future is uncertain
-		.flex-cols-4.space-xl.mt-80
-			.height-180.text-center.fragment
+			li.fragment.highlight migration between engines is practically impossible
+		.flex-cols-4.space-xl.mt-40
+			.height-250.text-center.fragment
 				img(src=imgAssets+'engine_horse.png')
-			.height-180.text-center.fragment
+			.height-250.text-center.fragment
 				img(src=imgAssets+'engine_car.png')
-			.height-180.text-center.fragment
+			.height-250.text-center.fragment
 				img(src=imgAssets+'engine_jet.png')
-			.height-180.text-center.fragment
+			.height-250.text-center.fragment
 				img(src=imgAssets+'engine_rocket.png')
-		.tip.bottom-200.right-380.fragment
-			img.height-500(src=imgAssets+'engines.jpg')
-+frameInbox('Engine Architecture')
++frameInbox('Game engine architecture')
 	.important-green.center
 		img.height-800(src=imgAssets+'architecture.svg')
 +frameInbox('Game Engine Primary Modules')

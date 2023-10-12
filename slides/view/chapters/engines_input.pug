@@ -17,19 +17,20 @@ include ../mixins/containers_aph.pug
 				.scope.fragment
 					p Devices
 					.right-100.top-250
-						img.height-450(src=globalAssets+'memes/keyboard_games.jpg')
+						img.height-570(src=globalAssets+'memes/keyboard_games.jpg')
 					ul
-						li.fragment keyboard, touch sensor, camera, gamepad, Oculus Touch,...
+						li.fragment keyboard, mouse, gamepad,...
 						li.fragment one-axis controller - single analog state
 						li.fragment two-axis controller - mouse and joystick
-						li.fragment three-axis controller - accelerometer
+						li.fragment three-axis controller - g-senzor
+						li.fragment four-axis controller - simulation joystick
 				.scope.fragment
 					p What to consider
 					ul
 						li.fragment which input is active (e.g., pressed key)
-						li.fragment how long has it been active
-						li.fragment what state is it in and which component can react to it
-						li.fragment when an input got active, what input was active before?
+						li.fragment for how long has been active
+						li.fragment which input combination is active
+						li.fragment how to map an input to an action in the game
 +frameInbox('Input Events')
 	.important-green
 		.flex-cols-2
@@ -37,9 +38,9 @@ include ../mixins/containers_aph.pug
 				.scope.fragment(data-fragment-index="1")
 					p Atomic events
 					ul
-						li key press
-						li key release
-						li mouse wheel move
+						li key press (keydown)
+						li key release (keyup)
+						li mouse movement (mouseover)
 				.scope.fragment(data-fragment-index="2")
 					p Compound events
 					ul
@@ -48,10 +49,10 @@ include ../mixins/containers_aph.pug
 						li pinch to zoom
 						li double tap
 				.scope.fragment(data-fragment-index="3")
-					p Special events
+					p Complex events
 					ul
 						li sequences
-						li actions
+						li chords
 			div
 				.right-170.top-200.fragment(data-fragment-index="1")
 					img.height-150(src=imgAssets+'input_joypad.png')
@@ -59,28 +60,26 @@ include ../mixins/containers_aph.pug
 					img.height-150(src=imgAssets+'input_pinch.png')
 				.right-270.top-600.mt-80.fragment(data-fragment-index="3")
 					img.height-200(src=imgAssets+'input_cheat.png')
-+frameInbox('Special Events')
++frameInbox('Complex events and mapping')
 		div.width-85p.important-green
 			.scope
 				p.fragment Sequence
 				ul
-					li.fragment cheats: IDDQD, IDKFA
+					li.fragment e.g., cheats: IDDQD, IDKFA
 						.right-30.top-30
-							img.width-400(src=globalAssets+'memes/cheatcodes.jpg')
-					li.fragment chords: combo moves in fighting games
-						.right-150.top-380
-							img.width-450(src=imgAssets+'street_fighter.jpg')
+							img.width-450(src=globalAssets+'memes/cheatcodes.jpg')
+			.scope
+				p.fragment Chords
+				ul
+					li.fragment in combat games
+						.right-50.top-420
+							img.width-550(src=imgAssets+'street_fighter.jpg')
 			.space-md
 			.scope.fragment
-				p Action
+				p Mapping
 				ul
-					li.fragment a button or a combination of buttons result in an action
-					li.fragment there must be a button ID <-> action ID mapping
-			.space-md
-			.scope.fragment
-				p Context-sensitive input
-				ul
-					li.fragment several modes: walking, driving, flying
+					li.fragment relationship between an event and an action in the game
+					li.fragment dependent on the context, e.g., if the player<br>drives a car, or walks on foot
 						.right-400.top-600
 							img.width-550(src=globalAssets+'memes/walk.jpg')
 				

@@ -1,0 +1,32 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_scene/';
+- var defaultBgr = 'backgrounds/tree.png';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Graf scény', imgAssets+'chapter_engines_scene.svg')
++frameInbox('Graf scény')
+	.important-orange
+		.scope.fragment
+			p Graf scény
+			ul
+				li.fragment základní struktura jakékoliv grafické aplikace
+				li.fragment způsob řazení dat do hierarchie
+				li.fragment reprezentován jako N-ární strom nebo graf
+				li.fragment implementován jako pole, oct-tree, quad-tree, bounding volume hierarchy,...
+				li.fragment transformace objektů má vliv na všechny objekty pod nimi
+				li.fragment listy reprezentují atomické objekty (polygony, vertexy,...)
+		.scope.fragment
+			p Manažer scény
+			ul
+				li.fragment v některých enginech - přidává ke grafu scény logickou nadstavbu
+				li.fragment hlavní funkce: komunikace a přenos událostí mezi objekty
+				li.fragment Unity Engine - hierarchie tvořená herními objekty
+				li.fragment Unreal Engine - hierarchie tvořená komponentami
+				li.fragment Godot Engine - hierarchie tvořená uzly
++frameInbox('Příklad: Graf scény')
+	.center.bottom-0.width-100p
+		img.height-380.mr-100(src=imgAssets+'scene_game.gif')
+	.center.top-0.left-20
+		img.height-650(src=imgAssets+'graph_creature.svg')

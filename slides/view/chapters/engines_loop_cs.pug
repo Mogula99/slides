@@ -1,0 +1,54 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_loop/';
+- var defaultBgr = 'backgrounds/pzprototype.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Herní smyčka', imgAssets+'chapter_engines_loop.svg')
++frameInbox('Herní smyčka')
+	.important-orange
+		ul
+			li.fragment nejdůležitější část většiny her
+			li.fragment každý frame aktualizuje herní model
+			li.fragment obvykle spojená s event smyčkou platformy
+			li.fragment optimální frekvence her: 
+				span.highlight.font-bold 60 FPS = 16.6 ms na frame
+			li.fragment vstupy a fyzika vyžadují častější update
+		.space-2xl
+		.text-center.center.fragment
+			.width-55p.highlight.font-bold Program obecně stráví 90% času v 10% kódu. Herní smyčka je zcela jistě v těch 10%.
++frameInbox('Jednoduchá smyčka')
+	.important-orange.center.fill
+		img.height-750(src=imgAssets+'loop_simple_cs.svg')
++frameInbox('Smyčka s odděleným renderingem')
+	.important-orange.center.fill
+		img.height-750(src=imgAssets+'loop_multithreaded_cs.svg')
++frameInbox('Kooperativní smyčka')
+	.important-orange
+		ul
+			li.fragment poprvé použita ve hře <span class="highlight">Ultima VII (1994)</span>
+		.bottom-20.left-170
+			img.height-680(src=imgAssets+'loop_cooperative_cs.svg')
++frameInbox('Update herního stavu')
+	.important-red
+		.scope.fragment 
+			p Fixní time step
+			ul
+				li.fragment každý update je proveden o fixní časovou jednotku
+				li.upside.fragment deterministické a stabilní
+				li.downside.fragment může zpomalit hru
+		.scope.fragment
+			p Variabilní time step
+			ul
+				li.fragment každý update je proveden o jednotku závislou na skutečném čase
+				li.upside.fragment přirozené
+				li.downside.fragment nedeterministické a nestabilní
+		.scope.fragment
+			p Adaptivní time step
+			ul
+				li.fragment variabilní smyčka s thresholdingem
+				li.fragment dokáže se vypořádat se zamrznutím hry
++frameInbox('Příklad: Unity')
+	.center
+		img.height-800(src=imgAssets+'loop_unity.svg')

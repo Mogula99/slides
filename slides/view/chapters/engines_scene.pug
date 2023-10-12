@@ -16,7 +16,7 @@ include ../mixins/containers_aph.pug
 				li.fragment represented as an N-Tree or a regular graph
 				li.fragment implemented as an array, oct-tree, quad-tree, bounding volume hierarchy,...
 				li.fragment parent nodes affect child nodes (translation, rotation, scale,...)
-				li.fragment leaves represent atomic units (shapes, vertices, imported meshes)
+				li.fragment leaves represent atomic units (polygons, vertices)
 		.scope.fragment
 			p Scene Manager
 			ul
@@ -24,7 +24,7 @@ include ../mixins/containers_aph.pug
 				li.fragment responsibility: communication, binding to logical components
 				li.fragment Unity Engine - game objects form a hierarchy
 				li.fragment Unreal Engine - components form a hierarchy
-				li.fragment Godot Engine - everyting forms a hierarchy
+				li.fragment Godot Engine - nodes forms a hierarchy
 +frameInbox('Example: Scene Hierarchy')
 	.center.bottom-0.width-100p
 		img.height-380.mr-100(src=imgAssets+'scene_game.gif')

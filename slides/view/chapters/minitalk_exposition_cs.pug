@@ -1,0 +1,87 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_exposition/';
+- var defaultBgr = 'backgrounds/shadowlands.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Expozice', imgAssets+'chapter_exposition.svg')
++frameInbox('Expozice')
+    .bottom-80.right-0.nopadding.fragment
+        img.height-400(src=imgAssets+'lothric_castle.jpg' alt='Lothric castle')
+    ul.spacing-lg.top-0
+        li.fragment forma, který hráči odhalí důležitý příběhový element (budovu, postavu,...)
+        li.fragment typický příklad: eskalování obtížnosti hry, které má hráče připravit na finální výzvu
+        li.fragment expozice je zásadní pro: 
+            ul
+                li.fragment budování atmosféry
+                li.fragment ponoření a vcítění se do děje/postav
+                li.fragment kontinuita příběhu
+        li.fragment bez dostatečné expozice bude hráč zmatený,<br> co se ve hře děje a proč
+        li.fragment nejběžnější expoziční klimax - <span class="highlight">boss fight</span>
+        li.fragment způsoby expozice: skrze cutscény, loading screeny,<br> dialogy, objevené artefakty, vypravěč, manuál, environmental storytelling
+    .tip.absolute.top-10.left-450.fragment
+        img.height-760(src=globalAssets+'memes/cutscenes.jpg')
++frameInbox('Expozice hlavního antagonisty')
+    .fill.center.flex-row.justify-evenly
+        figure.fragment
+            img.height-400(src=imgAssets+'mario.jpg' alt='Bowser')
+            p Super Mario Bros. (1983)
+        figure.fragment
+            img.height-400(src=imgAssets+'glados.jpg' alt='GLADos')
+            p Portal (2007)
++frameInbox('Expozice propojená s příběhem')
+    .fill.center.flex-row.justify-evenly
+        figure.fragment
+            img.height-400(src=imgAssets+'half-life.jpg' alt='Half-life')
+            p Half-Life (1998)
+        figure.fragment
+            img.height-400(src=imgAssets+'fear2.jpg' alt='F.E.A.R. 2')
+            p F.E.A.R 2 (2009)
++frameInbox('Expozice propojená s prostředím')
+    .fill.center.flex-row.justify-evenly
+        figure.fragment
+            img.height-280(src=imgAssets+'prince.jpg' alt='Prince of Persia')
+            p Prince of Persia (1990)
+        figure.fragment
+            img.height-280(src=imgAssets+'shadow_of_the_colossus.jpg' alt='Shadow of the Colossus')
+            p Shadow of the Colossus (2005)
+        figure.fragment
+            img.height-280(src=imgAssets+'ori.jpg' alt='Ori and the blind forest')
+            p Ori And The Blind Forest (2015)
++frameInbox('Expozice propojená s herním světem/levelem')
+    .fill.center.flex-row.justify-evenly
+        figure.fragment
+            img.height-400(src=imgAssets+'rayman.jpg' alt='Rayman')
+            p Rayman Legends (2013)
+        figure.fragment
+            img.height-400(src=imgAssets+'cuphead.jpg' alt='Cuphead')
+            p Cuphead (2017)
++frameInbox('Bossové ve hře Hellblade: Senua\'s Sacrifice')
+    div
+        .top-100.left-10
+            figure.fragment
+                img.height-400(src=imgAssets+'hellblade_garm.jpg' alt='Garm')
+                p Garm
+        .top-300.left-500
+            figure.fragment
+                img.height-400(src=imgAssets+'hellblade_surtr.jpg' alt='Surtr')
+                p Surtr
+        .top-450.right-10
+            figure.fragment
+                img.height-400(src=imgAssets+'hellblade_valravn.jpg' alt='Valravn')
+                p Valravn
++frameInbox('Další expozice')
+    div
+        .top-100.left-10
+            figure.fragment
+                img.height-380(src=imgAssets+'other_masseffect.jpg' alt='Mass Effect')
+                p Mass Effect (2007)
+        .top-300.left-500
+            figure.fragment
+                img.height-380(src=imgAssets+'other_esther.jpg' alt='Dear Esther')
+                p Dear Esther<br>(2012)
+        .top-450.right-10
+            figure.fragment
+                img.height-380(src=imgAssets+'other_misfortune.jpg' alt='Little Misfortune')
+                p Little Misfortune (2019)

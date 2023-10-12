@@ -1,0 +1,153 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_intro/';
+- var defaultBgr = 'backgrounds/bgr_wolfenstein.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Herní enginy - přehled', imgAssets+'chapter_engines_intro.svg')
++frameInbox('Herní enginy dneška')
+	div.nopadding.fill.center.absolute
+		img.height-640(src=imgAssets+'engines_today_cs.svg')
+	div.nopadding.fill.center.absolute
+		img.height-550.left-350.bottom-140(src=imgAssets+'engines.png')
+	.important-green.fill.nopadding
++frameInbox('Trendy - 2014')
+	div.nopadding.fill.center.absolute
+		img.height-630(src=imgAssets+'trends_2014.svg')
++frameInbox('Trendy - 2022')
+	div.nopadding.fill.center.absolute
+		img.height-630(src=imgAssets+'trends_2022.svg')
++frameInbox('Unreal Engine')
+	div.important-green
+		div.z-index-1000
+			.scope.fragment(data-fragment-index="0")
+				p Unreal Engine 1
+				ul
+					li vytvořen v roce 1998 firmou Epic Games jako FPS engine
+					li <span class="highlight-2">Unreal</span> - první hra
+			.flex-cols-2.space-md.width-70p
+				div
+					.scope.fragment(data-fragment-index="1")
+						p Unreal Engine 4
+						ul
+							li film-quality postprocessing
+							li VFX & Particle Systems
+							li beta Raytracing
+				div
+					.scope.fragment(data-fragment-index="2")
+						p Unreal Engine 5.3
+						ul
+							li Nanite virtualized geometry
+							li Lumen illumination engine
+							li.upside zdrojový kód je dostupný
+		.bottom-0.left-0.grid.grid-cols-3.grid.rows-2.width-100p.gap-30
+			div.text-center
+			div
+			div.text-center.fragment(data-fragment-index="0")
+				img.width-480(src=imgAssets+'unreal.jpg')
+			div.text-center.fragment(data-fragment-index="1")
+				img.height-270(src=imgAssets+'unreal_engine.jpg')
+			div.text-center.fragment(data-fragment-index="1")
+				img.height-270(src=imgAssets+'unreal_engine_2.jpg')
+			div.text-center.fragment(data-fragment-index="2")
+				img.height-270(src=imgAssets+'unreal_engine_3.jpg')
++frameInbox('Unreal hry')
+	div
+		div.flex-cols-3
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_batman.jpg')
+				p Batman Arkham Knight
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_sw.jpg')
+				p Star Wars Jedi: Fallen Order
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_hellblade.jpg')
+				p Hellblade: Senua's Sacrifice
+		div.flex-cols-3.mt-50
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_borderlands.jpg')
+				p Borderlands
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_fortnite.jpg')
+				p Fortnite
+			figure.fragment
+				img.height-280(src=imgAssets+'unreal_alpha.jpg')
+				p Planet Alpha
++frameInbox('Unity')
+	div.important-green
+		ul
+			li.fragment all-in-one (a nejen) herní engine 
+			li.fragment vznikl v roce 2005
+			li.fragment podporuje všechny hlavní platformy
+			li.fragment nejběžnější engine indie vývojářů
+			li.downside.fragment zdrojový kód dostupný pouze enterprise uživatelům
+		.scope.fragment
+			p Unity 2023.3 - současná verze
+			ul
+				li.fragment UVS - vizuální jazyk (dříve Bolt)
+				li.fragment Universal Render Pipeline
+				li.fragment Split Graphics Jobs
+				li.fragment nový multiplayer engine
+				li.fragment ECS komponentový engine
+	div
+		img.height-300.right-0.top-40(src=imgAssets+'unity_ori.jpg')
+		p.right-560.top-40.highlight Ori
+		img.height-300.right-130.top-290(src=imgAssets+'unity_besiege.jpg')
+		p.right-680.top-290.highlight Besiege
+		img.height-300.right-260.top-540(src=imgAssets+'unity_cuphead.jpg')
+		p.right-810.top-540.highlight Cuphead
++frameInbox('Godot')
+	div.important-green
+		ul
+			li.fragment(data-fragment-index="0") 2D a 3D engine
+			li.fragment(data-fragment-index="1") GDScript skriptovací jazyk
+			li.fragment(data-fragment-index="2") používá OOP architekturu
+			li.upside.fragment(data-fragment-index="3") MIT licence
+			li.downside.fragment(data-fragment-index="4") zatím žádné známé hry
+	div
+		img.height-300.left-770.top-50.fragment(src=imgAssets+'godot.png', data-fragment-index='0')
+		img.height-350.left-50.bottom-50.fragment(src=imgAssets+'godot_interface.jpg', data-fragment-index='1')
+		img.height-450.right-0.bottom-50.fragment(src=imgAssets+'godot_games.png', data-fragment-index='2')
++frameInbox('Jaký engine potřebuji?')
+	div
+		ul
+			li.fragment 2D minihry s jednoduchými animacemi se dají vytvářet bez enginu
+			li.fragment na některé typy her stačí grafické knihovny (ThreeJS, PixiJS, BabylonJS)
+			li.fragment Unity je hlavní volbou pro 2D a 3D indie hry, ale neumožňuje low-level customizaci
+			li.fragment Unreal má pozvolnou učící křivku, customizace je flexibilnější
+			li.fragment open-source enginy obvykle stojí na pár lidech a jejich osud je nejistý
+			li.fragment.highlight migrace mezi enginy je prakticky nemožná
+		.flex-cols-4.space-xl.mt-40
+			.height-250.text-center.fragment
+				img(src=imgAssets+'engine_horse.png')
+			.height-250.text-center.fragment
+				img(src=imgAssets+'engine_car.png')
+			.height-250.text-center.fragment
+				img(src=imgAssets+'engine_jet.png')
+			.height-250.text-center.fragment
+				img(src=imgAssets+'engine_rocket.png')
+		.tip.bottom-100.right-220.fragment
+			img.height-600(src=globalAssets+'memes/engines.jpg')
++frameInbox('Architektura herních enginů')
+	.important-green.center
+		img.height-800(src=imgAssets+'architecture.svg')
++frameInbox('Primární moduly')
+	.important-orange.spacing-2xs
+		ul
+			li.fragment <span class="highlight">Game Loop</span> - herní smyčka, zajišťuje real-time interakci
+			li.fragment <span class="highlight">Scene Manager</span> - udržuje objekty a jejich závislosti ve stromové struktuře
+			li.fragment <span class="highlight">Input Manager</span> - obstarává vstupy
+			li.fragment <span class="highlight">Resource Manager</span> - obstarává assety, cache a loading
+			li.fragment <span class="highlight">Memory Manager</span> - spravuje paměť (obvykle předalokovanou heapu)
+			li.fragment <span class="highlight">Rigidbody Engine</span> - mechanika tuhých těles (detekce kolizí)
+			li.fragment <span class="highlight">Physics Engine</span> - ovládá objekty na základě silového působení
+			li.fragment <span class="highlight">Rendering Engine</span> - zajišťuje vykreslování 
+			li.fragment <span class="highlight">Animation Engine</span> - přehrává a načítá animace
+			li.fragment <span class="highlight">Scripting Engine</span> - sémantický můstek mezi jádrem enginu a dalšími jazyky (JS, C#,...)
+			li.fragment <span class="highlight">Audio Engine</span> - přehrává hudbu, klipy, zvuky,...
+			li.fragment <span class="highlight">AI Engine</span> - abstraktní vrstva pro AI (stavové automaty, behaviorální stromy,...)
+			li.fragment <span class="highlight">Networking Engine</span> - multiplayer
+		div.fragment.mt-10
+			ul
+				li Další moduly - GUI framework, Level Editor, Camera, Event System, LOD system,...

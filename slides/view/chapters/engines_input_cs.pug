@@ -1,0 +1,89 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/engines_input/';
+- var defaultBgr = 'backgrounds/keyboard.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Vstupní zařízení', imgAssets+'chapter_engines_input.svg')
++frameInbox('Input Manager')
+	.important-green
+		.flex.flex-row.flex-no-wrap
+			div.spacing-xs
+				ul
+					li.fragment detekuje události od vstupních zařízení
+					li.fragment <span class="highlight">polling</span> - aktivní dotazování a porovnání s předchozím stavem
+					li.fragment <span class="highlight">callbacky</span> - ošetřeno softwarovou vrstvou
+				.scope.fragment
+					p Zařízení
+					.right-100.top-250
+						img.height-570(src=globalAssets+'memes/keyboard_games.jpg')
+					ul
+						li.fragment klávesnice, myš, gamepad, kamera,...
+						li.fragment jednoosý ovladač - analogová páka
+						li.fragment dvouosý ovladač - myš a joystick
+						li.fragment tříosý ovladač - g-senzor
+						li.fragment čtyřosý ovladač - simulační joystick
+				.scope.fragment
+					p Co brát v potaz
+					ul
+						li.fragment jaký vstup je aktivní (např. stisknutá klávesa)
+						li.fragment jak dlouho je aktivní
+						li.fragment jaká kombinace vstupů je aktivní
+						li.fragment jak mapovat vstup na výslednou akci ve hře
++frameInbox('Input Events')
+	.important-green
+		.flex-cols-2
+			div
+				.scope.fragment(data-fragment-index="1")
+					p Atomické události
+					ul
+						li stisk klávesy (keydown)
+						li uvolnění klávesy (keyup)
+						li pohyb myší (mouseover)
+				.scope.fragment(data-fragment-index="2")
+					p Složené události
+					ul
+						li click
+						li fling
+						li pinch to zoom
+						li double tap
+				.scope.fragment(data-fragment-index="3")
+					p Komplexní dálosti
+					ul
+						li sekvence
+						li kombo
+			div
+				.right-170.top-200.fragment(data-fragment-index="1")
+					img.height-150(src=imgAssets+'input_joypad.png')
+				.right-270.top-350.mt-80.fragment(data-fragment-index="2")
+					img.height-150(src=imgAssets+'input_pinch.png')
+				.right-270.top-600.mt-80.fragment(data-fragment-index="3")
+					img.height-200(src=imgAssets+'input_cheat.png')
++frameInbox('Komplexní události a mapování')
+		div.width-85p.important-green
+			.scope
+				p.fragment Sekvence
+				ul
+					li.fragment např. cheaty: IDDQD, IDKFA
+						.right-30.top-30
+							img.width-450(src=globalAssets+'memes/cheatcodes.jpg')
+			.scope
+				p.fragment Kombo
+				ul
+					li.fragment v bojových hrách
+						.right-50.top-420
+							img.width-550(src=imgAssets+'street_fighter.jpg')
+			.space-md
+			.scope.fragment
+				p Mapování
+				ul
+					li.fragment vztah mezi událostí a výslednou akcí ve hře
+					li.fragment závislé na kontextu, např. zda hráč řídí<br> auto, jde po svých nebo letí helikoptérou
+						.right-400.top-600
+							img.width-550(src=globalAssets+'memes/walk.jpg')
+				
++frameInbox('Příklad: Godot Input Manager')
+	.flex-cols-2
+		.code.text-sm
+			include ../../assets/engines_input/snippets_generated/input_godot.html

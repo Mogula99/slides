@@ -14,7 +14,7 @@ include ../mixins/containers_aph.pug
 			li.fragment usually coordinated with the event loop of the platform/virtual machine
 			li.fragment optimal time step for rendering: 
 				span.highlight.font-bold 60 FPS = 16.6 ms per frame
-			li.fragment audio, input, and physics require more frequent updates
+			li.fragment input, and physics require more frequent updates
 		.space-2xl
 		.text-center.center.fragment
 			.width-55p.highlight.font-bold In general, a program spends 90% of its time in 10% of its code. The game loop will be firmly in those 10%.
@@ -27,7 +27,6 @@ include ../mixins/containers_aph.pug
 +frameInbox('Cooperative game loop')
 	.important-orange
 		ul
-			li.fragment synchronization can be provided by delayed invocation
 			li.fragment first used in <span class="highlight">Ultima VII (1994)</span>
 		.bottom-20.left-170
 			img.height-680(src=imgAssets+'loop_cooperative.svg')
@@ -54,13 +53,3 @@ include ../mixins/containers_aph.pug
 +frameInbox('Example: Unity Game Loop')
 	.center
 		img.height-800(src=imgAssets+'loop_unity.svg')
-+frameInbox('Update Inconsistencies')
-	.important-orange
-		ul
-			li.fragment game objects are consistent before and after every update
-			li.fragment they may get to an inconsistent state during the update - <span class="highlight">one-frame-off lag</span>
-			li.fragment possible solutions: bucket update, script execution order (Unity), process priority (Godot)
-		.center.fragment
-			figure.mt-40
-				img.width-1000(src=imgAssets+'update_inconsistencies.svg')
-				p Object A reads previous state of Object B and Object B reads previous state of Object C

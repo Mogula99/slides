@@ -3,7 +3,6 @@
 // NAME=Enginy
 // LOCALE=cs 
 // ORDER=2
-// LOCKED=true
 doctype html
 include ./mixins/header.pug
 include ./mixins/containers.pug
@@ -16,26 +15,26 @@ include ./mixins/summary.pug
 - var globalAssets = '../assets/all/';
 - var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
 
-html(lang='en')
-	+header('Engines', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+html(lang='cs')
+	+header('Enginy', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
 	.reveal
 		.slides
-			+titleLecture('Engines', 'Lecture 2', globalAssets+'lectures/ic_lecture02.svg')
-			+frameInbox('Literature')
+			+titleLectureCs('Enginy', 'Přednáška 2', globalAssets+'lectures/ic_lecture02.svg')
+			+frameInbox('Literatura')
 				ul
 					li
 						a(href="https://www.amazon.co.uk/Engine-Architecture-Third-Jason-Gregory/dp/1138035459") Gregory, Json. 2018. Game Engine Architecture (3rd ed.)
 				div.text-center
 					img.height-500(src=globalAssets+'book_game_engine_arch.jpg' alt='Gregory, JSON. Game Engine Architecture')
-			include ./chapters/engines_history.pug
-			include ./chapters/engines_intro.pug
-			include ./chapters/engines_loop.pug
-			include ./chapters/engines_scene.pug
-			include ./chapters/engines_input.pug
-			include ./chapters/engines_scripting.pug
+			include ./chapters/engines_history_cs.pug
+			include ./chapters/engines_intro_cs.pug
+			include ./chapters/engines_loop_cs.pug
+			include ./chapters/engines_scene_cs.pug
+			include ./chapters/engines_input_cs.pug
+			include ./chapters/engines_scripting_cs.pug
 			- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
-			+summary_lecture02()
-			+quote-portal()
+			+summary_lecture02cs()
+			+quote-inspirationcs()
 					
-	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Lecture 2: Engines')
+	+footer('Adam Vesecký (FIT ČVUT)', 'Architektura Počítačových Her, Přednáška 2: Enginy')
 	script(src!='../../scripts/reveal-setup.js')

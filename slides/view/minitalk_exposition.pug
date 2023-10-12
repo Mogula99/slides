@@ -1,0 +1,20 @@
+// GROUP=Minitalks
+// NAME=Exposition
+// LOCALE=en
+// ORDER=1
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+
+html(lang='en')
+	+header('Minitalk: Exposition', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			include ./chapters/minitalk_exposition.pug
+
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Games, Minitalk: Exposition')
+	script(src!='../../scripts/reveal-setup.js')

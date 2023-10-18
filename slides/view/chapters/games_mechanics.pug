@@ -16,23 +16,23 @@ include ../mixins/containers_aph.pug
 			.scope.fragment 
 				p Progression
 				ul
-					li refers to the structures in games where a designer outlined the possible game states beforehand, usually through level design
+					li.fragment refers to the structures in games where a designer outlined the possible game states beforehand, usually through level design
 			.scope.fragment
 				p Gameplay
 				ul
-					li an emergent property of the game as defined by its rules
+					li.fragment the way how the player interacts with the game
 			.scope.fragment 
 				p Mechanics
 				ul
-					li a set of rules governing the behavior of a single game element
+					li.fragment a set of rules governing the interaction between the player and the game
 			.scope.fragment 
 				p System
 				ul
-					li interacting group of game elements forming a unified whole
+					li.fragment interacting group of game elements forming a unified whole
 			.scope.fragment 
 				p Level
 				ul
-					li a structure in a game that dictates what challenges players encounter
+					li.fragment a structure in a game that dictates what challenges players encounter
 +frameInbox('Game Basic Elements')
 	div.important-orange.spacing-2xs
 		div
@@ -40,24 +40,24 @@ include ../mixins/containers_aph.pug
 				p Mechanics
 				ul
 					li a set of rules governing the behavior of a single game element
-					li.fragment <span class="highlight-2">design hook</span> - the core mechanic that sells the game
+					li.fragment <span class="highlight-2">game hook</span> - the core mechanic that sells the game
 					li.fragment <span class="highlight-2">subelements</span> - space, objects, actions, rules
 			.scope.fragment
 				p Story
 				ul
-					li a sequence of events that unfolds in the game
+					li.fragment a sequence of events that unfolds in the game
 			.scope.fragment
 				p Aesthetics
 				ul
-					li how the game looks, sounds, feels,...
+					li.fragment how the game looks, sounds, feels,...
 			.scope.fragment
 				p Technology
 				ul
-					li any materials and interactions that make the game possible
+					li.fragment any materials and interactions that make the game possible
 			.scope.fragment
 				p Goals
 				ul
-					li define what players try to achieve
+					li.fragment define what players try to achieve
 		.bottom-40.right-40.fragment
 			img.width-750(src=imgAssets+'visible_mechanics.svg')
 +frameInbox('Mechanics')
@@ -96,29 +96,29 @@ include ../mixins/containers_aph.pug
 			p World of Warcraft
 +frameInbox('Example: Space Invaders')
 	div.leading-lg
-		p <span class="font-bold highlight">Mechanics</span> - introduced the concept of a highscore
-		p <span class="font-bold highlight">Story</span> - didn't need to have a story
-		p <span class="font-bold highlight">Aesthetics</span> - three different alien designs
-		p <span class="font-bold highlight">Technology</span> - first videogame of its kind
-		p <span class="font-bold highlight">Goals</span> - survive as long as you can
+		p.fragment <span class="font-bold highlight">Mechanics</span> - introduced the concept of a highscore
+		p.fragment <span class="font-bold highlight">Story</span> - "Save the Earth" posters
+		p.fragment <span class="font-bold highlight">Aesthetics</span> - three different alien designs
+		p.fragment <span class="font-bold highlight">Technology</span> - hardware designed solely for the game
+		p.fragment <span class="font-bold highlight">Goals</span> - survive as long as you can
 	.flex-row.justify-center.bottom-0.width-100p.nopadding
 		img.height-440(src=imgAssets+'invaders.jpg')
 +frameInbox('Example: Doom')
 	div.leading-lg
-		p <span class="font-bold highlight">Mechanics</span> - levels, ambushes powerkits, keys, doors, elevators,...
-		p <span class="font-bold highlight">Story</span> - unnamed hero (Doomguy) fighting against invading demons
-		p <span class="font-bold highlight">Aesthetics</span> - advanced level design (for that period)
-		p <span class="font-bold highlight">Technology</span> - pseudo 3D FPS perspective
-		p <span class="font-bold highlight">Goals</span> - hunt down keys, beat all levels
+		p.fragment <span class="font-bold highlight">Mechanics</span> - levels, ambushes powerkits, keys, doors, elevators,...
+		p.fragment <span class="font-bold highlight">Story</span> - unnamed hero (Doomguy) fighting against invading demons
+		p.fragment <span class="font-bold highlight">Aesthetics</span> - advanced level design (for that time)
+		p.fragment <span class="font-bold highlight">Technology</span> - pseudo 3D FPS perspective
+		p.fragment <span class="font-bold highlight">Goals</span> - hunt down keys, beat all levels
 	.flex-row.justify-center.bottom-0.width-100p.nopadding
 		img.height-440(src=imgAssets+'doom.jpg')
 +frameInbox('Baba is You')
 	div.leading-lg
-		p <span class="font-bold highlight">Mechanics</span> - building new rules by composing words (rule-based progressing)
-		p <span class="font-bold highlight">Story</span> - without narrative concepts 
-		p <span class="font-bold highlight">Aesthetics</span> - cartoonish pixel art
-		p <span class="font-bold highlight">Technology</span> - predefined logic operators
-		p <span class="font-bold highlight">Goals</span> - compose the right rule/command to advance, beat all levels
+		p.fragment <span class="font-bold highlight">Mechanics</span> - building new rules by composing words (rule-based progressing)
+		p.fragment <span class="font-bold highlight">Story</span> - without narrative concepts 
+		p.fragment <span class="font-bold highlight">Aesthetics</span> - cartoonish pixel art
+		p.fragment <span class="font-bold highlight">Technology</span> - predefined logic operators
+		p.fragment <span class="font-bold highlight">Goals</span> - compose the right rule/command to advance, beat all levels
 	.flex-row.justify-center.bottom-0.width-100p.nopadding
 		img.height-440(src=imgAssets+'babaisyou.jpg')
 +frameInbox('Game Mechanic Entities')
@@ -127,7 +127,6 @@ include ../mixins/containers_aph.pug
 			p Space
 			ul
 				li various spaces that can exist in a game and how they are related
-				li physical and conceptual relationships
 		.scope.fragment.fade-up(data-fragment-index='2')
 			p Objects
 			ul

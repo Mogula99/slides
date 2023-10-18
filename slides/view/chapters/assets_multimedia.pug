@@ -84,7 +84,7 @@ include ../mixins/containers_aph.pug
 				img.width-700(src=imgAssets+'cutscene_w3.jpg' alt='Warcraft cutscene')
 				img.width-700(src=imgAssets+'cutscene_hellblade.jpg' alt='Hellblade cutscene')
 		.tip.fragment.left-550.bottom-100
-			img.height-600(src=globalAssets+'memes/cutscenes.jpg')
+			img.height-600(src=globalAssets+'memes/cutscenes2.jpg')
 +frameInbox('Videos and Cutscenes')
 	div
 		.flex-cols-2.mt-20
@@ -92,17 +92,15 @@ include ../mixins/containers_aph.pug
 				img.width-600(src=imgAssets+'cut_ingame_another.jpg' alt='Another World cutscene')
 				p Another World, in-game
 			figure.fragment
-				img.width-600(src=imgAssets+'cut_video_wolf.jpg' alt='Wolfenstein New Collosus cutscene')
-				p Wolfenstein 2: New Colossus, video
+				img.width-600(src=imgAssets+'cut_ingame_lastofus.jpg' alt='The Last of us, Part I')
+				p The Last of Us, Part I (2022), in-game
 		.flex-cols-2.mt-20
 			figure.fragment
 				img.width-600(src=imgAssets+'w3_cutscene.jpg' alt='Warcraft cutscene')
-				p Warcraft 3, in-game
+				p Warcraft 3, in-game and cinematics
 			figure.fragment
 				img.width-600(src=imgAssets+'w3_reforged_cutscene.jpg' alt='Warcraft reforged cutscene')
-				p Warcraft 3 Reforged, video
-		.bottom-0.right-560.fragment.tip
-			img.height-400(src=globalAssets+'memes/ifonly.png' alt='meme ifonly')
+				p Warcraft 3 Reforged, cinematics
 +frameInbox('Textures')
 	.important-orange
 		.flex-cols-2.spacing-2xs
@@ -152,8 +150,12 @@ include ../mixins/containers_aph.pug
 			.scope.fragment.fade-up
 				p Sprite
 				ul
-					li a single graphic image that is incorporated into a scene
+					li a texture attached to a dynamic object
+					li usually represented by animated 2D characters
 					li allows to create large scenes as you can manipulate each sprite separately
+				.top-0.right-40
+					img.height-370(src=imgAssets+'braid.png' alt='Braid spritesheet')
+
 			.scope.fragment.fade-up
 				p Spritesheet
 				ul
@@ -162,8 +164,13 @@ include ../mixins/containers_aph.pug
 				p Sprite atlas
 				ul
 					li a single texture image containing a list of spritesheets
-		.text-center.mt-30.fragment.fade-up
-			img.height-370(src=imgAssets+'prince2.png' alt='Prince of Persia sprites')
+			.scope.fragment.fade-up
+				p Billboard
+				ul
+					li a texture that is always facing the camera
+					li unlike sprites, it can appear in 3D games too
+				.top-0.right-40
+					img.height-310(src=imgAssets+'billboard.jpg' )
 +frameInbox('3D Objects')
 	.important-green.text-center
 		img.height-700(src=imgAssets+'3DObjects.jpg' alt='3D objects')
@@ -181,8 +188,9 @@ include ../mixins/containers_aph.pug
 			li.fragment <span class="highlight">BLEND</span> - internal blender file, supported by many engines
 			li.fragment <span class="highlight">COLLADA</span> - .DAE, sharing models across CAD software
 			li.fragment <span class="highlight">X3D</span> - popular format for WEB
+			li.fragment <span class="highlight">GLB, GLTF</span> - format used mostly in open-source web libraries
 		.center.mt-20.fragment
-			table
+			table.text-xs
 				tr
 					th
 					th Appr. mesh
@@ -321,3 +329,21 @@ include ../mixins/containers_aph.pug
 						div.bgr-royal.radius-50.size-30.inline-block
 					td.text-center
 						div.bgr-royal.radius-50.size-30.inline-block
+				tr
+					td GLTF
+					td.text-center
+						div.bgr-royal.radius-50.size-20.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-20.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-20.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-20.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-20.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-20.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-20.inline-block
+					td.text-center
+						div.bgr-royal.radius-50.size-20.inline-block

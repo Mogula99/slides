@@ -1,0 +1,20 @@
+// GROUP=Minitalks
+// NAME=Portal
+// LOCALE=en
+// ORDER=2
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+
+html(lang='en')
+	+header('Minitalk: Making of Portal', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			include ./chapters/minitalk_portal.pug
+
+	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Video Games, Minitalk: Making of Portal')
+	script(src!='../../scripts/reveal-setup.js')

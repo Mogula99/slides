@@ -1,0 +1,55 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_portal/';
+- var defaultBgr = 'backgrounds/portal_2.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Hra Portal', imgAssets+'chapter_portal.svg')
++frameInbox('Portal')
+	div
+		ul
+			li.fragment <span class="highlight" data-fragment-index='1'>Rok vydání</span>: 2007
+			li.fragment <span class="highlight" data-fragment-index='2'>Engine</span>: Source Engine (mod hry Half-Life 2)
+			li.fragment <span class="highlight" data-fragment-index='3'>Hlavní přednosti hry</span>: černý humor, puzzle elementy, hlavní mechanika postavená na portálech, skvělý environmental narrative 
+			li.fragment <span class="highlight" data-fragment-index='4'>Autoři hry</span>: Kim Swift a další studenti z <span class="highlight-2">DigiPen Institute of Technology</span>
+				.center.mt-50
+					div
+						img.height-380.mr-20(src=imgAssets+'portal_01.jpg' data-fragment-index='3')
+						img.height-380(src=imgAssets+'kimswift.jpg' data-fragment-index='4')
++frameInbox('O vývoji hry')
+	div
+		ul
+			li.fragment hlavní mechanika vytvořena studenty z DigiPen
+			li.fragment na konci 4. ročníku bylo potřeba vytvořit 3D hru s funkční fyzikou
+			li.fragment vznikla hra Narbacular Drop
+				.top-120.right-20
+					.height-400.width-400
+						+gbGameBig(imgAssets+'narbacular.jpg', 'Narbacular Drop')
+			li.fragment Gabe Newell nabídl studentům práci ve společnosti Valve
+				div.right-40.top-440
+					.pframe.height-320.width-350.absolute
+					.height-380.width-350.p-20
+						img.width-350.object-cover(src=imgAssets+'newel.jpg')
+			li.fragment první prototyp byl postavený čistě na levelech
+			li.fragment na hře se podíleli scénaristi HF2, byly využity i původní assety
+			li.fragment antagonistu GlaDOS nadabovala Ellen McLain
+				div.bottom-20.right-400
+					.pframe.height-360.width-300.absolute
+					.height-360.width-300.p-20
+						img.width-300.object-cover(src=imgAssets+'mclain.jpg')
+				.bottom-20.left-600
+					.height-350.width-400
+						+gbGameBig(imgAssets+'portal_04.jpg', 'GlaDOS')
++frameInbox('Portal legacy')
+	div
+		ul
+			li.fragment díky hře se zintenzivnila výuka designu na školách
+			li.fragment velké množství lidí se se hrou ztotožnilo díky jejímu metaforickému příběhu
+				.top-30.right-50
+					img.height-540(src=imgAssets+'cosplay.jpg')
+				.bottom-20.right-50
+					img.height-280(src=imgAssets+'cake_is_lie.jpg')
+			li.fragment v roce 2011 vyšla hra Portal 2
+				.bottom-20.left-20
+					img.height-590(src=imgAssets+'portal2.jpg')

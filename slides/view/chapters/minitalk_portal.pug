@@ -1,0 +1,55 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/minitalk_portal/';
+- var defaultBgr = 'backgrounds/portal_2.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Making of Portal', imgAssets+'chapter_portal.svg')
++frameInbox('Portal')
+	div
+		ul
+			li.fragment <span class="highlight" data-fragment-index='1'>Release year</span>: 2007
+			li.fragment <span class="highlight" data-fragment-index='2'>Engine</span>: Source Engine (modded Half-Life 2)
+			li.fragment <span class="highlight" data-fragment-index='3'>The main features</span>: black humor, puzzle elements, the main mechanic based on portals, excellent environmental narrative
+			li.fragment <span class="highlight" data-fragment-index='4'>Authors</span>: Kim Swift and other students from <span class="highlight-2">DigiPen Institute of Technology</span>
+				.center.mt-50
+					div
+						img.height-380.mr-20(src=imgAssets+'portal_01.jpg' data-fragment-index='3')
+						img.height-380(src=imgAssets+'kimswift.jpg' data-fragment-index='4')
++frameInbox('Game development')
+	div
+		ul
+			li.fragment the main mechanic was created by the students from DigiPen
+			li.fragment in the end of the 4th year, they were supposed to create a 3D game with working physics
+			li.fragment a Narbacular Drop game was made 
+				.top-120.right-20
+					.height-400.width-400
+						+gbGameBig(imgAssets+'narbacular.jpg', 'Narbacular Drop')
+			li.fragment Gabe Newell offered the students jobs in Valve company
+				div.right-40.top-440
+					.pframe.height-320.width-350.absolute
+					.height-380.width-350.p-20
+						img.width-350.object-cover(src=imgAssets+'newel.jpg')
+			li.fragment the first prototype was based solely on levels
+			li.fragment HF2 writers were also involved, they even used original HF2 assets
+			li.fragment the GlaDOS antagonist was dubbed by Ellen McLain
+				div.bottom-20.right-400
+					.pframe.height-360.width-300.absolute
+					.height-360.width-300.p-20
+						img.width-300.object-cover(src=imgAssets+'mclain.jpg')
+				.bottom-20.left-600
+					.height-350.width-400
+						+gbGameBig(imgAssets+'portal_04.jpg', 'GlaDOS')
++frameInbox('Portal legacy')
+	div
+		ul
+			li.fragment thanks to the game, the teaching of design in schools intensified
+			li.fragment a large number of people identified with the game due to its metaphorical story.
+				.top-30.right-50
+					img.height-540(src=imgAssets+'cosplay.jpg')
+				.bottom-20.right-50
+					img.height-280(src=imgAssets+'cake_is_lie.jpg')
+			li.fragment in 2011, the game Portal 2 was released.
+				.bottom-20.left-20
+					img.height-590(src=imgAssets+'portal2.jpg')

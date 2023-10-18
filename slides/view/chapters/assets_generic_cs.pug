@@ -1,0 +1,161 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/assets_generic/';
+- var defaultBgr = 'backgrounds/bgr_binary.jpg';
+
++mchapter('Generické Assety', imgAssets+'chapter_assets_generic.svg')
++frameInbox('ZIP')
+	.important-green
+		.flex-cols-2
+			div
+				ul
+					li.fragment mnoho her používá vlastní formáty, které jsou odvozeny od ZIPu
+				.scope.fragment
+					p ZIP
+					ul
+						li bezztrátový formát pro archivaci
+						li komprese: shrink, DEFLATE, bzip2, žádná
+						li adresářová struktura
+				.scope.fragment
+					p zlib
+					ul
+						li open-source knihovna
+						li používá DEFLATE kompresi
+			div.text-center
+				img.height-700(src=imgAssets+'formats_zip.svg')
++frameInbox('Herní Data')
+	.important-green
+		.scope.fragment
+			p Serializovaná data
+			ul
+				li XML, JSON, CSV, CFG,...
+				li XML se hodí pro hierarchické struktury s větší hloubkou. Pro plošší struktury je tu JSON 
+				li některé jazyky (např. C++) nemají 1:1 serializační mechanismus
+				li JSON je skvělý pro JavaScript, neb je to jeho přirozená notace
+		.scope.fragment
+			p Databáze
+			ul
+				li web environment: Web storage (menší obsah dat), IndexedDB (větší obsah dat)
+				li desktop/mobile: SQLite
+		.scope.fragment
+			p Save data
+			ul
+				li destilát stavu hry, ze kterého je možno zrekonstruovat plný stav v daném čase/bodě
+				li velikost obvykle jednotky MB
++frameInbox('Web Storage')
+	.important-green
+		.flex-cols-2.spacing-4xs
+			div
+				.scope.fragment(data-fragment-index='1') 
+					p Local Storage
+					ul
+						li pro data menší velikosti (config, stav hry)
+						li až 10MB, bez expirace
+						li klíče a hodnoty jsou <span class="highlight">stringy</span>
+					.code.text-sm.mt-5
+						include ../../assets/assets_generic/snippets_generated/local_storage.html
+				.scope.fragment(data-fragment-index='2')
+					p IndexedDB
+					ul
+						li object-oriented DB
+						li low-level API pro strukturovaná data
+					.code.text-sm.text-sm.mt-5
+						include ../../assets/assets_generic/snippets_generated/indexed_db.html
+			div.fragment(data-fragment-index='1')
+				.code.text-xs
+					include ../../assets/assets_generic/snippets_generated/storage.html
++frameInbox('Příklad: OpenTTD Save format')
+	.flex-cols-2
+		div
+			img.height-700(src=imgAssets+'formats_openttd.svg' alt='OpenTTD save format')
+		div
+			ul
+				li 3 datové vrstvy
+				li velmi komplexní
+			.space-xl
+			img.height-420.mt-50(src=imgAssets+'transport_tycoon.gif' alt='Transport Tycoon Deluxe')
++frameInbox('Příklad: DOOM Save format')
+	.flex.flex-row
+		div.width-45p
+			ul
+				li.fragment DSG soubory
+				li.fragment hra načte level a načte stav hry tím, že iteruje přes všechny akce
+				li.fragment prakticky znemožňuje hacknutí (kromě statů hráče)
+				li.mt-30.fragment
+					span.highlight Akce:
+					ul
+						li.fragment dveře, switche, výtahy, schody, světla
+						li.fragment sebrané předměty
+						li.fragment projektily, teleporty
+						li.fragment animace, damage
+						li.fragment linedefs na minimapě
+						li.fragment kill counter
+		div.mt-20
+			.code.text-sm
+				include ../../assets/assets_generic/snippets_generated/doom_save.html
++frameInbox('Levely, mapy, dialogy')
+	ul.important-green.spacing-xs
+		li.fragment většinou proprietární formát jednotlivých knihoven/frameworků
+		li.fragment
+			span.highlight TMX Mapy
+			ul
+				li.fragment XML formát používaný v aplikaci <a href="https://www.mapeditor.org/">Tiled</a> pro mapy 2D her
+				li.fragment vrstvy, properties, objekty, animace, wangsety
+		li.highlight.fragment Populární nástroje pro Unity
+		ul
+			li.fragment
+				a(href="https://www.chatmapper.com/") Chat Mapper 
+				span - pro psaní nelineárního dialogu
+				ul
+					li větvení
+					li barks (štěky)
+					li lokalizace
+					li skripty
+			li.fragment
+				a(href="https://fungusgames.com/") Fungus 
+				span - storyline knihovna
+			li.fragment
+				a(href="https://assetstore.unity.com/packages/templates/systems/quest-machine-39834") Quest Machine 
+				span - pokročilý quest system
+	.top-100.right-0
+		img.height-400(src=imgAssets+'tileset.jpg' alt='Tileset')
++frameInbox('Tilemapy')
+	.important-green
+		ul
+			li.fragment několik vrstev - dlaždice, sprity, další dlaždice, pozadí (např. pro parallax)
+			li.fragment <span class="highlight">Dlaždice (Tile)</span> - nejmenší statický objekt na mapě
+			li.fragment <span class="highlight">Wang</span> - souvsející dlaždice (např. budova)
+		.flex-cols-2.mt-50
+			figure.fragment
+				img.height-450(src=imgAssets+'zelda_tilemap.png' alt='Zelda tilemap')
+				p Zelda (2004)
+			figure.fragment
+				img.height-450(src=imgAssets+'tiles_messenger.jpg' alt='The Messenger screenshot')
+				p The Messenger (2018)
+		.bottom-140.right-30.fragment
+			img.height-410(src=imgAssets+'tiles_messenger.svg' alt='The Messenger tiles')
++frameInbox('Příklad: TMX file')
+	.code.text-sm
+		include ../../assets/assets_generic/snippets_generated/tmx.html
+	.bottom-0.right-0
+		img.height-500(src=imgAssets+'tmxmap.png')
++frameInbox('Příklad: DOOM WAD file')
+	.important-green
+		.flex-cols-2
+			div
+				ul
+					li.fragment "<span class="highlight">W</span>here's <span class="highlight">A</span>ll the <span class="highlight">D</span>ata"
+					li.fragment Binární formát assetů hry Doom
+						ul
+							li.fragment Levely (zdi, podlahy, monstra)
+							li.fragment Zvukové efekty, hudba
+							li.fragment Barevná paleta, textury
+					li.fragment Vytvořeno Johnem D. Carmackem
+						img.height-450(src=imgAssets+'doom_map.png' alt='Doom Map')
+						div.bottom-20.right-100
+							.pframe.height-380.width-340.absolute
+							.height-380.width-340.p-20
+								img.width-300.object-cover(src=imgAssets+'carmack.png')
+			div.text-center
+				img.height-600(src=imgAssets+'formats_wad.png' alt='Doom WAD format')

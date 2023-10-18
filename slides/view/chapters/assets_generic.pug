@@ -100,7 +100,7 @@ include ../mixins/containers_aph.pug
 		li.fragment
 			span.highlight TMX Maps
 			ul
-				li.fragment XML format used by Tiled application for 2D games
+				li.fragment XML format used by <a href="https://www.mapeditor.org/">Tiled</a> application for 2D games
 				li.fragment layers, properties, objects, animations, terrains, wangsets
 		li.highlight.fragment Popular tools for Unity
 		ul
@@ -110,7 +110,6 @@ include ../mixins/containers_aph.pug
 				ul
 					li branching trees
 					li barks and alerts
-					li QTE
 					li localization
 					li optional scripting
 			li.fragment
@@ -153,6 +152,11 @@ include ../mixins/containers_aph.pug
 							li.fragment Sound effects, music
 							li.fragment Color palettes, images
 					li.fragment Designed by John D. Carmack
-				img.fragment.height-450(src=imgAssets+'doom_map.png' alt='Doom Map')
+						img.height-450(src=imgAssets+'doom_map.png' alt='Doom Map')
+						div.bottom-20.right-100
+							.pframe.height-380.width-340.absolute
+							.height-380.width-340.p-20
+								img.width-300.object-cover(src=imgAssets+'carmack.png')
 			div.text-center
 				img.height-600(src=imgAssets+'formats_wad.png' alt='Doom WAD format')
+

@@ -1,0 +1,136 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/assets_intro/';
+- var defaultBgr = 'backgrounds/textures.jpg';
+
++mchapter('Úvod do assetů', imgAssets+'chapter_assets_intro.svg')
++mcontainer('Co to jsou assety - různé definice').important-orange
+	+frameShard.width-860.top-3p.fragment.fade-up
+		p Vše, co je specifické pro danou hru (a není jen součástí enginu).
+	+frameShard.width-860.top-12p.left-20p.fragment.fade-up
+		p Všechna data, která jsou ve formátu podporovaném herním enginem.
+	+frameShard.width-860.top-20p.left-45p.fragment.fade-up
+		p Multimediální prvky, které jsou prezentovány hráči a chráněny copyrightem.
++frameInbox('Co to jsou assety')
+	div
+		ul
+			li.fragment mnoho her má podobné mechaniky ale odlišný vizuál - vizuální assety
+		.space-md
+		.flex-cols-2.mt-10
+			figure.fragment
+				img.height-280(src=imgAssets+'assetssim_mario.png' alt='Super Mario')
+				p Super Mario (1985)
+			figure.fragment
+				img.height-280(src=imgAssets+'assetssim_giana.png' alt='Giana Sisters')
+				p Giana Sisters (1987)
+		.flex-cols-2.mt-10
+			figure.fragment
+				img.height-280(src=imgAssets+'assetssim_wow.jpg' alt='World of Warcraft')
+				p World of Warcraft (2004)
+			figure.fragment
+				img.height-280(src=imgAssets+'assetssim_order_and_chaos_2.jpg' alt='Order and Chaos 2')
+				p Order and Chaos 2 (2015)
++frameInbox('Assety')
+	.top-0.left-0
+		figure.height-330
+			img(src=imgAssets+'assets_binary.png' alt='Binary assets')
+			p Binární data
+	.bottom-30.left-0
+		figure.height-330
+			img(src=imgAssets+'assets_bytecode.png' alt='Bytecode assets')
+			p Bytecode
+	.top-0.right-0
+		figure.height-330
+			img(src=imgAssets+'assets_text.png' alt='Text assets')
+			p Textové soubory
+	.bottom-30.right-0
+		figure.height-330
+			img(src=imgAssets+'assets_hybrid.png' alt='Hybrid assets')
+			p Hybridní soubory
+	.top-40p.left-44p
+		div.text-2xl Assety
+	div.text-center
+		img.height-700.mt-40.rotating(src=imgAssets+'assets_overview.svg' alt='Assets diagram')
++frameInbox('Média')
+	div
+		.grid.grid-rows-7.grid-cols-4.items-center.gap-10
+			div.text-center
+				img.height-100(src=globalAssets+'nes_cartridge2.png' alt='NES cartridge')
+			div NES cartridge
+			div 8kB - 1MB
+			div Super Mario
+
+			div.text-center
+				img.height-100(src=globalAssets+'gb_cartridge.png' alt='GameBoy cartridge')
+			div Game Boy cartridge
+			div 256 kB - 8 MB
+			div Pokémon Yellow
+
+			div.text-center
+				img.height-100(src=globalAssets+'disk_floppyaph.png' alt='Floppy disk')
+			div Disketa
+			div 1.44 MB
+			div Duke Nukem 1
+
+			div.text-center
+				img.height-100(src=globalAssets+'disk_cd.png' alt='Compact Disk')
+			div CD
+			div 700 MB
+			div Half-Life
+
+			div.text-center
+				img.height-100(src=globalAssets+'disk_dvd.png' alt='DVD disk')
+			div DVD
+			div 4.7 GB - 8.5 GB
+			div GTA San Andreas
+
+			div.text-center
+				img.height-100(src=globalAssets+'disk_bluray.png' alt='Bluray disk')
+			div Blu-ray
+			div 25 GB - 50 GB
+			div Witcher 3
+
+			div.text-center
+				img.height-100(src=globalAssets+'disk_hdd.png' alt='HDD')
+			div HDD + DLC
+			div Jakákoliv velikost (bohužel)
+			div Call of Duty: Warzone
+	+tipKeen3('Hra Super Mario zabírá méně KB než její screenshot!').bottom-0
+	.tip.fragment.height-600.bottom-280.right-550
+		img.height-600(src=globalAssets+'memes/cd.jpg')
++frameInbox('Velikost herních assetů')
+	div.text-center.important-green
+		img.height-760(src=imgAssets+'assets_size.svg' alt='Assets size in games')
++frameInbox('Typy assetů')
+	div.spacing-4xs
+		.scope.fragment.fade-up
+			p.leading-base Zvuky a hudba
+			ul
+				li AIFF, WAV, MP3, OGG
+		.scope.fragment.fade-up
+			p.leading-base Obrázky / textury
+			ul
+				li PNG, JPG, TGA, SVG, EXR, PBR, MTLX
+		.scope.fragment.fade-up
+			p.leading-base Video
+			ul
+				li MP4, MKV, AVI, MOV, MPG, WEBM
+		.scope.fragment.fade-up
+			p.leading-base 3D Modely
+			ul
+				li FBX, BLEND, DAE, 3DS, X3D, GLB, GLTF
+		.scope.fragment.fade-up
+			p.leading-base Herní Data
+			ul
+				li ZIP, XML, JSON, CFG, BIN,...
+		.scope.fragment.fade-up
+			p.leading-base Levely, Mapy
+			ul
+				li CAS, DAT, RPF, TIGER, WAD
+		.scope.fragment.fade-up
+			p Skripty
+			ul
+				li JS, LUA, PY, CS
+	.top-0.right-0
+		img.height-700(src=imgAssets+'data_hex.png' alt='HEX data')

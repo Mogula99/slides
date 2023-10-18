@@ -7,6 +7,11 @@ Versioning info:
 - third number indicates minor changes, such as hotfixes and updates
 
 
+## [6.5] - 2023-10-18
+### Added
+Lecture 3 new slides
+Portal minitalk
+
 ## [6.4] - 2023-10-12
 ### Added
 Lecture 2 new slides

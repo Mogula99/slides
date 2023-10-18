@@ -1,0 +1,20 @@
+// GROUP=Minitalky
+// NAME=Portal
+// LOCALE=cs
+// ORDER=2
+doctype html
+include ./mixins/header.pug
+include ./mixins/containers.pug
+include ./mixins/containers_aph.pug
+
+- var themePath = '../themes/aph/';
+- var globalAssets = '../assets/all/';
+
+html(lang='cs')
+	+header('Minitalk: Hra Portal', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+	.reveal
+		.slides
+			include ./chapters/minitalk_portal_cs.pug
+
+	+footer('Adam Vesecký (FIT ČVUT)', 'Architektura Počítačových Her, Minitalk: Portal')
+	script(src!='../../scripts/reveal-setup.js')

@@ -1,0 +1,92 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/assets_resources/';
+- var defaultBgr = 'backgrounds/memory.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Resource Manager', imgAssets+'chapter_assets_resources.svg')
++frameInbox('Resource Manager')
+	.important-orange
+		.scope.fragment.fade-up
+			p Poskytuje přístup ke všem zdrojům
+			ul
+				li meshe, materiály, shadery, animace, textury, klipy, levely
+				li <span class="highlight-2">Resource Cache</span> - používá se pro rychlejší přístup
+		.scope.fragment.fade-up
+			p Řídí životní cyklus každého zdroje
+			ul
+				li většina RM obsahuje nějaký registr
+		.scope.fragment.fade-up
+			p Garantuje, že vždy existuje pouze jedna kopie každého zdroje v paměti
+			ul
+				li resource GUID - jednoznačný identifikátor, možno použít cestu k souboru, neb je unikátní
+		.scope.fragment.fade-up
+			p Načítá požadované zdroje a uvolňuje ty, které už nejsou potřeba
+			ul
+				li načítání je mnohem jednodušší než uvolňování
+		.scope.fragment.fade-up
+			p Řeší streamování
+			ul
+				li u open-world her
++frameInbox('Resource Manager')
+	div.text-center
+		img.height-700.mt-40(src=imgAssets+'resource_manager.svg' alt='Resource Manager')
++frameInbox('Příklad: Godot Engine Resource Loader')
+	div
+		.code.text-xs
+			include ../../assets/assets_resources/snippets_generated/godot_resource_loader.html
++frameInbox('Příklad: Godot Engine, dealokace textury')
+	div
+		.code.text-xs
+			include ../../assets/assets_resources/snippets_generated/godot_free.html
+
++frameInbox('Načítání dat')
+	.important-orange.spacing-xs
+		.scope.fragment.fade-up 
+			p Level loading
+			ul
+				li načte se do paměti vždy daný level
+				li vyžaduje loading screen či před-renderovanou cutscénu/video
+				li použito ve hrách <span class="highlight-2">Tomb Raider, Doom, Quake,...</span>
+		.scope.fragment.fade-up
+			p Air locky
+			ul
+				li air lock je malá scéna (místnost, výtah)
+				li jakmile do ní hráč vkročí, načte se další část a airlock se otevře
+				li použito ve hrách <span class="highlight-2">Half-Life, Portal (částečně)</span>
+		.scope.fragment.fade-up
+			p World streams
+			ul
+				li engine uvolňuje prostředky týkajících se vzdálených regionů a načítá regiony, ke kterým hráč míří
+				li 2D používá lazy loading
+				li 3D používá <span class="highlight">LOD system</span> - objekty blíže ke hráči se načtou ve větších detailech
+				li použito ve hrách <span class="highlight-2">GTA, WoW, Arma a 2D scrollery</span>
++frameInbox('Příklad: Level Loading')
+	.flex-cols-2.items-center.fill
+		figure
+			img.height-400(src=imgAssets+'loading_tomb_raider.jpg')
+			p Shadow of the Tomb Raider (2018)
+		figure
+			img.height-400(src=imgAssets+'loading_wolfenstein.jpg')
+			p Wolfenstein II: The New Colossus (2018), render
++frameInbox('Příklad: Air Lock')
+	.flex-cols-2.items-center.fill
+		figure
+			img.height-400(src=imgAssets+'airlock_portal.jpg')
+			p Portal (2007)
+		figure
+			img.height-400(src=imgAssets+'airlock_hellblade.jpg')
+			p Hellblade: Senua's Sacrifice (2017)
++frameInbox('Příklad: World Streaming')
+	.flex-cols-2.items-center.fill
+		figure
+			img.height-400(src=imgAssets+'openworld_wow.jpg')
+			p World of Warcraft (2004)
+		figure
+			img.height-400(src=imgAssets+'openworld_jazz.jpg')
+			p Jazz Jackrabbit 2 (1998)
++frameInbox('Příklad: Jazz Jackrabbit - event-based vykreslování')
+	div
+		.code.text-xs
+			include ../../assets/assets_resources/snippets_generated/jazz_bridge.html

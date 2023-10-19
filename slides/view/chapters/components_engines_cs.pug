@@ -1,0 +1,99 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/components_engines/';
+- var defaultBgr = 'backgrounds/engines.jpg';
+
+
+
++mchapter('Komponentové enginy a knihovny', imgAssets+'chapter_components_engines.svg')
++frameInbox('Komponentové enginy a knihovny')
+	div
+		.spacing-xs
+			.scope.fragment
+				p Artemis framework
+				ul
+					li
+						a(href="https://github.com/junkdog/artemis-odb") https://github.com/junkdog/artemis-odb
+					li Java, port do C#, ECS implementace se vším všudy
+			.scope.fragment
+				p Atomic Game Engine
+				ul
+					li
+						a(href="https://github.com/AtomicGameEngine/AtomicGameEngine") https://github.com/AtomicGameEngine/AtomicGameEngine
+					li C++ (bridge do JS a C#), už se nevyvíjí, nicméně je to skvělý zdroj pro inspiraci
+			.scope.fragment
+				p Unity
+				ul
+					li ECS architektura
+			.scope.fragment
+				p Unreal Engine
+				ul
+					li hybridní objekto-komponentová architektura
+			.scope.fragment
+				p Godot Engine
+				ul
+					li node-based OOP architektura, signály
+	.bottom-0.right-0
+		img.height-400(src=imgAssets+'engines.gif')
++frameInbox('Příklad: Artemis Engine')
+	div
+		ul
+			li System obsahuje logiku, komponenty obsahují data
+		.code.text-xs
+			include ../../assets/components_engines/snippets_generated/artemis.html
++frameInbox('Unity')
+	.important-green
+		ul
+			li.fragment ECS architektura s messaging systémem
+			li.fragment entity jsou herní objekty, komponenty obsahují data, systémy obsahují herní logiku
+			li.fragment třída <span class="highlight code">MonoBehaviour</span> může obsahovat jak data, tak i herní logiku
+		.space-xl
+		.text-center
+			img.height-400(src=imgAssets+'unity_prefab.gif')
++frameInbox('Unity Architektura')
+	.important-green
+		.text-center
+			img.height-770(src=imgAssets+'diag_ecs_unity.svg')
++frameInbox('Příklad: Platformer2D')
+	.text-center
+		img.height-700(src=imgAssets+'platformer2D.jpg')
++frameInbox('Příklad: Platformer2D Graf scény')
+	.text-center
+		img.height-770.mt-20(src=imgAssets+'diag_unity_platformer.svg')
++frameInbox('Příklad: Platformer2D Events')
+	.code.text-xs
+		include ../../assets/components_engines/snippets_generated/platformer_events.html
++frameInbox('Komponentové knihovny')
+	div.spacing-xs
+		.scope.fragment
+			p EnTT
+			ul
+				li
+					a(href="https://github.com/skypjack/entt") https://github.com/skypjack/entt
+				li header-only C++ knihovna, čisté ECS
+		.scope.fragment
+			p Entitas
+			ul
+				li
+					a(href="https://github.com/sschmid/Entitas-CSharp") https://github.com/sschmid/Entitas-CSharp
+				li původně ECS framework pro Unity, portován do mnoha jazyků
+		.scope.fragment
+			p A-Frame
+			ul
+				li
+					a(href="https://aframe.io") https://aframe.io
+				li deklarativní framework pro VR, nadstavba ThreeJS
+		.scope.fragment
+			p ECSY
+			ul
+				li 
+					a(href="https://ecsy.io") https://ecsy.io
+				li experimentální ECS framework pro PixiJS, ThreeJS a BabylonJS
++frameInbox('Příklad: ECSY Framework')
+	div
+		.flex.flex-row.mt-100
+			.code.text-xs
+				include ../../assets/components_engines/snippets_generated/ecsy.html
+			.text-center
+				img.height-400(src=imgAssets+'ecsy.svg')

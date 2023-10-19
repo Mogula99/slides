@@ -1,0 +1,87 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/components_messaging/';
+- var defaultBgr = 'backgrounds/wires.jpg';
+
+
++mchapter('Messaging', imgAssets+'chapter_components_messaging.svg')
++frameInbox('Jak komponenty komunikují')
+	.important-orange.spacing-xs
+		.scope.fragment
+			p Modifikací stavu herního objektu
+			ul
+				li např. sdílený stavový automat
+				li nepřímá komunikace
+				li špatně se debugguje
+		.scope.fragment
+			p Přímým voláním
+			ul
+				li rychlý, ale zvyšuje zadrátovanost
+				li musíme vědět, koho volat
+				li volání typu <span class="code">getComponentByName().sth()</span>
+		.scope.fragment
+			p Pomocí message brokeru
+			ul
+				li eventy a commandy
+				li každá komponenta deklaruje, které typy zpráv ji zajímají
+				li např. jakmile dostaneme zprávu ITEM_PICK, přehrajeme zvuk
+				li komponenta vyšle zprávu, ale už ji nezajímá, kdo na ní zareaguje
+		.top-160.right-150
+			img.width-750(src=imgAssets+'messaging.svg')
++frameInbox('Message Broker')
+	.important-red
+		ul
+			li.fragment umožňuje komponentám, aby byly notifikovány o změně stavu, která je pro ně relevantní
+			li.fragment může být použit i pro návrat hodnot (nebezpečí <span class="highlight">feedback deadlocku</span>)
+			li.fragment komponenty obvykle obsahují metodu jako <span class="highlight code">OnMessage()</span>, která zprávy zachytává 
+			li.fragment nabízí se možnost i asynchronního (odloženého) zpracování
+			li.fragment <span class="highlight">Event</span> - zpráva, která informuje, že se něco stalo
+			li.fragment <span class="highlight">Command</span> - příkaz, který instruuje, že se něco má provést
+		.space-md
+		.text-center
+			img.height-300(src=imgAssets+'diag_message.svg')
++frameInbox('Typy zpráv')
+	.important-orange
+		.scope.fragment
+			p Unicast
+			ul
+				li komponenta pošle zprávu jiné komponentě (jen jedné)
+				li ve většině případů stačí přímé volání
+				li příklad: pauznutí hry
+		.scope.fragment
+			p Multicast
+			ul
+				li a) komponenta pošle zprávu všem subscriberům
+				li b) komponenta pošle zprávu všem objektům, které splňují určitá kritéria
+				li příklad: notifikace jednotek v osadě, že hráč vychází z lesa
+				li příklad: hráč šlápl do kaluže - přehrání zvuku
+		.scope.fragment
+			p Broadcast
+			ul
+				li globální zprávy, příliš se nevyužívá
+				li příklad: game over, případně debuggovací/loggovací komponenta
+		.bottom-0.right-20
+			img.height-680(src=imgAssets+'messaging_types.svg')
++frameInbox('Příklad: Unity Messages')
+	.code.text-xs
+		include ../../assets/components_messaging/snippets_generated/unity_messages.html
++frameInbox('Příklad: Unreal Message Bus')
+	div
+		ul
+			li.fragment umožňuje komunikaci mezi částmi aplikace pomocí techniky <span class="highlight">Message Passing</span>
+			li.fragment zprávy jsou rozdělené do commandů a eventů
+			li.fragment všechny zprávy jsou zabalené do rozhraní <span class="highlight code">IMessageContext</span>
+		.space-xl
+		.text-center
+			img.height-300(src=imgAssets+'diag_message_unreal.svg')
++frameInbox('Message Broker - shrnutí')
+	.important-green
+		ul
+			li.upside.fragment umožňuje komunikaci posíláním zpráv a příkazů
+			li.upside.fragment komponenty mohou reagovat na jakoukoliv zprávu, která přijde do brokera
+			li.downside.fragment není příliš vhodné pro per-frame zpracování (už vůbec ne pro dynamiku či závislý pohyb objektů)
+			li.downside.fragment pokud komponenta reaguje na příliš mnoho zpráv, není jednoduché ji refaktorovat a rozdělit na více komponent
+			li.mt-40.fragment pokud je nutné posílat konkrétní zprávu každý frame, je lepší použít přímé volání
+		.bottom-0.right-60
+			img.height-350(src=imgAssets+'boxes.png')

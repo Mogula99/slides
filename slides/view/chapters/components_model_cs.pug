@@ -1,0 +1,131 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/components_model/';
+- var defaultBgr = 'backgrounds/blocks.jpg';
+
+// ===================================================== SLIDES =====================================================
++mchapter('Herní model', imgAssets+'chapter_components_model.svg')
++frameInbox('Herní model')
+	.important-green
+		ul
+			li.fragment všechna herní pravidla jsou součástí herního modelu
+			li.fragment herní model je možno rozdělit do několika částí: doménový model, view model, networking model,...
+			li.fragment herní model aktualizuje svůj stav a interpretuje jej ostatním částem aplikace
+			li.fragment s každým updatem dojde k vykreslení interpretace <span class="highlight">stavu</span> modelu na obrazovce
+		.space-2xl
+		.text-center
+			img.height-200(src=imgAssets+'input_model_view.svg')
++frameInbox('Herní model')
+	.important-orange
+		.scope.fragment
+			p Doménový Model
+			ul
+				li obsahuje pravidla a klíčová herní data
+		.scope.fragment
+			p Presentační Model
+			ul
+				li to, co vnímá hráč
+				li např. přehrávané zvuky, animované sprity
+		.scope.fragment
+			p Fyzikální model
+			ul
+				li všechny entity, které se podílí na fyzikální interakci
+		.scope.fragment
+			p AI model
+			ul
+				li všechna data a struktury, které může zpracovávat AI (navmesh, behaviorální stromy,...)
+		.scope.fragment
+			p Networking model
+			ul
+				li vše, co je potřeba synchronizovat mezi zařízeními
++frameInbox('Příklad: Super Mario Bros.')
+	.important-green
+		.text-center
+			img.height-300(src=imgAssets+'mario_screen.jpg')
+		.bottom-40.left-40
+			img.height-370(src=imgAssets+'mario_model.svg')
+		.right-0.bottom-150
+			img.height-320(src=imgAssets+'mario_spritesheet.png')
++mcontainer('Herní model')
+	+frameShard.height-30p.top-280.center.z-index-100
+		div
+			ul
+				li.fragment jakmile složitost systému dosáhne určité hranice, je k modelování systému nezbytné použít systém samotný
+				li.fragment jednoduchý doménový model najdeme např. u turn-based her, puzzle her a grid-based platformerů
+				li.fragment složité hry typu GTA mohou obsahovat klíčová data přímo v herní scéně (presentačním modelu) 
++frameInbox('Příklad: Šachy')
+	.flex-cols-2.items-center.fill
+		figure
+			img.height-450(src=imgAssets+'chessmaster_2000.gif')
+			p Chessmaster 2000 (1986)
+		figure
+			img.height-450(src=imgAssets+'chessmaster_11.jpg')
+			p Chessmaster 11 (2007)
++frameInbox('Šachový model')
+	div
+		ul
+			li obsahuje jak atributy tak herní pravidla (v metodě <span class="code">makeMove()</span>)
+		.text-center
+			img.height-750(src=imgAssets+'diag_chess.svg')
++frameInboxMid('Šachové modely')
+	.important-green.center.fill
+		table
+			tr
+				th
+				th Chessmaster 2000
+				th Chessmaster 11
+			tr.fragment
+				td.color-lemon Doménový model
+				td Herní deska, figurky, čas, pravidla
+				td Herní deska, figurky, čas, pravidla
+			tr.fragment
+				td.color-lemon Presentační model
+				td CGA sprity, beeper zvuky
+				td Animované 3D objekty, zvuky, hudba
+			tr.fragment
+				td.color-lemon Fyzikální model
+				td Není
+				td Rigidbody engine
+			tr.fragment
+				td.color-lemon AI model
+				td Engine Davida Kittingera
+				td King engine
+			tr.fragment
+				td.color-lemon Networking model
+				td Není
+				td Posílání tahů
++frameInbox('Příklad: Strategie')
+	.fill.center
+		figure
+			img.height-650(src=imgAssets+'hom.jpg')
+			p Heroes of Might and Magic
++frameInbox('Heroes of Might and Magic model')
+	div
+		ul
+			li obsahuje pouze atributy
+		.text-center.mt-10
+			img.height-750(src=imgAssets+'diag_heroes.svg')
++frameInbox('Příklad: Textová adventura')
+	.fill.center
+		figure
+			img.height-700(src=imgAssets+'belegost.png')
+	.top-100
+		img.height-350(src=imgAssets+'adventure_events.svg')
++frameInbox('Příklad: Textová adventura')
+	div
+		ul
+			li obsahuje jak atributy tak pravidla
+		.text-center
+			img.height-750(src=imgAssets+'diag_adventure.svg')
++frameInbox('Příklad: Pacman')
+	.fill.center
+		img.height-800(src=imgAssets+'pacman.png')
+	.top-90.left-260
+		img.height-480(src=imgAssets+'pacman.svg')
++frameInbox('Pacman - architektura')
+	div
+		ul
+			li obsahuje pouze atributy
+		.text-center.mt-20
+			img.height-600(src=imgAssets+'diag_pacman.svg')

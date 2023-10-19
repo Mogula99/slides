@@ -3,7 +3,6 @@
 // NAME=Komponenty
 // LOCALE=cs 
 // ORDER=4
-// LOCKED=true
 doctype html
 include ./mixins/header.pug
 include ./mixins/containers.pug
@@ -16,19 +15,19 @@ include ./mixins/summary.pug
 - var globalAssets = '../assets/all/';
 - var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
 
-html(lang='en')
-	+header('Components', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
+html(lang='cs')
+	+header('Komponenty', 'Adam Vesecký', themePath + 'resources/favicon.png', themePath + 'theme_aph.scss')
 	.reveal
 		.slides
-			+titleLecture('Components', 'Lecture 4', globalAssets+'lectures/ic_lecture04.svg')
-			include ./chapters/components_model.pug
-			include ./chapters/components_objects.pug
-			include ./chapters/components_components.pug
-			include ./chapters/components_messaging.pug
-			include ./chapters/components_engines.pug
+			+titleLectureCs('Komponenty', 'Přednáška 4', globalAssets+'lectures/ic_lecture04.svg')
+			include ./chapters/components_model_cs.pug
+			include ./chapters/components_objects_cs.pug
+			include ./chapters/components_components_cs.pug
+			include ./chapters/components_messaging_cs.pug
+			include ./chapters/components_engines_cs.pug
 			- var defaultBgr = 'backgrounds/bgr_arcades2.jpg';
-			+summary_lecture04()
-			+quote-halflife()
+			+summary_lecture04cs()
+			+quote-primalex()
 
-	+footer('Adam Vesecký (FIT CTU)', 'Architecture of Computer Games, Lecture 4: Components')
+	+footer('Adam Vesecký (FIT ČVUT)', 'Architektura Počítačových Her, Přednáška 4: Komponenty')
 	script(src!='../../scripts/reveal-setup.js')

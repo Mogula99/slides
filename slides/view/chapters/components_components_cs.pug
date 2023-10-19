@@ -1,0 +1,120 @@
+include ../mixins/containers.pug
+include ../mixins/containers_aph.pug
+
+- var imgAssets = '../assets/components_components/';
+- var defaultBgr = 'backgrounds/components.jpg';
+
++mchapter('Komponentová architektura', imgAssets+'chapter_components_components.svg')
++frameInbox('Komponenta')
+	.important-red
+		ul
+			li.fragment(data-fragment-index="1") modulární část systému, jejíž chování je definováno z hlediska přijímaných a poskytnutých rozhraní
+			li.fragment(data-fragment-index="2") komponenty jsou <span class="highlight">plug-and-play objekty</span>
+			li.fragment(data-fragment-index="3") upřednostňuje kompozici před dědičností
+			li.fragment(data-fragment-index="4") chování objektu je stanoveno tím, jaké obsahuje komponenty
+			li.fragment(data-fragment-index="5") <span class="highlight">Dungeon Siege (2002)</span> - jedna z prvních her s komponentovou architekturou
+		.space-2xl
+		.text-center
+			img.height-250(src=imgAssets+'component.svg')
+		.bottom-60.left-40.width-400.fragment(data-fragment-index="5")
+			img(src=imgAssets+'dsiege.jpg')
++frameInbox('ECS Pattern')
+	.important-red
+		ul
+			li.fragment.highlight Entity-Component-System (+ Attribute)
+			li.fragment oblíbená architektura pro komponentové knihovny a enginy
+			li.fragment herní objekt je pouze kontejner pro data a logiku, kterou mu dodají přiřazené komponenty
+			li.fragment jednoduše se dá integrovat do <span class="highlight">grafu scény</span>
+		.text-center
+			img.height-500.mt-15(src=imgAssets+'ecs.svg')
++frameInbox('Terminologie')
+	.important-orange
+		.scope.fragment
+			p Entity
+			ul
+				li herní objekt
+		.scope.fragment
+			p Component
+			ul
+				li jednotka poskytující funkční chování (a někdy i data)
+		.scope.fragment
+			p System
+			ul
+				li samostatná komponenta, co zodpovídá za větší celek (HealthSystem, StatsSystem, ScoreSystem)
+		.scope.fragment
+			p Attribute
+			ul
+				li jednotka poskytující hernímu objektu data
+				li většina enginů používá datové komponenty
+		+tipKeen1('Pojmenování se může lišit. Některé enginy používají Behaviours pro komponenty, Components pro systémy, Properties pro atributy atd.').bottom-0.right-30p
++frameInbox('Příklad: Platformer')
+	ul
+		li.fragment atributy jsou <span class="highlight font-bold">DATA</span>, komponenty jsou <span class="highlight font-bold">CHOVÁNÍ</span>
+	.text-center
+		img.height-500(src=imgAssets+'diag_platformer_cmp.svg')
++frameInbox('ECS Architektura v C++')
+	.important-green
+		.text-center
+			img.height-770(src=imgAssets+'diag_ecs.svg')
++frameInbox('ECS příklad')
+	.top-140.left-370
+		img.height-450(src=imgAssets+'components_jazz.jpg')
+	.fill.center.absolute
+		img.height-700(src=imgAssets+'cmp_jazz.svg')
++mcontainer('Největší výzva v komponentové architektuře')
+	+frameShard.height-30p.top-280.center.z-index-100
+		div.highlight Je důležité si dobře promyslet, kdo za co zodpovídá
++frameInbox('Příklad: Pacman')
+	.important-green
+		.text-center
+			img.height-700.mt-20(src=imgAssets+'cmp_pacman.svg')
++frameInbox('Pacman')
+	.important-green.spacing-xs
+		.scope.fragment
+			p Root
+			ul
+				li kořenový herní objekt
+		.scope.fragment
+			p Maze
+			ul
+				li model bludiště, obsahuje pozice teček, boosterů atd.
+		.scope.fragment
+			p GameSystem
+			ul
+				li kontroluje hru jako jeden celek (např. přepíná herní stavy, určuje ukončovací podmínku - game over)
+		.scope.fragment
+			p BoxBehavior
+			ul
+				li herní logika ohrádky (náhodně vytváří duchy)
+		.scope.fragment
+			p PacmanBehavior
+			ul
+				li kontroluje pohyb Pacmana pomocí <span class="highlight code">InputManager</span> komponenty
+		.scope.fragment
+			p GhostBehavior
+			ul
+				li jednoduché AI pro "chase" behavior
++frameInbox('Příklad: Platformer')
+	.text-center
+		img.height-760.mt-20(src=imgAssets+'cmp_platformer.svg')
+	.bottom-0.right-0
+		img.width-400(src=imgAssets+'platformer.jpg')
++frameInbox('Komponentová architektura - shrnutí')
+	div
+		div
+			ul
+				li.upside.fragment škálovatelná
+				li.upside.fragment datově-orientovatelná
+				li.upside.fragment komponenty je snadné použít na více místech
+				li.upside.fragment jednoduché vytváření nových typů objektů
+				li.upside.fragment komponenty mohou mít polymorfní operace
+		.space-md
+		div
+			ul
+				li.downside.fragment vše je poskládáno v runtime
+				li.downside.fragment statická analýza kódu neodhalí potenciální překážky
+				li.downside.fragment kód je potřeba psát generickým způsobem
+				li.downside.fragment refaktoring může být problematický
+				li.downside.fragment hůře se debugguje
+	.bottom-0.right-0
+		img.height-250(src=imgAssets+'component.svg')
